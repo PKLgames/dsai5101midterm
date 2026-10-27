@@ -4,7 +4,8 @@
 （12th Gen i7-1260P，7 GB 内存）上几分钟跑完。
 
 项目还从另一份工作（`dsai-5101-sdm-proj`，见 `README_allie_chan.md`）借用了少量可复用组件——
-逐猫强度与 YOLO/CLIP 图片标签表——并在同一估计器、同一套折上比较各类特征族。
+逐猫强度与 YOLO/CLIP 图片标签表。标签表已内置到 `data/approach_a/`，因此本仓库无需再克隆该项目；
+特征族比较在同一估计器、同一套折上进行。
 
 ---
 
@@ -90,10 +91,10 @@ dsai5101midterm/
     ├── images/<cat>/<photo>.jpg  1,558 张，183.8 MB
     ├── manifest.csv              字节数、尺寸、来源 URL
     ├── image_index.csv           每张图的 cat / split / 出现次数
+    ├── approach_a/               内置的标签表（只读）：photo_labels.csv、cat_labels.csv
     ├── features/
     │   ├── <tag>.npz             paths, deep (N,576), hand (N,20), ok
     │   ├── <tag>.meta.json       主干、版本、耗时、内存、种子
-    │   ├── <tag>.csv             单图表（1,558 × 597）
     │   ├── qa_*_<tag>.{png,json} 特征诊断
     │   ├── baseline_metrics.{json,csv}
     │   ├── feature_families.{json,md,png}
@@ -103,6 +104,11 @@ dsai5101midterm/
         ├── pred_test.csv         嵌入基线
         ├── pred_hybrid_test.csv  联合混合模型（--structure joint）
         └── pred_routed_test.csv  分流模型（推荐）
+
+datasets/                         ← 可直接使用的表（gitignore，见 datasets/README.md）
+├── train_pairs.csv.gz            24,896 × 636：特征 + 画像 + 选择
+├── test_pairs.csv.gz             6,224 × 634：同列结构，无标签
+└── image_features.csv.gz         1,558 × 598：单图特征
 ```
 
 ## 快速开始
@@ -128,14 +134,23 @@ bash scripts/00_setup_env.sh
 产出 `data/features/mobilenet_v3_small_224.npz`（1,558 × 576 深特征 + 1,558 × 20 手工特征）与
 `data/submissions/pred_test.csv`（6,224 行）。
 
-特征族对比与混合模型需要把另一份工作克隆到同级目录（`../dsai-5101-sdm-proj`），仅为读取其
-`prepared/photo_labels.csv`，全程只读：
+对比与混合模型需要的标签表已**内置**在 `data/approach_a/photo_labels.csv`，不再需要第二份仓库：
 
 ```bash
 .venv/bin/python scripts/03_extract_features.py --backbone resnet18   # 可选第二主干，约 1 分钟
 .venv/bin/python scripts/07_feature_families.py      # 约 3.5 分钟
 .venv/bin/python scripts/08_cold_start_fix.py        # 约 7 分钟
 .venv/bin/python scripts/09_hybrid_submission.py     # 约 30 秒，写分流版提交
+```
+
+另外两个入口：
+
+```bash
+# 单张图 → 特征，并核对与缓存是否一致
+.venv/bin/python scripts/10_quickstart.py --image data/images/cat_000002/cat_000002_0001.jpg
+
+# 直接生成「特征 + 观测者画像 + 选择」的训练/测试表
+.venv/bin/python scripts/06_export_datasets.py
 ```
 
 ## 脚本
@@ -145,12 +160,14 @@ bash scripts/00_setup_env.sh
 | `00_setup_env.sh` | `PYTHON_TAG`, `TORCH_VER` | 建 `.venv`；CPU 轮子避免约 2.5 GB 的 nvidia 依赖 |
 | `01_download_images.py` | `--workers`, `--limit` | 16 线程、3 次退避重试、`.part` 原子落盘、已存在则跳过 |
 | `02_build_index.py` | — | 生成 `image_index.csv`，检查 train/test 重叠与缺图 |
-| `03_extract_features.py` | `--backbone`, `--size`, `--batch-size`, `--workers`, `--threads`, `--tta-flip`, `--limit`, `--tag`, `--list-backbones` | 抽特征、写缓存、报告吞吐 |
+| `03_extract_features.py` | `--backbone`, `--size`, `--batch-size`, `--workers`, `--threads`, `--tta-flip`, `--limit`, `--tag`, `--write-csv`, `--list-backbones` | 抽特征、写缓存、报告吞吐 |
 | `04_feature_qa.py` | `--tag`, `--no-plots` | 同猫/异猫相似度、5-NN 检索、PCA、最近邻图 |
 | `05_baseline_pairs.py` | `--tag`, `--C`, `--p2-folds`, `--seed` | 图对分组 CV + 图片留出，写提交文件 |
+| `06_export_datasets.py` | `--tag`, `--out-dir`, `--no-images` | 生成 `datasets/{train,test}_pairs.csv.gz` 与 `image_features.csv.gz` |
 | `07_feature_families.py` | `--folds`, `--p2-folds`, `--seed`, `--no-coldstart`, `--replot` | 十类特征族、三种协议、分观测者与校准指标 |
 | `08_cold_start_fix.py` | `--reuse` | 多主干特征与分流结构对着冷启动短板的实验 |
 | `09_hybrid_submission.py` | `--structure routed\|joint`, `--spec`, `--C`, `--sweep` | 全量拟合最终模型并写出预测 |
+| `10_quickstart.py` | `--image`, `--batch`, `--backbone`, `--tag` | 最小的「图片→特征」示例，并核对缓存 |
 
 可选主干（接口一致，一条参数切换）：
 
@@ -177,6 +194,20 @@ bash scripts/00_setup_env.sh
 
 维度：**单图 596**（576 深度 + 20 手工）；图对行 **578**（`f_A − f_B` + `comparison_type`），
 带 26 维人口学 one-hot 时 **604**，用 `diff_absdiff` 时 **1180**。
+
+## 可直接使用的表（`datasets/`）
+
+`scripts/06_export_datasets.py` 把**图片特征、观测者画像、观测到的选择**拼成一行一条响应，
+不写代码也能直接训练：
+
+| 文件 | 规模 | 内容 |
+|---|---|---|
+| `train_pairs.csv.gz` | 24,896 × 636 | `d_0000…d_0575`（嵌入 A−B）+ `h_*`（20）+ 6 列原始画像 + 26 列画像 one-hot + `choice`、`y` |
+| `test_pairs.csv.gz` | 6,224 × 634 | 同列结构，无标签 |
+| `image_features.csv.gz` | 1,558 × 598 | 单图特征表，用于还原单侧向量 |
+
+已验证：直接用 `train_pairs.csv.gz` 训练 `LogisticRegression(C=0.003)`，可复现流水线的 **0.665** log loss。
+完整列说明见 [datasets/README.zh-CN.md](datasets/README.zh-CN.md)。
 
 ## 使用特征
 
@@ -251,3 +282,38 @@ y = features.label_a(df)        # 选 A 记为 1
 * 两种冷启动（新图 vs 新猫）给出相反排名，报告时必须两种都写。
 * 测试集标签未公开，上述数字都不是排行榜分数。
 * 低层手工特征几乎不提升精度，价值在于可解释性。
+
+## 发布到 GitHub
+
+该目录已经是带有一次提交的 git 仓库，尚未推送到任何远端。
+
+```bash
+cd dsai5101midterm
+git status                      # 应为干净状态
+
+# 1) 先在 GitHub 上建一个空仓库（不要勾选 README / .gitignore），然后
+git remote add origin git@github.com:<你的用户名>/<仓库名>.git
+#   或用 HTTPS：
+#   git remote add origin https://github.com/<你的用户名>/<仓库名>.git
+
+git branch -M main
+git push -u origin main
+```
+
+装了 GitHub CLI 的话，前两步可合并为
+`gh repo create <仓库名> --private --source=. --push`。
+
+**没有**进仓库的内容（见 `.gitignore`）：183 MB 图片、特征缓存、78 MB 的 `datasets/*.csv.gz`、
+`.venv`、以及课程名单。它们都能重新生成：
+`git clone` → `bash scripts/00_setup_env.sh` → `scripts/01` → `scripts/03` → `scripts/06`。
+
+如果需要分发大表，三选一：
+
+| 方式 | 做法 |
+|---|---|
+| GitHub Release 附件 | 建一个 release，上传 `datasets/*.csv.gz`（单文件均 <100 MB） |
+| Git LFS | `git lfs track "datasets/*.csv.gz" && git add .gitattributes && git add datasets/*.csv.gz && git commit` |
+| 课程提交包 | 把 `datasets/` 与代码一起打包提交 |
+
+提交作者在本地被设为 `pklgames <pklgames@users.noreply.github.com>`；推送前可用
+`git config user.name "..."`、`git config user.email "..."` 改成你自己的名字。

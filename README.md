@@ -5,8 +5,9 @@ vectors and uses them to predict **whether a given observer will choose photo A 
 runs end to end on a GPU-less laptop (12th Gen Intel i7-1260P, 7 GB RAM) in a few minutes.
 
 It also borrows a few reusable components — per-cat strengths and the YOLO/CLIP photo-label
-table — from a second project (`dsai-5101-sdm-proj`, described by `README_allie_chan.md`), and
-compares feature families under one estimator and one set of folds.
+table — from a second project (`dsai-5101-sdm-proj`, described by `README_allie_chan.md`). The
+label table is vendored under `data/approach_a/`, so the repository runs without that clone, and
+feature families are compared under one estimator and one set of folds.
 
 ---
 
@@ -70,6 +71,7 @@ dsai5101midterm/
 │   ├── extract.py                batching, throughput, npz + meta cache
 │   ├── features.py               cache loader, pairwise design matrices, demographics
 │   ├── qa.py                     similarity / PCA / nearest-neighbour diagnostics
+│   ├── pipeline.py               one-call image -> features (no cache needed)
 │   ├── hybrid.py                 hybrid model (cat memory + appearance + labels)   [this project]
 │   └── approach_a/               reusable components copied from the other project
 │       ├── strength.py           per-item strengths + side term (their fit_bt)
@@ -82,9 +84,11 @@ dsai5101midterm/
 │   ├── 03_extract_features.py    feature cache (backbone / size / TTA / limit flags)
 │   ├── 04_feature_qa.py          diagnostics + figures
 │   ├── 05_baseline_pairs.py      embedding baseline, two leak-aware protocols, submission
+│   ├── 06_export_datasets.py     writes datasets/: features + profile + choice, ready to model
 │   ├── 07_feature_families.py    feature-family comparison + per-observer metrics
 │   ├── 08_cold_start_fix.py      better features vs routing, on the cold-start corner
-│   └── 09_hybrid_submission.py   fits the final model on all rows, writes the predictions
+│   ├── 09_hybrid_submission.py   fits the final model on all rows, writes the predictions
+│   └── 10_quickstart.py          one photo -> 576-d + 20-d vector, in ~20 lines of output
 ├── docs/
 │   ├── pipeline_design.md        ← design rationale (English)
 │   ├── pipeline_design.zh-CN.md  ← same, Chinese
@@ -94,10 +98,10 @@ dsai5101midterm/
     ├── images/<cat>/<photo>.jpg  1,558 photos, 183.8 MB
     ├── manifest.csv              bytes, dimensions, source URL
     ├── image_index.csv           cat / split / appearance counts per photo
+    ├── approach_a/               vendored label table (read-only): photo_labels.csv, cat_labels.csv
     ├── features/
     │   ├── <tag>.npz             paths, deep (N,576), hand (N,20), ok
     │   ├── <tag>.meta.json       backbone, versions, timings, RSS, seed
-    │   ├── <tag>.csv             per-photo table (1,558 × 597)
     │   ├── qa_*_<tag>.{png,json} feature diagnostics
     │   ├── baseline_metrics.{json,csv}
     │   ├── feature_families.{json,md,png}
@@ -107,6 +111,11 @@ dsai5101midterm/
         ├── pred_test.csv         embedding baseline
         ├── pred_hybrid_test.csv  joint hybrid (--structure joint)
         └── pred_routed_test.csv  routed model (recommended)
+
+datasets/                         ← ready-to-use tables (git-ignored, see datasets/README.md)
+├── train_pairs.csv.gz            24,896 × 636: features + profile + choice
+├── test_pairs.csv.gz             6,224 × 634: same columns, no labels
+└── image_features.csv.gz         1,558 × 598: per-photo features
 ```
 
 ## Quick start
@@ -133,14 +142,24 @@ bash scripts/00_setup_env.sh
 This yields `data/features/mobilenet_v3_small_224.npz` (1,558 × 576 deep + 1,558 × 20 hand) and
 `data/submissions/pred_test.csv` (6,224 rows).
 
-The comparison and the hybrid need the other project cloned next to this one
-(`../dsai-5101-sdm-proj`) for its `prepared/photo_labels.csv`; it is opened read-only:
+The label table those steps need is **vendored** in `data/approach_a/photo_labels.csv`, so no
+second repository is required. The comparison and hybrid runs:
 
 ```bash
 .venv/bin/python scripts/03_extract_features.py --backbone resnet18    # optional 2nd backbone, ~1 min
 .venv/bin/python scripts/07_feature_families.py      # ~3.5 min
 .venv/bin/python scripts/08_cold_start_fix.py        # ~7 min
 .venv/bin/python scripts/09_hybrid_submission.py     # ~30 s, writes the routed submission
+```
+
+Two extra entry points:
+
+```bash
+# one photo -> features, and check it matches the cache
+.venv/bin/python scripts/10_quickstart.py --image data/images/cat_000002/cat_000002_0001.jpg
+
+# ready-to-use train/test tables (features + observer profile + choice)
+.venv/bin/python scripts/06_export_datasets.py
 ```
 
 ## Scripts
@@ -150,12 +169,14 @@ The comparison and the hybrid need the other project cloned next to this one
 | `00_setup_env.sh` | `PYTHON_TAG`, `TORCH_VER` | build `.venv`; CPU wheels avoid ~2.5 GB of nvidia dependencies |
 | `01_download_images.py` | `--workers`, `--limit` | 16 threads, 3 retries with backoff, atomic `.part` writes, skip-if-present |
 | `02_build_index.py` | — | `image_index.csv`, train/test overlap and missing-file checks |
-| `03_extract_features.py` | `--backbone`, `--size`, `--batch-size`, `--workers`, `--threads`, `--tta-flip`, `--limit`, `--tag`, `--list-backbones` | extract, cache, report throughput |
+| `03_extract_features.py` | `--backbone`, `--size`, `--batch-size`, `--workers`, `--threads`, `--tta-flip`, `--limit`, `--tag`, `--write-csv`, `--list-backbones` | extract, cache, report throughput |
 | `04_feature_qa.py` | `--tag`, `--no-plots` | same/different-cat similarity, 5-NN retrieval, PCA, neighbour grid |
 | `05_baseline_pairs.py` | `--tag`, `--C`, `--p2-folds`, `--seed` | pair-grouped CV + image-holdout, submission |
+| `06_export_datasets.py` | `--tag`, `--out-dir`, `--no-images` | write `datasets/{train,test}_pairs.csv.gz` + `image_features.csv.gz` |
 | `07_feature_families.py` | `--folds`, `--p2-folds`, `--seed`, `--no-coldstart`, `--replot` | ten feature families, three protocols, per-observer and calibration metrics |
 | `08_cold_start_fix.py` | `--reuse` | multi-backbone features and routing against the cold-start corner |
 | `09_hybrid_submission.py` | `--structure routed\|joint`, `--spec`, `--C`, `--sweep` | fit the final model, write predictions |
+| `10_quickstart.py` | `--image`, `--batch`, `--backbone`, `--tag` | smallest image -> feature example, cache cross-check |
 
 Backbones (identical interface, one flag):
 
@@ -184,6 +205,21 @@ and timestamp — enough to satisfy a report's hardware/runtime section.
 Dimensions: **596 per photo** (576 deep + 20 hand); a pair row is **578** (`f_A − f_B` +
 `comparison_type`), **604** with the 26 demographic one-hot columns, or **1180** with
 `diff_absdiff`.
+
+## Ready-to-use tables (`datasets/`)
+
+`scripts/06_export_datasets.py` writes one row per annotator response with **image features,
+observer profile and the observed choice** already joined, so a model can be trained without
+touching this repository's code:
+
+| File | Shape | Contents |
+|---|---|---|
+| `train_pairs.csv.gz` | 24,896 × 636 | `d_0000…d_0575` (embedding A−B) + `h_*` (20) + 6 raw profile columns + 26 profile one-hots + `choice`, `y` |
+| `test_pairs.csv.gz` | 6,224 × 634 | same columns without labels |
+| `image_features.csv.gz` | 1,558 × 598 | per-photo table, for reconstructing per-side vectors |
+
+Verified: `LogisticRegression(C=0.003)` trained straight from `train_pairs.csv.gz` reproduces the
+pipeline's **0.665** log loss. Full column reference in [datasets/README.md](datasets/README.md).
 
 ## Using the features
 
@@ -267,3 +303,38 @@ Nothing else is imported from that project, and nothing here writes to it. Every
 * The two cold starts (new photos vs new cats) give opposite rankings. Report both.
 * Test labels are withheld, so none of these numbers is a leaderboard score.
 * Low-level hand features add little accuracy; their value is interpretability.
+
+## Publishing to GitHub
+
+This directory is already a git repository with one commit. Nothing has been pushed anywhere yet.
+
+```bash
+cd dsai5101midterm
+git status                      # should be clean
+
+# 1) create an EMPTY repository on GitHub (no README, no .gitignore), then
+git remote add origin git@github.com:<your-user>/<repo-name>.git
+#   HTTPS alternative:
+#   git remote add origin https://github.com/<your-user>/<repo-name>.git
+
+git branch -M main
+git push -u origin main
+```
+
+With the GitHub CLI the first two lines collapse into
+`gh repo create <repo-name> --private --source=. --push`.
+
+What is **not** in the repository (see `.gitignore`): the 183 MB of photos, the feature caches,
+the 78 MB `datasets/*.csv.gz`, `.venv`, and the course name list. They are all regenerable:
+`git clone` → `bash scripts/00_setup_env.sh` → `scripts/01` → `scripts/03` → `scripts/06`.
+
+If the large tables must be shared, pick one:
+
+| Option | How |
+|---|---|
+| GitHub Release asset | create a release, upload `datasets/*.csv.gz` (each file is under 100 MB) |
+| Git LFS | `git lfs track "datasets/*.csv.gz" && git add .gitattributes && git add datasets/*.csv.gz && git commit` |
+| Course package | zip `datasets/` together with the code for submission |
+
+The commit author is set locally to `pklgames <pklgames@users.noreply.github.com>`; change it with
+`git config user.name "..."` and `git config user.email "..."` before pushing if you want your own name.
