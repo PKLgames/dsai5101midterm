@@ -13,8 +13,8 @@ data/image_index.csv
 data/download_errors.csv
 
 # 78 MB of ready-to-use tables (scripts/06); ship via a release or Git LFS
-datasets/*.csv.gz
-datasets/*.csv
+# datasets/*.csv.gz
+# datasets/*.csv
 
 # Course-provided name list (personal data, not ours to publish)
 Dataset/Name_list.xlsx
@@ -35,3 +35,6 @@ __pycache__/
 .ipynb_checkpoints/
 .DS_Store
 .vscode/
+
+# Local tool binaries (git-lfs download)
+.tools/
