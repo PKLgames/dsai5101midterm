@@ -1,0 +1,40 @@
+# CPU-only environment for the cat feature pipeline.
+# Installed with scripts/00_setup_env.sh; `uv pip freeze` output from the machine
+# the results in README.md were produced on (Linux x86_64, CPython 3.14.7).
+#
+# IMPORTANT: torch/torchvision must come from https://download.pytorch.org/whl/cpu
+# so that no nvidia-* packages are pulled in.  The "+cpu" local version suffix is
+# only resolvable against that index.
+torch==2.14.1+cpu
+torchvision==0.29.1+cpu
+
+numpy==2.5.2
+pandas==3.1.0
+scipy==1.18.1
+scikit-learn==1.9.1
+pillow==12.3.0
+matplotlib==3.11.2
+
+# transitive, pinned for exact reproducibility
+cloudpickle==3.1.2
+contourpy==1.4.0
+cycler==0.12.1
+filelock==3.32.3
+fonttools==4.67.0
+fsspec==2026.7.0
+jinja2==3.1.6
+joblib==1.6.0
+kiwisolver==1.5.1
+markupsafe==3.0.3
+mpmath==1.3.0
+narwhals==2.27.1
+networkx==3.6.1
+packaging==26.3
+pyparsing==3.3.3
+python-dateutil==3.0.0
+setuptools==78.1.0
+six==1.17.0
+sympy==1.14.0
+threadpoolctl==3.7.0
+typing-extensions==4.16.0
+tzdata==2026.5
