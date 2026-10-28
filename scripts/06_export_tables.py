@@ -4,9 +4,9 @@
 One row per annotator response (24,896 train / 6,224 test).  Everything is derived
 from the feature cache and the course CSVs, so a single run reproduces the tables:
 
-    datasets/train_pairs.csv.gz   features + profile + observed choice
-    datasets/test_pairs.csv.gz    same columns, labels removed
-    datasets/image_features.csv.gz  per-photo rows (used for the A/B diffs above)
+    tables/train_pairs.csv.gz   features + profile + observed choice
+    tables/test_pairs.csv.gz    same columns, labels removed
+    tables/image_features.csv.gz  per-photo rows (used for the A/B diffs above)
 
 Columns
 -------
@@ -24,8 +24,8 @@ choice, y (train only)
     "A"/"B" and 1/0 for "chose A"
 
 Usage
-    python scripts/06_export_datasets.py
-    python scripts/06_export_datasets.py --tag resnet18_224 --out-dir datasets/resnet18
+    python scripts/06_export_tables.py
+    python scripts/06_export_tables.py --tag resnet18_224 --out-dir tables/resnet18
 """
 
 from __future__ import annotations
@@ -39,7 +39,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
 import numpy as np  # noqa: E402
 import pandas as pd  # noqa: E402
 
-from catarena import features, index, paths  # noqa: E402
+from model import features, index, paths  # noqa: E402
 
 
 def profile_block(df: pd.DataFrame) -> tuple[pd.DataFrame, pd.DataFrame]:
@@ -100,7 +100,7 @@ def build(df: pd.DataFrame, feats, split: str) -> pd.DataFrame:
 def main() -> None:
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--tag", default="mobilenet_v3_small_224")
-    ap.add_argument("--out-dir", default=str(paths.ROOT / "datasets"))
+    ap.add_argument("--out-dir", default=str(paths.ROOT / "tables"))
     ap.add_argument("--no-images", action="store_true", help="skip the per-photo table")
     args = ap.parse_args()
 

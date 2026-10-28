@@ -1,8 +1,7 @@
-"""Scoring helpers copied from approach A so the two sets of numbers are comparable.
+"""Scoring helpers so log loss, Brier score, and accuracy stay comparable.
 
-Adapted from ``dsai-5101-sdm-proj/analysis/03_cat_strength_model.ipynb`` and
-``05_label_prediction.ipynb``.  The clipping bound (1e-6) and the accuracy rule
-(``p >= 0.5`` -> A) match the other project exactly.
+The clipping bound (1e-6) and the accuracy rule (``p >= 0.5`` -> A) match
+the cat-strength fit.
 """
 
 from __future__ import annotations

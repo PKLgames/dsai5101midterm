@@ -8,7 +8,7 @@
 What it shows
 -------------
 1. one photo -> 576-d deep embedding + 20 hand statistics (no cache involved);
-2. the same numbers are what `data/features/<tag>.npz` already holds;
+2. the same numbers are what `artifacts/features/<tag>.npz` already holds;
 3. the cached features feed a pair row of 604 columns (embedding diff +
    26 demographic one-hot + 2 comparison types) exactly as the models use them.
 """
@@ -23,12 +23,12 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
 
 import numpy as np  # noqa: E402
 
-from catarena import features, index, paths, pipeline  # noqa: E402
+from model import features, index, paths, pipeline  # noqa: E402
 
 
 def main() -> None:
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    ap.add_argument("--image", default=None, help="photo to embed (default: a sample from data/images)")
+    ap.add_argument("--image", default=None, help="photo to embed (default: a sample from artifacts/images)")
     ap.add_argument("--batch", type=int, default=1, help="embed this many sample photos")
     ap.add_argument("--backbone", default=pipeline.DEFAULT_BACKBONE)
     ap.add_argument("--tag", default="mobilenet_v3_small_224", help="cache to compare against")

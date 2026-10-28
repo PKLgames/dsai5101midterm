@@ -28,7 +28,7 @@ from PIL import Image
 
 from . import index, paths
 
-USER_AGENT = "cat-arena-feature-pipeline/1.0 (course project)"
+USER_AGENT = "cat-image-arena/1.0 (course project)"
 TIMEOUT = 60
 
 

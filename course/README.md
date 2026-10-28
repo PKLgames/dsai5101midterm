@@ -15,17 +15,18 @@ Each row represents one annotator's response to one image pair. A pair may have 
 | --- | --- |
 | `train.csv` | 24,896 responses with observed `choice` values. |
 | `test.csv` | 6,224 test rows with `choice` and `prob_a` left blank. |
-| `images/` | 1,558 images organized into cat folders. |
+| `artifacts/images/` | 1,558 images organized into cat folders. Downloaded, not stored next to these CSVs. |
 
 ## Image paths
 
 Get the images from [Hugging Face](https://huggingface.co/datasets/missing12/cat-image-arena-images/tree/main/images).
 
-The `a_image` and `b_image` fields contain paths relative to `images/`. For example:
+The `a_image` and `b_image` fields contain paths relative to the image folder. In this
+repository that folder is `artifacts/images/`. For example:
 
 ```text
 Table value: cat_000002/cat_000002_0001.jpg
-Local file:  images/cat_000002/cat_000002_0001.jpg
+Local file:  artifacts/images/cat_000002/cat_000002_0001.jpg
 ```
 
 ## Fields

@@ -1,6 +1,6 @@
 # Design note: extracting simple features from the cat photos
 
-> Why each step in `src/catarena/` is built the way it is. Numbers are measured on this machine;
+> Why each step in `src/model/` is built the way it is. Numbers are measured on this machine;
 > run instructions live in the `README.md`.
 
 ## 1. Task and hard constraints
@@ -108,7 +108,7 @@ only for the 2-D diagnostic plot.
 
 ## 6. Cache and interface (what makes reuse cheap)
 
-`data/features/<tag>.npz` has five keys: `paths / deep / hand / ok / hand_names`.
+`artifacts/features/<tag>.npz` has five keys: `paths / deep / hand / ok / hand_names`.
 `paths` matches `a_image` and `b_image` **byte for byte**, so downstream code needs no mapping
 table. Correspondence is by **path string, not row index**; a failed decode yields
 `ok=False`, and `lookup()` returns a zero row with `present=False` so the caller can fall back
@@ -244,6 +244,6 @@ give opposite rankings, so `docs/feature_choices.md` reports both.
 - [x] Seeds: `torch.manual_seed(0)`, KFold `random_state=0`, path dictionary order
 - [x] Hardware and runtime: README table + per-tag `<tag>.meta.json`
 - [x] External resources and pretrained weights: `meta.backbone_weights` (e.g. `mobilenet_v3_small-047dcff4.pth`)
-- [x] Relative paths everywhere; data lives in `Dataset/` and `data/images/`
+- [x] Relative paths everywhere; data lives in `course/` and `artifacts/images/`
 - [x] Numerical variation documented: thread count changes summation order (4th decimal of
       log loss); everything else is bit-reproducible

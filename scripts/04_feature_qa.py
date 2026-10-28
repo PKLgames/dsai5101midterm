@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Check that the embeddings carry real signal before fitting any preference model.
 
-Writes data/features/qa_summary_<tag>.json plus three PNG diagnostics:
+Writes artifacts/features/qa_summary_<tag>.json plus three PNG diagnostics:
     qa_similarity_<tag>.png   same-cat vs different-cat cosine similarity
     qa_pca_<tag>.png          2-D PCA, top cats highlighted
     qa_neighbors_<tag>.png    query image + its 5 nearest neighbours
@@ -15,7 +15,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
 
-from catarena import features, qa  # noqa: E402
+from model import features, qa  # noqa: E402
 
 
 def main() -> None:

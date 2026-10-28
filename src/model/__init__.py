@@ -3,7 +3,7 @@
 Public entry points are re-exported here for notebook use::
 
     import sys; sys.path.insert(0, "src")
-    from catarena import extract, features, paths
+    from model import extract, features, paths
 
 The modules are intentionally small and free of side effects on import so that
 ``scripts/*.py`` stay thin command-line wrappers.

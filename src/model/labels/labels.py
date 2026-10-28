@@ -1,15 +1,15 @@
-"""Readers and encoders for approach A's YOLO + CLIP photo labels.
+"""Readers and encoders for the YOLO + CLIP photo labels.
 
 Provenance
 ----------
-The label *values* are produced by the other project's ``photo-labelling/*.py``
+The label *values* are produced by this repo's ``photo-labelling/*.py``
 (YOLO11n-seg mask -> fur-colour shares inside the mask, plus CLIP zero-shot
-attributes).  This module only reads ``prepared/photo_labels.csv`` and turns it
-into pairwise design blocks; the encoders mirror the other project's
-``numeric_diff`` / ``one_hot_diff`` / ``with_side`` helpers so scores match.
+attributes).  This module only reads that table and turns it into pairwise
+design blocks; the encoders mirror ``numeric_diff`` / ``one_hot_diff`` /
+``with_side`` so scores match the original notebooks.
 
 Nothing here is used by this project's default feature pipeline: the labels are
-an *optional* input of the hybrid model (see ``catarena.hybrid``).
+an *optional* input of the hybrid model (see ``model.hybrid``).
 """
 
 from __future__ import annotations
@@ -21,7 +21,7 @@ import pandas as pd
 
 from .. import paths
 
-#: The five fur-colour shares used by approach A (share_white is omitted because
+#: The five fur-colour shares (share_white is omitted because
 #: the six shares sum to one).
 COLOUR_SHARES = ["share_black", "share_gray", "share_orange", "share_cream", "share_brown"]
 
@@ -42,20 +42,17 @@ NUMERIC_COLUMNS = ["share_black", "share_gray", "share_orange", "share_cream",
 def load_photo_labels(repo_dir=None) -> pd.DataFrame:
     """Read the photo-label table (indexed by image path).
 
-    Order: explicit ``repo_dir`` -> vendored ``data/approach_a/photo_labels.csv``
-    -> a sibling clone of the source project.
+    Uses ``repo_dir/artifacts/labels/photo_labels.csv`` when ``repo_dir`` is
+    set, otherwise ``artifacts/labels/photo_labels.csv`` in this repo.
     """
-    candidates = []
     if repo_dir:
-        candidates.append(Path(repo_dir) / "prepared" / "photo_labels.csv")
-    candidates += [paths.APPROACH_A_PHOTO_LABELS_CSV, paths.APPROACH_A_FALLBACK_PHOTO_LABELS]
-    csv = next((c for c in candidates if c.exists()), None)
-    if csv is None:
+        csv = Path(repo_dir) / "artifacts" / "labels" / "photo_labels.csv"
+    else:
+        csv = paths.PHOTO_LABELS_CSV
+    if not csv.exists():
         raise FileNotFoundError(
-            "photo_labels.csv not found. Expected the vendored copy at "
-            f"{paths.APPROACH_A_PHOTO_LABELS_CSV}; re-clone "
-            "https://github.com/allie-chan-13/dsai-5101-sdm-proj and copy "
-            "prepared/photo_labels.csv there, or pass repo_dir=..."
+            "photo_labels.csv not found. Expected "
+            f"{csv}. Regenerate it with photo-labelling/label_photos.py."
         )
     df = pd.read_csv(csv)
     df["image"] = df["image"].astype(str)
@@ -122,5 +119,5 @@ def label_block(df: pd.DataFrame, labels: pd.DataFrame, groups: list[str]) -> tu
 
 
 def with_side(X: np.ndarray) -> np.ndarray:
-    """Append the constant side column (approach A's ``with_side``)."""
+    """Append the constant side column (``with_side``)."""
     return np.hstack([X, np.ones((len(X), 1))]) if X.shape[1] else np.ones((len(X), 1))

@@ -24,8 +24,8 @@ P2  image-holdout 3-fold
 
 Outputs
 -------
-    data/features/baseline_metrics.{json,csv}
-    data/submissions/pred_test.csv     (choice + prob_a filled, test.csv order)
+    artifacts/features/baseline_metrics.{json,csv}
+    artifacts/submissions/pred_test.csv     (choice + prob_a filled, test.csv order)
 """
 
 from __future__ import annotations
@@ -44,7 +44,7 @@ from sklearn.metrics import accuracy_score, log_loss  # noqa: E402
 from sklearn.model_selection import GroupKFold, GroupShuffleSplit, KFold  # noqa: E402
 from sklearn.preprocessing import StandardScaler  # noqa: E402
 
-from catarena import features, index, paths  # noqa: E402
+from model import features, index, paths  # noqa: E402
 
 C_GRID = [0.003, 0.01, 0.03, 0.1, 0.3, 1.0]
 VARIANTS = ["const", "demo", "deep", "deep_demo", "deep_hand"]

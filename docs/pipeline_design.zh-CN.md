@@ -114,7 +114,7 @@ future_pet 4 + mbti_ie 4（每列都有一个 `missing` 水平，对应原表 50
 
 ## 6. 缓存与接口（这是"给后期用"的关键）
 
-`data/features/<tag>.npz` 五个键：`paths / deep / hand / ok / hand_names`。
+`artifacts/features/<tag>.npz` 五个键：`paths / deep / hand / ok / hand_names`。
 `paths` 与 CSV 的 `a_image`、`b_image` **逐字符相同**，因此下游不需要任何路径映射表；
 对应关系是**按路径字符串查表**，不是按行号对齐（脚本会对 1,558 个路径做集合相等校验，
 train/test 的 31,120 个图片位置实测缺失 0 个）。若某张图解码失败，`ok=False`，
@@ -250,5 +250,5 @@ P2 的评估集只保留「两张图都在留出集合」的行，训练集只�
 - [x] 随机种子：`torch.manual_seed(0)`、KFold `random_state=0`、路径字典序
 - [x] 硬件与耗时：README 表格 + 每个 `<tag>.meta.json`
 - [x] 外部资源与预训练权重：`meta.backbone_weights`（如 `mobilenet_v3_small-047dcff4.pth`）
-- [x] 相对路径：`paths.py` 全部由 `__file__` 推导，数据放 `Dataset/` 与 `data/images/`
+- [x] 相对路径：`paths.py` 全部由 `__file__` 推导，数据放 `course/` 与 `artifacts/images/`
 - [x] 数值波动说明：线程数影响浮点求和顺序（logloss 第 4 位小数），其余逐位可复现
