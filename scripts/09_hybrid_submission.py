@@ -47,7 +47,7 @@ import numpy as np  # noqa: E402
 import pandas as pd  # noqa: E402
 
 from model import features, hybrid, index, paths  # noqa: E402
-from model.labels import labels as photo_labels  # noqa: E402
+from model.labels import labels as label_mod  # noqa: E402
 from model.labels import metrics as pair_metrics  # noqa: E402
 from model.labels import strength as item_strength  # noqa: E402
 
@@ -101,7 +101,7 @@ def main() -> None:
     train = item_strength.ensure_pair_columns(train)
     y = features.label_a(train)
     feats = features.load_features(args.tag, kind="deep")
-    photo_labels = photo_labels.load_photo_labels(Path(args.labels_repo) if args.labels_repo else None)
+    photo_labels = label_mod.load_photo_labels(Path(args.labels_repo) if args.labels_repo else None)
 
     specs = hybrid.default_specs(args.C)
     if args.spec not in specs:

@@ -45,7 +45,7 @@ import pandas as pd  # noqa: E402
 from sklearn.model_selection import KFold  # noqa: E402
 
 from model import features, hybrid, index, paths  # noqa: E402
-from model.labels import labels as photo_labels  # noqa: E402
+from model.labels import labels as label_mod  # noqa: E402
 from model.labels import metrics as pair_metrics  # noqa: E402
 from model.labels import strength as item_strength  # noqa: E402
 
@@ -173,7 +173,7 @@ def main() -> None:
 
     train = item_strength.ensure_pair_columns(index.load_train())
     y = features.label_a(train)
-    photo_labels = photo_labels.load_photo_labels()
+    photo_labels = label_mod.load_photo_labels()
 
     combined = "mnv3s_resnet18"
     if combined not in features.available_tags():
