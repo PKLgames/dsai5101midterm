@@ -44,3 +44,5 @@ models/
 
 # Captioned copies written by photo-labelling/label_photos.py
 artifacts/captioned-photos/
+# YOLO+CLIP tables (photo-labelling/label_photos.py / make labels)
+artifacts/labels/
