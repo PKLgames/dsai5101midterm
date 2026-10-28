@@ -34,10 +34,11 @@ def main() -> None:
     ap.add_argument("--tag", default="mobilenet_v3_small_224", help="cache to compare against")
     args = ap.parse_args()
 
+    images_dir = paths.IMAGES_DIR.resolve()
     if args.image:
-        images = [Path(args.image)]
+        images = [Path(args.image).expanduser().resolve()]
     else:
-        images = sorted(paths.IMAGES_DIR.glob("cat_*/*.jpg"))[: max(1, args.batch)]
+        images = sorted(images_dir.glob("cat_*/*.jpg"))[: max(1, args.batch)]
     print(f"embedding {len(images)} image(s) with {args.backbone}\n")
 
     rows = pipeline.images_to_features(images, backbone=args.backbone)
@@ -53,9 +54,17 @@ def main() -> None:
     except FileNotFoundError:
         print("\n(no feature cache yet - run scripts/03_extract_features.py to compare)")
         return
-    cached = feats.lookup([str(p.relative_to(paths.IMAGES_DIR)) for p in images])[0]
-    diff = np.abs(cached - np.stack([r["deep"] for r in rows])).max()
-    print(f"\ncache check: max |cache - fresh| = {diff:.2e} (0 means the cache is current)")
+    try:
+        cache_keys = [str(p.relative_to(images_dir)) for p in images]
+    except ValueError:
+        print("\n(image is not in artifacts/images; skipping cache check)")
+    else:
+        cached, present = feats.lookup(cache_keys)
+        if not present.all():
+            print("\n(image not in the feature cache; skipping cache check)")
+        else:
+            diff = np.abs(cached - np.stack([r["deep"] for r in rows])).max()
+            print(f"\ncache check: max |cache - fresh| = {diff:.2e} (0 means the cache is current)")
 
     # ---- what a model row looks like --------------------------------------- #
     train = index.load_train().head(1)
