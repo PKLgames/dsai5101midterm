@@ -13,8 +13,8 @@ artifacts/image_index.csv
 artifacts/download_errors.csv
 
 # 78 MB of ready-to-use tables (scripts/06_export_tables.py); ship via a release or Git LFS
-# tables/*.csv.gz
-# tables/*.csv
+tables/*.csv.gz
+tables/*.csv
 
 # Course-provided name list (personal data, not ours to publish)
 course/Name_list.xlsx
