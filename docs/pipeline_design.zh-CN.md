@@ -246,7 +246,7 @@ P2 的评估集只保留「两张图都在留出集合」的行，训练集只�
 
 ## 14. 复现清单（对应报告要求）
 
-- [x] 环境文件：`requirements.txt`（精确版本）+ `scripts/00_setup_env.sh`
+- [x] 环境文件：`requirements.txt`（精确版本）+ `scripts/00_setup_env.sh` + `Makefile`（`make all`）
 - [x] 随机种子：`torch.manual_seed(0)`、KFold `random_state=0`、路径字典序
 - [x] 硬件与耗时：README 表格 + 每个 `<tag>.meta.json`
 - [x] 外部资源与预训练权重：`meta.backbone_weights`（如 `mobilenet_v3_small-047dcff4.pth`）

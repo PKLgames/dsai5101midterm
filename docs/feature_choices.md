@@ -200,9 +200,10 @@ worse. The fix is to keep a dedicated transfer model and route to it.
 
 ```bash
 cd dsai5101midterm
-.venv/bin/python scripts/03_extract_features.py --backbone resnet18   # second backbone, ~1 min
-.venv/bin/python scripts/07_feature_families.py                      # ~3.5 min
-.venv/bin/python scripts/08_cold_start_fix.py                        # ~7 min
+source scripts/00_setup_env.sh
+python3 scripts/03_extract_features.py --backbone resnet18   # second backbone, ~1 min
+python3 scripts/07_feature_families.py                      # ~3.5 min
+python3 scripts/08_cold_start_fix.py                        # ~7 min
 ```
 
 Outputs: `artifacts/features/feature_families.{json,md,png}`,

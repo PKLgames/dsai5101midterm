@@ -5,9 +5,9 @@ pixels. Breed, framing, view, eyes, age, and posture are CLIP labels on the crop
 
 From the project root, after the CPU env in scripts/00_setup_env.sh:
 
-    bash scripts/00_setup_env.sh
-    .venv/bin/python scripts/01_download_images.py
-    .venv/bin/python photo-labelling/label_photos.py
+    source scripts/00_setup_env.sh
+    python3 scripts/01_download_images.py
+    python3 photo-labelling/label_photos.py
 
 Photos are read from artifacts/images (downloaded by scripts/01_download_images.py).
 Weights go in models/yolo11n-seg.pt. Download:

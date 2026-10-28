@@ -239,8 +239,7 @@ give opposite rankings, so `docs/feature_choices.md` reports both.
    1,296 photos, ~10–20 min/epoch on CPU, uncertain payoff given label noise.
 
 ## 14. Reproducibility checklist (matches the brief)
-
-- [x] Environment file: `requirements.txt` (pinned) + `scripts/00_setup_env.sh`
+- [x] Environment file: `requirements.txt` (pinned) + `scripts/00_setup_env.sh` + `Makefile` (`make all`)
 - [x] Seeds: `torch.manual_seed(0)`, KFold `random_state=0`, path dictionary order
 - [x] Hardware and runtime: README table + per-tag `<tag>.meta.json`
 - [x] External resources and pretrained weights: `meta.backbone_weights` (e.g. `mobilenet_v3_small-047dcff4.pth`)

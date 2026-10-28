@@ -170,9 +170,10 @@
 
 ```bash
 cd dsai5101midterm
-.venv/bin/python scripts/03_extract_features.py --backbone resnet18   # 第二主干，约 1 分钟
-.venv/bin/python scripts/07_feature_families.py                      # 约 3.5 分钟
-.venv/bin/python scripts/08_cold_start_fix.py                        # 约 7 分钟
+source scripts/00_setup_env.sh
+python3 scripts/03_extract_features.py --backbone resnet18   # 第二主干，约 1 分钟
+python3 scripts/07_feature_families.py                      # 约 3.5 分钟
+python3 scripts/08_cold_start_fix.py                        # 约 7 分钟
 ```
 
 产物：`artifacts/features/feature_families.{json,md,png}`、`artifacts/features/cold_start_fix.{json,md}`，

@@ -12,8 +12,9 @@
 重新生成：
 
 ```bash
-.venv/bin/python scripts/06_export_tables.py            # 默认 MobileNetV3-Small 缓存
-.venv/bin/python scripts/06_export_tables.py --tag resnet18_224 --out-dir tables/resnet18
+make tables                                             # 默认 MobileNetV3-Small 缓存
+python3 scripts/06_export_tables.py            # 同上（已激活 venv）
+python3 scripts/06_export_tables.py --tag resnet18_224 --out-dir tables/resnet18
 ```
 
 ## 列说明
