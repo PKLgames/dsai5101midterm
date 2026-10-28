@@ -15,6 +15,13 @@ scikit-learn==1.9.1
 pillow==12.3.0
 matplotlib==3.11.2
 
+# photo-labelling/ (YOLO11n-seg + CLIP). These ranges accept the pins above,
+# including torch==2.14.1+cpu. ultralytics also installs nvidia-ml-py, which is
+# a small monitor package, not the CUDA wheel stack.
+ultralytics==8.4.190
+open-clip-torch==3.3.0
+opencv-python==5.0.0.93
+
 # transitive, pinned for exact reproducibility
 cloudpickle==3.1.2
 contourpy==1.4.0

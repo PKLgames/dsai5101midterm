@@ -12,8 +12,6 @@ HERE="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 cd "$HERE"
 
 PYTHON_TAG="${PYTHON_TAG:-3.14}"
-TORCH_VER="${TORCH_VER:-2.14.1}"
-TORCHVISION_VER="${TORCHVISION_VER:-0.29.1}"
 CPU_INDEX="https://download.pytorch.org/whl/cpu"
 
 # Keep uv's wheel cache inside the project: the shared ~/.cache/uv may not be
@@ -29,14 +27,11 @@ fi
 echo "==> creating .venv with Python ${PYTHON_TAG}"
 uv venv --python "${PYTHON_TAG}" .venv
 
-echo "==> installing torch ${TORCH_VER}+cpu / torchvision ${TORCHVISION_VER}+cpu"
+echo "==> installing requirements.txt (torch from the CPU index, the rest from PyPI)"
 uv pip install --python .venv/bin/python \
   --index-url "${CPU_INDEX}" \
-  "torch==${TORCH_VER}+cpu" "torchvision==${TORCHVISION_VER}+cpu"
-
-echo "==> installing analysis packages"
-uv pip install --python .venv/bin/python \
-  "numpy>=2.0" "pandas>=2.2" "scikit-learn>=1.4" "pillow>=10" "matplotlib>=3.8"
+  --extra-index-url "https://pypi.org/simple" \
+  -r requirements.txt
 
 echo "==> verifying"
 .venv/bin/python - <<'PY'

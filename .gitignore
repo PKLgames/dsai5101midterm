@@ -38,3 +38,9 @@ __pycache__/
 
 # Local tool binaries (git-lfs download)
 .tools/
+
+# YOLO11n-seg weights (photo-labelling downloads these on first run)
+models/
+
+# Captioned copies written by photo-labelling/label_photos.py
+artifacts/captioned-photos/
