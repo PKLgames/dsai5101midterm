@@ -1,14 +1,14 @@
 """One-call image -> feature vector, mirroring what ``scripts/03`` bakes into the cache.
 
-The batch pipeline (`catarena.extract`) is the fast path for the whole dataset; this
+The batch pipeline (`model.extract`) is the fast path for the whole dataset; this
 module exists for the small cases: embedding a handful of new photos, sanity-checking
 that a checkpoint gives the same numbers as the cache, or using the features from a
 notebook without touching the cache format.
 
 Example
 -------
->>> from catarena import pipeline
->>> out = pipeline.image_to_features("data/images/cat_000002/cat_000002_0001.jpg")
+>>> from model import pipeline
+>>> out = pipeline.image_to_features("artifacts/images/cat_000002/cat_000002_0001.jpg")
 >>> out["deep"].shape, out["hand"].shape
 ((576,), (20,))
 """
@@ -38,7 +38,7 @@ def image_to_features(
 
     ``deep`` is the L2-normalised pooled embedding (576-d for the default
     backbone); ``hand`` is the 20-dim interpretable statistics vector.  This is
-    exactly the pair of blocks stored in ``data/features/<tag>.npz``.
+    exactly the pair of blocks stored in ``artifacts/features/<tag>.npz``.
     """
     return images_to_features([path], backbone=backbone, size=size, tta_flip=tta_flip)[0]
 

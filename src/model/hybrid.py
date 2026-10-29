@@ -4,20 +4,20 @@ Why a hybrid
 ------------
 The two compared projects fail in opposite directions:
 
-* per-cat strengths (approach A) are the best predictor for cats seen in the fit
+* per-cat strengths are the best predictor for cats seen in the fit
   but carry no information about a cat that never appeared (strength = 0);
-* a shared embedding (this project) transfers to unseen images/cats but is a
+* a shared embedding transfers to unseen images/cats but is a
   weaker fit for cats seen ~200 times.
 
 One L2 logistic regression over both blocks gets the best of the two, and can
-optionally add approach A's YOLO/CLIP label block (fur-colour shares, pose, ...).
+optionally add the YOLO/CLIP label block (fur-colour shares, pose, ...).
 
 Design blocks (difference-coded: ``+1`` for the A side, ``-1`` for the B side)
 
-    cat_strength : one-hot over the cats **seen in the fit**      (from approach A)
-    embedding    : frozen ImageNet pooled features, 576-d         (this project)
-    hand         : 20 low-level statistics, z-scored on fit rows  (this project)
-    labels       : approach A's photo-label block                 (from approach A)
+    cat_strength : one-hot over the cats **seen in the fit**
+    embedding    : frozen ImageNet pooled features, 576-d
+    hand         : 20 low-level statistics, z-scored on fit rows
+    labels       : YOLO/CLIP photo-label block
     side         : constant column (the shared A/B offset)
 
 Everything is fitted jointly with ``fit_intercept=False`` plus the side column,
@@ -32,7 +32,7 @@ import numpy as np
 import pandas as pd
 from sklearn.linear_model import LogisticRegression
 
-from .approach_a import labels as a_labels
+from .labels import labels as photo_labels
 
 
 @dataclass
@@ -116,7 +116,7 @@ class HybridModel:
             if self.spec.hand:
                 blocks.append(hand_diff)
         if self.spec.uses_labels:
-            Xl, _ = a_labels.label_block(df, self.photo_labels, list(self.spec.label_groups))
+            Xl, _ = photo_labels.label_block(df, self.photo_labels, list(self.spec.label_groups))
             if Xl.shape[1]:
                 blocks.append(Xl)
         X = np.hstack(blocks) if blocks else np.zeros((len(df), 0))
@@ -131,7 +131,7 @@ class HybridModel:
         if self.spec.hand:
             names += [f"hand_{n}" for n in self._hand_names()]
         if self.spec.uses_labels:
-            _, lab_names = a_labels.label_block(df.head(5), self.photo_labels, list(self.spec.label_groups))
+            _, lab_names = photo_labels.label_block(df.head(5), self.photo_labels, list(self.spec.label_groups))
             names += lab_names
         names.append("side")
         return names

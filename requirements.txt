@@ -2,9 +2,9 @@
 # Installed with scripts/00_setup_env.sh; `uv pip freeze` output from the machine
 # the results in README.md were produced on (Linux x86_64, CPython 3.14.7).
 #
-# IMPORTANT: torch/torchvision must come from https://download.pytorch.org/whl/cpu
-# so that no nvidia-* packages are pulled in.  The "+cpu" local version suffix is
-# only resolvable against that index.
+# The "+cpu" local tag is a Linux (x86_64 and aarch64) CPU-index wheel. macOS
+# Apple Silicon uses the same versions without "+cpu" (PyPI / MPS). Intel Mac is
+# not supported. scripts/00_setup_env.sh picks the right source per platform.
 torch==2.14.1+cpu
 torchvision==0.29.1+cpu
 
@@ -14,6 +14,13 @@ scipy==1.18.1
 scikit-learn==1.9.1
 pillow==12.3.0
 matplotlib==3.11.2
+
+# photo-labelling/ (YOLO11n-seg + CLIP). These ranges accept the pins above,
+# including torch==2.14.1+cpu. ultralytics also installs nvidia-ml-py, which is
+# a small monitor package, not the CUDA wheel stack.
+ultralytics==8.4.190
+open-clip-torch==3.3.0
+opencv-python==5.0.0.93
 
 # transitive, pinned for exact reproducibility
 cloudpickle==3.1.2

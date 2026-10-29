@@ -20,18 +20,18 @@ rich its description looks:
 Feature families compared (all on the same folds, same estimator family)
 ------------------------------------------------------------------------
     observer only   26 demographic one-hot columns
-    labels (colour) approach A's fur-colour shares (copied reader)
-    labels (all)    approach A's full label block (colour, coat, pose, breed, shot)
+    labels (colour) fur-colour shares from the YOLO/CLIP table
+    labels (all)    full YOLO/CLIP label block (colour, coat, pose, breed, shot)
     hand            20 low-level statistics (this project)
     embedding       576-d frozen ImageNet embedding (this project)
     embedding+hand  the two appearance blocks
-    cat memory      per-cat strengths (copied from approach A)
+    cat memory      per-cat Bradley-Terry strengths
     cat + embedding / + hand / + labels   hybrids
 
 Outputs
-    data/features/feature_families.json
-    data/features/feature_families.md
-    data/features/feature_families.png
+    artifacts/features/feature_families.json
+    artifacts/features/feature_families.md
+    artifacts/features/feature_families.png
 
 Usage
     python scripts/07_feature_families.py
@@ -52,10 +52,10 @@ import pandas as pd  # noqa: E402
 from sklearn.linear_model import LogisticRegression  # noqa: E402
 from sklearn.model_selection import KFold  # noqa: E402
 
-from catarena import features, hybrid, index, paths  # noqa: E402
-from catarena.approach_a import labels as a_labels  # noqa: E402
-from catarena.approach_a import metrics as a_metrics  # noqa: E402
-from catarena.approach_a import strength as a_strength  # noqa: E402
+from model import features, hybrid, index, paths  # noqa: E402
+from model.labels import labels as label_mod  # noqa: E402
+from model.labels import metrics as pair_metrics  # noqa: E402
+from model.labels import strength as item_strength  # noqa: E402
 
 PROFILE_COLS = ["gender", "pet_history", "pet_care", "pet_contact", "future_pet", "mbti_ie"]
 FAMILIES = {
@@ -124,9 +124,9 @@ def per_profile(y, p, profiles) -> dict:
             continue
         base = float(y[ii].mean())
         rows.append({"profile": prof, "n": int(len(ii)),
-                     "logloss": a_metrics.log_loss(y[ii], p[ii]),
-                     "baseline": a_metrics.log_loss(y[ii], np.full(len(ii), base)),
-                     "accuracy": a_metrics.accuracy(y[ii], p[ii])})
+                     "logloss": pair_metrics.log_loss(y[ii], p[ii]),
+                     "baseline": pair_metrics.log_loss(y[ii], np.full(len(ii), base)),
+                     "accuracy": pair_metrics.accuracy(y[ii], p[ii])})
     t = pd.DataFrame(rows).sort_values("logloss")
     # gain over the profile's own constant predictor: removes the part of the
     # spread that comes from some observer types simply being near 50/50
@@ -312,16 +312,16 @@ def main() -> None:
         return
 
     train, _ = index.load_train(), index.load_test()
-    train = a_strength.ensure_pair_columns(train)
+    train = item_strength.ensure_pair_columns(train)
     y = features.label_a(train)
     feats = features.load_features(args.tag, kind="deep")
-    photo_labels = a_labels.load_photo_labels()
+    photo_labels = label_mod.load_photo_labels()
     names = list(FAMILIES)
     profiles = profile_key(train)
     print(f"rows {len(train):,} | pairs {train['unordered_pair_id'].nunique():,} | "
           f"observer profiles {len(set(profiles))} | features {feats.meta.get('tag')}")
 
-    masks = a_strength.pair_masks(train, args.folds, seed=args.seed)
+    masks = item_strength.pair_masks(train, args.folds, seed=args.seed)
     print("\n[pair-grouped folds]")
     preds = oof(train, y, masks, feats, photo_labels, names)
 
@@ -334,7 +334,7 @@ def main() -> None:
             "seed": args.seed,
             "feature_tag": feats.meta.get("tag"),
             "estimator": "LogisticRegression(C=1, fit_intercept=False, side column)",
-            "label_source": "approach A's prepared/photo_labels.csv (YOLO11n-seg + CLIP)",
+            "label_source": "artifacts/labels/photo_labels.csv (YOLO11n-seg + CLIP)",
         },
         "pair_folds": {},
         "per_profile": {},
@@ -342,7 +342,7 @@ def main() -> None:
         "consensus": {},
     }
     for n in names:
-        res["pair_folds"][n] = a_metrics.metrics(y, preds[n])
+        res["pair_folds"][n] = pair_metrics.metrics(y, preds[n])
         res["per_profile"][n] = per_profile(y, preds[n], profiles)
         res["calibration"][n] = calibration(y, preds[n])
         res["consensus"][n] = consensus(train, y, preds[n])
@@ -372,7 +372,7 @@ def main() -> None:
             print(f"    fold {f + 1}/{args.p2_folds}: fit {fit.sum():,}, eval {ev.sum():,}", flush=True)
         for n in names:
             m = np.isfinite(preds_cold[n])
-            res["image_holdout"][n] = a_metrics.metrics(y[m], preds_cold[n][m])
+            res["image_holdout"][n] = pair_metrics.metrics(y[m], preds_cold[n][m])
 
         # --- cold start 2: both cats unseen (the hardest slice) ------------- #
         cats = np.array(sorted(set(train["a_cat"]) | set(train["b_cat"])))
@@ -394,7 +394,7 @@ def main() -> None:
             print(f"    fold {f + 1}/{args.p2_folds}: fit {fit.sum():,}, eval {ev.sum():,}", flush=True)
         for n in names:
             m = np.isfinite(preds_newcat[n])
-            res["cat_holdout"][n] = a_metrics.metrics(y[m], preds_newcat[n][m])
+            res["cat_holdout"][n] = pair_metrics.metrics(y[m], preds_newcat[n][m])
 
     dest = paths.FEATURES_DIR / "feature_families.json"
     dest.write_text(json.dumps(res, indent=2, ensure_ascii=False), encoding="utf-8")

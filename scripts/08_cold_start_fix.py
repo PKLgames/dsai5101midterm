@@ -23,9 +23,9 @@ Acceptance: average stays at the current best (<= 0.6565) **and** both-cats-unse
 drops to the family median or below (<= 0.6892).
 
 Outputs
-    data/features/cold_start_fix.json
-    data/features/cold_start_fix.md
-    data/submissions/pred_routed_test.csv   (winner fitted on all rows)
+    artifacts/features/cold_start_fix.json
+    artifacts/features/cold_start_fix.md
+    artifacts/submissions/pred_routed_test.csv   (winner fitted on all rows)
 
 Usage
     python scripts/08_cold_start_fix.py
@@ -44,10 +44,10 @@ import numpy as np  # noqa: E402
 import pandas as pd  # noqa: E402
 from sklearn.model_selection import KFold  # noqa: E402
 
-from catarena import features, hybrid, index, paths  # noqa: E402
-from catarena.approach_a import labels as a_labels  # noqa: E402
-from catarena.approach_a import metrics as a_metrics  # noqa: E402
-from catarena.approach_a import strength as a_strength  # noqa: E402
+from model import features, hybrid, index, paths  # noqa: E402
+from model.labels import labels as label_mod  # noqa: E402
+from model.labels import metrics as pair_metrics  # noqa: E402
+from model.labels import strength as item_strength  # noqa: E402
 
 BASELINE_AVG = 0.65652        # cat + embedding + hand, pair-grouped 5-fold (07)
 BASELINE_CAT_COLD = 0.69446   # same model, both cats unseen (07)
@@ -75,7 +75,7 @@ def configs(feats_single, feats_multi):
 
 def fold_masks(train, protocol: str, k: int, seed: int):
     if protocol == "pair":
-        for m in a_strength.pair_masks(train, k, seed=seed):
+        for m in item_strength.pair_masks(train, k, seed=seed):
             yield ~m, m
     elif protocol == "photo":
         imgs = np.array(sorted(set(train["a_image"]) | set(train["b_image"])))
@@ -118,7 +118,7 @@ def run_protocol(train, y, protocol, k, seed, cfgs, photo_labels) -> dict:
 def evaluate(y, preds) -> dict:
     """Score only the rows this protocol actually predicts (the rest stay NaN)."""
     m = np.isfinite(preds)
-    return a_metrics.metrics(y[m], preds[m])
+    return pair_metrics.metrics(y[m], preds[m])
 
 
 # --------------------------------------------------------------------------- #
@@ -171,9 +171,9 @@ def main() -> None:
                     help="skip the experiment, re-emit the submission for the recorded winner")
     args = ap.parse_args()
 
-    train = a_strength.ensure_pair_columns(index.load_train())
+    train = item_strength.ensure_pair_columns(index.load_train())
     y = features.label_a(train)
-    photo_labels = a_labels.load_photo_labels()
+    photo_labels = label_mod.load_photo_labels()
 
     combined = "mnv3s_resnet18"
     if combined not in features.available_tags():

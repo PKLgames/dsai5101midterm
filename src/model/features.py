@@ -125,7 +125,7 @@ def combine_caches(tags: list[str], out_tag: str, hand_from: str | None = None) 
 
 
 def load_features(tag: str | None = None, kind: str = "auto") -> Features:
-    """Load ``data/features/<tag>.npz``.
+    """Load ``artifacts/features/<tag>.npz``.
 
     ``tag=None`` picks the most recently written cache.  ``kind`` selects which
     embedding goes into ``deep``: ``deep`` (CNN), ``hand`` (low-level), ``both``

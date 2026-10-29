@@ -109,7 +109,7 @@ def _items(limit: int | None) -> list[tuple[str, str]]:
 
 
 def extract(cfg: ExtractConfig | None = None, progress: bool = True) -> dict:
-    """Run extraction and write ``data/features/<tag>.npz`` + ``.meta.json``."""
+    """Run extraction and write ``artifacts/features/<tag>.npz`` + ``.meta.json``."""
     cfg = cfg or ExtractConfig()
     paths.ensure_dirs()
     tag = cfg.resolved_tag()

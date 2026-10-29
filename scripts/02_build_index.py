@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build data/image_index.csv: one row per image with cat, split and hit counts."""
+"""Build artifacts/image_index.csv: one row per image with cat, split and hit counts."""
 
 from __future__ import annotations
 
@@ -10,7 +10,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
 
 import pandas as pd  # noqa: E402
 
-from catarena import index, paths  # noqa: E402
+from model import index, paths  # noqa: E402
 
 
 def main() -> None:

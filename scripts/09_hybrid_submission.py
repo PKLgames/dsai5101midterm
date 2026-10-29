@@ -24,9 +24,9 @@ The routing signal (was this cat / photo in the training data) is known at submi
 time and uses no test labels.
 
 Outputs
-    data/submissions/pred_routed_test.csv   when --structure routed (recommended)
-    data/submissions/pred_hybrid_test.csv   when --structure joint
-    data/features/hybrid_fit.json           spec, width, routing shares, slice summary
+    artifacts/submissions/pred_routed_test.csv   when --structure routed (recommended)
+    artifacts/submissions/pred_hybrid_test.csv   when --structure joint
+    artifacts/features/hybrid_fit.json           spec, width, routing shares, slice summary
 
 Usage
     python scripts/09_hybrid_submission.py
@@ -46,10 +46,10 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
 import numpy as np  # noqa: E402
 import pandas as pd  # noqa: E402
 
-from catarena import features, hybrid, index, paths  # noqa: E402
-from catarena.approach_a import labels as a_labels  # noqa: E402
-from catarena.approach_a import metrics as a_metrics  # noqa: E402
-from catarena.approach_a import strength as a_strength  # noqa: E402
+from model import features, hybrid, index, paths  # noqa: E402
+from model.labels import labels as label_mod  # noqa: E402
+from model.labels import metrics as pair_metrics  # noqa: E402
+from model.labels import strength as item_strength  # noqa: E402
 
 JOINT_SPEC = "D: cat + embedding + hand"
 DEFAULT_C = 0.3
@@ -63,7 +63,7 @@ def evaluate(train, y, masks, spec, feats, photo_labels) -> dict:
         fit_df = train.loc[~mask]
         model = hybrid.HybridModel(spec, feats, photo_labels).fit(fit_df, y[~mask])
         p[mask] = model.predict(train.loc[mask])
-    return a_metrics.metrics(y, p)
+    return pair_metrics.metrics(y, p)
 
 
 def slice_table(df: pd.DataFrame, train_df: pd.DataFrame) -> pd.DataFrame:
@@ -93,22 +93,22 @@ def main() -> None:
     ap.add_argument("--spec", default=JOINT_SPEC)
     ap.add_argument("--C", type=float, default=DEFAULT_C)
     ap.add_argument("--sweep", action="store_true", help="score candidate specs before fitting")
-    ap.add_argument("--approach-a", default=None,
-                    help="optional path to a clone of the label project; default uses the vendored table")
+    ap.add_argument("--labels-repo", default=None,
+                    help="optional checkout; reads its artifacts/labels/photo_labels.csv")
     args = ap.parse_args()
 
     train, test = index.load_train(), index.load_test()
-    train = a_strength.ensure_pair_columns(train)
+    train = item_strength.ensure_pair_columns(train)
     y = features.label_a(train)
     feats = features.load_features(args.tag, kind="deep")
-    photo_labels = a_labels.load_photo_labels(Path(args.approach_a) if args.approach_a else None)
+    photo_labels = label_mod.load_photo_labels(Path(args.labels_repo) if args.labels_repo else None)
 
     specs = hybrid.default_specs(args.C)
     if args.spec not in specs:
         raise SystemExit(f"unknown spec {args.spec!r}; choose from {sorted(specs)}")
     spec = specs[args.spec]
 
-    masks = a_strength.pair_masks(train, 5, seed=21)
+    masks = item_strength.pair_masks(train, 5, seed=21)
     summary = {spec.name: evaluate(train, y, masks, spec, feats, photo_labels)}
     if args.sweep:
         print("pair-grouped 5-fold in-sample check (all rows):")

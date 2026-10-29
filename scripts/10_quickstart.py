@@ -8,7 +8,7 @@
 What it shows
 -------------
 1. one photo -> 576-d deep embedding + 20 hand statistics (no cache involved);
-2. the same numbers are what `data/features/<tag>.npz` already holds;
+2. the same numbers are what `artifacts/features/<tag>.npz` already holds;
 3. the cached features feed a pair row of 604 columns (embedding diff +
    26 demographic one-hot + 2 comparison types) exactly as the models use them.
 """
@@ -23,21 +23,22 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
 
 import numpy as np  # noqa: E402
 
-from catarena import features, index, paths, pipeline  # noqa: E402
+from model import features, index, paths, pipeline  # noqa: E402
 
 
 def main() -> None:
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    ap.add_argument("--image", default=None, help="photo to embed (default: a sample from data/images)")
+    ap.add_argument("--image", default=None, help="photo to embed (default: a sample from artifacts/images)")
     ap.add_argument("--batch", type=int, default=1, help="embed this many sample photos")
     ap.add_argument("--backbone", default=pipeline.DEFAULT_BACKBONE)
     ap.add_argument("--tag", default="mobilenet_v3_small_224", help="cache to compare against")
     args = ap.parse_args()
 
+    images_dir = paths.IMAGES_DIR.resolve()
     if args.image:
-        images = [Path(args.image)]
+        images = [Path(args.image).expanduser().resolve()]
     else:
-        images = sorted(paths.IMAGES_DIR.glob("cat_*/*.jpg"))[: max(1, args.batch)]
+        images = sorted(images_dir.glob("cat_*/*.jpg"))[: max(1, args.batch)]
     print(f"embedding {len(images)} image(s) with {args.backbone}\n")
 
     rows = pipeline.images_to_features(images, backbone=args.backbone)
@@ -53,9 +54,17 @@ def main() -> None:
     except FileNotFoundError:
         print("\n(no feature cache yet - run scripts/03_extract_features.py to compare)")
         return
-    cached = feats.lookup([str(p.relative_to(paths.IMAGES_DIR)) for p in images])[0]
-    diff = np.abs(cached - np.stack([r["deep"] for r in rows])).max()
-    print(f"\ncache check: max |cache - fresh| = {diff:.2e} (0 means the cache is current)")
+    try:
+        cache_keys = [str(p.relative_to(images_dir)) for p in images]
+    except ValueError:
+        print("\n(image is not in artifacts/images; skipping cache check)")
+    else:
+        cached, present = feats.lookup(cache_keys)
+        if not present.all():
+            print("\n(image not in the feature cache; skipping cache check)")
+        else:
+            diff = np.abs(cached - np.stack([r["deep"] for r in rows])).max()
+            print(f"\ncache check: max |cache - fresh| = {diff:.2e} (0 means the cache is current)")
 
     # ---- what a model row looks like --------------------------------------- #
     train = index.load_train().head(1)

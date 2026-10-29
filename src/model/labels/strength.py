@@ -1,9 +1,8 @@
-"""Per-item strengths + side term (approach A's Bradley-Terry fit).
+"""Per-item strengths + side term (Bradley-Terry fit).
 
-Adapted from ``dsai-5101-sdm-proj/analysis/03_cat_strength_model.ipynb``
-(functions ``fit_bt`` / ``predict_bt`` / ``pair_masks``).  Only the reusable
-pieces are kept; nothing here re-runs that project's analysis.  Signatures were
-made explicit (item id columns and penalty are parameters).
+Adapted from the cat-strength fit (``fit_bt`` / ``predict_bt`` / ``pair_masks``).
+Only the reusable pieces are kept.  Signatures were made explicit (item id
+columns and penalty are parameters).
 
 Model
 -----
@@ -26,7 +25,7 @@ DEFAULT_C = 1.0
 
 
 def ensure_pair_columns(df: pd.DataFrame) -> pd.DataFrame:
-    """Add the two derived columns approach A's notebooks rely on, if missing.
+    """Add the two derived columns the strength fit relies on, if missing.
 
     ``unordered_pair_id`` is the two image paths sorted and joined by ``||``
     (so both orientations of a pair share an id); ``chose_a`` is 1 when the

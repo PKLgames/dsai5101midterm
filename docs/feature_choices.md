@@ -29,11 +29,11 @@ being close to 50/50, so it is the fairer of the two.
 | Family | What it is | What it can express | What it cannot |
 |---|---|---|---|
 | observer only | 26 demographic one-hot columns from the 6 background fields | "men like X" style population effects | anything about the photos |
-| labels (colour) | approach A's fur-colour shares (YOLO mask + pixel colours) | coat colour composition | pose, breed, composition, anything not labelled |
+| labels (colour) | fur-colour shares (YOLO mask + pixel colours) | coat colour composition | pose, breed, composition, anything not labelled |
 | labels (all) | colour shares + pattern/breed/pose/view/eyes/shot size | a coarse human vocabulary of the scene | fine texture, background, lighting, aesthetics |
 | hand (20) | brightness, contrast, saturation, colourfulness, sharpness, entropy, edges, hue, exposure, size | photographic quality properties | *what* is in the photo |
 | embedding (576) | frozen ImageNet MobileNetV3-Small pooled features | arbitrary appearance directions learned from 1.3 M photos | nothing is named; no per-cat memory |
-| cat memory | one strength per cat (approach A's item effect) | "cat 000123 is generally preferred" | any cat that was not in the fit |
+| cat memory | one strength per cat (per-cat item effect) | "cat 000123 is generally preferred" | any cat that was not in the fit |
 | hybrids | cat memory + embedding (+ hand / labels) in one fit | both of the above | still no help for unseen cats in the joint design |
 
 ## 3. Results
@@ -85,7 +85,7 @@ Cold start — the two kinds are not the same thing:
 | cat + embedding + hand | 0.6847 | 0.6945 |
 | cat + embedding + labels | 0.6818 | 0.6938 |
 
-![feature families](../data/features/feature_families.png)
+![feature families](../artifacts/features/feature_families.png)
 
 ## 4. Plain reading: strengths and weaknesses
 
@@ -144,11 +144,11 @@ embeddings: route by "is the cat known?" instead.
   so the per-profile spread mixes observer difficulty with pair composition; the gain column
   mitigates this but does not remove it.
 * **Agreement caps accuracy.** Two people agree on 55.7 % of repeated pairs (Cohen's kappa ≈ 0.11
-  as reported by approach A). On disputed pairs every model sits at 0.50 — there is nothing
+  from the cat-strength fit). On disputed pairs every model sits at 0.50 — there is nothing
   stable to predict. Treat ~0.70 accuracy on agreed pairs as close to the ceiling.
 * **Two cold starts, only one of which is usually reported.** Hiding the cat-holdout column makes
   item-memory models look better than they are.
-* **The label table is read, not regenerated** (approach A's YOLO11n-seg + CLIP output), so the
+* **The label table is read, not regenerated** (the YOLO11n-seg + CLIP table in `artifacts/labels/`), so the
   label rows inherit that pipeline's choices; the embedding and hand rows are produced here.
 * One dataset, one seed, `C = 1` for every family. The differences between neighbouring families
   (0.001–0.003) are within noise; the differences between families (0.005–0.03) are not.
@@ -200,11 +200,12 @@ worse. The fix is to keep a dedicated transfer model and route to it.
 
 ```bash
 cd dsai5101midterm
-.venv/bin/python scripts/03_extract_features.py --backbone resnet18   # second backbone, ~1 min
-.venv/bin/python scripts/07_feature_families.py                      # ~3.5 min
-.venv/bin/python scripts/08_cold_start_fix.py                        # ~7 min
+source scripts/00_setup_env.sh          # create .venv only if it is missing; does not reinstall
+python3 scripts/03_extract_features.py --backbone resnet18   # second backbone, ~1 min
+python3 scripts/07_feature_families.py                      # ~3.5 min
+python3 scripts/08_cold_start_fix.py                        # ~7 min
 ```
 
-Outputs: `data/features/feature_families.{json,md,png}`,
-`data/features/cold_start_fix.{json,md}` and the routed submission
-`data/submissions/pred_routed_test.csv`.
+Outputs: `artifacts/features/feature_families.{json,md,png}`,
+`artifacts/features/cold_start_fix.{json,md}` and the routed submission
+`artifacts/submissions/pred_routed_test.csv`.
