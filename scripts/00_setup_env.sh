@@ -14,7 +14,7 @@
 #
 # Usage:
 #   source scripts/00_setup_env.sh   # create (if needed) and activate .venv
-#   bash scripts/00_setup_env.sh     # always recreate .venv (Make uses this)
+#   bash scripts/00_setup_env.sh     # install only if requirements changed (Make uses this)
 
 _dsai_this_file() {
   if [[ -n "${BASH_SOURCE[0]:-}" ]]; then
@@ -38,13 +38,40 @@ _dsai_sourced() {
   fi
 }
 
+_dsai_fingerprint() {
+  # requirements plus this script: a comment-only edit of either should reinstall.
+  local src reqs sum
+  reqs="$1"
+  src="$2"
+  if command -v shasum >/dev/null 2>&1; then
+    sum=$(cat "$reqs" "$src" | shasum -a 256)
+  else
+    sum=$(cat "$reqs" "$src" | sha256sum)
+  fi
+  printf '%s\n' "${sum%% *}"
+}
+
 dsai_setup_env() {
-  local HERE REQS OS ARCH PYTHON_TAG
+  local HERE REQS OS ARCH PYTHON_TAG HASH_FILE NEW_HASH
   HERE="$(cd "$(dirname "$(_dsai_this_file)")/.." && pwd)"
   cd "$HERE" || return 1
 
   PYTHON_TAG="${PYTHON_TAG:-3.14}"
   REQS="$HERE/requirements.txt"
+  HASH_FILE="$HERE/.venv/.requirements.sha256"
+  NEW_HASH="$(_dsai_fingerprint "$REQS" "$(_dsai_this_file)")"
+
+  # An existing venv with this fingerprint is already the cache. Recreating it
+  # (uv venv --clear) would also make Make treat every downstream file as stale.
+  if [[ -x "$HERE/.venv/bin/python" && -f "$HASH_FILE" && "$(cat "$HASH_FILE")" == "$NEW_HASH" ]]; then
+    echo "==> .venv matches requirements.txt; leaving it in place"
+    return 0
+  fi
+  if [[ -x "$HERE/.venv/bin/python" && ! -f "$HASH_FILE" ]]; then
+    echo "==> .venv already installed; recording requirements fingerprint"
+    printf '%s\n' "$NEW_HASH" > "$HASH_FILE" || return 1
+    return 0
+  fi
 
   # Keep uv's wheel cache inside the project: the shared ~/.cache/uv may not be
   # writable (e.g. restricted sandboxes), and a local cache makes reruns fast.
@@ -107,6 +134,7 @@ print("torchvision ", torchvision.__version__)
 print("numpy/pandas/sklearn/pillow", numpy.__version__, pandas.__version__, sklearn.__version__, PIL.__version__)
 print("threads     ", torch.get_num_threads())
 PY
+  printf '%s\n' "$NEW_HASH" > "$HASH_FILE" || return 1
 }
 
 _DSAI_ROOT="$(cd "$(dirname "$(_dsai_this_file)")/.." && pwd)"

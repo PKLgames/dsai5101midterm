@@ -12,6 +12,9 @@ SHELL := /bin/bash
 .DEFAULT_GOAL := help
 
 PYTHON            ?= .venv/bin/python
+# Touched after a requirements-matching install. Artifact rules list it as an
+# order-only prerequisite so recreating the venv does not invalidate caches.
+ENV_STAMP         := .venv/.setup-stamp
 WORKERS           ?= 4
 THREADS           ?= 8
 DOWNLOAD_WORKERS  ?= 16
@@ -66,7 +69,7 @@ help:
 all: env images index $(PHOTO_LABELS) features qa models tables
 	@$(call BANNER,Done. Submissions are in artifacts/submissions/ and tables in tables/.)
 
-env: $(PYTHON)
+env: $(ENV_STAMP)
 
 images: $(MANIFEST)
 
@@ -84,29 +87,33 @@ tables: $(TABLES)
 # Environment
 # --------------------------------------------------------------------------- #
 
-$(PYTHON): requirements.txt scripts/00_setup_env.sh
+# Recreate .venv only when requirements.txt or the setup script changed.
+# A newer checkout mtime, or a rebuilt interpreter, must not miss the feature,
+# label, or model caches: those rules depend on this stamp only as order-only.
+$(ENV_STAMP): requirements.txt scripts/00_setup_env.sh
 	@$(call BANNER,Build a CPU-only Python 3.14 virtualenv and install pinned dependencies.)
 	bash scripts/00_setup_env.sh
+	touch $@
 
 # --------------------------------------------------------------------------- #
 # Data
 # --------------------------------------------------------------------------- #
 
-$(MANIFEST): $(PYTHON) course/train.csv course/test.csv
+$(MANIFEST): course/train.csv course/test.csv | $(ENV_STAMP)
 	@$(call BANNER,Download the 1558 cat photos from Hugging Face.)
 	$(PYTHON) scripts/01_download_images.py --workers $(DOWNLOAD_WORKERS)
 
-$(INDEX): $(MANIFEST) $(PYTHON)
+$(INDEX): $(MANIFEST) | $(ENV_STAMP)
 	@$(call BANNER,Build image_index.csv and check train/test overlap.)
 	$(PYTHON) scripts/02_build_index.py
 
 # YOLO + CLIP. Order-only prereqs: a newer venv or download must not force a
 # relabel. `make labels` always re-runs with --fresh.
-$(PHOTO_LABELS): | $(PYTHON) $(MANIFEST)
+$(PHOTO_LABELS): | $(ENV_STAMP) $(MANIFEST)
 	@$(call BANNER,Label every photo with YOLO11n-seg masks and CLIP attributes.)
 	$(PYTHON) photo-labelling/label_photos.py
 
-labels: $(PYTHON) | $(MANIFEST)
+labels: | $(ENV_STAMP) $(MANIFEST)
 	@$(call BANNER,Relabel every photo from scratch with YOLO11n-seg and CLIP.)
 	$(PYTHON) photo-labelling/label_photos.py --fresh
 
@@ -114,17 +121,17 @@ labels: $(PYTHON) | $(MANIFEST)
 # Frozen ImageNet features
 # --------------------------------------------------------------------------- #
 
-$(FEATURES_MNV3): $(INDEX) $(PYTHON)
+$(FEATURES_MNV3): $(INDEX) | $(ENV_STAMP)
 	@$(call BANNER,Extract frozen MobileNetV3-Small ImageNet embeddings for every photo.)
 	$(PYTHON) scripts/03_extract_features.py \
 		--backbone mobilenet_v3_small --workers $(WORKERS) --threads $(THREADS)
 
-$(FEATURES_RESNET): $(INDEX) $(PYTHON)
+$(FEATURES_RESNET): $(INDEX) | $(ENV_STAMP)
 	@$(call BANNER,Extract frozen ResNet18 ImageNet embeddings for every photo.)
 	$(PYTHON) scripts/03_extract_features.py \
 		--backbone resnet18 --workers $(WORKERS) --threads $(THREADS)
 
-$(QA_SUMMARY): $(FEATURES_MNV3) $(PYTHON)
+$(QA_SUMMARY): $(FEATURES_MNV3) | $(ENV_STAMP)
 	@$(call BANNER,Check that embeddings separate same-cat photos from different-cat photos.)
 	$(PYTHON) scripts/04_feature_qa.py --tag $(TAG)
 
@@ -134,39 +141,39 @@ $(QA_SUMMARY): $(FEATURES_MNV3) $(PYTHON)
 
 baseline: $(BASELINE)
 
-$(BASELINE): $(FEATURES_MNV3) $(PYTHON)
+$(BASELINE): $(FEATURES_MNV3) | $(ENV_STAMP)
 	@$(call BANNER,Fit the embedding preference baseline and write pred_test.csv.)
 	$(PYTHON) scripts/05_baseline_pairs.py --tag $(TAG)
 
 families: $(FAMILIES)
 
-$(FAMILIES): $(FEATURES_MNV3) $(PHOTO_LABELS) $(PYTHON)
+$(FAMILIES): $(FEATURES_MNV3) $(PHOTO_LABELS) | $(ENV_STAMP)
 	@$(call BANNER,Compare feature families for predicting which photo an observer chooses.)
 	$(PYTHON) scripts/07_feature_families.py --tag $(TAG)
 
 coldstart: $(COLD_START)
 
-$(COLD_START): $(FEATURES_MNV3) $(FEATURES_RESNET) $(PHOTO_LABELS) $(PYTHON)
+$(COLD_START): $(FEATURES_MNV3) $(FEATURES_RESNET) $(PHOTO_LABELS) | $(ENV_STAMP)
 	@$(call BANNER,Test routing versus extra features on unseen photos and unseen cats.)
 	$(PYTHON) scripts/08_cold_start_fix.py
 
 hybrid: $(ROUTED)
 
-$(ROUTED): $(FEATURES_MNV3) $(PHOTO_LABELS) $(PYTHON)
+$(ROUTED): $(FEATURES_MNV3) $(PHOTO_LABELS) | $(ENV_STAMP)
 	@$(call BANNER,Fit the routed hybrid model and write the test submission.)
 	$(PYTHON) scripts/09_hybrid_submission.py --structure routed --tag $(TAG)
 
 joint: $(JOINT)
 
-$(JOINT): $(FEATURES_MNV3) $(PHOTO_LABELS) $(PYTHON)
+$(JOINT): $(FEATURES_MNV3) $(PHOTO_LABELS) | $(ENV_STAMP)
 	@$(call BANNER,Fit the joint hybrid model and write pred_hybrid_test.csv.)
 	$(PYTHON) scripts/09_hybrid_submission.py --structure joint --tag $(TAG)
 
-$(TABLES): $(FEATURES_MNV3) $(PYTHON)
+$(TABLES): $(FEATURES_MNV3) | $(ENV_STAMP)
 	@$(call BANNER,Export joined train/test tables for modelling without this repo.)
 	$(PYTHON) scripts/06_export_tables.py --tag $(TAG)
 
-quickstart: $(FEATURES_MNV3) $(PYTHON) | $(MANIFEST)
+quickstart: $(FEATURES_MNV3) | $(ENV_STAMP) $(MANIFEST)
 	@$(call BANNER,Embed one photo and check it against the feature cache.)
 	$(PYTHON) scripts/10_quickstart.py --image artifacts/images/cat_000002/cat_000002_0001.jpg
 
