@@ -1,60 +1,18 @@
-# --------------------------------------------------------------------------- #
-# Generated / large artefacts
-# --------------------------------------------------------------------------- #
-
-# 183 MB of photos: download with scripts/01
-artifacts/images/
-# cached embeddings: scripts/03
-artifacts/features/
-# predictions: scripts/05 and scripts/09
-artifacts/submissions/
-artifacts/manifest.csv
-artifacts/image_index.csv
-artifacts/download_errors.csv
-
-# 78 MB of ready-to-use tables (scripts/06_export_tables.py); ship via a release or Git LFS
-tables/*.csv.gz
-tables/*.csv
-tables/*.zip
-
-# Course-provided name list (personal data, not ours to publish)
-course/Name_list.xlsx
-
-# --------------------------------------------------------------------------- #
-# Environments and caches
-# --------------------------------------------------------------------------- #
+# virtualenv and tool caches
 .venv/
-.uv-cache/
 .cache/
 
-# --------------------------------------------------------------------------- #
-# Python / OS / editor
-# --------------------------------------------------------------------------- #
+# Python
 __pycache__/
 *.py[cod]
+*.egg-info/
 .pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Jupyter
 .ipynb_checkpoints/
+
+# secrets and OS junk
+.env
 .DS_Store
-.vscode/
-
-# Local tool binaries (git-lfs download)
-.tools/
-
-# YOLO11n-seg weights (photo-labelling downloads these on first run)
-models/
-
-# Captioned copies written by photo-labelling/label_photos.py
-artifacts/captioned-photos/
-# YOLO+CLIP tables (photo-labelling/label_photos.py / make labels)
-artifacts/labels/
-
-# Notebook run outputs (written when executing analysis/*.ipynb)
-analysis/prepared/
-analysis/figures/
-analysis/outputs/
-analysis/model-checks/
-analysis/images/
-analysis/hf_cat_images/
-analysis/data/
-analysis/_ran_*.ipynb
-analysis/_failed_*.ipynb

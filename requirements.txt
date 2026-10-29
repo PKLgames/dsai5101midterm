@@ -5,8 +5,8 @@
 # The "+cpu" local tag is a Linux (x86_64 and aarch64) CPU-index wheel. macOS
 # Apple Silicon uses the same versions without "+cpu" (PyPI / MPS). Intel Mac is
 # not supported. scripts/00_setup_env.sh picks the right source per platform.
-torch==2.14.1+cpu
-torchvision==0.29.1+cpu
+torch==2.14.1
+torchvision==0.29.1
 
 numpy==2.5.2
 pandas==3.1.0
