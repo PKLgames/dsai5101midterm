@@ -55,23 +55,26 @@ cd dsai5101midterm
 make all          # env + images + YOLO/CLIP labels + ImageNet features + models
 ```
 
-`make help` lists the stage targets. `make all` runs YOLO+CLIP when `artifacts/labels/photo_labels.csv` is missing. `make labels` forces a re-label.
+`make help` lists the stage targets. Make rebuilds a product only when that file is missing or older than a real input: the course CSVs for the download, `artifacts/image_index.csv` for features, and the feature file for models and tables. `make all` runs YOLO+CLIP only when `artifacts/labels/photo_labels.csv` is missing. `make labels` forces a re-label. Photos already on disk are skipped.
 
-To use `python3` in your shell, `source scripts/00_setup_env.sh` (creates `.venv` if needed and activates it).
+The virtualenv is not one of those inputs. `make env` reinstalls only when `requirements.txt` or `scripts/00_setup_env.sh` no longer matches `.venv/.requirements.sha256`. A matching venv is left in place, and success is recorded in `.venv/.setup-stamp`. Later stages list that stamp as an order-only prerequisite, so a refreshed interpreter does not re-download, re-label, or re-extract.
+
+To use `python3` in your shell, `source scripts/00_setup_env.sh`. That creates `.venv` only if it is missing, then activates it. It does not reinstall.
 
 | Target | What it runs |
 |---|---|
-| `make env` | `scripts/00_setup_env.sh` — CPU torch (Linux CPU index / macOS PyPI) |
-| `make images` | download 1,558 photos (~184 MB, ~2 min) |
-| `make labels` | YOLO11n-seg + CLIP → `artifacts/labels/` (slow on CPU) |
+| `make env` | CPU `.venv` (Linux: PyTorch CPU index; macOS: PyPI). Skips the install when the requirements fingerprint matches |
+| `make images` | download 1,558 photos (~184 MB, ~2 min); existing files are skipped |
+| `make labels` | YOLO11n-seg + CLIP → `artifacts/labels/` (slow on CPU; always re-runs) |
 | `make features` | frozen ImageNet: MobileNetV3-Small + ResNet18 |
 | `make qa` | same-cat vs different-cat diagnostics |
 | `make models` | baseline, feature families, cold-start routing, routed hybrid |
 | `make tables` | `tables/{train,test}_pairs.csv.gz` |
-| `make quickstart` | one photo → 576-d + 20-d vector |
-| `make distclean` | wipe `.venv`, images, labels, features, tables, weight caches |
+| `make quickstart` | one photo → 576-d + 20-d vector, checked against the feature cache |
+| `make clean` | delete features, submissions, tables, the image index, and the download manifest. Photos, labels, `.venv`, and weight caches stay |
+| `make distclean` | `make clean`, plus `.venv`, photos, labels, `.cache/`, `.uv-cache`, and YOLO weights |
 
-Override load: `make all WORKERS=2 THREADS=4`. Stages are incremental: Make skips work whose outputs already exist.
+Override load: `make all WORKERS=2 THREADS=4`. Delete `artifacts/features/` (`make clean-features`) to force a re-extract. A newer `.venv` does not.
 
 That writes `artifacts/features/mobilenet_v3_small_224.npz` (1,558 × 576 deep + 1,558 × 20 hand) and `artifacts/submissions/pred_routed_test.csv` (6,224 rows).
 
@@ -120,7 +123,7 @@ dsai5101midterm/
 
 | Script | Key flags | Purpose |
 |---|---|---|
-| `00_setup_env.sh` | `PYTHON_TAG` | build `.venv` from `requirements.txt`; CPU torch avoids ~2.5 GB of nvidia CUDA wheels on Linux. `source` it to create (if needed) and activate; `make env` always recreates. |
+| `00_setup_env.sh` | `PYTHON_TAG` | CPU `.venv` from `requirements.txt`. Linux uses the PyTorch CPU index (no ~2.5 GB of nvidia CUDA wheels); macOS arm64 uses PyPI. `source` creates the venv only if it is missing, then activates it. `bash` / `make env` reinstalls only when `.venv/.requirements.sha256` no longer matches `requirements.txt` and this script. |
 | `photo-labelling/label_photos.py` | `--fresh`, `--limit`, `--batch` | YOLO11n-seg + CLIP labels → `artifacts/labels/`. Invoked by `make labels`. |
 | `01_download_images.py` | `--workers`, `--limit` | 16 threads, 3 retries with backoff, atomic `.part` writes, skip-if-present |
 | `02_build_index.py` | — | `image_index.csv`, train/test overlap and missing-file checks |

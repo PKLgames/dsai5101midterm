@@ -124,8 +124,6 @@ train/test 的 31,120 个图片位置实测缺失 0 个）。若某张图解码�
 线程、batch、耗时、img/s、峰值 RSS、CPU 型号、种子、生成时间。
 **任何一次特征产物都能自证来源**，这是复现要求里最容易被扣分的地方。
 
-`extract.py` 里的 `FEATURE_SPEC_VERSION` 用于在预处理逻辑变更后作废旧缓存（避免"悄悄用错特征"）。
-
 产物只有两级，全部是图片级的：
 
 | 产物 | 粒度 | 规模 | 何时用 |
@@ -133,8 +131,30 @@ train/test 的 31,120 个图片位置实测缺失 0 个）。若某张图解码�
 | `<tag>.npz` | 一张图一行 | 1,558 × (576+20)，3.4 MB | **默认**：下游现算图对矩阵（约 0.1 s） |
 | `<tag>.csv` | 一张图一行 | 1,558 × 597 | 查单张图、做图片级分析、贴进报告 |
 
+`extract.FEATURE_SPEC_VERSION` 写进 `<tag>.meta.json`。加载缓存时不比较它，所以只改预处理
+不会自动丢掉旧的 `.npz`。重抽之前先删 `artifacts/features/`（`make clean-features`）。
+
 图对矩阵是**派生量**，由 `features.pair_matrix` 在内存中现算而不落盘：一旦换编码方式
 （`diff` / `diff_absdiff` / 加人群特征）就无需重导任何文件。
+
+### Make 把什么当成过期
+
+`make all` 只在产物缺失、或比真正的输入更旧时重建：
+
+| 产物 | 何时重建 |
+|---|---|
+| `artifacts/manifest.csv` | 缺失，或比 `course/train.csv` / `course/test.csv` 更旧。`artifacts/images/` 里已有的文件会跳过 |
+| `artifacts/image_index.csv` | 缺失，或比清单更旧 |
+| `artifacts/labels/photo_labels.csv` | 缺失。更新虚拟环境或重新下载都不会重标。`make labels` 总会重标 |
+| `artifacts/features/<tag>.npz` | 缺失，或比 `image_index.csv` 更旧 |
+| QA、模型、`tables/*.csv.gz` | 缺失，或比它们读取的特征文件更旧 |
+
+虚拟环境不是这些输入。`scripts/00_setup_env.sh` 把 `requirements.txt` 和脚本自身的指纹
+存在 `.venv/.requirements.sha256`。指纹一致就保留现有 `.venv`。`make env` 在依赖比
+`.venv/.setup-stamp` 新时跑这次检查，然后更新戳记。下载、索引、标签、特征、QA、模型和表
+都只把这个戳记当作**仅排序**的前提：换了解释器，这些文件也不会过期。`make clean` 删特征、
+提交文件、表、索引和清单。`make distclean` 再删 `.venv`、图片、标签、`.cache/`、`.uv-cache`
+和 YOLO 权重。
 
 ## 7. CPU 工程实现要点
 
@@ -223,7 +243,8 @@ P2 的评估集只保留「两张图都在留出集合」的行，训练集只�
 | 多进程 DataLoader 被禁用 | 自动 `num_workers=0`，meta 记录 requested vs actual |
 | 内存不足 | 逐 batch 处理，峰值 661–678 MB；`--batch-size` 可调 |
 | 只读的 `~/.cache` | 权重与 matplotlib 缓存重定向到项目 `.cache/` |
-| 特征/预处理版本变化 | `FEATURE_SPEC_VERSION` + meta 里的版本字段，避免误用旧缓存 |
+| 重装了虚拟环境，或 `requirements.txt` 的时间戳变了 | 指纹在 `.venv/.requirements.sha256`；Make 把 `.venv/.setup-stamp` 当作仅排序前提，特征和标签都留着 |
+| 预处理变了 | `FEATURE_SPEC_VERSION` 记在 meta 里。用 `make clean-features` 再抽；加载本身不会丢掉旧 `.npz` |
 | 提交格式 | `05` 结尾断言：列顺序、6,224 行、ID 顺序、概率范围、`choice` 与 `prob_a≥0.5` 一致 |
 
 ## 13. 扩展路线（按性价比排序）

@@ -200,7 +200,7 @@ worse. The fix is to keep a dedicated transfer model and route to it.
 
 ```bash
 cd dsai5101midterm
-source scripts/00_setup_env.sh
+source scripts/00_setup_env.sh          # create .venv only if it is missing; does not reinstall
 python3 scripts/03_extract_features.py --backbone resnet18   # second backbone, ~1 min
 python3 scripts/07_feature_families.py                      # ~3.5 min
 python3 scripts/08_cold_start_fix.py                        # ~7 min

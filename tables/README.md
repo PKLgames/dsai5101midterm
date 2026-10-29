@@ -12,7 +12,7 @@ One row per annotator response, so a model can be trained without touching any c
 Regenerate with:
 
 ```bash
-make tables                                             # default MobileNetV3-Small cache
+make tables                                             # default MobileNetV3-Small cache; skips if the gzip is newer than the .npz
 python3 scripts/06_export_tables.py            # same (venv active)
 python3 scripts/06_export_tables.py --tag resnet18_224 --out-dir tables/resnet18
 ```

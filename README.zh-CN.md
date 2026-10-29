@@ -55,23 +55,26 @@ cd dsai5101midterm
 make all          # 环境 + 图片 + YOLO/CLIP 标注 + ImageNet 特征 + 模型
 ```
 
-`make help` 列出各阶段目标。没有 `artifacts/labels/photo_labels.csv` 时，`make all` 会跑 YOLO+CLIP。`make labels` 会强制重标。
+`make help` 列出各阶段目标。Make 只在产物缺失、或比真正的输入更旧时才重建：下载看课程 CSV，特征看 `artifacts/image_index.csv`，模型和表看特征文件。没有 `artifacts/labels/photo_labels.csv` 时，`make all` 才会跑 YOLO+CLIP。`make labels` 会强制重标。已经在磁盘上的图片会跳过。
 
-在当前 shell 里用 `python3`：`source scripts/00_setup_env.sh`（若需要则创建 `.venv` 并激活）。
+虚拟环境不算这些输入。`make env` 只在 `requirements.txt` 或 `scripts/00_setup_env.sh` 与 `.venv/.requirements.sha256` 不一致时重装；一致则保留现有 `.venv`，并把成功记在 `.venv/.setup-stamp`。后面的阶段把这个戳记当作仅排序的前提，所以换过解释器不会重新下载、重标或重抽特征。
+
+在当前 shell 里用 `python3`：`source scripts/00_setup_env.sh`。仅当 `.venv` 不存在时才创建，然后激活。不会重装。
 
 | 目标 | 做什么 |
 |---|---|
-| `make env` | `scripts/00_setup_env.sh` — CPU 版 torch（Linux CPU 源 / macOS PyPI） |
-| `make images` | 下载 1,558 张图（约 184 MB，约 2 分钟） |
-| `make labels` | YOLO11n-seg + CLIP → `artifacts/labels/`（CPU 上较慢） |
+| `make env` | CPU 版 `.venv`（Linux 用 PyTorch CPU 源，macOS 用 PyPI）。指纹一致则跳过安装 |
+| `make images` | 下载 1,558 张图（约 184 MB，约 2 分钟）；已有文件跳过 |
+| `make labels` | YOLO11n-seg + CLIP → `artifacts/labels/`（CPU 上较慢；总会重跑） |
 | `make features` | 冻结 ImageNet：MobileNetV3-Small + ResNet18 |
 | `make qa` | 同猫 vs 异猫诊断 |
 | `make models` | 基线、特征族对比、冷启动分流、分流混合模型 |
 | `make tables` | `tables/{train,test}_pairs.csv.gz` |
-| `make quickstart` | 单张图 → 576 维 + 20 维向量 |
-| `make distclean` | 清掉 `.venv`、图片、标签、特征、表、权重缓存 |
+| `make quickstart` | 单张图 → 576 维 + 20 维向量，并与特征缓存核对 |
+| `make clean` | 删掉特征、提交文件、表、图片索引和下载清单。图片、标签、`.venv` 和权重缓存保留 |
+| `make distclean` | 在 `make clean` 之外再删 `.venv`、图片、标签、`.cache/`、`.uv-cache` 和 YOLO 权重 |
 
-调整负载：`make all WORKERS=2 THREADS=4`。各阶段按产物增量执行：输出已存在则跳过。
+调整负载：`make all WORKERS=2 THREADS=4`。要强制重抽特征，删掉 `artifacts/features/`（`make clean-features`）。更新 `.venv` 不会触发重抽。
 
 产出 `artifacts/features/mobilenet_v3_small_224.npz`（1,558 × 576 深特征 + 1,558 × 20 手工特征）与 `artifacts/submissions/pred_routed_test.csv`（6,224 行）。
 
@@ -120,7 +123,7 @@ dsai5101midterm/
 
 | 脚本 | 关键参数 | 作用 |
 |---|---|---|
-| `00_setup_env.sh` | `PYTHON_TAG` | 按 `requirements.txt` 建 `.venv`；CPU 版 torch 避免 Linux 上约 2.5 GB 的 nvidia CUDA 轮子。`source` 会在需要时创建并激活；`make env` 总会重建。 |
+| `00_setup_env.sh` | `PYTHON_TAG` | 按 `requirements.txt` 建 CPU 版 `.venv`。Linux 走 PyTorch CPU 源，避免约 2.5 GB 的 nvidia CUDA 轮子；macOS arm64 走 PyPI。`source` 仅在 `.venv` 不存在时创建并激活。`bash` / `make env` 只在 `.venv/.requirements.sha256` 与 `requirements.txt` 和本脚本不一致时重装。 |
 | `photo-labelling/label_photos.py` | `--fresh`, `--limit`, `--batch` | YOLO11n-seg + CLIP 标签 → `artifacts/labels/`。由 `make labels` 调用。 |
 | `01_download_images.py` | `--workers`, `--limit` | 16 线程、3 次退避重试、`.part` 原子落盘、已存在则跳过 |
 | `02_build_index.py` | — | 生成 `image_index.csv`，检查 train/test 重叠与缺图 |

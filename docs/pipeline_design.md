@@ -119,11 +119,33 @@ train/test photo positions.
 torch/torchvision versions, threads, batch size, wall time, img/s, peak RSS, CPU model, seed
 and timestamp — any feature artefact can prove its own provenance.
 
-`extract.FEATURE_SPEC_VERSION` invalidates caches when preprocessing changes, so a stale cache
-cannot be used by accident.
+`extract.FEATURE_SPEC_VERSION` is written into `<tag>.meta.json`. Loading a cache does not
+compare it, so a preprocessing change does not by itself discard an old `.npz`. Delete
+`artifacts/features/` (`make clean-features`) before re-extracting.
 
 Pair design matrices are **derived on the fly** (`features.pair_matrix`, ~0.1 s) and never
 written to disk: changing the encoding requires no re-export.
+
+### What Make treats as stale
+
+`make all` rebuilds a product when the file is missing or older than a real input:
+
+| Product | Rebuilt when |
+|---|---|
+| `artifacts/manifest.csv` | missing, or older than `course/train.csv` / `course/test.csv`. Files already in `artifacts/images/` are skipped |
+| `artifacts/image_index.csv` | missing, or older than the manifest |
+| `artifacts/labels/photo_labels.csv` | missing. A newer venv or a fresh download does not relabel. `make labels` always does |
+| `artifacts/features/<tag>.npz` | missing, or older than `image_index.csv` |
+| QA, models, `tables/*.csv.gz` | missing, or older than the feature file they read |
+
+The virtualenv is not one of those inputs. `scripts/00_setup_env.sh` stores a fingerprint of
+`requirements.txt` and itself in `.venv/.requirements.sha256`. A venv whose fingerprint matches
+is left in place. `make env` runs that check when the requirements or the script are newer than
+`.venv/.setup-stamp`, then touches the stamp. Download, index, labels, features, QA, models, and
+tables list the stamp as an **order-only** prerequisite: refreshing the interpreter does not make
+those files stale. `make clean` removes features, submissions, tables, the index, and the
+manifest. `make distclean` also removes `.venv`, photos, labels, `.cache/`, `.uv-cache`, and the
+YOLO weights.
 
 ## 7. CPU engineering
 
@@ -216,7 +238,8 @@ give opposite rankings, so `docs/feature_choices.md` reports both.
 | DataLoader multiprocessing blocked | automatic `num_workers=0`, recorded in the meta |
 | Memory pressure | batch-wise processing, peak 661–678 MB; `--batch-size` tunable |
 | Read-only `~/.cache` | torch/matplotlib caches redirected into the project |
-| Preprocessing version change | `FEATURE_SPEC_VERSION` + meta fields |
+| Venv refreshed or `requirements.txt` touched | fingerprint in `.venv/.requirements.sha256`; Make uses `.venv/.setup-stamp` as an order-only prerequisite, so features and labels stay |
+| Preprocessing change | `FEATURE_SPEC_VERSION` is recorded in the meta. Re-extract with `make clean-features`; loading does not drop an old `.npz` by itself |
 | Submission format | `05` / `09` assert column order, 6,224 rows, row-id order, probability range, and `choice` ↔ `prob_a ≥ 0.5` consistency |
 
 ## 13. Extension paths, cheapest first

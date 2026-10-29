@@ -12,7 +12,7 @@
 重新生成：
 
 ```bash
-make tables                                             # 默认 MobileNetV3-Small 缓存
+make tables                                             # 默认 MobileNetV3-Small 缓存；gzip 比 .npz 新则跳过
 python3 scripts/06_export_tables.py            # 同上（已激活 venv）
 python3 scripts/06_export_tables.py --tag resnet18_224 --out-dir tables/resnet18
 ```

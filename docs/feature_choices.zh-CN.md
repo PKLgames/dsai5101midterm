@@ -170,7 +170,7 @@
 
 ```bash
 cd dsai5101midterm
-source scripts/00_setup_env.sh
+source scripts/00_setup_env.sh          # 仅当 .venv 不存在时创建；不会重装
 python3 scripts/03_extract_features.py --backbone resnet18   # 第二主干，约 1 分钟
 python3 scripts/07_feature_families.py                      # 约 3.5 分钟
 python3 scripts/08_cold_start_fix.py                        # 约 7 分钟
