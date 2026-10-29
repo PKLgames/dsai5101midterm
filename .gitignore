@@ -47,3 +47,14 @@ models/
 artifacts/captioned-photos/
 # YOLO+CLIP tables (photo-labelling/label_photos.py / make labels)
 artifacts/labels/
+
+# Notebook run outputs (written when executing analysis/*.ipynb)
+analysis/prepared/
+analysis/figures/
+analysis/outputs/
+analysis/model-checks/
+analysis/images/
+analysis/hf_cat_images/
+analysis/data/
+analysis/_ran_*.ipynb
+analysis/_failed_*.ipynb
