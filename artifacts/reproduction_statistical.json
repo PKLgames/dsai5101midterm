@@ -1,0 +1,293 @@
+{
+  "status": "passed",
+  "fresh_process": true,
+  "python": "3.12.0 (tags/v3.12.0:0fb18b0, Oct  2 2023, 13:03:39) [MSC v.1935 64 bit (AMD64)]",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "tolerance": 1e-06,
+  "selected_models_reproduced": 16,
+  "records": [
+    {
+      "model": "full:M0",
+      "validation_loss_abs_difference": 0.0,
+      "test_metric_max_abs_difference": 0.0,
+      "test_probability_max_abs_difference": 0.0,
+      "gradient_max": null,
+      "solver_attempts": []
+    },
+    {
+      "model": "full:M1",
+      "validation_loss_abs_difference": 0.0,
+      "test_metric_max_abs_difference": 0.0,
+      "test_probability_max_abs_difference": 0.0,
+      "gradient_max": 4.6997524254814565e-07,
+      "solver_attempts": [
+        {
+          "maxiter": 5000,
+          "ftol": 1e-12,
+          "solver_success": true,
+          "status": 0,
+          "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+          "iterations": 10,
+          "objective": 0.6495009321951416,
+          "gradient_max": 4.6997524254814565e-07,
+          "accepted": true
+        }
+      ]
+    },
+    {
+      "model": "full:M2",
+      "validation_loss_abs_difference": 0.0,
+      "test_metric_max_abs_difference": 0.0,
+      "test_probability_max_abs_difference": 0.0,
+      "gradient_max": 8.816401555278e-07,
+      "solver_attempts": [
+        {
+          "maxiter": 5000,
+          "ftol": 1e-12,
+          "solver_success": true,
+          "status": 0,
+          "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+          "iterations": 51,
+          "objective": 0.6253150528757365,
+          "gradient_max": 8.816401555278e-07,
+          "accepted": true
+        }
+      ]
+    },
+    {
+      "model": "full:M2-no-position",
+      "validation_loss_abs_difference": 0.0,
+      "test_metric_max_abs_difference": 0.0,
+      "test_probability_max_abs_difference": 0.0,
+      "gradient_max": 5.816152896477536e-07,
+      "solver_attempts": [
+        {
+          "maxiter": 5000,
+          "ftol": 1e-12,
+          "solver_success": true,
+          "status": 0,
+          "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+          "iterations": 11,
+          "objective": 0.6262736651052234,
+          "gradient_max": 5.816152896477536e-07,
+          "accepted": true
+        }
+      ]
+    },
+    {
+      "model": "common:M0",
+      "validation_loss_abs_difference": 0.0,
+      "test_metric_max_abs_difference": 0.0,
+      "test_probability_max_abs_difference": 0.0,
+      "gradient_max": null,
+      "solver_attempts": []
+    },
+    {
+      "model": "common:M1",
+      "validation_loss_abs_difference": 0.0,
+      "test_metric_max_abs_difference": 0.0,
+      "test_probability_max_abs_difference": 0.0,
+      "gradient_max": 4.6997524254814565e-07,
+      "solver_attempts": [
+        {
+          "maxiter": 5000,
+          "ftol": 1e-12,
+          "solver_success": true,
+          "status": 0,
+          "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+          "iterations": 10,
+          "objective": 0.6495009321951416,
+          "gradient_max": 4.6997524254814565e-07,
+          "accepted": true
+        }
+      ]
+    },
+    {
+      "model": "common:M2",
+      "validation_loss_abs_difference": 0.0,
+      "test_metric_max_abs_difference": 0.0,
+      "test_probability_max_abs_difference": 0.0,
+      "gradient_max": 8.816401555278e-07,
+      "solver_attempts": [
+        {
+          "maxiter": 5000,
+          "ftol": 1e-12,
+          "solver_success": true,
+          "status": 0,
+          "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+          "iterations": 51,
+          "objective": 0.6253150528757365,
+          "gradient_max": 8.816401555278e-07,
+          "accepted": true
+        }
+      ]
+    },
+    {
+      "model": "common:M2-no-position",
+      "validation_loss_abs_difference": 0.0,
+      "test_metric_max_abs_difference": 0.0,
+      "test_probability_max_abs_difference": 0.0,
+      "gradient_max": 5.816152896477536e-07,
+      "solver_attempts": [
+        {
+          "maxiter": 5000,
+          "ftol": 1e-12,
+          "solver_success": true,
+          "status": 0,
+          "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+          "iterations": 11,
+          "objective": 0.6262736651052234,
+          "gradient_max": 5.816152896477536e-07,
+          "accepted": true
+        }
+      ]
+    },
+    {
+      "model": "M3-H",
+      "validation_loss_abs_difference": 0.0,
+      "test_metric_max_abs_difference": 0.0,
+      "test_probability_max_abs_difference": 0.0,
+      "gradient_max": 6.480115652769284e-07,
+      "solver_attempts": [
+        {
+          "maxiter": 5000,
+          "ftol": 1e-12,
+          "solver_success": true,
+          "status": 0,
+          "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+          "iterations": 43,
+          "objective": 0.6855353783013306,
+          "gradient_max": 6.480115652769284e-07,
+          "accepted": true
+        }
+      ]
+    },
+    {
+      "model": "M4-H",
+      "validation_loss_abs_difference": 0.0,
+      "test_metric_max_abs_difference": 0.0,
+      "test_probability_max_abs_difference": 0.0,
+      "gradient_max": null,
+      "solver_attempts": []
+    },
+    {
+      "model": "M3-C",
+      "validation_loss_abs_difference": 0.0,
+      "test_metric_max_abs_difference": 0.0,
+      "test_probability_max_abs_difference": 0.0,
+      "gradient_max": 9.340362385121214e-07,
+      "solver_attempts": [
+        {
+          "maxiter": 5000,
+          "ftol": 1e-12,
+          "solver_success": true,
+          "status": 0,
+          "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+          "iterations": 78,
+          "objective": 0.6550723151278632,
+          "gradient_max": 9.340362385121214e-07,
+          "accepted": true
+        }
+      ]
+    },
+    {
+      "model": "M4-C",
+      "validation_loss_abs_difference": 0.0,
+      "test_metric_max_abs_difference": 0.0,
+      "test_probability_max_abs_difference": 0.0,
+      "gradient_max": 8.366371442841675e-07,
+      "solver_attempts": [
+        {
+          "maxiter": 5000,
+          "ftol": 1e-12,
+          "solver_success": true,
+          "status": 0,
+          "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+          "iterations": 100,
+          "objective": 0.6540517498847056,
+          "gradient_max": 8.366371442841675e-07,
+          "accepted": true
+        }
+      ]
+    },
+    {
+      "model": "M3-Y",
+      "validation_loss_abs_difference": 0.0,
+      "test_metric_max_abs_difference": 0.0,
+      "test_probability_max_abs_difference": 0.0,
+      "gradient_max": 4.479673849505544e-07,
+      "solver_attempts": [
+        {
+          "maxiter": 5000,
+          "ftol": 1e-12,
+          "solver_success": true,
+          "status": 0,
+          "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+          "iterations": 173,
+          "objective": 0.6769724478600524,
+          "gradient_max": 4.479673849505544e-07,
+          "accepted": true
+        }
+      ]
+    },
+    {
+      "model": "M4-Y",
+      "validation_loss_abs_difference": 0.0,
+      "test_metric_max_abs_difference": 0.0,
+      "test_probability_max_abs_difference": 0.0,
+      "gradient_max": null,
+      "solver_attempts": []
+    },
+    {
+      "model": "M3-side",
+      "validation_loss_abs_difference": 0.0,
+      "test_metric_max_abs_difference": 0.0,
+      "test_probability_max_abs_difference": 0.0,
+      "gradient_max": 5.723525455143301e-07,
+      "solver_attempts": [
+        {
+          "maxiter": 5000,
+          "ftol": 1e-12,
+          "solver_success": true,
+          "status": 0,
+          "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+          "iterations": 114,
+          "objective": 0.654254550234573,
+          "gradient_max": 5.723525455143301e-07,
+          "accepted": true
+        }
+      ]
+    },
+    {
+      "model": "M4-side",
+      "validation_loss_abs_difference": 0.0,
+      "test_metric_max_abs_difference": 0.0,
+      "test_probability_max_abs_difference": 0.0,
+      "gradient_max": 6.995032291727909e-07,
+      "solver_attempts": [
+        {
+          "maxiter": 5000,
+          "ftol": 1e-12,
+          "solver_success": true,
+          "status": 0,
+          "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+          "iterations": 112,
+          "objective": 0.65323612669165,
+          "gradient_max": 6.995032291727909e-07,
+          "accepted": true
+        }
+      ]
+    }
+  ],
+  "elapsed_seconds": 22.0,
+  "max_test_metric_abs_difference": 0.0,
+  "max_test_probability_abs_difference": 0.0,
+  "paired_bootstrap_reproduced": true,
+  "unique_fitting_photo_preprocessing_recomputed": true,
+  "source_sha256": "cb9b1ddd639a043aa173d9c086be160cb4f418b306d4f2d5bfff108f01b4147d",
+  "model_freeze_sha256": "47d22cc15fd7e42157b3f45faf634acee325e1288459b47b9635d9e2fd24411a",
+  "raw_internal_test_outcomes_read": false,
+  "frozen_artifacts_modified": false,
+  "scope": "Refit selected models at frozen settings in memory; no retuning or new evaluation. Test metrics are reconstruction checks using already-saved evaluation outcomes.",
+  "not_checked": "This check is not a full raw-image-to-report run or a fresh model-selection search."
+}

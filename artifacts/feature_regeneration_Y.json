@@ -1,0 +1,26 @@
+{
+  "status": "passed",
+  "block": "Y",
+  "selection": "first sorted image IDs; same initial extraction batch",
+  "image_ids": [
+    "cat_000002/cat_000002_0001.jpg",
+    "cat_000002/cat_000002_0002.jpg",
+    "cat_000002/cat_000002_0003.jpg",
+    "cat_000002/cat_000002_0004.jpg",
+    "cat_000002/cat_000002_0005.jpg",
+    "cat_000002/cat_000002_0006.jpg",
+    "cat_000002/cat_000002_0007.jpg",
+    "cat_000002/cat_000002_0008.jpg"
+  ],
+  "numeric_values_compared": 63,
+  "categorical_values_compared": 80,
+  "tolerance": 1e-05,
+  "maximum_observed_numeric_difference": 2.517273345326032e-08,
+  "elapsed_seconds": 24.39100000000326,
+  "device": "cuda:0",
+  "raw_preference_outcomes_read": false,
+  "frozen_feature_tables_modified": false,
+  "scope": "Fixed subset only; observed tolerance on this environment, not a cross-device guarantee.",
+  "cache_sha256": "4e56141451643d8ce97f4a368271d033de6968be34f7a92a7216399339a13c33",
+  "source_sha256": "cb8b180daaf6e9fa15a8517051b9fd439037b72a3847253d3bba8613befabd5a"
+}

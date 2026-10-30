@@ -1,0 +1,934 @@
+{
+  "status": "draft_pending_team_contribution_and_reference_completion",
+  "report": "Group_19_Report.pdf",
+  "main_pages": 18,
+  "total_pages": 42,
+  "appendices": [
+    {
+      "source": "figures/presentation_feature_importance_H.pdf",
+      "start_page": 19,
+      "pages": 1
+    },
+    {
+      "source": "figures/presentation_feature_importance_Y.pdf",
+      "start_page": 20,
+      "pages": 1
+    },
+    {
+      "source": "figures/presentation_context_interactions.pdf",
+      "start_page": 21,
+      "pages": 1
+    },
+    {
+      "source": "figures/simulations_ABC.pdf",
+      "start_page": 22,
+      "pages": 1
+    },
+    {
+      "source": "figures/graph_support.pdf",
+      "start_page": 23,
+      "pages": 1
+    },
+    {
+      "source": "figures/disagreement.pdf",
+      "start_page": 24,
+      "pages": 1
+    },
+    {
+      "source": "figures/support_distribution.pdf",
+      "start_page": 25,
+      "pages": 1
+    },
+    {
+      "source": "figures/penalty_paths.pdf",
+      "start_page": 26,
+      "pages": 1
+    },
+    {
+      "source": "figures/learning_curves.pdf",
+      "start_page": 27,
+      "pages": 1
+    },
+    {
+      "source": "figures/calibration.pdf",
+      "start_page": 28,
+      "pages": 1
+    },
+    {
+      "source": "figures/diagnostic_calibration.pdf",
+      "start_page": 29,
+      "pages": 1
+    },
+    {
+      "source": "figures/exploratory_demographic_semantics.pdf",
+      "start_page": 30,
+      "pages": 12
+    },
+    {
+      "source": "figures/exploratory_demographic_semantic_support.pdf",
+      "start_page": 42,
+      "pages": 1
+    }
+  ],
+  "layout_checks": [
+    {
+      "page": 1,
+      "topic": "Title and group",
+      "outside_page_text": []
+    },
+    {
+      "page": 2,
+      "topic": "Research question",
+      "outside_page_text": []
+    },
+    {
+      "page": 3,
+      "topic": "Data understanding",
+      "outside_page_text": []
+    },
+    {
+      "page": 4,
+      "topic": "Preparation and split",
+      "outside_page_text": []
+    },
+    {
+      "page": 5,
+      "topic": "Feature construction",
+      "outside_page_text": []
+    },
+    {
+      "page": 6,
+      "topic": "Methods",
+      "outside_page_text": []
+    },
+    {
+      "page": 7,
+      "topic": "Model selection and safeguards",
+      "outside_page_text": []
+    },
+    {
+      "page": 8,
+      "topic": "Test results",
+      "outside_page_text": []
+    },
+    {
+      "page": 9,
+      "topic": "Paired uncertainty",
+      "outside_page_text": []
+    },
+    {
+      "page": 10,
+      "topic": "Underperformance diagnosis",
+      "outside_page_text": []
+    },
+    {
+      "page": 11,
+      "topic": "Context interpretation",
+      "outside_page_text": []
+    },
+    {
+      "page": 12,
+      "topic": "Exploratory semantics",
+      "outside_page_text": []
+    },
+    {
+      "page": 13,
+      "topic": "Answer and limitations",
+      "outside_page_text": []
+    },
+    {
+      "page": 14,
+      "topic": "Reproduction and next evidence",
+      "outside_page_text": []
+    },
+    {
+      "page": 15,
+      "topic": "Contributions placeholder",
+      "outside_page_text": []
+    },
+    {
+      "page": 16,
+      "topic": "Submission and presentation",
+      "outside_page_text": []
+    },
+    {
+      "page": 17,
+      "topic": "References: data and methods",
+      "outside_page_text": []
+    },
+    {
+      "page": 18,
+      "topic": "References: representations and software",
+      "outside_page_text": []
+    }
+  ],
+  "evidence": [
+    {
+      "source": "tables/data_audit.csv",
+      "sha256": "0bb1c9da6102c69bf74e4a4559951aa04f303387ca0f309b64f22b558132d3f2",
+      "selector": {
+        "partition": "train",
+        "check": "row_count",
+        "value": "all"
+      },
+      "values": {
+        "count": "24896"
+      }
+    },
+    {
+      "source": "tables/data_audit.csv",
+      "sha256": "0bb1c9da6102c69bf74e4a4559951aa04f303387ca0f309b64f22b558132d3f2",
+      "selector": {
+        "partition": "test",
+        "check": "row_count",
+        "value": "all"
+      },
+      "values": {
+        "count": "6224"
+      }
+    },
+    {
+      "source": "tables/data_audit.csv",
+      "sha256": "0bb1c9da6102c69bf74e4a4559951aa04f303387ca0f309b64f22b558132d3f2",
+      "selector": {
+        "partition": "images",
+        "check": "file_count",
+        "value": "all"
+      },
+      "values": {
+        "count": "1558"
+      }
+    },
+    {
+      "source": "tables/split_coverage.csv",
+      "sha256": "05568a8f74cdba019049ede6f0ebbaf3567da0b5bacf4aed0d24f4ffdf4e652c",
+      "selector": {
+        "population": "common",
+        "partition": "validation",
+        "comparison_type": "all"
+      },
+      "values": {
+        "population": "common",
+        "partition": "validation",
+        "comparison_type": "all",
+        "status": "available",
+        "responses": "3742",
+        "pairs": "1208",
+        "eligible_responses": "3742",
+        "eligible_pairs": "1208",
+        "response_coverage": "1.0",
+        "pair_coverage": "1.0",
+        "one_photo_unseen_in_fit": "0",
+        "both_photos_unseen_in_fit": "0",
+        "different_fitting_components": "0",
+        "feature_unavailable": "0",
+        "no_admitted_visual_features": "0"
+      }
+    },
+    {
+      "source": "tables/split_coverage.csv",
+      "sha256": "05568a8f74cdba019049ede6f0ebbaf3567da0b5bacf4aed0d24f4ffdf4e652c",
+      "selector": {
+        "population": "common",
+        "partition": "test",
+        "comparison_type": "all"
+      },
+      "values": {
+        "population": "common",
+        "partition": "test",
+        "comparison_type": "all",
+        "status": "available",
+        "responses": "3733",
+        "pairs": "1207",
+        "eligible_responses": "3733",
+        "eligible_pairs": "1207",
+        "response_coverage": "1.0",
+        "pair_coverage": "1.0",
+        "one_photo_unseen_in_fit": "0",
+        "both_photos_unseen_in_fit": "0",
+        "different_fitting_components": "0",
+        "feature_unavailable": "0",
+        "no_admitted_visual_features": "0"
+      }
+    },
+    {
+      "source": "tables/graph_summary.csv",
+      "sha256": "39b1749c7e71ba862cf2902e5a782162ad309b380b5233249444a6562d8ac9b7",
+      "selector": {
+        "population": "common",
+        "entity": "photo"
+      },
+      "values": {
+        "population": "common",
+        "entity": "photo",
+        "fitting_responses": "17421",
+        "excluded_within_cat_responses": "0",
+        "nodes": "1296",
+        "undirected_edges": "5634",
+        "undirected_components": "1",
+        "largest_component_nodes": "1296",
+        "largest_component_fraction": "1.0",
+        "directed_edges": "9280",
+        "strongly_connected_components": "2",
+        "largest_strong_component_nodes": "1295",
+        "nontrivial_undirected_components": "1",
+        "strongly_connected_nontrivial_components": "0"
+      }
+    },
+    {
+      "source": "tables/feature_quality.csv",
+      "sha256": "13165e5590a2cd775629083baeca5677d2ff53eaaae0d4733ad81fa8bdc89f9b",
+      "selector": {
+        "block": "H"
+      },
+      "values": {
+        "block": "H",
+        "status": "pending_human_review",
+        "automated_checks": "passed",
+        "successful_images": "1558",
+        "failed_images": "0",
+        "strict_validation_responses": "3742",
+        "covered_validation_responses": "3742",
+        "validation_coverage": "1.0",
+        "details": ""
+      }
+    },
+    {
+      "source": "tables/feature_quality.csv",
+      "sha256": "13165e5590a2cd775629083baeca5677d2ff53eaaae0d4733ad81fa8bdc89f9b",
+      "selector": {
+        "block": "C"
+      },
+      "values": {
+        "block": "C",
+        "status": "pending_human_review",
+        "automated_checks": "passed",
+        "successful_images": "1558",
+        "failed_images": "0",
+        "strict_validation_responses": "3742",
+        "covered_validation_responses": "3742",
+        "validation_coverage": "1.0",
+        "details": ""
+      }
+    },
+    {
+      "source": "tables/feature_quality.csv",
+      "sha256": "13165e5590a2cd775629083baeca5677d2ff53eaaae0d4733ad81fa8bdc89f9b",
+      "selector": {
+        "block": "Y"
+      },
+      "values": {
+        "block": "Y",
+        "status": "pending_human_review",
+        "automated_checks": "passed",
+        "successful_images": "1558",
+        "failed_images": "0",
+        "strict_validation_responses": "3742",
+        "covered_validation_responses": "3742",
+        "validation_coverage": "1.0",
+        "details": ""
+      }
+    },
+    {
+      "source": "tables/main_results.csv",
+      "sha256": "4e881157eb3a579d076d5e58fa01585848079111ae3a8283a9760caf975f1368",
+      "selector": {
+        "population": "common",
+        "model_id": "common:M0"
+      },
+      "values": {
+        "population": "common",
+        "model_id": "common:M0",
+        "responses": "3733",
+        "pairs": "1207",
+        "response_log_loss": "0.6926438659108788",
+        "brier": "0.24974836178035345",
+        "accuracy": "0.5164746852397536",
+        "pair_log_loss": "0.692289006599796",
+        "response_ci95_low": "0.6913127592331271",
+        "response_ci95_high": "0.6939676753222558",
+        "response_bootstrap_se": "0.0006708353903463729",
+        "pair_ci95_low": "0.6908955714874205",
+        "pair_ci95_high": "0.6937286920218863",
+        "pair_bootstrap_se": "0.0007120123301808877",
+        "mean_probability": "0.5209218229824362",
+        "probability_p05": "0.5209218229824361",
+        "probability_median": "0.5209218229824361",
+        "probability_p95": "0.5209218229824361",
+        "fitting_loss": "0.6922713789955293",
+        "penalized_objective": "",
+        "validation_loss": "0.6929716559800769",
+        "ridge": "0.0",
+        "rho": "0.0",
+        "gradient_max": "",
+        "coefficient_count": "1",
+        "retained_feature_dimensions": "0",
+        "fitting_seconds": "0.0",
+        "inference_seconds": "7.853332984571655e-05",
+        "inference_timing_scope": "existing design matrix to probability; excludes preprocessing and IO",
+        "test_response_coverage": "1.0"
+      }
+    },
+    {
+      "source": "tables/main_results.csv",
+      "sha256": "4e881157eb3a579d076d5e58fa01585848079111ae3a8283a9760caf975f1368",
+      "selector": {
+        "population": "common",
+        "model_id": "common:M1"
+      },
+      "values": {
+        "population": "common",
+        "model_id": "common:M1",
+        "responses": "3733",
+        "pairs": "1207",
+        "response_log_loss": "0.6632123014643896",
+        "brier": "0.23536695149904713",
+        "accuracy": "0.5917492633270828",
+        "pair_log_loss": "0.6662817266753938",
+        "response_ci95_low": "0.6533659582796811",
+        "response_ci95_high": "0.6731088426438129",
+        "response_bootstrap_se": "0.004923295146678524",
+        "pair_ci95_low": "0.6563992777959529",
+        "pair_ci95_high": "0.6762801170268375",
+        "pair_bootstrap_se": "0.0049790714261679645",
+        "mean_probability": "0.5232395595137866",
+        "probability_p05": "0.2682696966451576",
+        "probability_median": "0.5231658439201214",
+        "probability_p95": "0.7678108101648622",
+        "fitting_loss": "0.6461825097557504",
+        "penalized_objective": "0.6495009321951416",
+        "validation_loss": "0.6621296569407022",
+        "ridge": "0.0001",
+        "rho": "0.0",
+        "gradient_max": "4.6997524254814565e-07",
+        "coefficient_count": "238",
+        "retained_feature_dimensions": "0",
+        "fitting_seconds": "0.030999999988125637",
+        "inference_seconds": "6.786666926927865e-05",
+        "inference_timing_scope": "existing design matrix to probability; excludes preprocessing and IO",
+        "test_response_coverage": "1.0"
+      }
+    },
+    {
+      "source": "tables/main_results.csv",
+      "sha256": "4e881157eb3a579d076d5e58fa01585848079111ae3a8283a9760caf975f1368",
+      "selector": {
+        "population": "common",
+        "model_id": "common:M2"
+      },
+      "values": {
+        "population": "common",
+        "model_id": "common:M2",
+        "responses": "3733",
+        "pairs": "1207",
+        "response_log_loss": "0.6707413727641309",
+        "brier": "0.23891744765335682",
+        "accuracy": "0.5879989284757567",
+        "pair_log_loss": "0.6714344579738941",
+        "response_ci95_low": "0.6601656841803224",
+        "response_ci95_high": "0.6813832971812307",
+        "response_bootstrap_se": "0.0053975973727397",
+        "pair_ci95_low": "0.6607590034708495",
+        "pair_ci95_high": "0.6820256952526156",
+        "pair_bootstrap_se": "0.005394129422838604",
+        "mean_probability": "0.5206449052825995",
+        "probability_p05": "0.26331617065112084",
+        "probability_median": "0.5228706677391234",
+        "probability_p95": "0.7686947487674949",
+        "fitting_loss": "0.6079248049837861",
+        "penalized_objective": "0.6253150528757365",
+        "validation_loss": "0.6690754313739401",
+        "ridge": "0.0001",
+        "rho": "0.0",
+        "gradient_max": "8.816401555278e-07",
+        "coefficient_count": "1297",
+        "retained_feature_dimensions": "0",
+        "fitting_seconds": "0.0629999999946449",
+        "inference_seconds": "5.7699993097533785e-05",
+        "inference_timing_scope": "existing design matrix to probability; excludes preprocessing and IO",
+        "test_response_coverage": "1.0"
+      }
+    },
+    {
+      "source": "tables/main_results.csv",
+      "sha256": "4e881157eb3a579d076d5e58fa01585848079111ae3a8283a9760caf975f1368",
+      "selector": {
+        "population": "common",
+        "model_id": "M3-H"
+      },
+      "values": {
+        "population": "common",
+        "model_id": "M3-H",
+        "responses": "3733",
+        "pairs": "1207",
+        "response_log_loss": "0.6881123039853554",
+        "brier": "0.2475163234695253",
+        "accuracy": "0.5330833110099116",
+        "pair_log_loss": "0.6887510694917424",
+        "response_ci95_low": "0.6837356202163296",
+        "response_ci95_high": "0.6925560534540051",
+        "response_bootstrap_se": "0.002239806940545883",
+        "pair_ci95_low": "0.6841858595195462",
+        "pair_ci95_high": "0.6933331955111657",
+        "pair_bootstrap_se": "0.002334225609980746",
+        "mean_probability": "0.5212874195108875",
+        "probability_p05": "0.42513753589819936",
+        "probability_median": "0.5219675962934786",
+        "probability_p95": "0.6157909021863149",
+        "fitting_loss": "0.6855348271250097",
+        "penalized_objective": "0.6855353783013306",
+        "validation_loss": "0.682642105748745",
+        "ridge": "1e-06",
+        "rho": "0.0",
+        "gradient_max": "6.480115652769284e-07",
+        "coefficient_count": "20",
+        "retained_feature_dimensions": "19",
+        "fitting_seconds": "0.09400000001187436",
+        "inference_seconds": "7.449999490442376e-05",
+        "inference_timing_scope": "existing design matrix to probability; excludes preprocessing and IO",
+        "test_response_coverage": "1.0"
+      }
+    },
+    {
+      "source": "tables/main_results.csv",
+      "sha256": "4e881157eb3a579d076d5e58fa01585848079111ae3a8283a9760caf975f1368",
+      "selector": {
+        "population": "common",
+        "model_id": "M3-C"
+      },
+      "values": {
+        "population": "common",
+        "model_id": "M3-C",
+        "responses": "3733",
+        "pairs": "1207",
+        "response_log_loss": "0.6692022596619409",
+        "brier": "0.2383352749283526",
+        "accuracy": "0.5874631663541388",
+        "pair_log_loss": "0.6700738987418047",
+        "response_ci95_low": "0.6605006359599437",
+        "response_ci95_high": "0.6778833906336388",
+        "response_bootstrap_se": "0.004444238786304239",
+        "pair_ci95_low": "0.6612837692540404",
+        "pair_ci95_high": "0.6787965931814613",
+        "pair_bootstrap_se": "0.004459037582427977",
+        "mean_probability": "0.5217270335992837",
+        "probability_p05": "0.31066609402238293",
+        "probability_median": "0.5227122623974586",
+        "probability_p95": "0.7267289163853571",
+        "fitting_loss": "0.6484451745255356",
+        "penalized_objective": "0.6550723151278632",
+        "validation_loss": "0.6654761465463775",
+        "ridge": "0.0001",
+        "rho": "0.0",
+        "gradient_max": "9.340362385121214e-07",
+        "coefficient_count": "577",
+        "retained_feature_dimensions": "576",
+        "fitting_seconds": "2.109000000025844",
+        "inference_seconds": "0.0017662333460369457",
+        "inference_timing_scope": "existing design matrix to probability; excludes preprocessing and IO",
+        "test_response_coverage": "1.0"
+      }
+    },
+    {
+      "source": "tables/main_results.csv",
+      "sha256": "4e881157eb3a579d076d5e58fa01585848079111ae3a8283a9760caf975f1368",
+      "selector": {
+        "population": "common",
+        "model_id": "M3-Y"
+      },
+      "values": {
+        "population": "common",
+        "model_id": "M3-Y",
+        "responses": "3733",
+        "pairs": "1207",
+        "response_log_loss": "0.6798727701697238",
+        "brier": "0.2434822602732182",
+        "accuracy": "0.5644253951245647",
+        "pair_log_loss": "0.682929353951744",
+        "response_ci95_low": "0.6738982563760947",
+        "response_ci95_high": "0.6861804718897402",
+        "response_bootstrap_se": "0.003157607836103409",
+        "pair_ci95_low": "0.676601600375094",
+        "pair_ci95_high": "0.689468666502201",
+        "pair_bootstrap_se": "0.0032966906103411684",
+        "mean_probability": "0.5213391838713893",
+        "probability_p05": "0.3715015605122916",
+        "probability_median": "0.5219401416834707",
+        "probability_p95": "0.6678586739738145",
+        "fitting_loss": "0.6768610271351325",
+        "penalized_objective": "0.6769724478600524",
+        "validation_loss": "0.6767471202923168",
+        "ridge": "1e-05",
+        "rho": "0.0",
+        "gradient_max": "4.479673849505544e-07",
+        "coefficient_count": "101",
+        "retained_feature_dimensions": "100",
+        "fitting_seconds": "0.3279999999795109",
+        "inference_seconds": "0.0001493333353816221",
+        "inference_timing_scope": "existing design matrix to probability; excludes preprocessing and IO",
+        "test_response_coverage": "1.0"
+      }
+    },
+    {
+      "source": "tables/main_results.csv",
+      "sha256": "4e881157eb3a579d076d5e58fa01585848079111ae3a8283a9760caf975f1368",
+      "selector": {
+        "population": "common",
+        "model_id": "M4-C"
+      },
+      "values": {
+        "population": "common",
+        "model_id": "M4-C",
+        "responses": "3733",
+        "pairs": "1207",
+        "response_log_loss": "0.6682955522478154",
+        "brier": "0.23788549670730777",
+        "accuracy": "0.5885346905973747",
+        "pair_log_loss": "0.6689838088837875",
+        "response_ci95_low": "0.6595021253534813",
+        "response_ci95_high": "0.6771072115656415",
+        "response_bootstrap_se": "0.004461289712518813",
+        "pair_ci95_low": "0.6600471583553829",
+        "pair_ci95_high": "0.6777835621121314",
+        "pair_bootstrap_se": "0.004472373985857113",
+        "mean_probability": "0.5221946079731533",
+        "probability_p05": "0.31204948835535923",
+        "probability_median": "0.5232327992271704",
+        "probability_p95": "0.7277029874403629",
+        "fitting_loss": "0.6465906685579511",
+        "penalized_objective": "0.6540517498847056",
+        "validation_loss": "0.6653032773338816",
+        "ridge": "0.0001",
+        "rho": "100",
+        "gradient_max": "8.366371442841675e-07",
+        "coefficient_count": "2881",
+        "retained_feature_dimensions": "576",
+        "fitting_seconds": "4.562999999994645",
+        "inference_seconds": "0.0027724666676173606",
+        "inference_timing_scope": "existing design matrix to probability; excludes preprocessing and IO",
+        "test_response_coverage": "1.0"
+      }
+    },
+    {
+      "source": "tables/primary_contrasts.csv",
+      "sha256": "751f886d96c62faf4cf5df17003201a79abc0e4114d497663ab94d906d0d93ed",
+      "selector": {
+        "contrast": "cat_identity"
+      },
+      "values": {
+        "contrast": "cat_identity",
+        "reference": "common:M0",
+        "candidate": "common:M1",
+        "responses": "3733",
+        "pairs": "1207",
+        "response_loss_difference": "0.029431564446489308",
+        "pair_loss_difference": "0.02600727992440213",
+        "interval_level": "0.9875",
+        "response_interval_low": "0.016800776742636088",
+        "response_interval_high": "0.041897562189237715",
+        "response_ci95_low": "0.019627740897604513",
+        "response_ci95_high": "0.03913620958378251",
+        "response_bootstrap_se": "0.004878878263851983",
+        "pair_interval_low": "0.01380494338620402",
+        "pair_interval_high": "0.03829448595022882",
+        "pair_bootstrap_se": "0.004903928317699772",
+        "interpretation": "positive favors candidate; conditional on fitted models and development choices",
+        "multiplicity": "four primary contrasts: approximate 98.75% pointwise intervals"
+      }
+    },
+    {
+      "source": "tables/primary_contrasts.csv",
+      "sha256": "751f886d96c62faf4cf5df17003201a79abc0e4114d497663ab94d906d0d93ed",
+      "selector": {
+        "contrast": "photo_detail"
+      },
+      "values": {
+        "contrast": "photo_detail",
+        "reference": "common:M1",
+        "candidate": "common:M2",
+        "responses": "3733",
+        "pairs": "1207",
+        "response_loss_difference": "-0.0075290712997413975",
+        "pair_loss_difference": "-0.005152731298500347",
+        "interval_level": "0.9875",
+        "response_interval_low": "-0.018226758075423434",
+        "response_interval_high": "0.003145796892626809",
+        "response_ci95_low": "-0.01612219814725332",
+        "response_ci95_high": "0.0010873696842312285",
+        "response_bootstrap_se": "0.004401472742053582",
+        "pair_interval_low": "-0.016823547076929016",
+        "pair_interval_high": "0.006692584469140721",
+        "pair_bootstrap_se": "0.004700761758220009",
+        "interpretation": "positive favors candidate; conditional on fitted models and development choices",
+        "multiplicity": "four primary contrasts: approximate 98.75% pointwise intervals"
+      }
+    },
+    {
+      "source": "tables/primary_contrasts.csv",
+      "sha256": "751f886d96c62faf4cf5df17003201a79abc0e4114d497663ab94d906d0d93ed",
+      "selector": {
+        "contrast": "visual_sharing"
+      },
+      "values": {
+        "contrast": "visual_sharing",
+        "reference": "common:M2",
+        "candidate": "M3-C",
+        "responses": "3733",
+        "pairs": "1207",
+        "response_loss_difference": "0.0015391131021900751",
+        "pair_loss_difference": "0.0013605592320893815",
+        "interval_level": "0.9875",
+        "response_interval_low": "-0.008144237908796315",
+        "response_interval_high": "0.012218792780081623",
+        "response_ci95_low": "-0.006298602394356564",
+        "response_ci95_high": "0.009862032457774905",
+        "response_bootstrap_se": "0.004135045463462841",
+        "pair_interval_low": "-0.008855128382754634",
+        "pair_interval_high": "0.012338984118120752",
+        "pair_bootstrap_se": "0.004313105242257864",
+        "interpretation": "positive favors candidate; conditional on fitted models and development choices",
+        "multiplicity": "four primary contrasts: approximate 98.75% pointwise intervals"
+      }
+    },
+    {
+      "source": "tables/primary_contrasts.csv",
+      "sha256": "751f886d96c62faf4cf5df17003201a79abc0e4114d497663ab94d906d0d93ed",
+      "selector": {
+        "contrast": "recorded_context"
+      },
+      "values": {
+        "contrast": "recorded_context",
+        "reference": "M3-C",
+        "candidate": "M4-C",
+        "responses": "3733",
+        "pairs": "1207",
+        "response_loss_difference": "0.0009067074141254222",
+        "pair_loss_difference": "0.0010900898580171214",
+        "interval_level": "0.9875",
+        "response_interval_low": "0.0001491611726521627",
+        "response_interval_high": "0.0016541105294959947",
+        "response_ci95_low": "0.0003222488850384676",
+        "response_ci95_high": "0.0014929086933083994",
+        "response_bootstrap_se": "0.0003029256717326912",
+        "pair_interval_low": "0.0003247944865458616",
+        "pair_interval_high": "0.0018521514394276534",
+        "pair_bootstrap_se": "0.0003138466856692406",
+        "interpretation": "positive favors candidate; conditional on fitted models and development choices",
+        "multiplicity": "four primary contrasts: approximate 98.75% pointwise intervals"
+      }
+    },
+    {
+      "source": "tables/validation_results.csv",
+      "sha256": "e4c11a9044b5bab63ae740a8b667569d7184043679945803280ad7940e1ee62e",
+      "selector": {
+        "model": "common:M1"
+      },
+      "values": {
+        "model": "common:M1",
+        "ridge": "0.0001",
+        "rho": "0.0",
+        "pooled": "False",
+        "accepted": "True",
+        "validation_loss": "0.6621296569407022",
+        "brier": "0.23531205640459968",
+        "accuracy": "0.590860502405131",
+        "train_loss": "0.6461825097557504",
+        "objective": "0.6495009321951416",
+        "gradient_max": "4.6997524254814565e-07",
+        "coefficient_count": "238",
+        "pooled_from": "",
+        "iterations": "10",
+        "seconds": "0.030999999988125637",
+        "fit_attempts": "[{\"maxiter\": 5000, \"ftol\": 1e-12, \"solver_success\": true, \"status\": 0, \"message\": \"CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL\", \"iterations\": 10, \"objective\": 0.6495009321951416, \"gradient_max\": 4.6997524254814565e-07, \"accepted\": true}]"
+      }
+    },
+    {
+      "source": "tables/validation_results.csv",
+      "sha256": "e4c11a9044b5bab63ae740a8b667569d7184043679945803280ad7940e1ee62e",
+      "selector": {
+        "model": "common:M2"
+      },
+      "values": {
+        "model": "common:M2",
+        "ridge": "0.0001",
+        "rho": "0.0",
+        "pooled": "False",
+        "accepted": "True",
+        "validation_loss": "0.6690754313739401",
+        "brier": "0.23809528336353175",
+        "accuracy": "0.5860502405130946",
+        "train_loss": "0.6079248049837861",
+        "objective": "0.6253150528757365",
+        "gradient_max": "8.816401555278e-07",
+        "coefficient_count": "1297",
+        "pooled_from": "",
+        "iterations": "51",
+        "seconds": "0.0629999999946449",
+        "fit_attempts": "[{\"maxiter\": 5000, \"ftol\": 1e-12, \"solver_success\": true, \"status\": 0, \"message\": \"CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL\", \"iterations\": 51, \"objective\": 0.6253150528757365, \"gradient_max\": 8.816401555278e-07, \"accepted\": true}]"
+      }
+    },
+    {
+      "source": "tables/validation_results.csv",
+      "sha256": "e4c11a9044b5bab63ae740a8b667569d7184043679945803280ad7940e1ee62e",
+      "selector": {
+        "model": "common:M3-C"
+      },
+      "values": {
+        "model": "common:M3-C",
+        "ridge": "0.0001",
+        "rho": "0.0",
+        "pooled": "False",
+        "accepted": "True",
+        "validation_loss": "0.6654761465463775",
+        "brier": "0.2365914579773002",
+        "accuracy": "0.5921966862640299",
+        "train_loss": "0.6484451745255356",
+        "objective": "0.6550723151278632",
+        "gradient_max": "9.340362385121214e-07",
+        "coefficient_count": "577",
+        "pooled_from": "",
+        "iterations": "78",
+        "seconds": "2.109000000025844",
+        "fit_attempts": "[{\"maxiter\": 5000, \"ftol\": 1e-12, \"solver_success\": true, \"status\": 0, \"message\": \"CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL\", \"iterations\": 78, \"objective\": 0.6550723151278632, \"gradient_max\": 9.340362385121214e-07, \"accepted\": true}]"
+      }
+    },
+    {
+      "source": "tables/secondary_results.csv",
+      "sha256": "a5738fcbd003bc5b059cc87da808842525519aad470cd8c28b2614e45aa50b51",
+      "selector": {
+        "contrast": "temperature_M2"
+      },
+      "values": {
+        "contrast": "temperature_M2",
+        "reference": "common:M2",
+        "candidate": "M2-temperature",
+        "responses": "3733",
+        "pairs": "1207",
+        "response_loss_difference": "0.003641692079485379",
+        "pair_loss_difference": "0.00353854515054511",
+        "interval_level": "0.95",
+        "response_interval_low": "0.000218899355612557",
+        "response_interval_high": "0.0071948770313609795",
+        "response_ci95_low": "0.000218899355612557",
+        "response_ci95_high": "0.0071948770313609795",
+        "response_bootstrap_se": "0.0017739893894383701",
+        "pair_interval_low": "9.655471666849022e-05",
+        "pair_interval_high": "0.007025384060282539",
+        "pair_bootstrap_se": "0.0017617838660084523",
+        "interpretation": "positive favors candidate; conditional on fitted models and development choices",
+        "multiplicity": "secondary descriptive interval; multiplicity not adjusted"
+      }
+    },
+    {
+      "source": "tables/secondary_results.csv",
+      "sha256": "a5738fcbd003bc5b059cc87da808842525519aad470cd8c28b2614e45aa50b51",
+      "selector": {
+        "contrast": "context_with_group_side"
+      },
+      "values": {
+        "contrast": "context_with_group_side",
+        "reference": "M3-side",
+        "candidate": "M4-side",
+        "responses": "3733",
+        "pairs": "1207",
+        "response_loss_difference": "0.0008950427295264401",
+        "pair_loss_difference": "0.001079119561017017",
+        "interval_level": "0.95",
+        "response_interval_low": "0.00031290814523707587",
+        "response_interval_high": "0.0014831930172834482",
+        "response_ci95_low": "0.00031290814523707587",
+        "response_ci95_high": "0.0014831930172834482",
+        "response_bootstrap_se": "0.0003023462779831559",
+        "pair_interval_low": "0.0004657469398254513",
+        "pair_interval_high": "0.0016919836554381365",
+        "pair_bootstrap_se": "0.0003137895518778295",
+        "interpretation": "positive favors candidate; conditional on fitted models and development choices",
+        "multiplicity": "secondary descriptive interval; multiplicity not adjusted"
+      }
+    },
+    {
+      "source": "tables/exploratory_demographic_semantic_rates.csv",
+      "sha256": "09209584f1a7178b4522be60c5e452c69e23a225b60d9fa771be4995ac6d65c3",
+      "selector": {
+        "demographic": "pet_care",
+        "group": "current_regular",
+        "feature": "breed=british_shorthair"
+      },
+      "values": {
+        "partition": "development=fit+validation",
+        "task_role": "T2",
+        "demographic": "pet_care",
+        "group": "current_regular",
+        "kind": "category",
+        "family": "breed",
+        "feature": "breed=british_shorthair",
+        "category": "british_shorthair",
+        "display_label": "CLIP-inferred breed: british shorthair",
+        "group_responses": "3137",
+        "usable_measurement_responses": "3114",
+        "non_discriminating_responses": "2983",
+        "excluded_measurement_responses": "23",
+        "discriminating_responses": "131",
+        "distinct_pairs": "116",
+        "feature_endpoint_choices": "89",
+        "choice_rate": "0.6793893129770993",
+        "wilson_low": "0.5953388097642381",
+        "wilson_high": "0.7532186770136112",
+        "support_status": "supported",
+        "mean_signed_chosen_minus_rejected_gap": "",
+        "within_cat_responses": "14",
+        "between_cats_responses": "117",
+        "interpretation": "raw conditional choice association; unmatched pair composition; not a causal or adjusted demographic effect"
+      }
+    },
+    {
+      "source": "tables/exploratory_demographic_semantic_rates.csv",
+      "sha256": "09209584f1a7178b4522be60c5e452c69e23a225b60d9fa771be4995ac6d65c3",
+      "selector": {
+        "demographic": "pet_care",
+        "group": "occasionally",
+        "feature": "breed=british_shorthair"
+      },
+      "values": {
+        "partition": "development=fit+validation",
+        "task_role": "T2",
+        "demographic": "pet_care",
+        "group": "occasionally",
+        "kind": "category",
+        "family": "breed",
+        "feature": "breed=british_shorthair",
+        "category": "british_shorthair",
+        "display_label": "CLIP-inferred breed: british shorthair",
+        "group_responses": "5492",
+        "usable_measurement_responses": "5461",
+        "non_discriminating_responses": "5236",
+        "excluded_measurement_responses": "31",
+        "discriminating_responses": "225",
+        "distinct_pairs": "171",
+        "feature_endpoint_choices": "115",
+        "choice_rate": "0.5111111111111111",
+        "wilson_low": "0.44615886122240583",
+        "wilson_high": "0.5756903265330248",
+        "support_status": "supported",
+        "mean_signed_chosen_minus_rejected_gap": "",
+        "within_cat_responses": "16",
+        "between_cats_responses": "209",
+        "interpretation": "raw conditional choice association; unmatched pair composition; not a causal or adjusted demographic effect"
+      }
+    },
+    {
+      "source": "artifacts/reproduction_statistical.json",
+      "sha256": "97d6c262f6a18ae61eefe934faeb51376e1c71d02f145927102bdd6a295337f5",
+      "selector": {},
+      "values": {
+        "selected_models_reproduced": 16,
+        "max_test_metric_abs_difference": 0.0
+      }
+    }
+  ],
+  "report_sha256": "12ecf195e342137dc409a78f0b64d41121a35770ab7aa0b359a2cfca4e51b44c",
+  "source_sha256": "6221e1c988e59cb331fbb048981f6880d73193b3cc1c0b968019e50a3baa71d7",
+  "frozen_model_or_test_outputs_modified": false,
+  "contribution_placeholder": true,
+  "submission_channel_verified": false
+}

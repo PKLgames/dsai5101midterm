@@ -1,0 +1,23 @@
+{
+  "group": "19",
+  "report_filename": "Group_19_Report.pdf",
+  "code_filename": "Group_19_Code.zip",
+  "report_status": "draft_pending_manual_contribution_statement_and_reference_details",
+  "presenters_confirmed_by_user": true,
+  "presenter_allocation": {
+    "Chen Wanchuan": "Question, synthesis, limitations",
+    "Chee Ching Lam": "Data, splits, evaluation",
+    "Lu Yuqing": "Features and diagnostics",
+    "Yuen Lok Yan": "YOLO-CLIP and exploratory semantics",
+    "Chan Hoi Lam": "Model comparison and uncertainty"
+  },
+  "contributions": "User requests a clearly labeled placeholder; do not certify actual completed individual contributions.",
+  "submission_channel": "not verified; local preparation only; no upload authorized",
+  "deadline_hkt": "2026-11-02T12:00:00+08:00",
+  "internal_target_hkt": "2026-11-02T11:00:00+08:00",
+  "course_only_bundle": true,
+  "include": ["project source and tests", "raw course CSVs", "cached features", "saved models and split definitions", "analysis tables and figures", "governance and provenance", "report and reproduction instructions"],
+  "exclude": ["raw photographs", "pretrained weights", "virtual environments", "Git database", "download caches", "secrets and machine-local configuration"],
+  "data_restriction": "Education and research only; this archive is prepared for the teaching team, not public redistribution or commercial use.",
+  "chapter7_reference": "Course Chapter 7 materials were named in the plan, but complete bibliographic details have not been supplied; team must verify."
+}

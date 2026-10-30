@@ -1,0 +1,2 @@
+# PDF assembly and guideline/compliance checks for Stage 11.
+pypdf==6.21.4

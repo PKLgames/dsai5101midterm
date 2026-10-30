@@ -1,5 +1,35 @@
 # Cat Image Arena
 
+## Group 19 report and reproducibility deliverables
+
+The Stage 11 working report is `Group_19_Report.pdf`, with 18 main presentation
+pages and diagnostic appendices. The contribution slide is an explicit
+placeholder requested by the user; complete it with actual tasks/outputs and
+finish the course Chapter 7 reference before submission. The official upload
+channel remains unverified, and nothing has been uploaded.
+
+Use [REPRODUCTION.md](REPRODUCTION.md) for the exact cached-feature setup,
+portable fresh-process checks, image/weight download requirements, environment
+roles, restrictions, and the original analysis order. The tested snapshots are
+`requirements-lock-cpu.txt` and `requirements-lock-y-gpu.txt`.
+The original `requirements.txt` and older notebook instructions below describe
+a legacy setup, not the Stage 11 cached statistical route.
+
+```powershell
+python -m venv .venv
+.\.venv\Scripts\python.exe -m pip install -r requirements-lock-cpu.txt
+.\.venv\Scripts\python.exe -m unittest discover -s tests -p 'test_*.py'
+.\.venv\Scripts\python.exe -m src.reproduction_check --output artifacts\reproduction_fresh.json
+```
+
+The reconstruction refits selected models at frozen settings in an isolated
+working copy, without retuning, changing original artifacts, or reopening raw
+internal-test outcomes. Course-only CSVs and cached derived artifacts are
+included in `Group_19_Code.zip`; raw photos, review-panel images, pretrained
+weights, environments, Git, and caches are excluded. Do not publish the archive
+or use the data commercially. License notes are in
+`tables/third_party_resources.csv`.
+
 See [protocol.md](protocol.md) and [decisions.yaml](decisions.yaml) for the
 registered scope, user-acknowledged governance gate, and prior-analysis limits.
 The setup and notebook instructions below describe an earlier workflow: the
