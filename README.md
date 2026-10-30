@@ -211,6 +211,25 @@ the fixed 20-response minimum without lowering it. Registered pair entropy is
 an in-sample descriptive fit, not an oracle estimate or an information limit.
 Outputs are protected against overwrite.
 
+## Stage 7 development models
+
+Install `requirements-stage7.txt` after the earlier stage environments. Run
+`.\.venv\Scripts\python.exe -m src.run --config decisions.yaml --stage develop`
+from the project root. The command checks prior artifact hashes and reruns the
+estimator, recovery, orientation, preprocessing, and modeling tests before
+fitting. It refuses to overwrite an existing run. Its candidate log is written
+incrementally, including failures; an interrupted run is not a completed
+selection.
+
+Preprocessing is fitted on unique fitting photos and saved under
+`artifacts/preprocessing/`. Full and matched identity models and matched visual
+and contextual models use the frozen populations. Validation predictions,
+candidate diagnostics, selected model coefficients, and selection metadata are
+saved separately. Internal-test outcomes are not read. The fair-coin control
+and development diagnostics are still required before final evaluation.
+`artifacts/stage7_verification.json` records a reconstruction check of the
+selected validation predictions and hashes the saved development artifacts.
+
 ## Setup
 
 Python 3.12. From the project root:

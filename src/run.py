@@ -13,7 +13,7 @@ from .audit import audit_dataset, write_audit
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--stage", required=True, choices=[
-        "audit", "split", "features", "feature-qa", "feature-panels", "feature-freeze", "graphs", "simulations", "describe",
+        "audit", "split", "features", "feature-qa", "feature-panels", "feature-freeze", "graphs", "simulations", "describe", "develop",
     ])
     parser.add_argument("--config", type=Path, default=Path("decisions.yaml"))
     parser.add_argument("--root", type=Path, default=Path.cwd())
@@ -97,6 +97,15 @@ def main(argv: list[str] | None = None) -> int:
             report = run_descriptive(root, config)
             print(f"Development summaries: {report['development_responses']} responses; "
                   f"{report['development_pairs']} unordered pairs.")
+            return 0
+        if args.stage == "develop":
+            from .development import run_development
+
+            if not config.get("real_data_modeling_allowed"):
+                raise ValueError("Stage 0 governance gate has not been opened.")
+            report = run_development(root, config)
+            print(f"Development selection: {report['selected_representation']}; "
+                  f"{report['candidate_count']} candidates attempted.")
             return 0
         result = audit_dataset(root)
         outputs = write_audit(root, result, overwrite=args.overwrite)

@@ -1,0 +1,33 @@
+{
+  "verified_selected_models": 16,
+  "validation_responses": 3742,
+  "preprocessing_recomputed_from_unique_fitting_photos": true,
+  "probability_reconstruction_tolerance": 1e-12,
+  "internal_test_outcomes_read": false,
+  "output_sha256": {
+    "artifacts/model_selection.json": "e4e5b131f82d61fa139e89c279903466d289bf50720605d73ab91d435b9883a6",
+    "tables/all_fit_attempts.csv": "472e6f0727d5b99d3755fcb564115572d995993b890532963b3cb39e7864d42d",
+    "tables/validation_results.csv": "e4c11a9044b5bab63ae740a8b667569d7184043679945803280ad7940e1ee62e",
+    "tables/validation_predictions.csv": "f5abd7e94a67b76e3bc3a995d0b259e40ee5db6b0651e793b96e232c21a50a1e",
+    "models/common_M0.json": "7f87358307329264f6bee869f4cfc6c6dbfcb464cc5a27b792c49ca054737675",
+    "models/common_M1.json": "4972caf368c0dff3a53e5c710751755e8e2b5b3cfe0d027da52586102de02952",
+    "models/common_M2-no-position.json": "3c7728dc9f6bcef89d74c7cb99e3970f5c360b5d865b9019e9bd720069c8f0dd",
+    "models/common_M2.json": "9b44e8d4d096ccf5acc5d23c93b601eb4f0aae839088e0a8e28d866bb6654db3",
+    "models/full_M0.json": "613ef6694d73ea586ab4887b9ab0b07d318584befd58b7950372439fbdde4590",
+    "models/full_M1.json": "f7ee6373f4e441ac5c303620faa4162cda45bd29032faffa5237ec28e41941f1",
+    "models/full_M2-no-position.json": "111b837f44d0942cbfff30512b0ed2b60dc5f36c1ed5cdb00cef2f8ac9c04925",
+    "models/full_M2.json": "26fdcfddf433ebcf3c315c22ddc0b31d311109cb1cb4076a6c4d1bce65d38b5d",
+    "models/M3-C.json": "2b356fac66bef6d2c49f9019f84de0568af866fa9a4aa2b44817c94daa250781",
+    "models/M3-H.json": "3f53227fe41c27915077b699b7360eeb7e9c4d126546600976ad384b59627082",
+    "models/M3-side.json": "57a3fb224ed131d9d0f1fc40837439e87d9fb97dc81ddb2423913dcf33625bf3",
+    "models/M3-Y.json": "76f921280639abf546d35643539f78398d23068961ca8a96afb7dab3103ee4d3",
+    "models/M4-C.json": "5cb1e5598090514bcb8975d843f1bba567bc114785e59fc09fde46b7b89ade22",
+    "models/M4-H.json": "b568283b616a2547c89cfae95e249ab15fb400b253ded27d938461443a9e0e1b",
+    "models/M4-side.json": "086ec37fb26d4aca09d2fd248edbf8073b01ff43b27ed500f6d7c687770c60b1",
+    "models/M4-Y.json": "37fb638fcf2c2c4c2b647a9d9aca5177b35a938cfe3965858095c707d62e4fe2",
+    "artifacts/preprocessing/C.json": "b8a9bcc763d5d1a0ea987c063d10d609d352a49b603084702c59b14277b2c3df",
+    "artifacts/preprocessing/H.json": "62a7a81aeca1b40c7cd31bc5ac38275f23a0ba70f07a2cc6c4aee924740d6e54",
+    "artifacts/preprocessing/Y.json": "cca6c28920a2bf7546071a3385d4307f97c4a1eae15acff4f46e14f15a804177"
+  },
+  "verification_source_sha256": "47c11cfee9bbe069063a76a6aab8f86efc8a5041c3b75be03d6fb02c71e869c7"
+}

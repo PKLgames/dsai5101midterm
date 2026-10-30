@@ -1,0 +1,10 @@
+{
+  "date": "2026-10-30",
+  "decision": "accept_common_population_for_registered_comparison",
+  "authority": "user",
+  "fitting_responses": 17421,
+  "strict_validation_responses": 3742,
+  "strict_validation_pairs": 1208,
+  "feature_blocks": ["H", "C", "Y"],
+  "limitation": "These operational counts do not guarantee statistical power or precision."
+}

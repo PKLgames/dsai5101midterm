@@ -1,0 +1,2 @@
+# Stage 7 statistical fits; earlier stage dependencies remain required.
+threadpoolctl==3.7.0

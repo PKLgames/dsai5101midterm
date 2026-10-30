@@ -1,0 +1,21 @@
+{
+  "model": "common:M0",
+  "ridge": 0.0,
+  "rho": 0.0,
+  "pooled": false,
+  "accepted": true,
+  "validation_loss": 0.6929716559800769,
+  "brier": 0.24991216111615236,
+  "accuracy": 0.5125601282736505,
+  "objective": null,
+  "gradient_max": null,
+  "train_loss": 0.6922713789955293,
+  "coefficient_count": 1,
+  "pooled_from": "",
+  "iterations": 0,
+  "seconds": 0.0,
+  "fit_attempts": [],
+  "coefficients": [
+    0.08373618573858993
+  ]
+}
