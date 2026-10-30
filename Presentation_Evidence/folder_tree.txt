@@ -1,0 +1,112 @@
+Presentation_Evidence\
+|-- By_Stage\
+|   |-- 00_Governance\
+|   |   `-- protocol.md
+|   |-- 01_Raw_Data_Audit\
+|   |   `-- data_audit.csv
+|   |-- 02_Pair_Split\
+|   |   `-- split_manifest.parquet
+|   |-- 03_Feature_Integration\
+|   |   |-- feature_admission_decisions.csv
+|   |   `-- feature_quality.csv
+|   |-- 04_Graphs_and_Eligibility\
+|   |   |-- graph_summary.csv
+|   |   |-- graph_support.pdf
+|   |   `-- split_coverage.csv
+|   |-- 05_Estimator_Checks\
+|   |   `-- simulations_ABC.pdf
+|   |-- 06_Development_Description\
+|   |   |-- context_overlap.csv
+|   |   |-- disagreement.pdf
+|   |   `-- support_distribution.pdf
+|   |-- 07_Model_Selection\
+|   |   `-- validation_results.csv
+|   |-- 08_Development_Diagnostics\
+|   |   |-- cnn_pca_diagnostic.csv
+|   |   |-- grouped_ablations.csv
+|   |   |-- learning_curves.pdf
+|   |   |-- penalty_paths.pdf
+|   |   |-- synthetic_label_control.csv
+|   |   `-- temperature_diagnostic.csv
+|   |-- 09_Frozen_Test\
+|   |   |-- calibration.pdf
+|   |   |-- main_results.csv
+|   |   |-- primary_contrasts.csv
+|   |   |-- secondary_results.csv
+|   |   `-- subgroup_results.csv
+|   |-- 10_0_Diagnostic_Synthesis\
+|   |   |-- claims_final.csv
+|   |   `-- diagnostic_synthesis.csv
+|   |-- 10_1_Frozen_Coefficient_Charts\
+|   |   |-- presentation_context_interactions.pdf
+|   |   |-- presentation_feature_importance_H.pdf
+|   |   `-- presentation_feature_importance_Y.pdf
+|   |-- 10_5_Exploratory_Semantics\
+|   |   |-- exploratory_demographic_semantic_overlap.csv
+|   |   |-- exploratory_demographic_semantic_rates.csv
+|   |   `-- exploratory_demographic_semantics.pdf
+|   `-- 11_Report_and_Reproduction\
+|       |-- Group_19_Report.pdf
+|       |-- references.csv
+|       |-- REPRODUCTION.md
+|       `-- stage11_contributions_draft.csv
+|-- By_Presentation_Flow\
+|   |-- 01_Data\
+|   |   |-- 01_Audit\
+|   |   |   `-- data_audit.csv
+|   |   |-- 02_Split_and_Graph_Support\
+|   |   |   |-- graph_summary.csv
+|   |   |   |-- graph_support.pdf
+|   |   |   |-- split_coverage.csv
+|   |   |   `-- split_manifest.parquet
+|   |   |-- 03_Feature_Quality\
+|   |   |   |-- feature_admission_decisions.csv
+|   |   |   `-- feature_quality.csv
+|   |   `-- 04_Development_Description\
+|   |       |-- context_overlap.csv
+|   |       |-- disagreement.pdf
+|   |       `-- support_distribution.pdf
+|   |-- 02_Models\
+|   |   |-- 01_Validation_Selection\
+|   |   |   `-- validation_results.csv
+|   |   |-- 02_Frozen_Feature_Associations\
+|   |   |   |-- presentation_context_interactions.pdf
+|   |   |   |-- presentation_feature_importance_H.pdf
+|   |   |   `-- presentation_feature_importance_Y.pdf
+|   |   `-- 03_Frozen_Test_Comparison\
+|   |       |-- main_results.csv
+|   |       |-- primary_contrasts.csv
+|   |       `-- secondary_results.csv
+|   |-- 03_Diagnostics\
+|   |   |-- 01_Known_Truth_and_Controls\
+|   |   |   |-- simulations_ABC.pdf
+|   |   |   `-- synthetic_label_control.csv
+|   |   |-- 02_Development_Probes\
+|   |   |   |-- cnn_pca_diagnostic.csv
+|   |   |   |-- grouped_ablations.csv
+|   |   |   |-- learning_curves.pdf
+|   |   |   |-- penalty_paths.pdf
+|   |   |   `-- temperature_diagnostic.csv
+|   |   |-- 03_Test_Calibration_and_Slices\
+|   |   |   |-- calibration.pdf
+|   |   |   `-- subgroup_results.csv
+|   |   `-- 04_Exploratory_Demographic_Semantics\
+|   |       |-- exploratory_demographic_semantic_overlap.csv
+|   |       |-- exploratory_demographic_semantic_rates.csv
+|   |       `-- exploratory_demographic_semantics.pdf
+|   `-- 04_Claims\
+|       |-- 01_Question_and_Scope\
+|       |   `-- protocol.md
+|       |-- 02_Evidence_Linked_Synthesis\
+|       |   |-- claims_final.csv
+|       |   `-- diagnostic_synthesis.csv
+|       `-- 03_Report_and_Submission\
+|           |-- Group_19_Report.pdf
+|           |-- references.csv
+|           |-- REPRODUCTION.md
+|           `-- stage11_contributions_draft.csv
+|-- folder_tree.txt
+|-- original_hashes_after.json
+|-- original_hashes_before.json
+|-- selection_manifest.csv
+`-- verification.json

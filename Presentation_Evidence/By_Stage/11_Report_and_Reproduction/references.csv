@@ -1,0 +1,13 @@
+reference_id,resource,citation_or_description,url,verification_status
+R01,Dataset,Cat Image Arena course dataset and README; educational and research use only,https://huggingface.co/datasets/missing12/cat-image-arena-images,Dataset location recorded in supplied README
+R02,Course guidelines,DSAI5101 Statistical Data Mining Midterm Report Guidelines 2026,Midterm_Report_Guidelines_2026.pdf,Local official guideline reviewed
+R03,Bradley-Terry,Bradley RA and Terry ME 1952 Rank Analysis of Incomplete Block Designs Biometrika 39 324-345,https://doi.org/10.1093/biomet/39.3-4.324,Method reference; team should verify bibliography formatting
+R04,Wilson intervals,Wilson EB 1927 Probable Inference the Law of Succession and Statistical Inference JASA 22 209-212,https://doi.org/10.1080/01621459.1927.10502953,Working-model interval reference
+R05,Bootstrap,Efron B and Tibshirani RJ 1993 An Introduction to the Bootstrap Chapman and Hall,https://doi.org/10.1201/9780429246593,Conditional bootstrap reference
+R06,MobileNetV3,Howard et al 2019 Searching for MobileNetV3 ICCV,https://arxiv.org/abs/1905.02244,Architecture reference
+R07,Torchvision weights,MobileNet_V3_Small_Weights.IMAGENET1K_V1 actual checkpoint and preprocessing recorded in features/manifests/C.json,https://docs.pytorch.org/vision/stable/models/generated/torchvision.models.mobilenet_v3_small.html,Implementation manifest is authoritative for actual 232 resize
+R08,CLIP,Radford et al 2021 Learning Transferable Visual Models From Natural Language Supervision ICML,https://arxiv.org/abs/2103.00020,Representation reference
+R09,OpenCLIP,OpenCLIP implementation ViT-B-32 with OpenAI weights and QuickGELU,https://github.com/mlfoundations/open_clip,Actual checkpoint and library versions in Y manifest
+R10,YOLO11,Ultralytics YOLO11n segmentation implementation and checkpoint,https://docs.ultralytics.com/models/yolo11/,Actual release and checkpoint hash in Y manifest
+R11,Course Chapter 7,PLACEHOLDER - supply exact title author and course reference for Chapter 7 before submission,,Not supplied; team must complete
+R12,Software,Exact software versions and primary project links recorded in environment locks and tables/third_party_resources.csv,,Installed package metadata checked locally

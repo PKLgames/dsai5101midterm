@@ -1,0 +1,5 @@
+population,entity,fitting_responses,excluded_within_cat_responses,nodes,undirected_edges,undirected_components,largest_component_nodes,largest_component_fraction,directed_edges,strongly_connected_components,largest_strong_component_nodes,nontrivial_undirected_components,strongly_connected_nontrivial_components
+full,photo,17421,0,1296,5634,1,1296,1.0,9280,2,1295,1,0
+full,cat,17421,2098,237,4842,1,237,1.0,8014,1,237,1,1
+common,photo,17421,0,1296,5634,1,1296,1.0,9280,2,1295,1,0
+common,cat,17421,2098,237,4842,1,237,1.0,8014,1,237,1,1

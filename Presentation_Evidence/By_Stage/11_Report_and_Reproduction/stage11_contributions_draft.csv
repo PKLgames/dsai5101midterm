@@ -1,0 +1,6 @@
+member,assigned_responsibility,artifacts_to_review,proposed_presentation,status
+Chen Wanchuan,Governance reporting and reproduction,protocol.md; claims_final.csv; artifacts/stage11_decisions.json; reproduction outputs,Question synthesis and limitations,PLACEHOLDER - member must confirm actual completed work and outputs
+Chee Ching Lam,Data splits and joint modeling/evaluation,tables/data_audit.csv; artifacts/split_manifest.parquet; tables/primary_contrasts.csv,Data splits and evaluation,PLACEHOLDER - member must confirm actual completed work and outputs
+Lu Yuqing,H/C feature integration,features/manifests/H.json; features/manifests/C.json; tables/representation_recovery.csv,Features and diagnostics,PLACEHOLDER - member must confirm actual completed work and outputs
+Yuen Lok Yan,YOLO-CLIP integration,features/manifests/Y.json; figures/presentation_feature_importance_Y.pdf; tables/exploratory_demographic_semantic_rates.csv,YOLO-CLIP and exploratory semantics,PLACEHOLDER - member must confirm actual completed work and outputs
+Chan Hoi Lam,Joint modeling and evaluation,models/; tables/validation_results.csv; tables/primary_contrasts.csv,Model comparison and uncertainty,PLACEHOLDER - member must confirm actual completed work and outputs

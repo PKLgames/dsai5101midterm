@@ -1,0 +1,481 @@
+{
+  "status": "all_checks_passed",
+  "verified_utc": "2026-10-30T13:19:49.168259+00:00",
+  "operation": "Sources were copied, never moved or edited.",
+  "original_file_count": 1929,
+  "selected_original_file_count": 36,
+  "verified_copies": 72,
+  "missing_originals": [],
+  "new_files_outside_evidence_folder": [],
+  "changed_originals": [],
+  "before_manifest_sha256": "1dd425424cb49716d3aad4a172791891b39b020011d8bcbbde447eeaba84339f",
+  "after_manifest_sha256": "19a14374f8a24af3b2a4e30bdc6091b49e98aa37511c874926a5a717f38334f8",
+  "selection_manifest_sha256": "06021a0fb76ad82af296a62a6a0db06b02df65a4cba460e77c3e140717ce8564",
+  "frozen_model_provenance_valid": true,
+  "evaluation_provenance_valid": true,
+  "synthesis_append_lineage_valid": true,
+  "stage11_report_archive_and_reproduction_provenance_valid": true,
+  "model_representation_unchanged": "C",
+  "tests_rerun": false,
+  "models_refit": false,
+  "test_outcomes_loaded": false,
+  "scope_exclusions": [
+    ".cache",
+    ".git",
+    ".venv",
+    "Presentation_Evidence"
+  ],
+  "note": "The existing report is still a working draft with contribution/reference/submission actions pending. Evidence copies do not modify that status. The unchanged original code ZIP does not automatically include this supplementary evidence folder. Copied documentation retains original project-relative links; use source paths in selection_manifest.csv to locate referenced originals.",
+  "copies": [
+    {
+      "source": "protocol.md",
+      "copy": "By_Stage\\00_Governance\\protocol.md",
+      "sha256": "36e96e9a7e2044d5433946696f36de456c8341c772690380591f86f19f9e2c7c",
+      "matches_original": true
+    },
+    {
+      "source": "protocol.md",
+      "copy": "By_Presentation_Flow\\04_Claims\\01_Question_and_Scope\\protocol.md",
+      "sha256": "36e96e9a7e2044d5433946696f36de456c8341c772690380591f86f19f9e2c7c",
+      "matches_original": true
+    },
+    {
+      "source": "tables\\data_audit.csv",
+      "copy": "By_Stage\\01_Raw_Data_Audit\\data_audit.csv",
+      "sha256": "0bb1c9da6102c69bf74e4a4559951aa04f303387ca0f309b64f22b558132d3f2",
+      "matches_original": true
+    },
+    {
+      "source": "tables\\data_audit.csv",
+      "copy": "By_Presentation_Flow\\01_Data\\01_Audit\\data_audit.csv",
+      "sha256": "0bb1c9da6102c69bf74e4a4559951aa04f303387ca0f309b64f22b558132d3f2",
+      "matches_original": true
+    },
+    {
+      "source": "artifacts\\split_manifest.parquet",
+      "copy": "By_Stage\\02_Pair_Split\\split_manifest.parquet",
+      "sha256": "2b11ea67b2d735af59c04b9bd3b37abf6e43744b3ce0b522e39915c7bf5151e5",
+      "matches_original": true
+    },
+    {
+      "source": "artifacts\\split_manifest.parquet",
+      "copy": "By_Presentation_Flow\\01_Data\\02_Split_and_Graph_Support\\split_manifest.parquet",
+      "sha256": "2b11ea67b2d735af59c04b9bd3b37abf6e43744b3ce0b522e39915c7bf5151e5",
+      "matches_original": true
+    },
+    {
+      "source": "tables\\feature_quality.csv",
+      "copy": "By_Stage\\03_Feature_Integration\\feature_quality.csv",
+      "sha256": "13165e5590a2cd775629083baeca5677d2ff53eaaae0d4733ad81fa8bdc89f9b",
+      "matches_original": true
+    },
+    {
+      "source": "tables\\feature_quality.csv",
+      "copy": "By_Presentation_Flow\\01_Data\\03_Feature_Quality\\feature_quality.csv",
+      "sha256": "13165e5590a2cd775629083baeca5677d2ff53eaaae0d4733ad81fa8bdc89f9b",
+      "matches_original": true
+    },
+    {
+      "source": "artifacts\\feature_admission_decisions.csv",
+      "copy": "By_Stage\\03_Feature_Integration\\feature_admission_decisions.csv",
+      "sha256": "5df0539bf7611778b8024fe78e06456a75fcaa04ddc1d02339f867febde4e0fd",
+      "matches_original": true
+    },
+    {
+      "source": "artifacts\\feature_admission_decisions.csv",
+      "copy": "By_Presentation_Flow\\01_Data\\03_Feature_Quality\\feature_admission_decisions.csv",
+      "sha256": "5df0539bf7611778b8024fe78e06456a75fcaa04ddc1d02339f867febde4e0fd",
+      "matches_original": true
+    },
+    {
+      "source": "figures\\graph_support.pdf",
+      "copy": "By_Stage\\04_Graphs_and_Eligibility\\graph_support.pdf",
+      "sha256": "74dc3f6e015c5e49eed89f005e9aa3145bac899321785e7a461981a82918935d",
+      "matches_original": true
+    },
+    {
+      "source": "figures\\graph_support.pdf",
+      "copy": "By_Presentation_Flow\\01_Data\\02_Split_and_Graph_Support\\graph_support.pdf",
+      "sha256": "74dc3f6e015c5e49eed89f005e9aa3145bac899321785e7a461981a82918935d",
+      "matches_original": true
+    },
+    {
+      "source": "tables\\graph_summary.csv",
+      "copy": "By_Stage\\04_Graphs_and_Eligibility\\graph_summary.csv",
+      "sha256": "39b1749c7e71ba862cf2902e5a782162ad309b380b5233249444a6562d8ac9b7",
+      "matches_original": true
+    },
+    {
+      "source": "tables\\graph_summary.csv",
+      "copy": "By_Presentation_Flow\\01_Data\\02_Split_and_Graph_Support\\graph_summary.csv",
+      "sha256": "39b1749c7e71ba862cf2902e5a782162ad309b380b5233249444a6562d8ac9b7",
+      "matches_original": true
+    },
+    {
+      "source": "tables\\split_coverage.csv",
+      "copy": "By_Stage\\04_Graphs_and_Eligibility\\split_coverage.csv",
+      "sha256": "05568a8f74cdba019049ede6f0ebbaf3567da0b5bacf4aed0d24f4ffdf4e652c",
+      "matches_original": true
+    },
+    {
+      "source": "tables\\split_coverage.csv",
+      "copy": "By_Presentation_Flow\\01_Data\\02_Split_and_Graph_Support\\split_coverage.csv",
+      "sha256": "05568a8f74cdba019049ede6f0ebbaf3567da0b5bacf4aed0d24f4ffdf4e652c",
+      "matches_original": true
+    },
+    {
+      "source": "figures\\simulations_ABC.pdf",
+      "copy": "By_Stage\\05_Estimator_Checks\\simulations_ABC.pdf",
+      "sha256": "5f263a2076649b9f15f527b1960989ce6b6602aa09b22bea63295ab6355cee93",
+      "matches_original": true
+    },
+    {
+      "source": "figures\\simulations_ABC.pdf",
+      "copy": "By_Presentation_Flow\\03_Diagnostics\\01_Known_Truth_and_Controls\\simulations_ABC.pdf",
+      "sha256": "5f263a2076649b9f15f527b1960989ce6b6602aa09b22bea63295ab6355cee93",
+      "matches_original": true
+    },
+    {
+      "source": "figures\\disagreement.pdf",
+      "copy": "By_Stage\\06_Development_Description\\disagreement.pdf",
+      "sha256": "967979f9f88dd4e2b42e860db79ad1b67c3b0dbd1369b9d28396b6653a08e2fa",
+      "matches_original": true
+    },
+    {
+      "source": "figures\\disagreement.pdf",
+      "copy": "By_Presentation_Flow\\01_Data\\04_Development_Description\\disagreement.pdf",
+      "sha256": "967979f9f88dd4e2b42e860db79ad1b67c3b0dbd1369b9d28396b6653a08e2fa",
+      "matches_original": true
+    },
+    {
+      "source": "figures\\support_distribution.pdf",
+      "copy": "By_Stage\\06_Development_Description\\support_distribution.pdf",
+      "sha256": "135245b004dc3cb8da3b8ad7b17c1a9486f4ce192e0e1372855bfcc8c1ae4272",
+      "matches_original": true
+    },
+    {
+      "source": "figures\\support_distribution.pdf",
+      "copy": "By_Presentation_Flow\\01_Data\\04_Development_Description\\support_distribution.pdf",
+      "sha256": "135245b004dc3cb8da3b8ad7b17c1a9486f4ce192e0e1372855bfcc8c1ae4272",
+      "matches_original": true
+    },
+    {
+      "source": "tables\\context_overlap.csv",
+      "copy": "By_Stage\\06_Development_Description\\context_overlap.csv",
+      "sha256": "7ca20d7eca1b325ba2751dbf46649c97451243dd49205aecd60b90fc381ff6b8",
+      "matches_original": true
+    },
+    {
+      "source": "tables\\context_overlap.csv",
+      "copy": "By_Presentation_Flow\\01_Data\\04_Development_Description\\context_overlap.csv",
+      "sha256": "7ca20d7eca1b325ba2751dbf46649c97451243dd49205aecd60b90fc381ff6b8",
+      "matches_original": true
+    },
+    {
+      "source": "tables\\validation_results.csv",
+      "copy": "By_Stage\\07_Model_Selection\\validation_results.csv",
+      "sha256": "e4c11a9044b5bab63ae740a8b667569d7184043679945803280ad7940e1ee62e",
+      "matches_original": true
+    },
+    {
+      "source": "tables\\validation_results.csv",
+      "copy": "By_Presentation_Flow\\02_Models\\01_Validation_Selection\\validation_results.csv",
+      "sha256": "e4c11a9044b5bab63ae740a8b667569d7184043679945803280ad7940e1ee62e",
+      "matches_original": true
+    },
+    {
+      "source": "figures\\penalty_paths.pdf",
+      "copy": "By_Stage\\08_Development_Diagnostics\\penalty_paths.pdf",
+      "sha256": "e6ccfa54b1419b19ec65e358b5b95e6d31b635ca144080a91993340821de23b9",
+      "matches_original": true
+    },
+    {
+      "source": "figures\\penalty_paths.pdf",
+      "copy": "By_Presentation_Flow\\03_Diagnostics\\02_Development_Probes\\penalty_paths.pdf",
+      "sha256": "e6ccfa54b1419b19ec65e358b5b95e6d31b635ca144080a91993340821de23b9",
+      "matches_original": true
+    },
+    {
+      "source": "figures\\learning_curves.pdf",
+      "copy": "By_Stage\\08_Development_Diagnostics\\learning_curves.pdf",
+      "sha256": "a23d6915d22d7330e8c91a4dc91dfb5c0092def23a1e55fa86b9134295a5e061",
+      "matches_original": true
+    },
+    {
+      "source": "figures\\learning_curves.pdf",
+      "copy": "By_Presentation_Flow\\03_Diagnostics\\02_Development_Probes\\learning_curves.pdf",
+      "sha256": "a23d6915d22d7330e8c91a4dc91dfb5c0092def23a1e55fa86b9134295a5e061",
+      "matches_original": true
+    },
+    {
+      "source": "tables\\grouped_ablations.csv",
+      "copy": "By_Stage\\08_Development_Diagnostics\\grouped_ablations.csv",
+      "sha256": "6dd4af7ea98b236ea5b0523bc8c978f383da4bedbdd85f3adcef2119cc08f47f",
+      "matches_original": true
+    },
+    {
+      "source": "tables\\grouped_ablations.csv",
+      "copy": "By_Presentation_Flow\\03_Diagnostics\\02_Development_Probes\\grouped_ablations.csv",
+      "sha256": "6dd4af7ea98b236ea5b0523bc8c978f383da4bedbdd85f3adcef2119cc08f47f",
+      "matches_original": true
+    },
+    {
+      "source": "tables\\cnn_pca_diagnostic.csv",
+      "copy": "By_Stage\\08_Development_Diagnostics\\cnn_pca_diagnostic.csv",
+      "sha256": "ccefdc15a356affb4590b35ef89d82552c49501feebc2e98e6789321876b7e51",
+      "matches_original": true
+    },
+    {
+      "source": "tables\\cnn_pca_diagnostic.csv",
+      "copy": "By_Presentation_Flow\\03_Diagnostics\\02_Development_Probes\\cnn_pca_diagnostic.csv",
+      "sha256": "ccefdc15a356affb4590b35ef89d82552c49501feebc2e98e6789321876b7e51",
+      "matches_original": true
+    },
+    {
+      "source": "tables\\temperature_diagnostic.csv",
+      "copy": "By_Stage\\08_Development_Diagnostics\\temperature_diagnostic.csv",
+      "sha256": "8de2dfd9ce9209db6e38e5c51712785cadb4a856fd8e2229f9e73f3f10c5da11",
+      "matches_original": true
+    },
+    {
+      "source": "tables\\temperature_diagnostic.csv",
+      "copy": "By_Presentation_Flow\\03_Diagnostics\\02_Development_Probes\\temperature_diagnostic.csv",
+      "sha256": "8de2dfd9ce9209db6e38e5c51712785cadb4a856fd8e2229f9e73f3f10c5da11",
+      "matches_original": true
+    },
+    {
+      "source": "tables\\synthetic_label_control.csv",
+      "copy": "By_Stage\\08_Development_Diagnostics\\synthetic_label_control.csv",
+      "sha256": "90c3639815fe4495467c4d841f655239fe8d9135cb007090726da7451e38268e",
+      "matches_original": true
+    },
+    {
+      "source": "tables\\synthetic_label_control.csv",
+      "copy": "By_Presentation_Flow\\03_Diagnostics\\01_Known_Truth_and_Controls\\synthetic_label_control.csv",
+      "sha256": "90c3639815fe4495467c4d841f655239fe8d9135cb007090726da7451e38268e",
+      "matches_original": true
+    },
+    {
+      "source": "tables\\main_results.csv",
+      "copy": "By_Stage\\09_Frozen_Test\\main_results.csv",
+      "sha256": "4e881157eb3a579d076d5e58fa01585848079111ae3a8283a9760caf975f1368",
+      "matches_original": true
+    },
+    {
+      "source": "tables\\main_results.csv",
+      "copy": "By_Presentation_Flow\\02_Models\\03_Frozen_Test_Comparison\\main_results.csv",
+      "sha256": "4e881157eb3a579d076d5e58fa01585848079111ae3a8283a9760caf975f1368",
+      "matches_original": true
+    },
+    {
+      "source": "tables\\primary_contrasts.csv",
+      "copy": "By_Stage\\09_Frozen_Test\\primary_contrasts.csv",
+      "sha256": "751f886d96c62faf4cf5df17003201a79abc0e4114d497663ab94d906d0d93ed",
+      "matches_original": true
+    },
+    {
+      "source": "tables\\primary_contrasts.csv",
+      "copy": "By_Presentation_Flow\\02_Models\\03_Frozen_Test_Comparison\\primary_contrasts.csv",
+      "sha256": "751f886d96c62faf4cf5df17003201a79abc0e4114d497663ab94d906d0d93ed",
+      "matches_original": true
+    },
+    {
+      "source": "tables\\secondary_results.csv",
+      "copy": "By_Stage\\09_Frozen_Test\\secondary_results.csv",
+      "sha256": "a5738fcbd003bc5b059cc87da808842525519aad470cd8c28b2614e45aa50b51",
+      "matches_original": true
+    },
+    {
+      "source": "tables\\secondary_results.csv",
+      "copy": "By_Presentation_Flow\\02_Models\\03_Frozen_Test_Comparison\\secondary_results.csv",
+      "sha256": "a5738fcbd003bc5b059cc87da808842525519aad470cd8c28b2614e45aa50b51",
+      "matches_original": true
+    },
+    {
+      "source": "tables\\subgroup_results.csv",
+      "copy": "By_Stage\\09_Frozen_Test\\subgroup_results.csv",
+      "sha256": "3b59c95c8270ec665abb6b03448904e64f4d5b80327a4db0f4dbaab8a43dc3e0",
+      "matches_original": true
+    },
+    {
+      "source": "tables\\subgroup_results.csv",
+      "copy": "By_Presentation_Flow\\03_Diagnostics\\03_Test_Calibration_and_Slices\\subgroup_results.csv",
+      "sha256": "3b59c95c8270ec665abb6b03448904e64f4d5b80327a4db0f4dbaab8a43dc3e0",
+      "matches_original": true
+    },
+    {
+      "source": "figures\\calibration.pdf",
+      "copy": "By_Stage\\09_Frozen_Test\\calibration.pdf",
+      "sha256": "d698f0b424c33b22c6a7370b1c4724c8db79e96d887e5ad33c643e5a99c0409d",
+      "matches_original": true
+    },
+    {
+      "source": "figures\\calibration.pdf",
+      "copy": "By_Presentation_Flow\\03_Diagnostics\\03_Test_Calibration_and_Slices\\calibration.pdf",
+      "sha256": "d698f0b424c33b22c6a7370b1c4724c8db79e96d887e5ad33c643e5a99c0409d",
+      "matches_original": true
+    },
+    {
+      "source": "claims_final.csv",
+      "copy": "By_Stage\\10_0_Diagnostic_Synthesis\\claims_final.csv",
+      "sha256": "9cc8001c3cd61ed38b72a8d0890cb28c7edc2d96a599043c1ef1dfd49a7f808a",
+      "matches_original": true
+    },
+    {
+      "source": "claims_final.csv",
+      "copy": "By_Presentation_Flow\\04_Claims\\02_Evidence_Linked_Synthesis\\claims_final.csv",
+      "sha256": "9cc8001c3cd61ed38b72a8d0890cb28c7edc2d96a599043c1ef1dfd49a7f808a",
+      "matches_original": true
+    },
+    {
+      "source": "tables\\diagnostic_synthesis.csv",
+      "copy": "By_Stage\\10_0_Diagnostic_Synthesis\\diagnostic_synthesis.csv",
+      "sha256": "9cc8001c3cd61ed38b72a8d0890cb28c7edc2d96a599043c1ef1dfd49a7f808a",
+      "matches_original": true
+    },
+    {
+      "source": "tables\\diagnostic_synthesis.csv",
+      "copy": "By_Presentation_Flow\\04_Claims\\02_Evidence_Linked_Synthesis\\diagnostic_synthesis.csv",
+      "sha256": "9cc8001c3cd61ed38b72a8d0890cb28c7edc2d96a599043c1ef1dfd49a7f808a",
+      "matches_original": true
+    },
+    {
+      "source": "figures\\presentation_feature_importance_H.pdf",
+      "copy": "By_Stage\\10_1_Frozen_Coefficient_Charts\\presentation_feature_importance_H.pdf",
+      "sha256": "18675d45a85b2cd18abf41ac5b8451f64e936135e6558467dd978d133667afbb",
+      "matches_original": true
+    },
+    {
+      "source": "figures\\presentation_feature_importance_H.pdf",
+      "copy": "By_Presentation_Flow\\02_Models\\02_Frozen_Feature_Associations\\presentation_feature_importance_H.pdf",
+      "sha256": "18675d45a85b2cd18abf41ac5b8451f64e936135e6558467dd978d133667afbb",
+      "matches_original": true
+    },
+    {
+      "source": "figures\\presentation_feature_importance_Y.pdf",
+      "copy": "By_Stage\\10_1_Frozen_Coefficient_Charts\\presentation_feature_importance_Y.pdf",
+      "sha256": "56b0820d2a489fe996394a7d4eb82ecfdfef5e4a64f5cbaf1ba5f296bc1cdfaa",
+      "matches_original": true
+    },
+    {
+      "source": "figures\\presentation_feature_importance_Y.pdf",
+      "copy": "By_Presentation_Flow\\02_Models\\02_Frozen_Feature_Associations\\presentation_feature_importance_Y.pdf",
+      "sha256": "56b0820d2a489fe996394a7d4eb82ecfdfef5e4a64f5cbaf1ba5f296bc1cdfaa",
+      "matches_original": true
+    },
+    {
+      "source": "figures\\presentation_context_interactions.pdf",
+      "copy": "By_Stage\\10_1_Frozen_Coefficient_Charts\\presentation_context_interactions.pdf",
+      "sha256": "a870d84d84dc3ea3e6e369278369cff3c97942b44705f726d82168ce1323d73b",
+      "matches_original": true
+    },
+    {
+      "source": "figures\\presentation_context_interactions.pdf",
+      "copy": "By_Presentation_Flow\\02_Models\\02_Frozen_Feature_Associations\\presentation_context_interactions.pdf",
+      "sha256": "a870d84d84dc3ea3e6e369278369cff3c97942b44705f726d82168ce1323d73b",
+      "matches_original": true
+    },
+    {
+      "source": "figures\\exploratory_demographic_semantics.pdf",
+      "copy": "By_Stage\\10_5_Exploratory_Semantics\\exploratory_demographic_semantics.pdf",
+      "sha256": "10196c35ed7aaa10eb5f9b40812cfa9a32ec4eb78471681e31a8f1e637e53122",
+      "matches_original": true
+    },
+    {
+      "source": "figures\\exploratory_demographic_semantics.pdf",
+      "copy": "By_Presentation_Flow\\03_Diagnostics\\04_Exploratory_Demographic_Semantics\\exploratory_demographic_semantics.pdf",
+      "sha256": "10196c35ed7aaa10eb5f9b40812cfa9a32ec4eb78471681e31a8f1e637e53122",
+      "matches_original": true
+    },
+    {
+      "source": "tables\\exploratory_demographic_semantic_rates.csv",
+      "copy": "By_Stage\\10_5_Exploratory_Semantics\\exploratory_demographic_semantic_rates.csv",
+      "sha256": "09209584f1a7178b4522be60c5e452c69e23a225b60d9fa771be4995ac6d65c3",
+      "matches_original": true
+    },
+    {
+      "source": "tables\\exploratory_demographic_semantic_rates.csv",
+      "copy": "By_Presentation_Flow\\03_Diagnostics\\04_Exploratory_Demographic_Semantics\\exploratory_demographic_semantic_rates.csv",
+      "sha256": "09209584f1a7178b4522be60c5e452c69e23a225b60d9fa771be4995ac6d65c3",
+      "matches_original": true
+    },
+    {
+      "source": "tables\\exploratory_demographic_semantic_overlap.csv",
+      "copy": "By_Stage\\10_5_Exploratory_Semantics\\exploratory_demographic_semantic_overlap.csv",
+      "sha256": "a897ca67b375a2da7f3a4043a95019336fa54a271abb6fc305bb610e89c5c2b3",
+      "matches_original": true
+    },
+    {
+      "source": "tables\\exploratory_demographic_semantic_overlap.csv",
+      "copy": "By_Presentation_Flow\\03_Diagnostics\\04_Exploratory_Demographic_Semantics\\exploratory_demographic_semantic_overlap.csv",
+      "sha256": "a897ca67b375a2da7f3a4043a95019336fa54a271abb6fc305bb610e89c5c2b3",
+      "matches_original": true
+    },
+    {
+      "source": "Group_19_Report.pdf",
+      "copy": "By_Stage\\11_Report_and_Reproduction\\Group_19_Report.pdf",
+      "sha256": "12ecf195e342137dc409a78f0b64d41121a35770ab7aa0b359a2cfca4e51b44c",
+      "matches_original": true
+    },
+    {
+      "source": "Group_19_Report.pdf",
+      "copy": "By_Presentation_Flow\\04_Claims\\03_Report_and_Submission\\Group_19_Report.pdf",
+      "sha256": "12ecf195e342137dc409a78f0b64d41121a35770ab7aa0b359a2cfca4e51b44c",
+      "matches_original": true
+    },
+    {
+      "source": "tables\\stage11_contributions_draft.csv",
+      "copy": "By_Stage\\11_Report_and_Reproduction\\stage11_contributions_draft.csv",
+      "sha256": "07fd78e8eba445fff5e3dab5aa6d743b1147e991707c7c76e9a4fb6fd8c966ba",
+      "matches_original": true
+    },
+    {
+      "source": "tables\\stage11_contributions_draft.csv",
+      "copy": "By_Presentation_Flow\\04_Claims\\03_Report_and_Submission\\stage11_contributions_draft.csv",
+      "sha256": "07fd78e8eba445fff5e3dab5aa6d743b1147e991707c7c76e9a4fb6fd8c966ba",
+      "matches_original": true
+    },
+    {
+      "source": "references.csv",
+      "copy": "By_Stage\\11_Report_and_Reproduction\\references.csv",
+      "sha256": "cfc2f59ec450a4e8a4b238cd7b894e507b23f3923d524b3d975cb82d54310d9e",
+      "matches_original": true
+    },
+    {
+      "source": "references.csv",
+      "copy": "By_Presentation_Flow\\04_Claims\\03_Report_and_Submission\\references.csv",
+      "sha256": "cfc2f59ec450a4e8a4b238cd7b894e507b23f3923d524b3d975cb82d54310d9e",
+      "matches_original": true
+    },
+    {
+      "source": "REPRODUCTION.md",
+      "copy": "By_Stage\\11_Report_and_Reproduction\\REPRODUCTION.md",
+      "sha256": "35fec8a23b36cf6b0b633102196d890e2f37247f48a42a56ff53380467dea422",
+      "matches_original": true
+    },
+    {
+      "source": "REPRODUCTION.md",
+      "copy": "By_Presentation_Flow\\04_Claims\\03_Report_and_Submission\\REPRODUCTION.md",
+      "sha256": "35fec8a23b36cf6b0b633102196d890e2f37247f48a42a56ff53380467dea422",
+      "matches_original": true
+    }
+  ],
+  "raw_data_audit_files_verified": 1560,
+  "cached_pretrained_checkpoints_verified": [
+    {
+      "label": "CNN",
+      "sha256": "047dcff4addef86ea5bc2eff13c9614dc11f47ab1160d0a71a25e7db994f4e1f",
+      "matches_manifest": true
+    },
+    {
+      "label": "detector",
+      "sha256": "55ed65c56c91713d23e8402371c6c49a6fd84f257f7dce452e8d70e41dcbe152",
+      "matches_manifest": true
+    },
+    {
+      "label": "clip",
+      "sha256": "e6d1bd7789aa45192b3bf90570a789b478bae1b74ebcce7eddd908e83a2b7c31",
+      "matches_manifest": true
+    }
+  ]
+}

@@ -1,0 +1,4 @@
+block,status,automated_checks,successful_images,failed_images,strict_validation_responses,covered_validation_responses,validation_coverage,details
+H,pending_human_review,passed,1558,0,3742,3742,1.0,
+C,pending_human_review,passed,1558,0,3742,3742,1.0,
+Y,pending_human_review,passed,1558,0,3742,3742,1.0,
