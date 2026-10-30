@@ -295,6 +295,29 @@ unscaled source model. The scaled validation results and selected temperatures
 are recorded in `tables/temperature_diagnostic.csv`; the test metrics in
 `main_results.csv` use the frozen temperature.
 
+## Stage 10 diagnostic synthesis
+
+```powershell
+.\.venv\Scripts\python.exe -m unittest discover -s tests -p test_synthesis.py -v
+.\.venv\Scripts\python.exe -m src.synthesis
+```
+
+Stage 10 uses a separate entry point because the existing stage-runner source
+is part of the sealed evaluation freeze. It verifies the freeze and prior
+artifact hashes, then writes `claims_final.csv`,
+`tables/diagnostic_synthesis.csv`, and `artifacts/stage10_provenance.json`.
+No model is refitted and no test evaluation is repeated.
+
+The two CSVs contain the same evidence-linked synthesis: the original research
+questions plus supporting diagnostic and limitation statements. Each row
+separates the measured result, supported interpretation, alternatives,
+nonclaim, and next discriminating evidence. `source_evidence_json` records
+the exact source file, hash, row selector, field, operation, and value for
+reported numerical evidence. Development diagnostics, synthetic demonstrations,
+primary test contrasts, and secondary results remain explicitly distinguished.
+Unfavorable extensions and intervals spanning no difference are retained.
+Existing synthesis outputs are never overwritten.
+
 ## Setup
 
 Python 3.12. From the project root:
