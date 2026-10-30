@@ -1,0 +1,43 @@
+{
+  "status": "development_outcome_access_started",
+  "outcomes_requested": [
+    "separate core fitting",
+    "G4 validation"
+  ],
+  "g4_test_outcomes_requested": false,
+  "previous_partition_overlap": {
+    "separate_core_fit": {
+      "original_g2_partitions": {
+        "fit": 8071,
+        "test": 1678,
+        "validation": 1794
+      },
+      "original_g3_allocations": {
+        "core_fit": 6459,
+        "core_test": 1371,
+        "core_validation": 1461,
+        "quarantine": 90,
+        "test": 1065,
+        "validation": 1097
+      }
+    },
+    "g4_validation": {
+      "original_g2_partitions": {
+        "fit": 2505,
+        "test": 501,
+        "validation": 497
+      },
+      "original_g3_allocations": {
+        "core_fit": 2061,
+        "core_test": 430,
+        "core_validation": 405,
+        "quarantine": 71,
+        "test": 290,
+        "validation": 246
+      }
+    }
+  },
+  "warning": "Some fitting and validation outcomes were previously exposed during G2/G3; G4 is retrospective.",
+  "fitting_cat_graph_connected": true,
+  "fitting_cats": 191
+}

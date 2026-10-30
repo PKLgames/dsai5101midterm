@@ -1,0 +1,33 @@
+{
+  "status": "coverage_passed",
+  "outcomes_read": false,
+  "training_cats": 237,
+  "duplicate_aware_cat_groups": 237,
+  "core_fitting_responses": 11543,
+  "core_fitting_pairs": 3751,
+  "core_fitting_cats": 191,
+  "core_fitting_photos": 1041,
+  "allocation_counts": {
+    "core_fit": 11543,
+    "core_test": 2468,
+    "core_validation": 2479,
+    "quarantine": 1424,
+    "test": 3479,
+    "validation": 3503
+  },
+  "g4": {
+    "validation": {
+      "responses": 3503,
+      "pairs": 1106,
+      "held_out_cats": 23,
+      "coverage_passed": true
+    },
+    "test": {
+      "responses": 3479,
+      "pairs": 1101,
+      "held_out_cats": 23,
+      "coverage_passed": true
+    }
+  },
+  "protocol_sha256": "f1090363e3a7e083d12db5dc4c6cd8145197affd2396c3c70070de98af570128"
+}

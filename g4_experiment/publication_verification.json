@@ -1,0 +1,93 @@
+{
+  "status": "all_checks_passed",
+  "verified_utc": "2026-10-30T15:57:24.859678+00:00",
+  "operation": "Copied G4 evidence into both views; original sources were not moved or edited.",
+  "original_project_files_including_g3_unchanged": 1979,
+  "previous_evidence_files_unchanged_before_tree_refresh": 117,
+  "g4_sources_verified_unchanged": 7,
+  "g4_copies_verified": 14,
+  "selection_manifest_sha256": "7a6797f40872d05a5c41a5849a8b7a9a40fbdbe2d8f8af375a342de3d33e80e2",
+  "g2_freeze_sha256": "47d22cc15fd7e42157b3f45faf634acee325e1288459b47b9635d9e2fd24411a",
+  "g3_freeze_sha256": "a1307b29f1f0ef37bc2dfcce6c39bdceb75e5eb41c76a78748c3eb0466a20514",
+  "g4_freeze_sha256": "bdb3c2f5a7fc8636d132c91b815f6f1df04c4b752648ac2e0de68dfcacd5ea56",
+  "scope_exclusions": [
+    ".cache",
+    ".git",
+    ".venv",
+    "Presentation_Evidence",
+    "g4_experiment"
+  ],
+  "note": "The original, abstention, G3 and within-cat evidence records remain historical and unchanged. The tree alone is refreshed. G2/G3 claims, reports and frozen evaluation outputs are not updated.",
+  "copies": [
+    {
+      "source": "g4_experiment\\presentation_g4_results.pdf",
+      "copy": "By_Stage\\13_Retrospective_G4_Experiment\\presentation_g4_results.pdf",
+      "sha256": "fc54830fdb1876f5c09b96b4556d69736d8cb16cc5ad9ebd86e7e0f9e1c26251"
+    },
+    {
+      "source": "g4_experiment\\presentation_g4_results.pdf",
+      "copy": "By_Presentation_Flow\\03_Diagnostics\\07_Retrospective_G4\\presentation_g4_results.pdf",
+      "sha256": "fc54830fdb1876f5c09b96b4556d69736d8cb16cc5ad9ebd86e7e0f9e1c26251"
+    },
+    {
+      "source": "g4_experiment\\test_results.csv",
+      "copy": "By_Stage\\13_Retrospective_G4_Experiment\\test_results.csv",
+      "sha256": "0a85ab96c83a4e0c2ee3b21d01e40f22b564abbc02c9585b33cb4dee0050f55f"
+    },
+    {
+      "source": "g4_experiment\\test_results.csv",
+      "copy": "By_Presentation_Flow\\03_Diagnostics\\07_Retrospective_G4\\test_results.csv",
+      "sha256": "0a85ab96c83a4e0c2ee3b21d01e40f22b564abbc02c9585b33cb4dee0050f55f"
+    },
+    {
+      "source": "g4_experiment\\test_contrasts.csv",
+      "copy": "By_Stage\\13_Retrospective_G4_Experiment\\test_contrasts.csv",
+      "sha256": "45484d3a689c331f3978db3a0cdcb1c7aae67c44a172ded97afe832539ab6493"
+    },
+    {
+      "source": "g4_experiment\\test_contrasts.csv",
+      "copy": "By_Presentation_Flow\\03_Diagnostics\\07_Retrospective_G4\\test_contrasts.csv",
+      "sha256": "45484d3a689c331f3978db3a0cdcb1c7aae67c44a172ded97afe832539ab6493"
+    },
+    {
+      "source": "g4_experiment\\validation_results.csv",
+      "copy": "By_Stage\\13_Retrospective_G4_Experiment\\validation_results.csv",
+      "sha256": "a3c16b56b3bd3a558953c96fb4767fac334ab1c5bf46eea56347e544af442738"
+    },
+    {
+      "source": "g4_experiment\\validation_results.csv",
+      "copy": "By_Presentation_Flow\\03_Diagnostics\\07_Retrospective_G4\\validation_results.csv",
+      "sha256": "a3c16b56b3bd3a558953c96fb4767fac334ab1c5bf46eea56347e544af442738"
+    },
+    {
+      "source": "g4_experiment\\coverage.json",
+      "copy": "By_Stage\\13_Retrospective_G4_Experiment\\coverage.json",
+      "sha256": "d4b8b3894079326fb0407f007cbe956747e734a7d0974948dff89fb6582a1475"
+    },
+    {
+      "source": "g4_experiment\\coverage.json",
+      "copy": "By_Presentation_Flow\\03_Diagnostics\\07_Retrospective_G4\\coverage.json",
+      "sha256": "d4b8b3894079326fb0407f007cbe956747e734a7d0974948dff89fb6582a1475"
+    },
+    {
+      "source": "g4_experiment\\protocol.json",
+      "copy": "By_Stage\\13_Retrospective_G4_Experiment\\protocol.json",
+      "sha256": "f1090363e3a7e083d12db5dc4c6cd8145197affd2396c3c70070de98af570128"
+    },
+    {
+      "source": "g4_experiment\\protocol.json",
+      "copy": "By_Presentation_Flow\\03_Diagnostics\\07_Retrospective_G4\\protocol.json",
+      "sha256": "f1090363e3a7e083d12db5dc4c6cd8145197affd2396c3c70070de98af570128"
+    },
+    {
+      "source": "g4_experiment\\evaluation_provenance.json",
+      "copy": "By_Stage\\13_Retrospective_G4_Experiment\\evaluation_provenance.json",
+      "sha256": "c39f05c1afbaa48f60151980cbaada99d2f510106c1dc0bf3151c30135251878"
+    },
+    {
+      "source": "g4_experiment\\evaluation_provenance.json",
+      "copy": "By_Presentation_Flow\\03_Diagnostics\\07_Retrospective_G4\\evaluation_provenance.json",
+      "sha256": "c39f05c1afbaa48f60151980cbaada99d2f510106c1dc0bf3151c30135251878"
+    }
+  ]
+}

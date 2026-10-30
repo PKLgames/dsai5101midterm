@@ -1,0 +1,18 @@
+{
+  "status": "g4_test_access_started",
+  "freeze_sha256": "bdb3c2f5a7fc8636d132c91b815f6f1df04c4b752648ac2e0de68dfcacd5ea56",
+  "previous_g2_partition_overlap": {
+    "fit": 2437,
+    "test": 536,
+    "validation": 506
+  },
+  "previous_g3_allocation_overlap": {
+    "core_fit": 2001,
+    "core_test": 475,
+    "core_validation": 430,
+    "quarantine": 18,
+    "test": 324,
+    "validation": 231
+  },
+  "limitation": "Retrospective test outcomes include outcomes previously exposed in the completed G2/G3 analyses."
+}

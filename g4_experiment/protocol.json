@@ -1,0 +1,49 @@
+{
+  "status": "retrospective_exploratory_not_preregistered",
+  "authorization": "The user chose exactly one unseen cat versus one known cat and approved a quarantined retrospective exploratory experiment.",
+  "target": "Comparisons with exactly one held-out cat and one different nonreserved cat represented in the separate fitting data. Both photos must have usable H, C and Y features.",
+  "nonclaims": [
+    "G4 was not reserved before G2/G3 outcome access, and results are not an independent or confirmatory test.",
+    "Uncertainty intervals are descriptive, conditional on fitted models and model selection, and do not account for all shared known-cat, photo or respondent dependence.",
+    "No causal effect, deployment decision, new primary G2 claim, or change to G2/G3 artifacts follows."
+  ],
+  "reservation": {
+    "universe": "Cats in labeled training responses, with cats connected by exact duplicate photo content grouped together.",
+    "order": "Ascending SHA-256 of UTF-8 'retrospective-g4-20261028:' followed by JSON-encoded sorted cat IDs of each group; break ties by encoded IDs.",
+    "groups_per_partition": "floor(0.10 * number of duplicate-aware cat groups), at least one; first groups are test, next are validation.",
+    "justification": "Ten percent is specified before reservation to allow at least 20 held-out cats in each partition when 237 groups are available.",
+    "outcome_blind": true
+  },
+  "separate_core": {
+    "population": "Responses with both cats nonreserved and usable admitted H, C and Y photo features.",
+    "split": "Separate 70/15/15 pair split using the existing pair-band allocation rules and seed 20261028. Only fitting responses train G4 models.",
+    "cross_reserved": "All responses involving two reserved cats, a reserved cat against another reserved partition, or a reserved cat compared to itself are quarantined."
+  },
+  "coverage_gate_per_partition": {
+    "responses": 200,
+    "pairs": 50,
+    "held_out_cats": 20,
+    "failure": "Report insufficient coverage and do not fit or evaluate G4. Thresholds are operational and are not power guarantees."
+  },
+  "models": {
+    "candidates": ["M0", "M1-zero", "M3-H", "M3-C", "M3-Y", "M4-H", "M4-C", "M4-Y"],
+    "M1-zero": "Train cat-identity M1 on core fitting cats; assign score zero to the unseen cat and retain the known fitting-cat score. Zero is a fixed cold-start convention, not a learned unseen-cat score or a claim that the unseen cat is average.",
+    "M2": "Excluded: no fitted free photo score exists for an unseen cat's photos.",
+    "preprocessing": "Fit on unique separate-core fitting photos only, using the existing frozen H/C/Y preprocessing implementations.",
+    "ridge_grid": [0.000001, 0.00001, 0.0001, 0.001, 0.01, 0.1, 1.0],
+    "context_multipliers": [1, 10, 100],
+    "context": "pet_care; fitting-only support of at least 100 responses and 30 pairs; largest supported group is reference, lexical tie; unsupported groups use zero deviation.",
+    "fallback": "Exact pooled M3 predictions are candidates for the matching M4 model.",
+    "selection": "G4 validation loss only; tolerance 1e-6; stronger ridge, stronger context shrinkage, and exact pooled fallback preferred for ties. Select M3* among H, C, Y with that fixed tie order and retain matched M4*.",
+    "test_freeze": "Write and hash experiment-specific selection and fitted preprocessing/model artifacts before parsing reserved G4 test outcomes."
+  },
+  "evaluation": {
+    "bootstrap_unit": "held-out cat",
+    "bootstrap_replicates": 5000,
+    "bootstrap_seed": 20261101,
+    "confidence": "95% pointwise descriptive intervals, not multiplicity adjusted",
+    "metric": "response-weighted natural-log loss; Brier score and accuracy are secondary",
+    "paired_contrasts": ["M0-M1-zero", "M1-zero-M3*", "M3*-M4*"],
+    "guard": "Evaluate once only after validating the G4 freeze; no test-driven tuning or deployment selection."
+  }
+}

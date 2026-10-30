@@ -1,0 +1,33 @@
+{
+  "status": "completed_once_post_freeze_retrospective_exploratory",
+  "freeze_sha256": "bdb3c2f5a7fc8636d132c91b815f6f1df04c4b752648ac2e0de68dfcacd5ea56",
+  "test_access_record_sha256": "5ddcb4b6a7c0850378b95cf7ea524d59ea0de8533b94278ba081a19998a912c0",
+  "output_sha256": {
+    "test_predictions.parquet": "336b8b5d3b245a405e63d3a8a12a94379effdff38e335e963ff3746f1069a381",
+    "test_results.csv": "0a85ab96c83a4e0c2ee3b21d01e40f22b564abbc02c9585b33cb4dee0050f55f",
+    "test_contrasts.csv": "45484d3a689c331f3978db3a0cdcb1c7aae67c44a172ded97afe832539ab6493",
+    "presentation_g4_results.pdf": "fc54830fdb1876f5c09b96b4556d69736d8cb16cc5ad9ebd86e7e0f9e1c26251"
+  },
+  "responses": 3479,
+  "pairs": 1101,
+  "held_out_cats": 23,
+  "bootstrap_replicates": 5000,
+  "bootstrap_unit": "held-out cat",
+  "bootstrap_seed": 20261101,
+  "previous_g2_partition_overlap": {
+    "fit": 2437,
+    "test": 536,
+    "validation": 506
+  },
+  "previous_g3_allocation_overlap": {
+    "core_fit": 2001,
+    "core_test": 475,
+    "core_validation": 430,
+    "quarantine": 18,
+    "test": 324,
+    "validation": 231
+  },
+  "interpretation": "Post-test retrospective exploration, not an independent or confirmatory holdout. Intervals are pointwise and conditional on fitted models and selection; held-out-cat resampling does not account for all shared known-cat, photo or respondent dependence.",
+  "m1_zero_convention": "Train cat-identity M1 on core fitting cats; assign score zero to the unseen cat and retain the known fitting-cat score. Zero is a fixed cold-start convention, not a learned unseen-cat score or a claim that the unseen cat is average.",
+  "deployment_or_frozen_g2_g3_changed": false
+}
