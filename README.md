@@ -129,6 +129,32 @@ This freezes `artifacts/common_population_manifest.parquet` and records its
 coverage. Empty common validation or test populations are marked insufficient;
 nonempty populations still require an adequacy assessment before model
 selection. No internal-test outcomes are read by this workflow.
+`tables/feature_quality.csv` is the pre-review automated-check snapshot; the
+reviewed admissions are recorded in `artifacts/feature_admission_decisions.csv`
+and `artifacts/common_population_report.json`.
+
+## Stage 4 fitting graphs and eligibility
+
+After feature review and population freeze, use the CPU environment:
+
+```powershell
+.\.venv\Scripts\python.exe -m pip install -r requirements-stage4.txt
+.\.venv\Scripts\python.exe -m src.run --config decisions.yaml --stage graphs
+.\.venv\Scripts\python.exe -m unittest discover -s tests -p test_graphs.py -v
+```
+
+The command creates full and matched fitting-photo and fitting-cat graphs,
+with outcome-directed edges from fitting responses only. It saves graph
+summaries, node components and support, edges, row-level strict-G2 masks,
+split coverage, an enriched official-test coverage table, and a support
+figure. Existing outputs are not overwritten. Strong connectivity describes
+the ordinary unpenalized Bradley-Terry MLE condition; it does not determine
+whether a penalized estimator returns finite scores.
+
+The held-out eligibility masks use only image identities and fitting-graph
+components. They do not use validation or internal-test outcomes. The frozen
+Stage 3 population still requires an adequacy assessment before model
+selection; official-test overlap is not a performance estimate.
 
 ## Setup
 

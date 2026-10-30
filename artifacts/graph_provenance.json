@@ -1,0 +1,50 @@
+{
+  "status": "graphs_and_masks_created",
+  "common_population_status": "available_adequacy_review_required",
+  "admitted_blocks": [
+    "H",
+    "C",
+    "Y"
+  ],
+  "outcome_source": "fitting rows only; directed edges point winner to loser",
+  "eligibility_source": "structural endpoints and fitting-graph components; no held-out outcomes",
+  "interpretation": "Directed strong connectivity concerns the ordinary unpenalized BT MLE; it does not determine whether a penalized estimator returns finite scores.",
+  "library_versions": {
+    "networkx": "3.7",
+    "matplotlib": "3.11.2",
+    "pyarrow": "21.0.0"
+  },
+  "inputs_sha256": {
+    "artifacts/rows_canonical.parquet": "2201f72aa2668b1b2410fb45208c17f702b1a2299f64aa00bd2e2f4df7188e70",
+    "artifacts/split_manifest.parquet": "2b11ea67b2d735af59c04b9bd3b37abf6e43744b3ce0b522e39915c7bf5151e5",
+    "artifacts/common_population_manifest.parquet": "d328a57503d72789537f3245ecb8a5e9ac37c649a315a5460bd7a1b7d4e1d684",
+    "artifacts/common_population_report.json": "4090cfd31c58c873849ad6df557c49776c9051f307efba6524495c65c491c32c",
+    "artifacts/feature_review.csv": "6c4ff28ee83961d1ecc3358b20fc5123c5c54bf45132c6958a0e837e68b0ba00",
+    "artifacts/feature_review_manifest.json": "3cf68b76f630af9c3f9ea778eb25a820027e3aa79f0f8c5bd44426cdbe6641f8",
+    "artifacts/feature_admission_decisions.csv": "5df0539bf7611778b8024fe78e06456a75fcaa04ddc1d02339f867febde4e0fd",
+    "artifacts/raw_hashes.json": "d41a4fd76eb5871b24c663e2a0f5461168c56e1b932fd72327172faaf13f4715",
+    "tables/official_test_coverage.csv": "95e67e8385c0112bf7adc60910dc63722ed5a4c6b01efd21d8843f0e7f5ede11",
+    "dataset/test.csv": "d8f6e9f8790ba722112c4620c0f60490e5354b8af3c2d1592ac204bb9a5c3534",
+    "decisions.yaml": "a881ba406cc05c48ad5c1d099e0458f5e4709c3219d804988d511eb7d6f3f232",
+    "src/graphs.py": "19c692fa9f7bfbeb30142bf9c95e287454a6cd9e635511264a4b78ade0ab9c41",
+    "src/feature_quality.py": "80a8372cb7f852a915f2dfcdd5812568bbcf4cf1c165349f4acd5d785042381f",
+    "src/feature_freeze.py": "9281e6452e893b4dc103e0c1ad3bbc5c49276fc4b14a5c9b6438be12f00f4625",
+    "requirements-stage4.txt": "8dc3bb7b3203faa3a6efbbacae8bb1d487f134e3b7aa23cca9741de3075a71d1",
+    "features/H.parquet": "dfc525019207a6dac5637cab3c748cc24eba202f2a24c2cb38ec14a13a30438a",
+    "features/manifests/H.json": "577fd606f2dc26cab9cac724556db28c8eaf755e1967718de919e1f7bacc1aa5",
+    "features/C.parquet": "1b4d1f937e5a18d21204f25c2168dfa436872b890fa6f34a61c5635d775be426",
+    "features/manifests/C.json": "05b45d32ad1c7242ff0c62bf720c209a864e40654dcb625d070073f4d4e49092",
+    "features/Y.parquet": "4e56141451643d8ce97f4a368271d033de6968be34f7a92a7216399339a13c33",
+    "features/manifests/Y.json": "16491672f38296c6911ea78d75c41303bcfab422de5286c2bd4adcd943d91b6d"
+  },
+  "stage3_review_history_limit": "Stage 3 did not record a hash of mutable review findings at freeze; current review and decision hashes are recorded here.",
+  "outputs_sha256": {
+    "tables/graph_summary.csv": "39b1749c7e71ba862cf2902e5a782162ad309b380b5233249444a6562d8ac9b7",
+    "tables/split_coverage.csv": "05568a8f74cdba019049ede6f0ebbaf3567da0b5bacf4aed0d24f4ffdf4e652c",
+    "tables/official_test_coverage_stage4.csv": "4219d1a845b78d5d4b61aa87e1f775b99c8a24947fbc5227676cd2db2ac1ce52",
+    "figures/graph_support.pdf": "74dc3f6e015c5e49eed89f005e9aa3145bac899321785e7a461981a82918935d",
+    "artifacts/g2_eligibility.parquet": "4aaac8aee46fcdbe757366eb6942e3dddd790bd5d73b6bd28c92edaa569f78e9",
+    "artifacts/graph_components.parquet": "906b98014df4221188f7e0b2d908f8559b50f6530e2a8c4c75cc8c8716b8c612",
+    "artifacts/graph_edges.parquet": "e71ce7a66b6155793ded58fb8c217226eae60808ae4567f4b5c7b768f17800b9"
+  }
+}

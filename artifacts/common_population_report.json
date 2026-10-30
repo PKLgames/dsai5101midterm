@@ -1,0 +1,74 @@
+{
+  "admitted_blocks": [
+    "H",
+    "C",
+    "Y"
+  ],
+  "status": "available_adequacy_review_required",
+  "common_fitting_responses": 17421,
+  "common_strict_validation_responses": 3742,
+  "common_strict_test_responses": 3733,
+  "review_images": 64,
+  "review_rows": 128,
+  "review_issue_fields": 0,
+  "admission_decisions": [
+    {
+      "block": "H",
+      "decision": "admitted",
+      "reviewer": "Yuen Lok Yan",
+      "systematic_bugs_resolved": "yes",
+      "reason": "review found no problem"
+    },
+    {
+      "block": "C",
+      "decision": "admitted",
+      "reviewer": "Yuen Lok Yan",
+      "systematic_bugs_resolved": "yes",
+      "reason": "review found no problem"
+    },
+    {
+      "block": "Y",
+      "decision": "admitted",
+      "reviewer": "Lu Yuqing",
+      "systematic_bugs_resolved": "yes",
+      "reason": "review found no problem"
+    }
+  ],
+  "feature_reports": {
+    "H": {
+      "block": "H",
+      "status": "passed_human_review",
+      "automated_checks": "passed",
+      "successful_images": 1558,
+      "failed_images": 0,
+      "strict_validation_responses": 3742,
+      "covered_validation_responses": 3742,
+      "validation_coverage": 1.0,
+      "details": "review found no problem"
+    },
+    "C": {
+      "block": "C",
+      "status": "passed_human_review",
+      "automated_checks": "passed",
+      "successful_images": 1558,
+      "failed_images": 0,
+      "strict_validation_responses": 3742,
+      "covered_validation_responses": 3742,
+      "validation_coverage": 1.0,
+      "details": "review found no problem"
+    },
+    "Y": {
+      "block": "Y",
+      "status": "passed_human_review",
+      "automated_checks": "passed",
+      "successful_images": 1558,
+      "failed_images": 0,
+      "strict_validation_responses": 3742,
+      "covered_validation_responses": 3742,
+      "validation_coverage": 1.0,
+      "details": ""
+    }
+  },
+  "note": "Population membership is structural; no held-out outcomes were read. Review sample-size adequacy before model selection.",
+  "population_manifest_sha256": "d328a57503d72789537f3245ecb8a5e9ac37c649a315a5460bd7a1b7d4e1d684"
+}

@@ -1,0 +1,13 @@
+population,partition,comparison_type,status,responses,pairs,eligible_responses,eligible_pairs,response_coverage,pair_coverage,one_photo_unseen_in_fit,both_photos_unseen_in_fit,different_fitting_components,feature_unavailable,no_admitted_visual_features
+full,validation,all,available,3742,1208,3742,1208,1.0,1.0,0,0,0,0,0
+full,validation,within_cat,available,450,170,450,170,1.0,1.0,0,0,0,0,0
+full,validation,between_cats,available,3292,1038,3292,1038,1.0,1.0,0,0,0,0,0
+full,test,all,available,3733,1207,3733,1207,1.0,1.0,0,0,0,0,0
+full,test,within_cat,available,455,170,455,170,1.0,1.0,0,0,0,0,0
+full,test,between_cats,available,3278,1037,3278,1037,1.0,1.0,0,0,0,0,0
+common,validation,all,available,3742,1208,3742,1208,1.0,1.0,0,0,0,0,0
+common,validation,within_cat,available,450,170,450,170,1.0,1.0,0,0,0,0,0
+common,validation,between_cats,available,3292,1038,3292,1038,1.0,1.0,0,0,0,0,0
+common,test,all,available,3733,1207,3733,1207,1.0,1.0,0,0,0,0,0
+common,test,within_cat,available,455,170,455,170,1.0,1.0,0,0,0,0,0
+common,test,between_cats,available,3278,1037,3278,1037,1.0,1.0,0,0,0,0,0

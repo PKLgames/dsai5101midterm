@@ -13,7 +13,7 @@ from .audit import audit_dataset, write_audit
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--stage", required=True, choices=[
-        "audit", "split", "features", "feature-qa", "feature-panels", "feature-freeze",
+        "audit", "split", "features", "feature-qa", "feature-panels", "feature-freeze", "graphs",
     ])
     parser.add_argument("--config", type=Path, default=Path("decisions.yaml"))
     parser.add_argument("--root", type=Path, default=Path.cwd())
@@ -77,6 +77,12 @@ def main(argv: list[str] | None = None) -> int:
             report = run_freeze(root)
             print(f"Common population frozen: {report['status']}; admitted: {report['admitted_blocks']}.")
             return 0
+        if args.stage == "graphs":
+            from .graphs import run_graphs
+
+            report = run_graphs(root, config)
+            print(f"Stage 4: {report['status']}; common population: {report['common_population_status']}.")
+            return 0 if report["status"] == "graphs_and_masks_created" else 1
         result = audit_dataset(root)
         outputs = write_audit(root, result, overwrite=args.overwrite)
     except (OSError, ValueError, RuntimeError, ImportError, KeyError) as exc:

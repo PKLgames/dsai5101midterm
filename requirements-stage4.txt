@@ -1,0 +1,4 @@
+# Versions used for Stage 4 graph summaries and figures.
+networkx==3.7
+matplotlib==3.11.2
+pyarrow==21.0.0
