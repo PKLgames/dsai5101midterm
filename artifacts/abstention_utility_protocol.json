@@ -1,0 +1,27 @@
+{
+  "scope": "post-test exploratory presentation analysis using saved frozen predictions only",
+  "population": "common strict-G2 internal test",
+  "models": ["M0", "M1", "M2", "M3*", "M4*"],
+  "payoffs": {"correct": 1, "incorrect": -1, "abstain": 0},
+  "threshold_grid": {"start": 0.5, "stop": 1.0, "step": 0.025},
+  "classification_rule": "A if prob_a >= 0.5 else B",
+  "confidence": "max(prob_a, 1-prob_a)",
+  "acceptance_rule": "retain confidence >= threshold; retain all confidence ties together",
+  "utility_denominator": "all original responses, including abstained cases with utility zero",
+  "selective_accuracy_denominator": "retained responses only; undefined when no responses retained",
+  "support_rule": {"retained_responses": 100, "retained_pairs": 30},
+  "bootstrap": {
+    "replicates": 5000,
+    "seed": 20261101,
+    "cluster": "unordered test pair",
+    "confidence_level": 0.95,
+    "shared_resamples": "same resampled pairs across every model and threshold; keep all responses and pair multiplicity",
+    "conditional_interval_policy": "Report retained-accuracy intervals only when support rule passes and every resample has retained responses. Count undefined resamples explicitly.",
+    "interpretation": "exploratory pointwise intervals, not multiplicity-adjusted; conditional on fitted models and development choices"
+  },
+  "model_implied_utility": "Sum of retained (2*confidence-1) divided by all original responses; valid as expected correctness utility only under calibrated probabilities.",
+  "decision_theory_note": "With correct +1, wrong -1, abstain 0 and calibrated probabilities, always predict is weakly optimal in expected total utility because confidence is at least 0.5. Higher selective accuracy alone does not establish a total-utility benefit.",
+  "threshold_selection": "none; do not maximize test utility, tune a threshold, select a new winner, or modify deployment",
+  "illustrative_table_thresholds": [0.5, 0.6, 0.7],
+  "not_performed": ["model refitting", "feature extraction", "reading raw test outcomes", "rerunning the frozen evaluation", "updating primary claims", "changing existing report or code ZIP"]
+}

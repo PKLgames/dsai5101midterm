@@ -1,0 +1,98 @@
+{
+  "status": "post_test_exploratory",
+  "figure": "figures/presentation_abstention_utility.pdf",
+  "models": [
+    "M0",
+    "M1",
+    "M2",
+    "M3*",
+    "M4*"
+  ],
+  "common_responses": 3733,
+  "common_pairs": 1207,
+  "thresholds": [
+    0.5,
+    0.525,
+    0.55,
+    0.575,
+    0.6,
+    0.625,
+    0.65,
+    0.675,
+    0.7,
+    0.725,
+    0.75,
+    0.775,
+    0.8,
+    0.825,
+    0.85,
+    0.875,
+    0.9,
+    0.925,
+    0.95,
+    0.975,
+    1.0
+  ],
+  "payoffs": {
+    "correct": 1,
+    "incorrect": -1,
+    "abstain": 0
+  },
+  "threshold_selected": false,
+  "deployment_changed": false,
+  "models_refit": false,
+  "raw_test_outcomes_read": false,
+  "frozen_evaluation_rerun": false,
+  "working_data": "Only already-saved outcomes and probabilities in the original frozen prediction artifact",
+  "freeze_sha256": "47d22cc15fd7e42157b3f45faf634acee325e1288459b47b9635d9e2fd24411a",
+  "bootstrap": {
+    "replicates": 5000,
+    "seed": 20261101,
+    "cluster": "unordered test pair",
+    "confidence_level": 0.95,
+    "shared_resamples": "same resampled pairs across every model and threshold; keep all responses and pair multiplicity",
+    "conditional_interval_policy": "Report retained-accuracy intervals only when support rule passes and every resample has retained responses. Count undefined resamples explicitly.",
+    "interpretation": "exploratory pointwise intervals, not multiplicity-adjusted; conditional on fitted models and development choices"
+  },
+  "layout_checks": [
+    {
+      "page": 1,
+      "outside_page_text": []
+    },
+    {
+      "page": 2,
+      "outside_page_text": []
+    },
+    {
+      "page": 3,
+      "outside_page_text": []
+    },
+    {
+      "page": 4,
+      "outside_page_text": []
+    }
+  ],
+  "input_sha256": {
+    "artifacts/model_freeze.json": "47d22cc15fd7e42157b3f45faf634acee325e1288459b47b9635d9e2fd24411a",
+    "artifacts/model_freeze.sha256": "5b1c65e1eac2f904ea5d20beac9e0bbc06e25448758cadbb1c8d3d78e3126138",
+    "artifacts/evaluation_provenance.json": "ba1d82b0543e0400e9fff75f0274f67735b8e0182e2dca78ed0cee52280ba5ed",
+    "artifacts/test_predictions.parquet": "e390f1dd6cfbbb1ef93a70dfc7d772f244cdc87b330e56137b21429b7fb897a8",
+    "artifacts/model_selection.json": "e4e5b131f82d61fa139e89c279903466d289bf50720605d73ab91d435b9883a6",
+    "tables/main_results.csv": "4e881157eb3a579d076d5e58fa01585848079111ae3a8283a9760caf975f1368",
+    "tables/primary_contrasts.csv": "751f886d96c62faf4cf5df17003201a79abc0e4114d497663ab94d906d0d93ed",
+    "tables/secondary_results.csv": "a5738fcbd003bc5b059cc87da808842525519aad470cd8c28b2614e45aa50b51",
+    "claims_final.csv": "9cc8001c3cd61ed38b72a8d0890cb28c7edc2d96a599043c1ef1dfd49a7f808a",
+    "tables/diagnostic_synthesis.csv": "9cc8001c3cd61ed38b72a8d0890cb28c7edc2d96a599043c1ef1dfd49a7f808a",
+    "Group_19_Report.pdf": "12ecf195e342137dc409a78f0b64d41121a35770ab7aa0b359a2cfca4e51b44c",
+    "Group_19_Code.zip": "a0c6c8704b141b16c62739355c5827253580b730a7d0212a634415581b94949c",
+    "artifacts/abstention_utility_protocol.json": "6a620ab384f6c4699fb20b79f34b14fc9360deb4539533f0b2b47769c84105ab",
+    "src/abstention_utility.py": "368f75ee3e4583dd40502d69208274899a0955bea8d84b9cac817375168489bd"
+  },
+  "output_sha256": {
+    "figures/presentation_abstention_utility.pdf": "c342fd5b3ad2eb20eead3ad29523376ec6f1ba0cff2b0957672ab48c11043e92",
+    "tables/exploratory_abstention_utility.csv": "4e24c5acebb28ac72ae4a75b02af8ace32dc2f0d794ca04efe930d2727336f60"
+  },
+  "interpretation": "With correct +1, wrong -1, abstain 0 and calibrated probabilities, always predict is weakly optimal in expected total utility because confidence is at least 0.5. Higher selective accuracy alone does not establish a total-utility benefit.",
+  "limits": "Exploratory post-test thresholds and pointwise pair-bootstrap intervals do not establish an independently validated abstention policy.",
+  "existing_deliverables": "The original report, code ZIP, claims, synthesis, and Presentation_Evidence copies were not modified to incorporate this supplementary extension."
+}

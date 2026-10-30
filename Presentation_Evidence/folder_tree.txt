@@ -1,4 +1,64 @@
 Presentation_Evidence\
+|-- By_Presentation_Flow\
+|   |-- 01_Data\
+|   |   |-- 01_Audit\
+|   |   |   `-- data_audit.csv
+|   |   |-- 02_Split_and_Graph_Support\
+|   |   |   |-- graph_summary.csv
+|   |   |   |-- graph_support.pdf
+|   |   |   |-- split_coverage.csv
+|   |   |   `-- split_manifest.parquet
+|   |   |-- 03_Feature_Quality\
+|   |   |   |-- feature_admission_decisions.csv
+|   |   |   `-- feature_quality.csv
+|   |   `-- 04_Development_Description\
+|   |       |-- context_overlap.csv
+|   |       |-- disagreement.pdf
+|   |       `-- support_distribution.pdf
+|   |-- 02_Models\
+|   |   |-- 01_Validation_Selection\
+|   |   |   `-- validation_results.csv
+|   |   |-- 02_Frozen_Feature_Associations\
+|   |   |   |-- presentation_context_interactions.pdf
+|   |   |   |-- presentation_feature_importance_H.pdf
+|   |   |   `-- presentation_feature_importance_Y.pdf
+|   |   `-- 03_Frozen_Test_Comparison\
+|   |       |-- main_results.csv
+|   |       |-- primary_contrasts.csv
+|   |       `-- secondary_results.csv
+|   |-- 03_Diagnostics\
+|   |   |-- 01_Known_Truth_and_Controls\
+|   |   |   |-- simulations_ABC.pdf
+|   |   |   `-- synthetic_label_control.csv
+|   |   |-- 02_Development_Probes\
+|   |   |   |-- cnn_pca_diagnostic.csv
+|   |   |   |-- grouped_ablations.csv
+|   |   |   |-- learning_curves.pdf
+|   |   |   |-- penalty_paths.pdf
+|   |   |   `-- temperature_diagnostic.csv
+|   |   |-- 03_Test_Calibration_and_Slices\
+|   |   |   |-- calibration.pdf
+|   |   |   `-- subgroup_results.csv
+|   |   |-- 04_Exploratory_Demographic_Semantics\
+|   |   |   |-- exploratory_demographic_semantic_overlap.csv
+|   |   |   |-- exploratory_demographic_semantic_rates.csv
+|   |   |   `-- exploratory_demographic_semantics.pdf
+|   |   `-- 05_Exploratory_Abstention_Utility\
+|   |       |-- abstention_utility_protocol.json
+|   |       |-- abstention_utility_provenance.json
+|   |       |-- exploratory_abstention_utility.csv
+|   |       `-- presentation_abstention_utility.pdf
+|   `-- 04_Claims\
+|       |-- 01_Question_and_Scope\
+|       |   `-- protocol.md
+|       |-- 02_Evidence_Linked_Synthesis\
+|       |   |-- claims_final.csv
+|       |   `-- diagnostic_synthesis.csv
+|       `-- 03_Report_and_Submission\
+|           |-- Group_19_Report.pdf
+|           |-- references.csv
+|           |-- REPRODUCTION.md
+|           `-- stage11_contributions_draft.csv
 |-- By_Stage\
 |   |-- 00_Governance\
 |   |   `-- protocol.md
@@ -41,6 +101,11 @@ Presentation_Evidence\
 |   |   |-- presentation_context_interactions.pdf
 |   |   |-- presentation_feature_importance_H.pdf
 |   |   `-- presentation_feature_importance_Y.pdf
+|   |-- 10_2_Exploratory_Abstention_Utility\
+|   |   |-- abstention_utility_protocol.json
+|   |   |-- abstention_utility_provenance.json
+|   |   |-- exploratory_abstention_utility.csv
+|   |   `-- presentation_abstention_utility.pdf
 |   |-- 10_5_Exploratory_Semantics\
 |   |   |-- exploratory_demographic_semantic_overlap.csv
 |   |   |-- exploratory_demographic_semantic_rates.csv
@@ -50,61 +115,8 @@ Presentation_Evidence\
 |       |-- references.csv
 |       |-- REPRODUCTION.md
 |       `-- stage11_contributions_draft.csv
-|-- By_Presentation_Flow\
-|   |-- 01_Data\
-|   |   |-- 01_Audit\
-|   |   |   `-- data_audit.csv
-|   |   |-- 02_Split_and_Graph_Support\
-|   |   |   |-- graph_summary.csv
-|   |   |   |-- graph_support.pdf
-|   |   |   |-- split_coverage.csv
-|   |   |   `-- split_manifest.parquet
-|   |   |-- 03_Feature_Quality\
-|   |   |   |-- feature_admission_decisions.csv
-|   |   |   `-- feature_quality.csv
-|   |   `-- 04_Development_Description\
-|   |       |-- context_overlap.csv
-|   |       |-- disagreement.pdf
-|   |       `-- support_distribution.pdf
-|   |-- 02_Models\
-|   |   |-- 01_Validation_Selection\
-|   |   |   `-- validation_results.csv
-|   |   |-- 02_Frozen_Feature_Associations\
-|   |   |   |-- presentation_context_interactions.pdf
-|   |   |   |-- presentation_feature_importance_H.pdf
-|   |   |   `-- presentation_feature_importance_Y.pdf
-|   |   `-- 03_Frozen_Test_Comparison\
-|   |       |-- main_results.csv
-|   |       |-- primary_contrasts.csv
-|   |       `-- secondary_results.csv
-|   |-- 03_Diagnostics\
-|   |   |-- 01_Known_Truth_and_Controls\
-|   |   |   |-- simulations_ABC.pdf
-|   |   |   `-- synthetic_label_control.csv
-|   |   |-- 02_Development_Probes\
-|   |   |   |-- cnn_pca_diagnostic.csv
-|   |   |   |-- grouped_ablations.csv
-|   |   |   |-- learning_curves.pdf
-|   |   |   |-- penalty_paths.pdf
-|   |   |   `-- temperature_diagnostic.csv
-|   |   |-- 03_Test_Calibration_and_Slices\
-|   |   |   |-- calibration.pdf
-|   |   |   `-- subgroup_results.csv
-|   |   `-- 04_Exploratory_Demographic_Semantics\
-|   |       |-- exploratory_demographic_semantic_overlap.csv
-|   |       |-- exploratory_demographic_semantic_rates.csv
-|   |       `-- exploratory_demographic_semantics.pdf
-|   `-- 04_Claims\
-|       |-- 01_Question_and_Scope\
-|       |   `-- protocol.md
-|       |-- 02_Evidence_Linked_Synthesis\
-|       |   |-- claims_final.csv
-|       |   `-- diagnostic_synthesis.csv
-|       `-- 03_Report_and_Submission\
-|           |-- Group_19_Report.pdf
-|           |-- references.csv
-|           |-- REPRODUCTION.md
-|           `-- stage11_contributions_draft.csv
+|-- extension_selection_manifest.csv
+|-- extension_verification.json
 |-- folder_tree.txt
 |-- original_hashes_after.json
 |-- original_hashes_before.json

@@ -1,0 +1,83 @@
+{
+  "status": "all_checks_passed",
+  "verified_utc": "2026-10-30T15:16:15.134185+00:00",
+  "operation": "Copied extension sources into both evidence views; originals were not moved or edited.",
+  "scope_exclusions": [
+    ".cache",
+    ".git",
+    ".venv",
+    "Presentation_Evidence"
+  ],
+  "original_file_count_before_and_after": 1937,
+  "original_files_changed_during_operation": [],
+  "historical_original_files_verified": 1929,
+  "historical_original_files_changed_since_snapshot": [],
+  "historical_metadata_hashes_verified": true,
+  "previous_selected_sources_verified": 36,
+  "previous_copies_verified": 72,
+  "extension_sources": 4,
+  "extension_copies_verified": 8,
+  "extension_provenance_input_and_output_hashes_verified": true,
+  "extension_selection_manifest_sha256": "a6aa29ca1c4fcd688914adf102e6d1e10cae35a7b985cb679b590544483ff2b0",
+  "source_hashes_before_and_after": {
+    "figures\\presentation_abstention_utility.pdf": {
+      "sha256": "c342fd5b3ad2eb20eead3ad29523376ec6f1ba0cff2b0957672ab48c11043e92",
+      "bytes": 63506
+    },
+    "tables\\exploratory_abstention_utility.csv": {
+      "sha256": "4e24c5acebb28ac72ae4a75b02af8ace32dc2f0d794ca04efe930d2727336f60",
+      "bytes": 54930
+    },
+    "artifacts\\abstention_utility_protocol.json": {
+      "sha256": "6a620ab384f6c4699fb20b79f34b14fc9360deb4539533f0b2b47769c84105ab",
+      "bytes": 2186
+    },
+    "artifacts\\abstention_utility_provenance.json": {
+      "sha256": "bd269c8577954e8d5e11b43517e4c4bf543491a9a1e21af11caaefc51763f6a9",
+      "bytes": 4054
+    }
+  },
+  "copies": [
+    {
+      "copy": "By_Stage\\10_2_Exploratory_Abstention_Utility\\presentation_abstention_utility.pdf",
+      "source": "figures\\presentation_abstention_utility.pdf",
+      "sha256": "c342fd5b3ad2eb20eead3ad29523376ec6f1ba0cff2b0957672ab48c11043e92"
+    },
+    {
+      "copy": "By_Presentation_Flow\\03_Diagnostics\\05_Exploratory_Abstention_Utility\\presentation_abstention_utility.pdf",
+      "source": "figures\\presentation_abstention_utility.pdf",
+      "sha256": "c342fd5b3ad2eb20eead3ad29523376ec6f1ba0cff2b0957672ab48c11043e92"
+    },
+    {
+      "copy": "By_Stage\\10_2_Exploratory_Abstention_Utility\\exploratory_abstention_utility.csv",
+      "source": "tables\\exploratory_abstention_utility.csv",
+      "sha256": "4e24c5acebb28ac72ae4a75b02af8ace32dc2f0d794ca04efe930d2727336f60"
+    },
+    {
+      "copy": "By_Presentation_Flow\\03_Diagnostics\\05_Exploratory_Abstention_Utility\\exploratory_abstention_utility.csv",
+      "source": "tables\\exploratory_abstention_utility.csv",
+      "sha256": "4e24c5acebb28ac72ae4a75b02af8ace32dc2f0d794ca04efe930d2727336f60"
+    },
+    {
+      "copy": "By_Stage\\10_2_Exploratory_Abstention_Utility\\abstention_utility_protocol.json",
+      "source": "artifacts\\abstention_utility_protocol.json",
+      "sha256": "6a620ab384f6c4699fb20b79f34b14fc9360deb4539533f0b2b47769c84105ab"
+    },
+    {
+      "copy": "By_Presentation_Flow\\03_Diagnostics\\05_Exploratory_Abstention_Utility\\abstention_utility_protocol.json",
+      "source": "artifacts\\abstention_utility_protocol.json",
+      "sha256": "6a620ab384f6c4699fb20b79f34b14fc9360deb4539533f0b2b47769c84105ab"
+    },
+    {
+      "copy": "By_Stage\\10_2_Exploratory_Abstention_Utility\\abstention_utility_provenance.json",
+      "source": "artifacts\\abstention_utility_provenance.json",
+      "sha256": "bd269c8577954e8d5e11b43517e4c4bf543491a9a1e21af11caaefc51763f6a9"
+    },
+    {
+      "copy": "By_Presentation_Flow\\03_Diagnostics\\05_Exploratory_Abstention_Utility\\abstention_utility_provenance.json",
+      "source": "artifacts\\abstention_utility_provenance.json",
+      "sha256": "bd269c8577954e8d5e11b43517e4c4bf543491a9a1e21af11caaefc51763f6a9"
+    }
+  ],
+  "note": "The original selection_manifest.csv and verification.json remain historical records. This extension has a separate manifest and verification. The post-test analysis is exploratory, does not select a deployment threshold, and is not included in the existing report or code ZIP."
+}
