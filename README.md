@@ -156,6 +156,38 @@ components. They do not use validation or internal-test outcomes. The frozen
 Stage 3 population still requires an adequacy assessment before model
 selection; official-test overlap is not a performance estimate.
 
+## Stage 5 estimator tests and known-truth simulations
+
+Install the numerical dependencies and run the focused checks before the
+synthetic simulations:
+
+```powershell
+.\.venv\Scripts\python.exe -m pip install -r requirements-stage5.txt
+.\.venv\Scripts\python.exe -m unittest discover -s tests -p test_objective.py -v
+.\.venv\Scripts\python.exe -m unittest discover -s tests -p test_recovery.py -v
+.\.venv\Scripts\python.exe -m unittest discover -s tests -p test_orientation.py -v
+.\.venv\Scripts\python.exe -m src.run --config decisions.yaml --stage simulations
+```
+
+The shared estimator uses float64 stable logit loss, per-coefficient ridge,
+analytic gradients, zero-start L-BFGS-B, the registered acceptance threshold,
+and one recorded retry. Weighted rows support exact count aggregation only
+when all predictors match. Callers must inspect `FitResult.accepted`; a failed
+fit is not a candidate. The pooled fallback copies the matched M3 predictions
+exactly rather than approximating zero interactions through a matrix product.
+
+The simulation output contains each fit and solver attempt. The three
+demonstrations use 100 repetitions at 10, 50, and 200 responses per pair per
+group, with ridge 1e-6 and no position intercept because the known-truth
+examples have no position effect. The cycle's pair oracle is not a fitted BT
+model. These are known-truth demonstrations, not real-data claims.
+
+The required 20-repetition fair-coin synthetic-label control is **not yet
+complete**: it must include the selected visual/contextual procedure at fixed
+development settings, which does not exist until Stage 7. Run it before
+final evaluation and investigate consistent unexpected gains. A successful
+control does not prove all code paths leakage-free.
+
 ## Setup
 
 Python 3.12. From the project root:

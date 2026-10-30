@@ -1,0 +1,5 @@
+# Stage 5 estimator and synthetic simulations.
+numpy==2.5.2
+scipy==1.18.1
+matplotlib==3.11.2
+pyarrow==21.0.0

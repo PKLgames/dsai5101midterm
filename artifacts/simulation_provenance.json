@@ -1,0 +1,31 @@
+{
+  "seed": 20261029,
+  "repetitions": 100,
+  "response_counts": [
+    10,
+    50,
+    200
+  ],
+  "simulation_ridge": 1e-06,
+  "side_intercept": false,
+  "side_intercept_explanation": "No position effect is part of the known-truth simulations; cycle orientation must not become a side predictor.",
+  "risk": "exact equally weighted pair/group expected logistic loss from logits",
+  "failed_fits": 0,
+  "fit_count": 1200,
+  "synthetic_label_control": "deferred: requires Stage 7 selected visual/contextual procedure and fixed development settings",
+  "source_sha256": {
+    "src/estimator.py": "2951bf159312714f6b83632ef2cd22f38f9f78238de455e7629ff59e4886cbc2",
+    "src/simulations.py": "9412a374cc147c4e2a39a8b1de306d2c9482e51f32f1a8407d1432df0ab8bac9",
+    "requirements-stage5.txt": "5eaaa66cf3eec05d89cfab2323a2529f4e3ef9bbce658e3af29860cc23732152"
+  },
+  "library_versions": {
+    "numpy": "2.5.2",
+    "scipy": "1.18.1",
+    "pyarrow": "21.0.0",
+    "matplotlib": "3.11.2"
+  },
+  "outputs_sha256": {
+    "artifacts/simulations.parquet": "87b5f48564bcacf40a4cd300cd08785d8ce98fcdc81745df1b14a3d29986978c",
+    "figures/simulations_ABC.pdf": "5f263a2076649b9f15f527b1960989ce6b6602aa09b22bea63295ab6355cee93"
+  }
+}

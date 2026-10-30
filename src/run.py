@@ -13,7 +13,7 @@ from .audit import audit_dataset, write_audit
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--stage", required=True, choices=[
-        "audit", "split", "features", "feature-qa", "feature-panels", "feature-freeze", "graphs",
+        "audit", "split", "features", "feature-qa", "feature-panels", "feature-freeze", "graphs", "simulations",
     ])
     parser.add_argument("--config", type=Path, default=Path("decisions.yaml"))
     parser.add_argument("--root", type=Path, default=Path.cwd())
@@ -83,6 +83,14 @@ def main(argv: list[str] | None = None) -> int:
             report = run_graphs(root, config)
             print(f"Stage 4: {report['status']}; common population: {report['common_population_status']}.")
             return 0 if report["status"] == "graphs_and_masks_created" else 1
+        if args.stage == "simulations":
+            from .simulations import run_simulations
+
+            if not config.get("real_data_modeling_allowed"):
+                raise ValueError("Stage 0 governance gate has not been opened.")
+            report = run_simulations(root, config["seeds"]["simulation"])
+            print(f"Known-truth fits: {report['fit_count']}; failed fits: {report['failed_fits']}.")
+            return 1 if report["failed_fits"] else 0
         result = audit_dataset(root)
         outputs = write_audit(root, result, overwrite=args.overwrite)
     except (OSError, ValueError, RuntimeError, ImportError, KeyError) as exc:
