@@ -1,0 +1,6 @@
+{
+  "selection": "first five common strict-validation response IDs in lexicographic order, independent of outcomes and predictions",
+  "models": ["M3-H", "M4-H", "M3-C", "M4-C", "M3-Y", "M4-Y"],
+  "groups": "H and Y follow stage8_protocol.json ablation groups; unassigned dimensions form an other group. C is reported as one entire embedding block.",
+  "interpretation": "contributions explain the fitted model logit and are not causal human preference effects"
+}

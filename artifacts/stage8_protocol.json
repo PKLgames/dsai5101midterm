@@ -1,0 +1,39 @@
+{
+  "date": "2026-10-30",
+  "learning_curve_validation_minimum": {
+    "responses": 100,
+    "distinct_pairs": 30,
+    "authority": "user",
+    "interpretation": "operational rule, not a statistical-power guarantee"
+  },
+  "learning_curve_sizes": [0.25, 0.5, 0.75, 1.0],
+  "learning_curve_fallback_sizes": [0.5, 0.75, 1.0],
+  "learning_curve_seeds": [20261030, 20261031],
+  "synthetic_label_control": {
+    "seed": 20261102,
+    "repetitions": 20,
+    "procedure": "Fit M2 and selected M3/M4 at Stage 7 fixed penalties and representation; independent fair-coin fitting and validation labels.",
+    "investigation_trigger": "At least 16 of 20 accepted repetitions improve over the 0.5 baseline for any tested procedure; this is an operational flag, not proof of leakage."
+  },
+  "ablation_groups": {
+    "H": {
+      "color_brightness": ["brightness", "saturation_mean", "saturation_std", "colorfulness", "warm_pixel_ratio", "hue_mean", "hue_concentration", "mean_r", "mean_g", "mean_b", "overexposed_frac", "underexposed_frac", "is_effectively_gray"],
+      "contrast_sharpness_edges": ["contrast", "sharpness_laplacian_var", "entropy_bits", "edge_density"],
+      "size": ["aspect_ratio", "log_pixels", "log_file_kb"]
+    },
+    "Y": {
+      "coat_measurements": ["share_black", "share_white", "share_gray", "share_orange", "share_cream", "share_brown", "tabby_score", "pointed_score", "colour_primary", "colour_secondary", "colour_pattern"],
+      "framing_view": ["bbox_area_frac", "framing", "view"],
+      "eyes_posture": ["eyes", "eyes_colour", "posture"],
+      "inferred_breed": ["breed"]
+    }
+  },
+  "ablation_notes": "Age remains in the Y representation in all registered ablations. Numeric missing indicators follow their parent variable. Refit M3 on the unchanged matched fitting/validation responses; recompute the retained block RMS norm on unique fitting photos after dropping one group.",
+  "optional_diagnostics": {
+    "cnn_pca": true,
+    "temperature_models": ["M2", "M3*", "M4*"],
+    "temperature_grid": [0.25, 0.5, 0.75, 1, 1.5, 2, 4],
+    "grouped_permutation": false,
+    "photo_residual_hybrid": false
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "status": "completed",
+  "worst_losses": 60,
+  "temperature_candidates": 21,
+  "representations": 3,
+  "test_outcomes_read": false
+}

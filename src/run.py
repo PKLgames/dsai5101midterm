@@ -13,7 +13,7 @@ from .audit import audit_dataset, write_audit
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--stage", required=True, choices=[
-        "audit", "split", "features", "feature-qa", "feature-panels", "feature-freeze", "graphs", "simulations", "describe", "develop",
+        "audit", "split", "features", "feature-qa", "feature-panels", "feature-freeze", "graphs", "simulations", "describe", "develop", "diagnose-core", "diagnose-curves", "diagnose-curve-support", "diagnose-representations", "diagnose-reports", "diagnose-contributions", "diagnose-finalize",
     ])
     parser.add_argument("--config", type=Path, default=Path("decisions.yaml"))
     parser.add_argument("--root", type=Path, default=Path.cwd())
@@ -106,6 +106,62 @@ def main(argv: list[str] | None = None) -> int:
             report = run_development(root, config)
             print(f"Development selection: {report['selected_representation']}; "
                   f"{report['candidate_count']} candidates attempted.")
+            return 0
+        if args.stage == "diagnose-core":
+            from .diagnostics import run_core
+
+            if not config.get("real_data_modeling_allowed"):
+                raise ValueError("Stage 0 governance gate has not been opened.")
+            report = run_core(root)
+            print(f"Stage 8 core control: {report['status']}.")
+            return 0 if report["status"] == "passed_operational_control" else 1
+        if args.stage == "diagnose-curves":
+            from .learning_curves import run_curves
+
+            if not config.get("real_data_modeling_allowed"):
+                raise ValueError("Stage 0 governance gate has not been opened.")
+            report = run_curves(root, config)
+            print(f"Learning curves: {report['status']}.")
+            return 0
+        if args.stage == "diagnose-curve-support":
+            from .learning_curve_support import run_curve_support
+
+            if not config.get("real_data_modeling_allowed"):
+                raise ValueError("Stage 0 governance gate has not been opened.")
+            report = run_curve_support(root)
+            print(f"Learning-curve support: {report['status']}; {report['context_rows']} category records.")
+            return 0
+        if args.stage == "diagnose-representations":
+            from .representation_diagnostics import run_representation_diagnostics
+
+            if not config.get("real_data_modeling_allowed"):
+                raise ValueError("Stage 0 governance gate has not been opened.")
+            report = run_representation_diagnostics(root, config)
+            print(f"Representation diagnostics: {report['status']}.")
+            return 0
+        if args.stage == "diagnose-reports":
+            from .diagnostic_reports import run_reports
+
+            if not config.get("real_data_modeling_allowed"):
+                raise ValueError("Stage 0 governance gate has not been opened.")
+            report = run_reports(root)
+            print(f"Validation diagnostics: {report['status']}.")
+            return 0
+        if args.stage == "diagnose-contributions":
+            from .contributions import run_contributions
+
+            if not config.get("real_data_modeling_allowed"):
+                raise ValueError("Stage 0 governance gate has not been opened.")
+            count = run_contributions(root)
+            print(f"Recorded {count} grouped model-logit contributions.")
+            return 0
+        if args.stage == "diagnose-finalize":
+            from .diagnostic_finalize import run_finalize
+
+            if not config.get("real_data_modeling_allowed"):
+                raise ValueError("Stage 0 governance gate has not been opened.")
+            report = run_finalize(root)
+            print(f"Stage 8: {report['status']}; internal-test outcomes not read.")
             return 0
         result = audit_dataset(root)
         outputs = write_audit(root, result, overwrite=args.overwrite)

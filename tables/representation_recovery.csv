@@ -1,0 +1,4 @@
+partition,representation,photos,components,dimensions,ridge,rmse,correlation,interpretation
+common_fit_photos,H,1296,1,19,0.001,0.48966422123237224,0.326534825459264,"in-sample reconstruction of estimated M2 scores, not an independent preference test"
+common_fit_photos,C,1296,1,576,0.001,0.39679921494040143,0.6578311946485316,"in-sample reconstruction of estimated M2 scores, not an independent preference test"
+common_fit_photos,Y,1296,1,100,0.001,0.4617133677675944,0.45402092303981073,"in-sample reconstruction of estimated M2 scores, not an independent preference test"

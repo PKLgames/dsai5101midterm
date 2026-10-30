@@ -1,0 +1,25 @@
+seed,fraction,model,status,fitting_responses,fitting_pairs,fitting_photos,validation_responses,validation_pairs,reference_context,interaction_contexts,ridge,rho,pooled,validation_loss
+20261030,0.25,M2,ok,4367,1408,1161,1836,589,past_regular,"[""current_regular"", ""never"", ""occasionally""]",0.001,0.0,False,0.6829368893946626
+20261030,0.25,M3*,ok,4367,1408,1161,1836,589,past_regular,"[""current_regular"", ""never"", ""occasionally""]",0.001,0.0,False,0.6756658756775549
+20261030,0.25,M4*,ok,4367,1408,1161,1836,589,past_regular,"[""current_regular"", ""never"", ""occasionally""]",0.001,100,False,0.675632720555332
+20261030,0.5,M2,ok,8737,2817,1288,1836,589,never,"[""current_regular"", ""missing"", ""occasionally"", ""past_regular""]",0.001,0.0,False,0.6769938619254187
+20261030,0.5,M3*,ok,8737,2817,1288,1836,589,never,"[""current_regular"", ""missing"", ""occasionally"", ""past_regular""]",0.001,0.0,False,0.6717065135725578
+20261030,0.5,M4*,ok,8737,2817,1288,1836,589,never,"[""current_regular"", ""missing"", ""occasionally"", ""past_regular""]",0.001,exact_pooled,True,0.6717065135725578
+20261030,0.75,M2,ok,13057,4225,1296,1836,589,never,"[""current_regular"", ""missing"", ""occasionally"", ""past_regular""]",0.001,0.0,False,0.6767857933797122
+20261030,0.75,M3*,ok,13057,4225,1296,1836,589,never,"[""current_regular"", ""missing"", ""occasionally"", ""past_regular""]",0.001,0.0,False,0.6709565971035719
+20261030,0.75,M4*,ok,13057,4225,1296,1836,589,never,"[""current_regular"", ""missing"", ""occasionally"", ""past_regular""]",0.001,exact_pooled,True,0.6709565971035719
+20261030,1.0,M2,ok,17421,5634,1296,1836,589,never,"[""current_regular"", ""missing"", ""occasionally"", ""past_regular""]",0.0001,0.0,False,0.6725139445288851
+20261030,1.0,M3*,ok,17421,5634,1296,1836,589,never,"[""current_regular"", ""missing"", ""occasionally"", ""past_regular""]",0.0001,0.0,False,0.6669866469144402
+20261030,1.0,M4*,ok,17421,5634,1296,1836,589,never,"[""current_regular"", ""missing"", ""occasionally"", ""past_regular""]",0.0001,exact_pooled,True,0.6669866469144402
+20261031,0.25,M2,ok,4299,1408,1140,1836,589,past_regular,"[""current_regular"", ""never"", ""occasionally""]",0.001,0.0,False,0.6873630073216526
+20261031,0.25,M3*,ok,4299,1408,1140,1836,589,past_regular,"[""current_regular"", ""never"", ""occasionally""]",0.001,0.0,False,0.6767116868753861
+20261031,0.25,M4*,ok,4299,1408,1140,1836,589,past_regular,"[""current_regular"", ""never"", ""occasionally""]",0.001,10,False,0.6755710644361794
+20261031,0.5,M2,ok,8636,2817,1281,1836,589,never,"[""current_regular"", ""missing"", ""occasionally"", ""past_regular""]",0.001,0.0,False,0.6805793549988516
+20261031,0.5,M3*,ok,8636,2817,1281,1836,589,never,"[""current_regular"", ""missing"", ""occasionally"", ""past_regular""]",0.001,0.0,False,0.6740222893617513
+20261031,0.5,M4*,ok,8636,2817,1281,1836,589,never,"[""current_regular"", ""missing"", ""occasionally"", ""past_regular""]",0.001,10,False,0.6737709318333234
+20261031,0.75,M2,ok,13007,4225,1295,1836,589,never,"[""current_regular"", ""missing"", ""occasionally"", ""past_regular""]",0.001,0.0,False,0.6788500670921866
+20261031,0.75,M3*,ok,13007,4225,1295,1836,589,never,"[""current_regular"", ""missing"", ""occasionally"", ""past_regular""]",0.001,0.0,False,0.6717912430202501
+20261031,0.75,M4*,ok,13007,4225,1295,1836,589,never,"[""current_regular"", ""missing"", ""occasionally"", ""past_regular""]",0.001,10,False,0.6716971560121919
+20261031,1.0,M2,ok,17421,5634,1296,1836,589,never,"[""current_regular"", ""missing"", ""occasionally"", ""past_regular""]",0.0001,0.0,False,0.6725139445288851
+20261031,1.0,M3*,ok,17421,5634,1296,1836,589,never,"[""current_regular"", ""missing"", ""occasionally"", ""past_regular""]",0.0001,0.0,False,0.6669866469144402
+20261031,1.0,M4*,ok,17421,5634,1296,1836,589,never,"[""current_regular"", ""missing"", ""occasionally"", ""past_regular""]",0.0001,exact_pooled,True,0.6669866469144402

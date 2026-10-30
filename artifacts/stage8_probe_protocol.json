@@ -1,0 +1,21 @@
+{
+  "representation_recovery": {
+    "target": "fitting-only common-population M2 photo scores centered within fitting-photo components",
+    "representations": ["H", "C", "Y"],
+    "ridge": 0.001,
+    "objective": "mean squared residual plus ridge times squared coefficient norm",
+    "component_intercepts": "unpenalized; equivalently center predictors and target within components",
+    "evaluation": "in-sample reconstruction of estimated scores; not an independent preference test"
+  },
+  "worst_loss_audit": {
+    "models": ["M2", "M3*", "M4*"],
+    "partition": "common strict validation",
+    "count_per_model": 20,
+    "tie_break": "lexicographic response ID"
+  },
+  "temperature_selection": {
+    "models": ["M2", "M3*", "M4*"],
+    "tie_break": "closest to 1 then smaller temperature",
+    "promotion": "secondary diagnostic only"
+  }
+}

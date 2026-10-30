@@ -1,0 +1,52 @@
+{
+  "status": "completed",
+  "internal_test_outcomes_read": false,
+  "selected_representation": "C",
+  "synthetic_control": "passed_operational_control",
+  "learning_curve_status": {
+    "status": "completed",
+    "responses": 1836,
+    "pairs": 589,
+    "sizes": [
+      0.25,
+      0.5,
+      0.75,
+      1.0
+    ]
+  },
+  "input_sha256": {
+    "artifacts/stage8_protocol.json": "7d5eb8f18ed5046017640da32766255195f71e64f0a89802bb3701e44d915387",
+    "artifacts/stage8_probe_protocol.json": "1fd36015a2a3979509b487c91bd3211910be23bb0547816e8aeb9a23b71c8cfd",
+    "artifacts/stage8_contribution_protocol.json": "bddc1e54b5eb3637efc3fc58d443295c279d908829da65931dde7d580478b0b9",
+    "artifacts/stage8_core.json": "184aa7008bfc191171c6da65e7d70e84e8afffad1f59b5802d0667f013edcde9",
+    "artifacts/learning_curve_status.json": "7e91acbfd9b4346a55cb4019e414c66e07075c82dda2a19de23c13fca222fb74",
+    "artifacts/representation_diagnostic_status.json": "2856d9e674677e0c8a7c91d20aaf4cb9035889e8fa7df6e3ae90dabc7b498b75",
+    "artifacts/learning_curve_preprocessing.json": "95dc47412bee5bd5b894a72bdd665050cd46a0e27863f720adaa80f0368f6437",
+    "tables/learning_curve_context_support.csv": "9d196a28d53003299ffd42ed9d7b648e34f2c41bb5ab6f401c7ad80f13181751",
+    "artifacts/diagnostic_report_status.json": "670353e31c480b9b830bd50f71ef91b1840cf7d165f3659b33ca92e548b3ef13",
+    "tables/learning_curves.csv": "cb1e6e9b59682c1917e5efa05aff6d7388495ebb3d53a64de5c70aa64d86fdbe",
+    "tables/learning_curve_candidates.csv": "87eccab9802e328d290d08466d210c96dddf4408d2c6f068dafcca0ee6286aff",
+    "tables/penalty_path_refits.csv": "fc270728188e9213c49ca277a6db6fd32151fd75b3e0994a17187a283ec0af63",
+    "tables/grouped_ablations.csv": "6dd4af7ea98b236ea5b0523bc8c978f383da4bedbdd85f3adcef2119cc08f47f",
+    "tables/cnn_pca_diagnostic.csv": "ccefdc15a356affb4590b35ef89d82552c49501feebc2e98e6789321876b7e51",
+    "tables/temperature_diagnostic.csv": "8de2dfd9ce9209db6e38e5c51712785cadb4a856fd8e2229f9e73f3f10c5da11",
+    "tables/representation_recovery.csv": "13bd4d362d2e42a73f2ad88726e454b133afbb9ba4be27c81106b8c22ada5092",
+    "tables/feature_contributions.csv": "5dbdafb379568fd6518cbf5da46a70c8bcd4d1d1976abbdfab6fbef955adb39b",
+    "tables/worst_validation_losses.csv": "7e7764e30af41ab2185802852991b76500a3c726b0ed4f962c87b8e55b7a11e7",
+    "tables/diagnostic_confidence.csv": "4d443784d5871c6a6ce7fe9e521eaf1b819ed7e3bb2849b21a64741230890983",
+    "figures/diagnostic_calibration.pdf": "64299e4f35a80253d608c353c5e23888b5d1b7aafb0ba55d1429730fdd8a1eda",
+    "src/diagnostics.py": "c1ecca96c401456235ec2ddf79c904cbc7ab2893f6bd90959d24c98d3b10f339",
+    "src/learning_curves.py": "e31d9d21a5d61026020f030aacbb1be3df63f2140b230b763dc4ce8c915c406a",
+    "src/learning_curve_support.py": "706093dc951374df516c7585a4b7c9caa09f3ab7c206b8fc6e07e77e083551d3",
+    "src/representation_diagnostics.py": "a89850849c3b2c5109a1e8cca2f6320b0f28b44b0a3ec98b04b024bc63350ff9",
+    "src/diagnostic_reports.py": "14b6f5fd5c7a2ab35f24321017bfda386cb7f81c6291826523bd346bef1c1805",
+    "src/contributions.py": "32d0b35f9aabc6b9ed6f32e5a57e92b1b8f1a6994b36e4d715a224d0faeb8127",
+    "src/diagnostic_finalize.py": "eda649e55dbf2afa29c0056901a9219c1d58b30da82042d3e83eb283758e78e8"
+  },
+  "output_sha256": {
+    "figures/penalty_paths.pdf": "e6ccfa54b1419b19ec65e358b5b95e6d31b635ca144080a91993340821de23b9",
+    "figures/learning_curves.pdf": "a23d6915d22d7330e8c91a4dc91dfb5c0092def23a1e55fa86b9134295a5e061",
+    "artifacts/development_decisions.csv": "86411ce6c809f2f603f6474ee90b4209a4634c6b399bc1d84e0b92829ca19860",
+    "tables/diagnostic_interpretation.csv": "baec4a6f8fbbd1f4735ca8310d723b1a3dfda20c017f9ce674f7d2e875cb225e"
+  }
+}

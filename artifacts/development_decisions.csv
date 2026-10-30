@@ -1,0 +1,9 @@
+decision,value,status,scope
+primary_representation,C,retained_stage7_selection,development only; no test-driven reselection
+synthetic_label_control,passed_operational_control,completed,20 independent repetitions; does not certify absence of leakage
+learning_curve_coverage,"{""status"": ""completed"", ""responses"": 1836, ""pairs"": 589, ""sizes"": [0.25, 0.5, 0.75, 1.0]}",completed,"100 responses and 30 pairs are operational thresholds, not power guarantees"
+cnn_pca,development-only diagnostic,not_promoted,not part of the primary candidate registry
+temperature,"{""M2"": 1.5, ""M3*"": 1.0, ""M4*"": 1.0}",not_promoted,must be fixed before any optional final test use
+ablation,registered H and Y groups,secondary,"conditional predictive value, not causal behavioral percentages"
+score_recovery,fitting-only M2 scores; ridge 0.001,secondary,"in-sample reconstruction of estimated scores, not an independent preference test"
+contribution_examples,first five validation response IDs,secondary,"model-logit explanations, not causal preference effects"

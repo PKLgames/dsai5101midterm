@@ -1,0 +1,25 @@
+{
+  "validation_responses": 3742,
+  "fitting_responses": 17421,
+  "control_repetitions": 20,
+  "failed_control_fits": 0,
+  "improved_repetitions": {},
+  "investigation_triggered": {
+    "M2": false,
+    "M3*": false,
+    "M4*": false
+  },
+  "status": "passed_operational_control",
+  "test_outcomes_read": false,
+  "note": "The control cannot certify leakage freedom; subgroup performance may be low support.",
+  "input_sha256": {
+    "artifacts/stage7_verification.json": "7949b224a93e7e26b42913117348c29df8f3d42d707db04ec5143a0321dcb88a",
+    "artifacts/stage8_protocol.json": "7d5eb8f18ed5046017640da32766255195f71e64f0a89802bb3701e44d915387",
+    "src/diagnostics.py": "c1ecca96c401456235ec2ddf79c904cbc7ab2893f6bd90959d24c98d3b10f339"
+  },
+  "output_sha256": {
+    "tables/diagnostic_results.csv": "ae2586c070b86c3e2a77f58878d75a9a89840fda62bf86d77913b2960f5a074d",
+    "tables/diagnostic_calibration.csv": "e4ec235795b00e01891de3162b27755aaf5c3b097ae36f07840890d45c19bb53",
+    "tables/synthetic_label_control.csv": "90c3639815fe4495467c4d841f655239fe8d9135cb007090726da7451e38268e"
+  }
+}

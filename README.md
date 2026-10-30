@@ -230,6 +230,39 @@ and development diagnostics are still required before final evaluation.
 `artifacts/stage7_verification.json` records a reconstruction check of the
 selected validation predictions and hashes the saved development artifacts.
 
+## Stage 8 development diagnosis
+
+The Stage 8 registry is in `artifacts/stage8_protocol.json`; the separate probe
+and contribution registries document their fixed rules. The analysis uses
+fitting and common strict-validation responses only. It does not change the
+Stage 7 model winner or load internal-test outcomes.
+
+After earlier stage artifacts have been verified:
+
+```powershell
+.\.venv\Scripts\python.exe -m src.run --config decisions.yaml --stage diagnose-core
+.\.venv\Scripts\python.exe -m src.run --config decisions.yaml --stage diagnose-curves
+.\.venv\Scripts\python.exe -m src.run --config decisions.yaml --stage diagnose-curve-support
+.\.venv\Scripts\python.exe -m src.run --config decisions.yaml --stage diagnose-representations
+.\.venv\Scripts\python.exe -m src.run --config decisions.yaml --stage diagnose-reports
+.\.venv\Scripts\python.exe -m src.run --config decisions.yaml --stage diagnose-contributions
+.\.venv\Scripts\python.exe -m src.run --config decisions.yaml --stage diagnose-finalize
+```
+
+The fair-coin control uses 20 independent fitting/validation label draws at the
+fixed selected development settings. A passing control does not certify
+leakage freedom. Learning curves refit preprocessing, context support, and
+penalties within nested fitting-pair subsets. The minimum common validation
+coverage of 100 responses and 30 pairs is operational, not a power guarantee.
+Per-subset preprocessing and context fallbacks are saved.
+
+Penalty-path refits reproduce Stage 7 validation losses and add coefficient
+norms. H/Y grouped ablations, the C PCA probe, temperature scaling, and
+reconstruction of estimated photo scores are secondary development
+diagnostics. Contributions explain model outputs, not causal human preferences.
+Every stage refuses to overwrite an existing output; an interrupted run is not
+a completed diagnostic or test freeze.
+
 ## Setup
 
 Python 3.12. From the project root:
