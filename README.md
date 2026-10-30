@@ -318,6 +318,64 @@ primary test contrasts, and secondary results remain explicitly distinguished.
 Unfavorable extensions and intervals spanning no difference are retained.
 Existing synthesis outputs are never overwritten.
 
+## Presentation coefficient figures
+
+```powershell
+.\.venv\Scripts\python.exe -m src.presentation_features
+```
+
+This descriptive, post-evaluation visualization reads the frozen
+`models/M3-H.json`, `models/M3-Y.json`, and `models/M4-C.json` with the saved
+preprocessing names and context mapping. It excludes the intercept, plots the
+five largest positive and negative H/Y weights, and shows the eight unlabeled
+CNN dimensions with the largest absolute context deviations. It neither fits
+models nor reruns evaluation. Requested PDFs are saved under `figures/`; exact
+plotted values and hashes are saved in the presentation tables and
+`artifacts/presentation_feature_provenance.json`.
+
+All figures are labeled "Predictive Association, Not Causal Effect".
+Coefficient magnitude is not standalone feature importance: normalization,
+category coding, correlated predictors, and shrinkage affect the weights.
+Interpret category contrasts within an attribute; do not attach semantic
+names to individual CNN dimensions. The context bars show deviations from the
+`never` reference group, not group-specific intercepts.
+
+## Exploratory Stage 10.5: demographics and semantic image choices
+
+```powershell
+.\.venv\Scripts\python.exe -m src.exploratory_semantics
+```
+
+This is a post-evaluation, descriptive T2 analysis of fitting plus validation
+rows only. No predictive model is fitted and no internal-test outcome is
+loaded. The scope and rules are recorded before execution in
+`artifacts/stage10_5_protocol.json`. Only development-photo Y records enter the
+analysis.
+
+For hard semantic labels, a choice rate is the fraction selecting the endpoint
+with a category when exactly one endpoint carries it. For continuous
+measurements, the rate is the fraction selecting the higher-measurement
+endpoint on non-tied, finite comparisons. Missing or unknown semantic values
+and no-detection endpoints are excluded; their exclusions are counted. Dog
+fallback measurements are retained and disclosed. Missing demographics and
+documented MBTI unknown values remain distinct.
+
+The multipage demographic heatmap shows all measured traits, masking cells
+below 100 discriminating responses or 30 pairs. The tables include support,
+working-model Wilson intervals, comparison-type counts, exclusions, signed
+numeric gaps, and shared-pair support. Unmatched pair composition, correlated
+attributes, side tendencies, and automated measurement error can explain raw
+rate differences. No causal, adjusted demographic, significance, or
+respondent-level claim follows from a heatmap.
+
+Exploratory claims are appended to `claims_final.csv` and
+`tables/diagnostic_synthesis.csv` without rewriting their existing bytes.
+The original Stage 10 provenance still describes the unchanged prefixes;
+`artifacts/stage10_5_provenance.json` records prefix sizes/hashes, appended
+claim IDs, and current full-file hashes. Use this append lineage when checking
+the updated synthesis files, rather than expecting their historical whole-file
+hashes to stay unchanged.
+
 ## Setup
 
 Python 3.12. From the project root:

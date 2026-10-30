@@ -1,0 +1,75 @@
+{
+  "stage": "10.5",
+  "task_role": "T2",
+  "status": "exploratory_development_only",
+  "development_responses": 21163,
+  "development_pairs": 6842,
+  "semantic_features": 56,
+  "rate_rows": 1456,
+  "demographic_fields": [
+    "gender",
+    "pet_history",
+    "pet_care",
+    "pet_contact",
+    "future_pet",
+    "mbti_ie"
+  ],
+  "raw_outcomes_source": "canonical rows filtered to fitting and validation",
+  "internal_test_outcomes_read": false,
+  "test_evaluation_rerun": false,
+  "new_predictive_models_fit": false,
+  "causal_claim": false,
+  "confirmatory_significance_test": false,
+  "qualified_shared_pair_contrasts": 0,
+  "input_sha256": {
+    "artifacts/rows_canonical.parquet": "2201f72aa2668b1b2410fb45208c17f702b1a2299f64aa00bd2e2f4df7188e70",
+    "features/Y.parquet": "4e56141451643d8ce97f4a368271d033de6968be34f7a92a7216399339a13c33",
+    "features/manifests/Y.json": "16491672f38296c6911ea78d75c41303bcfab422de5286c2bd4adcd943d91b6d",
+    "artifacts/stage10_5_protocol.json": "48b977da7c417a5ae8fbc8f8faec3ad0bb09e92364b7dbd7044f6dfb0a313175",
+    "artifacts/stage10_provenance.json": "7316bcfc02aa83372fb553982f33e7b2b31aee47e8929074fdc8dcb05dcd8a53",
+    "artifacts/model_freeze.json": "47d22cc15fd7e42157b3f45faf634acee325e1288459b47b9635d9e2fd24411a",
+    "src/exploratory_semantics.py": "adf6336ef4be74a8b522462231090336fe1564f1a16256cd02b399a2bd06bb12"
+  },
+  "append_lineage": {
+    "claims_final.csv": {
+      "parent_sha256": "b1bbbc2f567459a23b7d56e6d6718d39c6fc2f4c92a2c036319f952098db49f5",
+      "parent_bytes": 74553,
+      "parent_rows": 17,
+      "appended_claim_ids": [
+        "X105-01",
+        "X105-02",
+        "X105-03",
+        "X105-04",
+        "X105-05",
+        "X105-06"
+      ],
+      "current_sha256": "9cc8001c3cd61ed38b72a8d0890cb28c7edc2d96a599043c1ef1dfd49a7f808a",
+      "current_rows": 23
+    },
+    "tables/diagnostic_synthesis.csv": {
+      "parent_sha256": "b1bbbc2f567459a23b7d56e6d6718d39c6fc2f4c92a2c036319f952098db49f5",
+      "parent_bytes": 74553,
+      "parent_rows": 17,
+      "appended_claim_ids": [
+        "X105-01",
+        "X105-02",
+        "X105-03",
+        "X105-04",
+        "X105-05",
+        "X105-06"
+      ],
+      "current_sha256": "9cc8001c3cd61ed38b72a8d0890cb28c7edc2d96a599043c1ef1dfd49a7f808a",
+      "current_rows": 23
+    }
+  },
+  "output_sha256": {
+    "tables/exploratory_demographic_semantic_rates.csv": "09209584f1a7178b4522be60c5e452c69e23a225b60d9fa771be4995ac6d65c3",
+    "tables/exploratory_demographic_semantic_overlap.csv": "a897ca67b375a2da7f3a4043a95019336fa54a271abb6fc305bb610e89c5c2b3",
+    "tables/exploratory_demographic_semantic_support.csv": "eb52a46a7bbe31be67ba868e106add3f0f9d381a2fe7b940d1de1a7d26dd6223",
+    "figures/exploratory_demographic_semantics.pdf": "10196c35ed7aaa10eb5f9b40812cfa9a32ec4eb78471681e31a8f1e637e53122",
+    "figures/exploratory_demographic_semantic_support.pdf": "7ddfdba96f51c4085c4c8dbadbc612c67aff909df24fd983fb1639d5ad6073fe"
+  },
+  "stage10_provenance_note": "Original Stage 10 output hashes now identify the unchanged file prefixes. This record verifies the append and the current full-file hashes; original provenance was not overwritten.",
+  "scope_note": "This exploratory analysis uses development outcomes after final test evaluation and cannot be promoted to an independent or confirmatory analysis of demographic preferences.",
+  "frozen_representation_unchanged": "C"
+}

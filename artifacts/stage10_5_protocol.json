@@ -1,0 +1,22 @@
+{
+  "stage": "10.5",
+  "task_role": "T2",
+  "status": "exploratory_post_evaluation_development_only",
+  "demographics": ["gender", "pet_history", "pet_care", "pet_contact", "future_pet", "mbti_ie"],
+  "partition": "fit plus validation; internal-test outcomes excluded at read time",
+  "hard_labels": ["colour_primary", "colour_secondary", "colour_pattern", "breed", "framing", "view", "eyes", "eyes_colour", "age", "posture"],
+  "numeric_features": ["share_black", "share_white", "share_gray", "share_orange", "share_cream", "share_brown", "tabby_score", "pointed_score", "bbox_area_frac"],
+  "categorical_choice_rate": "Among responses with exactly one endpoint carrying a category, fraction choosing the carrying endpoint.",
+  "numeric_choice_rate": "Among finite endpoint measurements differing by more than 1e-12, fraction choosing the endpoint with the higher measurement; report mean signed chosen-minus-rejected gap separately.",
+  "numeric_tie_tolerance": 1e-12,
+  "semantic_exclusions": ["empty or unknown semantic labels", "failed extraction", "no-detection endpoints"],
+  "dog_fallback": "retained but counted and disclosed; automated measurements are not annotations",
+  "demographic_missingness": "empty is a separate <missing> category; documented MBTI unknown is preserved; gender vocabulary is observed, not fixed",
+  "heatmap_support": {"responses": 100, "distinct_pairs": 30},
+  "working_intervals": "95% Wilson binomial working model only; respondent linkage and independence are unverified",
+  "shared_pair_comparison": "Compare the same attribute-discriminating unordered pairs; require at least five responses per pair-group cell in both groups. If absent, do not report an adjusted group-preference contrast.",
+  "plot_selection": "Display all observed semantic categories and numeric features; mask cells below the operational support rule; never select traits based on significance.",
+  "claim_selection": "For each demographic, describe the largest raw range across supported groups for the same feature; tie-break by family and feature ID. This is exploratory outcome-based description, not a significance test.",
+  "nonclaims": ["no causal effects", "no adjusted demographic effect from unmatched pair compositions", "no individual or respondent-disjoint inference", "no confirmed group preference from raw-rate ranking", "no multiple-testing discovery claim", "CLIP-inferred breed is not true pedigree"],
+  "append_policy": "Append new T2 exploratory claims to both synthesis CSVs, preserving existing bytes. Keep Stage 10 provenance as the historical prefix record and create a separate Stage 10.5 lineage record."
+}
