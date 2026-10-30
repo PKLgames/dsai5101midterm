@@ -1,0 +1,9 @@
+# Legacy visual implementations, pinned for the Stage 3 CPU environment.
+numpy==2.5.2
+pandas==3.1.0
+pillow==12.3.0
+torch==2.14.1
+torchvision==0.29.1
+ultralytics==8.4.190
+open-clip-torch==3.3.0
+opencv-python==5.0.0.93

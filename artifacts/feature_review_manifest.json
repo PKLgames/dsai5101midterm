@@ -1,0 +1,19 @@
+{
+  "audit_seed": 20261103,
+  "image_count": 64,
+  "review_rows": 128,
+  "reviewer_names": [
+    "Lu Yuqing",
+    "Yuen Lok Yan"
+  ],
+  "selection_rule": "48 hash-ranked fitting images; up to 16 flagged fitting images selected by fixed flag-family priority then hash order",
+  "flag_rules": "no detection, dog fallback, multiple cats, bbox/small mask, breed margin < 0.42, H outside fitting-photo 1st/99th percentiles",
+  "immutable_review_sha256": "1ce40f7597c837d43c7ca59c7db788b5e17fc2a449b4e9b1916cdb7e1bd0be0f",
+  "split_manifest_sha256": "2b11ea67b2d735af59c04b9bd3b37abf6e43744b3ce0b522e39915c7bf5151e5",
+  "quality_code_sha256": "80a8372cb7f852a915f2dfcdd5812568bbcf4cf1c165349f4acd5d785042381f",
+  "feature_file_sha256": {
+    "H": "dfc525019207a6dac5637cab3c748cc24eba202f2a24c2cb38ec14a13a30438a",
+    "C": "1b4d1f937e5a18d21204f25c2168dfa436872b890fa6f34a61c5635d775be426",
+    "Y": "4e56141451643d8ce97f4a368271d033de6968be34f7a92a7216399339a13c33"
+  }
+}

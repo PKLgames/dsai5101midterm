@@ -1,0 +1,16 @@
+{
+  "gpu": "NVIDIA GeForce RTX 4050 Laptop GPU",
+  "torch": "2.6.0+cu124",
+  "cuda_runtime": "12.4",
+  "sample_images": [
+    "cat_000002/cat_000002_0001.jpg",
+    "cat_000002/cat_000002_0002.jpg",
+    "cat_000002/cat_000002_0003.jpg",
+    "cat_000002/cat_000002_0004.jpg"
+  ],
+  "same_batch_repetitions": 2,
+  "yolo_masks_identical": true,
+  "clip_hard_label_mismatches": 0,
+  "max_clip_score_difference": 0.0,
+  "scope": "Same GPU and batch only; not a cross-device tolerance or guarantee."
+}

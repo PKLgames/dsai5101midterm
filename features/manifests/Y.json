@@ -1,0 +1,393 @@
+{
+  "schema_version": 1,
+  "block": "Y",
+  "pipeline_version": "stage3-legacy-adapter-2",
+  "created_utc": "2026-10-30T07:27:54.201370+00:00",
+  "source_sha256": {
+    "src/features.py": "f8e12210fd814098f294070d86211b2465a88d03e071a1e5dbf6ed02cfdd728e",
+    "src/feature_y.py": "27b0981666fb46d848ee5d45f09ab3d8a8686bbaf6799fc7751d79eccbc555e3",
+    "legacy/photo-labelling/label_photos.py": "5a046f91be53422965709d7c992db059bb353e298f8ace52e5ba05c230cd8dcb",
+    "legacy/photo-labelling/yolo_clip_labels.py": "ba51dc58521b22bcd6a896b2c6998e691e2b1579c936dd8970a11021b5ff836f",
+    "legacy/photo-labelling/save_photo_labels.py": "29267255142b959238d2a09b3bb23fe206001b935df71975216880e26185fc69"
+  },
+  "source_image_hashes": "sha256 per image in feature table; Stage 1 artifacts/raw_hashes.json",
+  "feature_names": [
+    "share_black",
+    "share_white",
+    "share_gray",
+    "share_orange",
+    "share_cream",
+    "share_brown",
+    "tabby_score",
+    "pointed_score",
+    "bbox_area_frac",
+    "colour_primary",
+    "colour_secondary",
+    "colour_pattern",
+    "breed",
+    "framing",
+    "view",
+    "eyes",
+    "eyes_colour",
+    "age",
+    "posture"
+  ],
+  "feature_dimension": 19,
+  "feature_dtype": {
+    "numeric": "float32",
+    "categorical": "string"
+  },
+  "image_id": "path relative to dataset/images",
+  "extraction_status": "one row per image; status and failure_reason are explicit",
+  "preference_outcomes_used": false,
+  "device": "cuda:0",
+  "precision": "float32",
+  "library_versions": {
+    "numpy": "2.5.2",
+    "pillow": "12.3.0",
+    "torch": "2.6.0+cu124",
+    "torchvision": "0.21.0+cu124",
+    "ultralytics": "8.4.190",
+    "open-clip-torch": "3.3.0",
+    "opencv-python": "5.0.0.93",
+    "pandas": "3.1.0",
+    "pyarrow": "21.0.0"
+  },
+  "admission": "pending_quality_review",
+  "missing_source_policy": "failed extraction; feature values null",
+  "cuda_runtime": "12.4",
+  "gpu_name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+  "gpu_compute_capability": [
+    8,
+    9
+  ],
+  "gpu_driver": "555.99",
+  "feature_definitions": {
+    "numeric": "Legacy OpenCV HSV mask measurements; bbox area is detector box area / original image area.",
+    "categorical": "Legacy HSV hard labels and CLIP hard labels after recorded postprocessing."
+  },
+  "architecture": {
+    "detector": "YOLO11n segmentation",
+    "clip": "ViT-B-32"
+  },
+  "checkpoint": {
+    "detector": "C:\\Users\\SamuelChee\\Downloads\\sdm_proj\\dsai5101midterm\\.cache\\yolo\\yolo11n-seg.pt",
+    "clip": "C:\\Users\\SamuelChee\\Downloads\\sdm_proj\\dsai5101midterm\\.cache\\open_clip\\models--timm--vit_base_patch32_clip_224.openai\\snapshots\\a6f597a30f7b82c51704746581f9a4e41421e878\\open_clip_model.safetensors"
+  },
+  "checkpoint_source": {
+    "detector": "https://github.com/ultralytics/assets/releases/download/v8.4.0/yolo11n-seg.pt",
+    "clip_pretrained_config": {
+      "url": "https://openaipublic.azureedge.net/clip/models/40d365715913c9da98579312b702a82c18be219cc2a73407c4526f58eba950af/ViT-B-32.pt",
+      "hf_hub": "timm/vit_base_patch32_clip_224.openai/",
+      "mean": [
+        0.48145466,
+        0.4578275,
+        0.40821073
+      ],
+      "std": [
+        0.26862954,
+        0.26130258,
+        0.27577711
+      ],
+      "interpolation": "bicubic",
+      "resize_mode": "shortest",
+      "quick_gelu": true
+    }
+  },
+  "weight_sha256": {
+    "detector": "55ed65c56c91713d23e8402371c6c49a6fd84f257f7dce452e8d70e41dcbe152",
+    "clip": "e6d1bd7789aa45192b3bf90570a789b478bae1b74ebcce7eddd908e83a2b7c31"
+  },
+  "exif_orientation": "Ultralytics file loader / OpenCV behavior; manual orientation audit required",
+  "color_conversion": "OpenCV BGR to HSV for coat; BGR to RGB for CLIP",
+  "resize_crop_interpolation": {
+    "detector": "Ultralytics imgsz=512 with library defaults",
+    "clip": "Compose(\n    Resize(size=224, interpolation=bicubic, max_size=None, antialias=True)\n    CenterCrop(size=(224, 224))\n    MaybeConvertMode()\n    MaybeToTensor()\n    Normalize(mean=(0.48145466, 0.4578275, 0.40821073), std=(0.26862954, 0.26130258, 0.27577711))\n)",
+    "crop": "selected box padded 6%; square pad 127; full frame if no detection"
+  },
+  "detector": {
+    "inference_size": 512,
+    "confidence_threshold": 0.05,
+    "nms_iou": 0.7,
+    "max_detections": 300,
+    "agnostic_nms": false,
+    "class_mapping": {
+      "0": "person",
+      "1": "bicycle",
+      "2": "car",
+      "3": "motorcycle",
+      "4": "airplane",
+      "5": "bus",
+      "6": "train",
+      "7": "truck",
+      "8": "boat",
+      "9": "traffic light",
+      "10": "fire hydrant",
+      "11": "stop sign",
+      "12": "parking meter",
+      "13": "bench",
+      "14": "bird",
+      "15": "cat",
+      "16": "dog",
+      "17": "horse",
+      "18": "sheep",
+      "19": "cow",
+      "20": "elephant",
+      "21": "bear",
+      "22": "zebra",
+      "23": "giraffe",
+      "24": "backpack",
+      "25": "umbrella",
+      "26": "handbag",
+      "27": "tie",
+      "28": "suitcase",
+      "29": "frisbee",
+      "30": "skis",
+      "31": "snowboard",
+      "32": "sports ball",
+      "33": "kite",
+      "34": "baseball bat",
+      "35": "baseball glove",
+      "36": "skateboard",
+      "37": "surfboard",
+      "38": "tennis racket",
+      "39": "bottle",
+      "40": "wine glass",
+      "41": "cup",
+      "42": "fork",
+      "43": "knife",
+      "44": "spoon",
+      "45": "bowl",
+      "46": "banana",
+      "47": "apple",
+      "48": "sandwich",
+      "49": "orange",
+      "50": "broccoli",
+      "51": "carrot",
+      "52": "hot dog",
+      "53": "pizza",
+      "54": "donut",
+      "55": "cake",
+      "56": "chair",
+      "57": "couch",
+      "58": "potted plant",
+      "59": "bed",
+      "60": "dining table",
+      "61": "toilet",
+      "62": "tv",
+      "63": "laptop",
+      "64": "mouse",
+      "65": "remote",
+      "66": "keyboard",
+      "67": "cell phone",
+      "68": "microwave",
+      "69": "oven",
+      "70": "toaster",
+      "71": "sink",
+      "72": "refrigerator",
+      "73": "book",
+      "74": "clock",
+      "75": "vase",
+      "76": "scissors",
+      "77": "teddy bear",
+      "78": "hair drier",
+      "79": "toothbrush"
+    },
+    "cat_threshold": 0.2,
+    "dog_threshold": 0.45,
+    "selection": "Prefer cat candidates; otherwise dog fallback; maximize confidence times square root of box area.",
+    "mask_coordinates": "Ultralytics masks.xy polygons in original-image coordinates",
+    "minimum_mask_pixels": 50,
+    "small_mask_fallback": "bounding box mask; quality flag retained",
+    "no_detection": "full-frame CLIP; coat measurements null and coat labels no_detection"
+  },
+  "clip": {
+    "model": "ViT-B-32",
+    "pretrained": "openai",
+    "quick_gelu": true,
+    "evaluation_mode": true,
+    "inference_mode": true,
+    "templates": [
+      "a photo of {}",
+      "a picture of {}"
+    ],
+    "taxonomy_and_prompts": {
+      "breed": [
+        [
+          "domestic_shorthair",
+          "a domestic shorthair cat"
+        ],
+        [
+          "domestic_longhair",
+          "a longhaired domestic cat with fluffy fur"
+        ],
+        [
+          "siamese",
+          "a siamese cat with a pale body and dark face, ears and tail"
+        ],
+        [
+          "persian",
+          "a persian cat with a flat face and long fur"
+        ],
+        [
+          "maine_coon",
+          "a maine coon cat with tufted ears and a ruff"
+        ],
+        [
+          "bengal",
+          "a bengal cat with a spotted or marbled coat"
+        ],
+        [
+          "sphynx",
+          "a hairless sphynx cat"
+        ],
+        [
+          "british_shorthair",
+          "a british shorthair cat with a round face and thick short fur"
+        ]
+      ],
+      "framing": [
+        [
+          "close_up",
+          "a close-up of a cat's face filling the frame"
+        ],
+        [
+          "medium",
+          "a cat photographed from the chest up"
+        ],
+        [
+          "full_body",
+          "a full body view of a cat"
+        ]
+      ],
+      "view": [
+        [
+          "front",
+          "a cat facing the camera"
+        ],
+        [
+          "three_quarter",
+          "a cat with its face turned slightly to the side"
+        ],
+        [
+          "profile",
+          "a cat in side profile"
+        ],
+        [
+          "from_above",
+          "a cat seen from above"
+        ],
+        [
+          "looking_away",
+          "a cat looking away from the camera"
+        ],
+        [
+          "rear",
+          "a cat seen from behind"
+        ]
+      ],
+      "eyes": [
+        [
+          "both_open",
+          "a cat with both eyes open"
+        ],
+        [
+          "half_closed",
+          "a cat with half-closed sleepy eyes"
+        ],
+        [
+          "closed",
+          "a cat with its eyes closed"
+        ],
+        [
+          "not_visible",
+          "a cat whose eyes cannot be seen"
+        ]
+      ],
+      "eyes_colour": [
+        [
+          "green",
+          "a cat with green eyes"
+        ],
+        [
+          "yellow",
+          "a cat with yellow eyes"
+        ],
+        [
+          "blue",
+          "a cat with blue eyes"
+        ],
+        [
+          "copper",
+          "a cat with copper orange eyes"
+        ]
+      ],
+      "age": [
+        [
+          "kitten",
+          "a young kitten with a small body and a large head"
+        ],
+        [
+          "adult",
+          "a fully grown adult cat"
+        ]
+      ],
+      "posture": [
+        [
+          "sitting",
+          "a cat sitting upright"
+        ],
+        [
+          "lying",
+          "a cat lying down"
+        ],
+        [
+          "standing",
+          "a cat standing on all four paws"
+        ]
+      ]
+    },
+    "prompt_aggregation": "L2-normalize text embeddings; average template embeddings; L2-normalize",
+    "score_normalization": "softmax over each fixed prompt family; not calibrated probabilities",
+    "hard_label_selection": "argmax then legacy breed/framing/eye postprocessing",
+    "breed_margin_threshold": 0.42,
+    "no_detection_breed_rule": "Apply confidence margin only; skip coat-dependent Siamese override."
+  },
+  "hsv_and_pattern_rules": "Exact thresholds and pattern rules are in hashed legacy/photo-labelling/yolo_clip_labels.py.",
+  "diagnostic_fields": [
+    "det_conf",
+    "mask_fraction",
+    "breed_score",
+    "breed_margin",
+    "framing_score",
+    "view_score",
+    "eyes_score",
+    "eyes_colour_score",
+    "age_score",
+    "posture_score",
+    "candidate_cat_count",
+    "candidate_dog_count",
+    "edges_touched",
+    "detection_status",
+    "mask_source",
+    "mask_height",
+    "mask_width",
+    "mask_bitmap_zlib",
+    "bbox_x1",
+    "bbox_y1",
+    "bbox_x2",
+    "bbox_y2"
+  ],
+  "mask_storage": "zlib-compressed big-endian np.packbits of selected original-image mask, row-major",
+  "randomness": "no augmentation; torch deterministic algorithms enabled; CUDA cuDNN benchmark and TF32 disabled",
+  "cublas_workspace_config": ":4096:8",
+  "batch_size": 8,
+  "threads": 8,
+  "image_count": 1558,
+  "successful_images": 1558,
+  "failed_images": 0,
+  "no_detection_images": 5,
+  "elapsed_seconds": 599.5469999999914,
+  "peak_gpu_allocated_bytes": 1159090688,
+  "feature_file_sha256": "4e56141451643d8ce97f4a368271d033de6968be34f7a92a7216399339a13c33"
+}

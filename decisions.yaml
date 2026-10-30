@@ -99,6 +99,12 @@
       "decision": "Open Stage 0 gate on user acknowledgement of prior-analysis limitations.",
       "evidence": "User statement and proj-docs.md historical held-out evaluation.",
       "scope": "Governance only; Stage 1 and later gates still apply."
+    },
+    {
+      "date": "2026-10-30",
+      "decision": "Use fixed flag-family priority followed by hash order for the 16 flagged feature-review slots.",
+      "evidence": "An outcome-blind hash-only sample omitted available no-detection fitting images.",
+      "scope": "Stage 3 quality review only; the 48 global hash-ranked images and candidate registry are unchanged."
     }
   ]
 }

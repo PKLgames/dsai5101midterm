@@ -98,7 +98,7 @@ def load_clip():
 def encode_phrases(model, tokenizer, phrases: list[str]) -> torch.Tensor:
     encoded = []
     for phrase in phrases:
-        tokens = tokenizer([template.format(phrase) for template in TEMPLATES])
+        tokens = tokenizer([template.format(phrase) for template in TEMPLATES]).to(next(model.parameters()).device)
         with torch.inference_mode():
             features = model.encode_text(tokens)
             features = features / features.norm(dim=-1, keepdim=True)
@@ -491,7 +491,7 @@ def crop_rgb(bgr: np.ndarray, xyxy, pad: float = CROP_PAD):
 def classify_crops(model, preprocess, text, crops: list[np.ndarray]) -> list[dict]:
     from PIL import Image
 
-    batch = torch.stack([preprocess(Image.fromarray(crop)) for crop in crops])
+    batch = torch.stack([preprocess(Image.fromarray(crop)) for crop in crops]).to(next(model.parameters()).device)
     scale = model.logit_scale.exp()
     with torch.inference_mode():
         image_features = model.encode_image(batch)

@@ -62,6 +62,74 @@ outcomes: this is a procedural safeguard, not access control. After the model
 freeze, evaluation must recover test outcomes by row ID from the unchanged raw
 CSV and apply the recorded orientation. No modeling is performed here.
 
+## Stage 3 feature integration and quality review
+
+Install the pinned H/C visual dependencies in the project environment with
+`.\.venv\Scripts\python.exe -m pip install -r requirements-stage3.txt`.
+The following commands extract H and C without using preference outcomes:
+
+```powershell
+.\.venv\Scripts\python.exe -m src.run --config decisions.yaml --stage features --block H
+.\.venv\Scripts\python.exe -m src.run --config decisions.yaml --stage features --block C
+```
+
+For the RTX 4050 with a CUDA 12.5-capable driver, Y uses a separate environment
+with CUDA 12.4 PyTorch wheels. This preserves the CPU environment used for H/C.
+Create the GPU environment only if it does not already exist:
+
+```powershell
+python -m venv .venv\gpu
+.\.venv\gpu\Scripts\python.exe -m pip install -r requirements-y-gpu.txt
+.\.venv\gpu\Scripts\python.exe -c "import torch; print(torch.cuda.is_available())"
+.\.venv\gpu\Scripts\python.exe -m src.run --config decisions.yaml --stage features --block Y --device cuda
+```
+
+The Y command fails rather than falling back to CPU if CUDA is unavailable.
+Its manifest records the device, driver, runtime, precision, and library
+versions. Once all available feature blocks are extracted, prepare the quality
+review using the original CPU environment:
+
+```powershell
+.\.venv\Scripts\python.exe -m src.run --config decisions.yaml --stage feature-qa
+.\.venv\Scripts\python.exe -m src.run --config decisions.yaml --stage feature-panels
+```
+
+Feature tables and their provenance manifests are written under `features/`.
+The Y adapter uses the existing detector and CLIP rules, but does not calculate
+coat measurements from the full frame when no cat is detected. Such values are
+null, with an explicit no-detection category. CLIP's existing full-frame
+fallback is retained and documented; its scores are diagnostic, not calibrated
+attribute probabilities. Review software and checkpoint licenses before
+redistributing weights or derived materials.
+
+The QA command selects up to 48 hash-ranked fitting images and 16 additional
+flagged fitting images without preference outcomes. The flagged subset uses a
+fixed flag-family priority and hash order to represent rare categories. Flags include no detection,
+dog fallback, multiple cat detections, small or box-fallback masks, low breed
+margin, and handcrafted values outside fitting-photo 1st/99th percentiles.
+It writes `tables/feature_quality.csv`, `artifacts/feature_review.csv`, and
+`artifacts/feature_admission_decisions.csv`. Review panels show the original,
+CNN crop, and detector mask; their paths are in the review CSV.
+
+The two assigned reviewers must independently examine each panel. In their
+rows, set `review_status` to `reviewed` and each review criterion to `pass`,
+`issue`, `not_visually_verifiable`, or `not_applicable`; explain any issue in
+`notes`. Do not change image IDs, selection metadata, or reviewer assignments.
+Then complete each admission decision with `admitted` or `quarantined`, a
+reviewer, a rationale, and `systematic_bugs_resolved=yes` for admission.
+Automated checks and at least 95% strict-validation coverage are also required.
+
+Only after these reviews and decisions:
+
+```powershell
+.\.venv\Scripts\python.exe -m src.run --config decisions.yaml --stage feature-freeze
+```
+
+This freezes `artifacts/common_population_manifest.parquet` and records its
+coverage. Empty common validation or test populations are marked insufficient;
+nonempty populations still require an adequacy assessment before model
+selection. No internal-test outcomes are read by this workflow.
+
 ## Setup
 
 Python 3.12. From the project root:
