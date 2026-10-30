@@ -1,8 +1,8 @@
 # Stage 0 protocol: predictive diagnosis of cat-photo preferences
 
-Status: candidate registry recorded; prior outcome-access history remains
-unresolved. Do not start real-data modeling until the team has documented how
-the unknown history will be handled. Stage 0 is not signed off.
+Status: Stage 0 governance gate opened by user acknowledgement on 2026-10-30.
+The user accepts the limitations of an internally held-out evaluation after
+prior analysis. This does not certify that all reviewers have signed off.
 
 The supplied [project plan](project-plan-source.txt) is the authoritative
 execution contract. Its SHA-256 is
@@ -85,6 +85,11 @@ remainder, breaking ties in fitting, validation, test order. All rows for a
 pair stay together. Strict G2 eligibility is structural and uses fitting
 photos and components, not held-out outcomes.
 
+Stage 2 masks both displayed and canonical internal-test outcomes in its
+canonical-row artifact. The unchanged raw training CSV still contains all
+outcomes; masking is procedural, not access control. After freeze, evaluation
+must recover test choices by row ID and apply the recorded orientation.
+
 Fit the common visual comparison on the same eligible fitting responses and
 evaluate on identical eligible rows, as specified in sections 13-14 of the
 plan. Select penalties on validation, save all attempts and failures, and
@@ -92,12 +97,15 @@ freeze before accessing internal-test outcomes. Maintain separate full-data
 identity models. Never silently drop missing predictions or overwrite raw data.
 
 Prior analysis is documented in [proj-docs.md](proj-docs.md), so a fresh folder
-does not imply outcome blindness. The user reports no available official test
-labels, but prior team access to training outcomes and internal holdout results
-is unknown. See [the access log](artifacts/outcome_access_log.csv). The team
-must resolve or explicitly document the residual uncertainty and its effect on
-confirmatory interpretation before real-data modeling. Do not imply that
-internal test outcomes were previously unseen.
+does not imply outcome blindness. The user reports that teammates used labeled
+training data and unlabeled official test data without hidden test labels, and
+did not explicitly tune against a held-out evaluation set. The existing notes,
+however, describe five-fold held-out evaluation and a held-out penalty path.
+The exact historical access and selection effects remain uncertain. The user
+has accepted this limitation and authorized a new internal holdout; see
+[the access log](artifacts/outcome_access_log.csv). Describe it as pair-disjoint
+within the new procedure, not as pristine or provably unseen in prior work.
+Disclose prior analysis and possible selection effects in the final report.
 
 ## Stage 0 inspection
 
@@ -151,10 +159,10 @@ endpoints, and no unresolved systematic extraction bug. Poor predictive loss
 alone is not a reason to reject a pipeline. No-detection, unknown attribute,
 failed extraction, and missing numeric values must remain distinct.
 
-## Remaining Stage 0 gate
+## Stage 0 gate and subsequent work
 
-The team must review and sign off this registry, assignments, and access log;
-resolve or explicitly record the limits of unknown historical outcome access;
-and document any discovered prior split before real-data modeling. This gate
-does not assert that Stage 1's data audit, feature extraction, tests, or any
-subsequent stage has run.
+The user authorized proceeding with the recorded prior-access limitation.
+The data-audit and subsequent stage gates remain separate; this authorization
+does not certify their completion. Preserve any valid pre-existing split found
+later, and document its provenance before deciding how to proceed. Report
+reviewer sign-off separately when obtained.

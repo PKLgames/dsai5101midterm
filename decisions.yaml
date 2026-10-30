@@ -2,8 +2,8 @@
   "schema_version": 1,
   "format_note": "JSON syntax is a YAML 1.2 subset.",
   "stage": 0,
-  "governance_status": "pending_team_review_and_prior_outcome_access_resolution",
-  "real_data_modeling_allowed": false,
+  "governance_status": "opened_by_user_with_prior_analysis_limitation",
+  "real_data_modeling_allowed": true,
   "source_plan": {
     "path": "project-plan-source.txt",
     "sha256": "85ecf8eb38e8a9bf5574d3de388cd887d00441fa6732e475f5939ec5243ea823"
@@ -87,9 +87,18 @@
   },
   "prior_outcome_access": {
     "prior_analysis_documented": true,
-    "team_access_details": "unknown",
+    "team_access_details": "user reports prior use of labeled training and unlabeled official test data; exact historical access and selection remain uncertain",
     "official_test_labels": "user reports none available",
+    "internal_holdout_interpretation": "newly pair-disjoint within this procedure; prior analysis and possible selection effects disclosed",
+    "user_acknowledged_limitation": true,
     "log": "artifacts/outcome_access_log.csv"
   },
-  "changes": []
+  "changes": [
+    {
+      "date": "2026-10-30",
+      "decision": "Open Stage 0 gate on user acknowledgement of prior-analysis limitations.",
+      "evidence": "User statement and proj-docs.md historical held-out evaluation.",
+      "scope": "Governance only; Stage 1 and later gates still apply."
+    }
+  ]
 }

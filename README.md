@@ -1,13 +1,66 @@
 # Cat Image Arena
 
-The current project is in Stage 0 governance. See [protocol.md](protocol.md)
-and [decisions.yaml](decisions.yaml) for the registered scope and open gate.
+See [protocol.md](protocol.md) and [decisions.yaml](decisions.yaml) for the
+registered scope, user-acknowledged governance gate, and prior-analysis limits.
 The setup and notebook instructions below describe an earlier workflow: the
 referenced notebooks are currently absent and the environment has not been
 validated for the current plan. [proj-docs.md](proj-docs.md) contains prior
 analysis, not results from the current protocol.
 
 Pairwise cat-image preferences, and the midterm analysis of those choices. The analysis notes are in `proj-docs.md`.
+
+## Stage 1 raw-data audit
+
+From the project root, using Python 3.12:
+
+```powershell
+python -m src.run --config decisions.yaml --stage audit
+```
+
+The audit writes `tables/data_audit.csv`,
+`tables/official_test_coverage.csv`, `artifacts/cleaning_log.csv`, and
+`artifacts/raw_hashes.json`. It reads but does not modify the raw dataset. It
+retains identical-looking responses and records self-comparisons for later
+quarantine. A blocking audit issue produces a nonzero exit status after
+writing its findings. Existing output files are not replaced unless
+`--overwrite` is explicitly supplied.
+
+Official overlap is classified against valid, non-self rows from the full
+training data, not a fitting split. Component support and feature availability
+remain explicitly unavailable until later stages. Image-file hashes and
+existence do not establish that images decode successfully; feature extraction
+must check that separately. The Stage 0 governance gate remains independent.
+
+Run the focused audit tests with:
+
+```powershell
+python -m unittest discover -s tests -p test_audit.py -v
+```
+
+## Stage 2 canonicalization and pair split
+
+The Stage 2 Parquet dependency is pinned separately in
+`requirements-stage2.txt`. In PowerShell, create the project environment and
+install that dependency if they are not already present:
+
+```powershell
+python -m venv .venv
+.\.venv\Scripts\python.exe -m pip install -r requirements-stage2.txt
+.\.venv\Scripts\python.exe -m src.run --config decisions.yaml --stage split
+.\.venv\Scripts\python.exe -m unittest discover -s tests -p 'test_*.py' -v
+```
+
+Stage 2 requires an open governance gate and matching, unblocked Stage 1 audit
+artifacts. It writes `artifacts/split_manifest.parquet` and
+`artifacts/rows_canonical.parquet`; a validated existing split is retained,
+not overwritten to match the seed. Pair assignment uses a seeded Python 3.12
+`random.Random` shuffle in sorted comparison-type and band order.
+
+The canonical rows contain fitting and validation outcomes, but internal-test
+outcome columns are null. The original training CSV still contains those
+outcomes: this is a procedural safeguard, not access control. After the model
+freeze, evaluation must recover test outcomes by row ID from the unchanged raw
+CSV and apply the recorded orientation. No modeling is performed here.
 
 ## Setup
 

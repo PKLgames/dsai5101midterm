@@ -1,0 +1,2 @@
+# Parquet output for the Stage 2 split and canonical rows (Python 3.12).
+pyarrow==21.0.0
