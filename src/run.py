@@ -13,7 +13,7 @@ from .audit import audit_dataset, write_audit
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--stage", required=True, choices=[
-        "audit", "split", "features", "feature-qa", "feature-panels", "feature-freeze", "graphs", "simulations", "describe", "develop", "diagnose-core", "diagnose-curves", "diagnose-curve-support", "diagnose-representations", "diagnose-reports", "diagnose-contributions", "diagnose-finalize",
+        "audit", "split", "features", "feature-qa", "feature-panels", "feature-freeze", "graphs", "simulations", "describe", "develop", "diagnose-core", "diagnose-curves", "diagnose-curve-support", "diagnose-representations", "diagnose-reports", "diagnose-contributions", "diagnose-finalize", "freeze", "evaluate",
     ])
     parser.add_argument("--config", type=Path, default=Path("decisions.yaml"))
     parser.add_argument("--root", type=Path, default=Path.cwd())
@@ -162,6 +162,19 @@ def main(argv: list[str] | None = None) -> int:
                 raise ValueError("Stage 0 governance gate has not been opened.")
             report = run_finalize(root)
             print(f"Stage 8: {report['status']}; internal-test outcomes not read.")
+            return 0
+        if args.stage == "freeze":
+            from .freeze import freeze_model
+
+            frozen = freeze_model(root, config)
+            print(f"Frozen representation: {frozen['selected_representation']}; test outcomes not loaded.")
+            return 0
+        if args.stage == "evaluate":
+            from .evaluate import evaluate
+
+            report = evaluate(root)
+            print(f"Internal test evaluated once: {report['models']} model/population groups; "
+                  f"{report['common_responses']} common responses.")
             return 0
         result = audit_dataset(root)
         outputs = write_audit(root, result, overwrite=args.overwrite)

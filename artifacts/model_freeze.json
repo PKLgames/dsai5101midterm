@@ -1,0 +1,361 @@
+{
+  "schema_version": 1,
+  "created_utc": "2026-10-30T11:29:55.720994+00:00",
+  "git_commit": "67410c312d5afd9a44b046fcb431eb3cd0f450d6",
+  "git_branch": "finalized",
+  "git_worktree_status_before_freeze": "M README.md\n M src/run.py\n?? src/evaluate.py\n?? src/freeze.py\n?? tests/test_evaluation.py",
+  "candidate_registry": {
+    "status": "registered_before_model_comparison",
+    "primary": [
+      "M0",
+      "M1",
+      "M2",
+      "M3-H",
+      "M3-C",
+      "M3-Y",
+      "M4-H",
+      "M4-C",
+      "M4-Y"
+    ],
+    "secondary": [
+      "M2-no-position",
+      "M3-side",
+      "M4-side"
+    ],
+    "primary_context": "pet_care",
+    "base_ridge_grid": [
+      1e-06,
+      1e-05,
+      0.0001,
+      0.001,
+      0.01,
+      0.1,
+      1
+    ],
+    "context_penalty_multipliers": [
+      1,
+      10,
+      100
+    ],
+    "exact_pooled_fallback": true,
+    "tie_tolerance": 1e-06,
+    "representation_tie_order": [
+      "H",
+      "C",
+      "Y"
+    ],
+    "m4_selection": "matched_to_selected_m3_representation",
+    "primary_contrasts": [
+      "M0-M1",
+      "M1-M2",
+      "M2-M3*",
+      "M3*-M4*"
+    ],
+    "feature_admission": "conditional_on_manifest_quality_and_coverage_gates"
+  },
+  "selected_representation": "C",
+  "selected_model_keys": [
+    "full:M0",
+    "full:M1",
+    "full:M2",
+    "full:M2-no-position",
+    "common:M0",
+    "common:M1",
+    "common:M2",
+    "common:M2-no-position",
+    "M3-H",
+    "M4-H",
+    "M3-C",
+    "M4-C",
+    "M3-Y",
+    "M4-Y",
+    "M3-side",
+    "M4-side"
+  ],
+  "selected_parameters": {
+    "full:M0": {
+      "model": "full:M0",
+      "ridge": 0.0,
+      "rho": 0.0,
+      "pooled": false,
+      "pooled_from": ""
+    },
+    "full:M1": {
+      "model": "full:M1",
+      "ridge": 0.0001,
+      "rho": 0.0,
+      "pooled": false,
+      "pooled_from": ""
+    },
+    "full:M2": {
+      "model": "full:M2",
+      "ridge": 0.0001,
+      "rho": 0.0,
+      "pooled": false,
+      "pooled_from": ""
+    },
+    "full:M2-no-position": {
+      "model": "full:M2-no-position",
+      "ridge": 0.0001,
+      "rho": 0.0,
+      "pooled": false,
+      "pooled_from": ""
+    },
+    "common:M0": {
+      "model": "common:M0",
+      "ridge": 0.0,
+      "rho": 0.0,
+      "pooled": false,
+      "pooled_from": ""
+    },
+    "common:M1": {
+      "model": "common:M1",
+      "ridge": 0.0001,
+      "rho": 0.0,
+      "pooled": false,
+      "pooled_from": ""
+    },
+    "common:M2": {
+      "model": "common:M2",
+      "ridge": 0.0001,
+      "rho": 0.0,
+      "pooled": false,
+      "pooled_from": ""
+    },
+    "common:M2-no-position": {
+      "model": "common:M2-no-position",
+      "ridge": 0.0001,
+      "rho": 0.0,
+      "pooled": false,
+      "pooled_from": ""
+    },
+    "M3-H": {
+      "model": "common:M3-H",
+      "ridge": 1e-06,
+      "rho": 0.0,
+      "pooled": false,
+      "pooled_from": ""
+    },
+    "M4-H": {
+      "model": "common:M4-H",
+      "ridge": 1e-06,
+      "rho": "exact_pooled",
+      "pooled": true,
+      "pooled_from": "common:M3-H"
+    },
+    "M3-C": {
+      "model": "common:M3-C",
+      "ridge": 0.0001,
+      "rho": 0.0,
+      "pooled": false,
+      "pooled_from": ""
+    },
+    "M4-C": {
+      "model": "common:M4-C",
+      "ridge": 0.0001,
+      "rho": 100,
+      "pooled": false,
+      "pooled_from": ""
+    },
+    "M3-Y": {
+      "model": "common:M3-Y",
+      "ridge": 1e-05,
+      "rho": 0.0,
+      "pooled": false,
+      "pooled_from": ""
+    },
+    "M4-Y": {
+      "model": "common:M4-Y",
+      "ridge": 1e-05,
+      "rho": "exact_pooled",
+      "pooled": true,
+      "pooled_from": "common:M3-Y"
+    },
+    "M3-side": {
+      "model": "common:M3-side",
+      "ridge": 0.0001,
+      "rho": 0.0,
+      "pooled": false,
+      "pooled_from": ""
+    },
+    "M4-side": {
+      "model": "common:M4-side",
+      "ridge": 0.0001,
+      "rho": 100,
+      "pooled": false,
+      "pooled_from": ""
+    }
+  },
+  "context_reference": "never",
+  "context_interactions": [
+    "current_regular",
+    "missing",
+    "occasionally",
+    "past_regular"
+  ],
+  "primary_contrasts": [
+    {
+      "label": "cat_identity",
+      "reference": "common:M0",
+      "candidate": "common:M1"
+    },
+    {
+      "label": "photo_detail",
+      "reference": "common:M1",
+      "candidate": "common:M2"
+    },
+    {
+      "label": "visual_sharing",
+      "reference": "common:M2",
+      "candidate": "M3-C"
+    },
+    {
+      "label": "recorded_context",
+      "reference": "M3-C",
+      "candidate": "M4-C"
+    }
+  ],
+  "temperature_diagnostics": {
+    "M2": 1.5,
+    "M3*": 1.0,
+    "M4*": 1.0
+  },
+  "diagnostics": [
+    "M2-no-position",
+    "M3-side",
+    "M4-side",
+    "H/C/Y matched comparisons",
+    "registered temperature scaling",
+    "calibration",
+    "support and feature-quality subgroups"
+  ],
+  "optional_flags": {
+    "known_cat_g3": false,
+    "all_block_fusion": false,
+    "fine_tuning": false,
+    "real_data_cycle_testing_in_core": false,
+    "test_driven_confirmatory_repair": false,
+    "cnn_pca_development_diagnostic": true,
+    "temperature_scaling_diagnostic": true,
+    "temperature_diagnostic_models": [
+      "M2",
+      "M3*",
+      "M4*"
+    ],
+    "temperature_grid": [
+      0.25,
+      0.5,
+      0.75,
+      1,
+      1.5,
+      2,
+      4
+    ],
+    "photo_residual_hybrid": false,
+    "grouped_feature_permutation": false,
+    "in_sample_pair_entropy_descriptive": true,
+    "official_predictions_after_internal_freeze": true
+  },
+  "bootstrap": {
+    "seed": 20261101,
+    "replicates": 5000,
+    "cluster": "unordered_test_pair",
+    "primary_confidence": 0.9875,
+    "pointwise_confidence": 0.95
+  },
+  "raw_training_sha256": "36bae3173cd867124b8c514a8abfb87b4d9303facbfc8fdeef0ea7cfbb0622d8",
+  "library_versions": {
+    "numpy": "2.5.2",
+    "scipy": "1.18.1",
+    "pyarrow": "21.0.0",
+    "matplotlib": "3.11.2"
+  },
+  "artifacts_sha256": {
+    "artifacts/common_population_manifest.parquet": "d328a57503d72789537f3245ecb8a5e9ac37c649a315a5460bd7a1b7d4e1d684",
+    "artifacts/common_population_report.json": "4090cfd31c58c873849ad6df557c49776c9051f307efba6524495c65c491c32c",
+    "artifacts/development_decisions.csv": "86411ce6c809f2f603f6474ee90b4209a4634c6b399bc1d84e0b92829ca19860",
+    "artifacts/diagnostic_report_status.json": "670353e31c480b9b830bd50f71ef91b1840cf7d165f3659b33ca92e548b3ef13",
+    "artifacts/g2_eligibility.parquet": "4aaac8aee46fcdbe757366eb6942e3dddd790bd5d73b6bd28c92edaa569f78e9",
+    "artifacts/graph_components.parquet": "906b98014df4221188f7e0b2d908f8559b50f6530e2a8c4c75cc8c8716b8c612",
+    "artifacts/learning_curve_preprocessing.json": "95dc47412bee5bd5b894a72bdd665050cd46a0e27863f720adaa80f0368f6437",
+    "artifacts/learning_curve_status.json": "7e91acbfd9b4346a55cb4019e414c66e07075c82dda2a19de23c13fca222fb74",
+    "artifacts/model_selection.json": "e4e5b131f82d61fa139e89c279903466d289bf50720605d73ab91d435b9883a6",
+    "artifacts/preprocessing/C.json": "b8a9bcc763d5d1a0ea987c063d10d609d352a49b603084702c59b14277b2c3df",
+    "artifacts/preprocessing/H.json": "62a7a81aeca1b40c7cd31bc5ac38275f23a0ba70f07a2cc6c4aee924740d6e54",
+    "artifacts/preprocessing/Y.json": "cca6c28920a2bf7546071a3385d4307f97c4a1eae15acff4f46e14f15a804177",
+    "artifacts/raw_hashes.json": "d41a4fd76eb5871b24c663e2a0f5461168c56e1b932fd72327172faaf13f4715",
+    "artifacts/representation_diagnostic_status.json": "2856d9e674677e0c8a7c91d20aaf4cb9035889e8fa7df6e3ae90dabc7b498b75",
+    "artifacts/rows_canonical.parquet": "2201f72aa2668b1b2410fb45208c17f702b1a2299f64aa00bd2e2f4df7188e70",
+    "artifacts/split_manifest.parquet": "2b11ea67b2d735af59c04b9bd3b37abf6e43744b3ce0b522e39915c7bf5151e5",
+    "artifacts/stage7_verification.json": "7949b224a93e7e26b42913117348c29df8f3d42d707db04ec5143a0321dcb88a",
+    "artifacts/stage8_contribution_protocol.json": "bddc1e54b5eb3637efc3fc58d443295c279d908829da65931dde7d580478b0b9",
+    "artifacts/stage8_core.json": "184aa7008bfc191171c6da65e7d70e84e8afffad1f59b5802d0667f013edcde9",
+    "artifacts/stage8_probe_protocol.json": "1fd36015a2a3979509b487c91bd3211910be23bb0547816e8aeb9a23b71c8cfd",
+    "artifacts/stage8_protocol.json": "7d5eb8f18ed5046017640da32766255195f71e64f0a89802bb3701e44d915387",
+    "artifacts/stage8_provenance.json": "3704fc1375fffa24a9f53354f1858100d14fa6af842335fc94799e4c2bbafd0b",
+    "decisions.yaml": "a881ba406cc05c48ad5c1d099e0458f5e4709c3219d804988d511eb7d6f3f232",
+    "features/C.parquet": "1b4d1f937e5a18d21204f25c2168dfa436872b890fa6f34a61c5635d775be426",
+    "features/H.parquet": "dfc525019207a6dac5637cab3c748cc24eba202f2a24c2cb38ec14a13a30438a",
+    "features/Y.parquet": "4e56141451643d8ce97f4a368271d033de6968be34f7a92a7216399339a13c33",
+    "features/manifests/C.json": "05b45d32ad1c7242ff0c62bf720c209a864e40654dcb625d070073f4d4e49092",
+    "features/manifests/H.json": "577fd606f2dc26cab9cac724556db28c8eaf755e1967718de919e1f7bacc1aa5",
+    "features/manifests/Y.json": "16491672f38296c6911ea78d75c41303bcfab422de5286c2bd4adcd943d91b6d",
+    "figures/diagnostic_calibration.pdf": "64299e4f35a80253d608c353c5e23888b5d1b7aafb0ba55d1429730fdd8a1eda",
+    "figures/learning_curves.pdf": "a23d6915d22d7330e8c91a4dc91dfb5c0092def23a1e55fa86b9134295a5e061",
+    "figures/penalty_paths.pdf": "e6ccfa54b1419b19ec65e358b5b95e6d31b635ca144080a91993340821de23b9",
+    "models/M3-C.json": "2b356fac66bef6d2c49f9019f84de0568af866fa9a4aa2b44817c94daa250781",
+    "models/M3-H.json": "3f53227fe41c27915077b699b7360eeb7e9c4d126546600976ad384b59627082",
+    "models/M3-Y.json": "76f921280639abf546d35643539f78398d23068961ca8a96afb7dab3103ee4d3",
+    "models/M3-side.json": "57a3fb224ed131d9d0f1fc40837439e87d9fb97dc81ddb2423913dcf33625bf3",
+    "models/M4-C.json": "5cb1e5598090514bcb8975d843f1bba567bc114785e59fc09fde46b7b89ade22",
+    "models/M4-H.json": "b568283b616a2547c89cfae95e249ab15fb400b253ded27d938461443a9e0e1b",
+    "models/M4-Y.json": "37fb638fcf2c2c4c2b647a9d9aca5177b35a938cfe3965858095c707d62e4fe2",
+    "models/M4-side.json": "086ec37fb26d4aca09d2fd248edbf8073b01ff43b27ed500f6d7c687770c60b1",
+    "models/common_M0.json": "7f87358307329264f6bee869f4cfc6c6dbfcb464cc5a27b792c49ca054737675",
+    "models/common_M1.json": "4972caf368c0dff3a53e5c710751755e8e2b5b3cfe0d027da52586102de02952",
+    "models/common_M2-no-position.json": "3c7728dc9f6bcef89d74c7cb99e3970f5c360b5d865b9019e9bd720069c8f0dd",
+    "models/common_M2.json": "9b44e8d4d096ccf5acc5d23c93b601eb4f0aae839088e0a8e28d866bb6654db3",
+    "models/full_M0.json": "613ef6694d73ea586ab4887b9ab0b07d318584befd58b7950372439fbdde4590",
+    "models/full_M1.json": "f7ee6373f4e441ac5c303620faa4162cda45bd29032faffa5237ec28e41941f1",
+    "models/full_M2-no-position.json": "111b837f44d0942cbfff30512b0ed2b60dc5f36c1ed5cdb00cef2f8ac9c04925",
+    "models/full_M2.json": "26fdcfddf433ebcf3c315c22ddc0b31d311109cb1cb4076a6c4d1bce65d38b5d",
+    "project-plan-source.txt": "85ecf8eb38e8a9bf5574d3de388cd887d00441fa6732e475f5939ec5243ea823",
+    "protocol.md": "36e96e9a7e2044d5433946696f36de456c8341c772690380591f86f19f9e2c7c",
+    "src/contributions.py": "32d0b35f9aabc6b9ed6f32e5a57e92b1b8f1a6994b36e4d715a224d0faeb8127",
+    "src/development.py": "a731411b36e8637fb0fe03a963b98e86fe7b48cc983a68a4eefce7dfab115aa5",
+    "src/diagnostic_finalize.py": "eda649e55dbf2afa29c0056901a9219c1d58b30da82042d3e83eb283758e78e8",
+    "src/diagnostic_reports.py": "14b6f5fd5c7a2ab35f24321017bfda386cb7f81c6291826523bd346bef1c1805",
+    "src/diagnostics.py": "c1ecca96c401456235ec2ddf79c904cbc7ab2893f6bd90959d24c98d3b10f339",
+    "src/estimator.py": "2951bf159312714f6b83632ef2cd22f38f9f78238de455e7629ff59e4886cbc2",
+    "src/evaluate.py": "1722a277bd82a9e5b909f98576acf3faf00e41d4d2e7e2041ef3d2411cbad807",
+    "src/freeze.py": "19043df558c8c1a0fa61e06c93bcf0f73ef1104de224031baedbc5a0b4a0faac",
+    "src/learning_curve_support.py": "706093dc951374df516c7585a4b7c9caa09f3ab7c206b8fc6e07e77e083551d3",
+    "src/learning_curves.py": "e31d9d21a5d61026020f030aacbb1be3df63f2140b230b763dc4ce8c915c406a",
+    "src/preprocessing.py": "7e9f3985f306903e01107bf88f7b91df179ad08b42a8825c12c1a6f86130ffda",
+    "src/representation_diagnostics.py": "a89850849c3b2c5109a1e8cca2f6320b0f28b44b0a3ec98b04b024bc63350ff9",
+    "src/run.py": "ea3db6e05d0fc0e039b01d36e02fda3a2b095b7325d297134882ca3425a66e75",
+    "tables/all_fit_attempts.csv": "472e6f0727d5b99d3755fcb564115572d995993b890532963b3cb39e7864d42d",
+    "tables/cnn_pca_diagnostic.csv": "ccefdc15a356affb4590b35ef89d82552c49501feebc2e98e6789321876b7e51",
+    "tables/diagnostic_confidence.csv": "4d443784d5871c6a6ce7fe9e521eaf1b819ed7e3bb2849b21a64741230890983",
+    "tables/diagnostic_interpretation.csv": "baec4a6f8fbbd1f4735ca8310d723b1a3dfda20c017f9ce674f7d2e875cb225e",
+    "tables/feature_contributions.csv": "5dbdafb379568fd6518cbf5da46a70c8bcd4d1d1976abbdfab6fbef955adb39b",
+    "tables/grouped_ablations.csv": "6dd4af7ea98b236ea5b0523bc8c978f383da4bedbdd85f3adcef2119cc08f47f",
+    "tables/learning_curve_candidates.csv": "87eccab9802e328d290d08466d210c96dddf4408d2c6f068dafcca0ee6286aff",
+    "tables/learning_curve_context_support.csv": "9d196a28d53003299ffd42ed9d7b648e34f2c41bb5ab6f401c7ad80f13181751",
+    "tables/learning_curves.csv": "cb1e6e9b59682c1917e5efa05aff6d7388495ebb3d53a64de5c70aa64d86fdbe",
+    "tables/model_resources.csv": "56725119d5fc14609f67910fa8bff3aa7bfef986156575f14cd80140c252c445",
+    "tables/penalty_path_refits.csv": "fc270728188e9213c49ca277a6db6fd32151fd75b3e0994a17187a283ec0af63",
+    "tables/representation_recovery.csv": "13bd4d362d2e42a73f2ad88726e454b133afbb9ba4be27c81106b8c22ada5092",
+    "tables/temperature_diagnostic.csv": "8de2dfd9ce9209db6e38e5c51712785cadb4a856fd8e2229f9e73f3f10c5da11",
+    "tables/validation_predictions.csv": "f5abd7e94a67b76e3bc3a995d0b259e40ee5db6b0651e793b96e232c21a50a1e",
+    "tables/validation_results.csv": "e4c11a9044b5bab63ae740a8b667569d7184043679945803280ad7940e1ee62e",
+    "tables/worst_validation_losses.csv": "7e7764e30af41ab2185802852991b76500a3c726b0ed4f962c87b8e55b7a11e7",
+    "tests/test_evaluation.py": "af0ec206f629dfecc98a5d5a8c606bed18c3ab8a66967109131adb143aa94818"
+  },
+  "test_outcomes_loaded_at_freeze": false,
+  "limitations": [
+    "Internal holdout is not certified pristine because of earlier analyses.",
+    "Bootstrap is conditional on fitted models and development choices; it omits training variability, respondent linkage and shared-image dependence.",
+    "Secondary intervals are descriptive and subject to multiplicity."
+  ]
+}

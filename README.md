@@ -263,6 +263,38 @@ diagnostics. Contributions explain model outputs, not causal human preferences.
 Every stage refuses to overwrite an existing output; an interrupted run is not
 a completed diagnostic or test freeze.
 
+## Stage 9 freeze and internal-test evaluation
+
+Run the evaluation tests, then freeze before loading internal-test outcomes:
+
+```powershell
+.\.venv\Scripts\python.exe -m unittest discover -s tests -p test_evaluation.py -v
+.\.venv\Scripts\python.exe -m src.run --config decisions.yaml --stage freeze
+.\.venv\Scripts\python.exe -m src.run --config decisions.yaml --stage evaluate
+```
+
+`artifacts/model_freeze.json` and its SHA-256 seal record the selected models,
+preprocessing, context mappings, population masks, optional diagnostics, Git
+state, input hashes, and four primary contrasts. Evaluation refuses a missing
+or changed freeze, missing predictions, mismatched paired IDs, or existing
+test outputs. It records test-outcome access before loading the original
+training choices by internal-test response ID. If evaluation is interrupted
+after outcome access, it must not be silently repeated or retuned.
+
+The evaluation saves row-level predictions, overall and subgroup metrics,
+calibration, and pair-cluster bootstrap intervals. The four primary contrasts
+receive approximate 98.75% pointwise intervals; secondary intervals are
+descriptive and not multiplicity-adjusted. Intervals are conditional on fitted
+models and development decisions, and do not capture all training variability,
+respondent dependence, shared-image dependence, or prior analysis exposure.
+Temperature scaling is secondary and uses the values fixed during Stage 8;
+it does not alter the primary model choices.
+For temperature-diagnostic rows in `tables/main_results.csv`, the fitting
+loss, penalized objective, and validation loss columns describe the original
+unscaled source model. The scaled validation results and selected temperatures
+are recorded in `tables/temperature_diagnostic.csv`; the test metrics in
+`main_results.csv` use the frozen temperature.
+
 ## Setup
 
 Python 3.12. From the project root:
