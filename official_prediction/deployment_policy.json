@@ -1,0 +1,62 @@
+{
+  "status": "validation_only_deployment_rule_sealed_before_refit",
+  "known_photo_model": {
+    "model": "common:M1",
+    "ridge": 0.0001,
+    "validation_loss": 0.6621296569407022,
+    "candidate_order": [
+      "common:M0",
+      "common:M1",
+      "common:M2",
+      "M3*",
+      "M4*"
+    ],
+    "validation_losses": {
+      "common:M0": 0.6929716559800769,
+      "common:M1": 0.6621296569407022,
+      "common:M2": 0.6690754313739401,
+      "M3*": 0.6654761465463775,
+      "M4*": 0.6653032773338816
+    },
+    "tie_rule": "within 1e-6 prefer first in the stated order",
+    "source": "frozen G2 common strict-validation selections"
+  },
+  "new_or_unsupported_photo_model": {
+    "model": "M4-C",
+    "block": "C",
+    "ridge": 0.001,
+    "rho": 1,
+    "context_reference": "past_regular",
+    "context_interactions": [
+      "current_regular",
+      "missing",
+      "never",
+      "occasionally"
+    ],
+    "validation_losses": {
+      "M3-C": 0.6716376426222747,
+      "M4-C": 0.6696034708565557
+    },
+    "tie_rule": "within 1e-6 prefer matched pooled M3",
+    "source": "frozen retrospective known-cat G3 validation selections"
+  },
+  "fallbacks": "If C is unavailable, use M1 for two supported known cats; otherwise use smoothed M0.",
+  "refit": "Refit selected models and preprocessing on all audited labeled responses and unique labeled photos; retain selected penalty and G3 context mapping.",
+  "test_selection": "No G2, G3, or G4 internal-test metric is used by this routing or parameter selection.",
+  "limitations": [
+    "The deployment routing was documented after prior outcome analyses; it was not independently preregistered.",
+    "The G3 validation used to choose the shared scorer is retrospective, not a pristine holdout.",
+    "G3 tests new photos of known cats, not new cats. Applying its shared scorer to new cats is transfer beyond the G3 target.",
+    "G4 covered one unseen cat versus one known cat, but is retrospective and does not directly validate comparisons between two unseen cats.",
+    "No official test labels are available, and no official-test performance is claimed."
+  ],
+  "source_sha256": {
+    "g2_freeze": "47d22cc15fd7e42157b3f45faf634acee325e1288459b47b9635d9e2fd24411a",
+    "g2_selection": "e4e5b131f82d61fa139e89c279903466d289bf50720605d73ab91d435b9883a6",
+    "g3_freeze": "a1307b29f1f0ef37bc2dfcce6c39bdceb75e5eb41c76a78748c3eb0466a20514",
+    "g3_selection": "76b2870b43112f3ae96630f6fd6e2e87e97b599b36d08aeb27b875ddc7f8bdec",
+    "g4_freeze": "bdb3c2f5a7fc8636d132c91b815f6f1df04c4b752648ac2e0de68dfcacd5ea56",
+    "raw_training": "36bae3173cd867124b8c514a8abfb87b4d9303facbfc8fdeef0ea7cfbb0622d8",
+    "official_test": "d8f6e9f8790ba722112c4620c0f60490e5354b8af3c2d1592ac204bb9a5c3534"
+  }
+}

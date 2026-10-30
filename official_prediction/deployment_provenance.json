@@ -1,0 +1,56 @@
+{
+  "status": "official_predictions_generated_not_submitted",
+  "original_project_files_unchanged": 2140,
+  "original_scope_exclusions": [
+    ".cache",
+    ".git",
+    ".venv",
+    "official_prediction"
+  ],
+  "policy_sha256": "f2ca4679552a0253bb9bd654df640865c03af01c2d0008d552bdf0a35ed8972b",
+  "original_hash_snapshot_sha256": "d5f2e02411722fd55d9f4141541484666f74082d5b99a4f91cfa139d80195d6c",
+  "input_sha256": {
+    "g2_freeze": "47d22cc15fd7e42157b3f45faf634acee325e1288459b47b9635d9e2fd24411a",
+    "g2_selection": "e4e5b131f82d61fa139e89c279903466d289bf50720605d73ab91d435b9883a6",
+    "g3_freeze": "a1307b29f1f0ef37bc2dfcce6c39bdceb75e5eb41c76a78748c3eb0466a20514",
+    "g3_selection": "76b2870b43112f3ae96630f6fd6e2e87e97b599b36d08aeb27b875ddc7f8bdec",
+    "g4_freeze": "bdb3c2f5a7fc8636d132c91b815f6f1df04c4b752648ac2e0de68dfcacd5ea56",
+    "raw_training": "36bae3173cd867124b8c514a8abfb87b4d9303facbfc8fdeef0ea7cfbb0622d8",
+    "official_test": "d8f6e9f8790ba722112c4620c0f60490e5354b8af3c2d1592ac204bb9a5c3534"
+  },
+  "output_sha256": {
+    "deployment_models.json": "fa8df3d06f26f4a1091cb3b1b9e6e588c313ec81e5cf3b1815bcaaeab038663e",
+    "official_predictions.csv": "d005ff0de0545b18e1fe3095ad15f38a27d361bfdff1137c3535a70d6e44922f",
+    "routing.csv": "dffa5bdf3a8b87728596d29c3ba859526aced7742f650bd105a564b13d898c9e"
+  },
+  "deployment_started_sha256": "8d5fc55188da397d3941a1f851f31ba6bfe424140ca291ceaec5ab43f6b1d7b1",
+  "training_responses": 24896,
+  "official_responses": 6224,
+  "route_counts": {
+    "known_photo_m1": 3112,
+    "shared_visual": 3112
+  },
+  "unseen_cat_endpoint_counts": {
+    "0": 3112,
+    "1": 1556,
+    "2": 1556
+  },
+  "choice_counts": {
+    "A": 3737,
+    "B": 2487
+  },
+  "all_original_columns_and_row_order_preserved": true,
+  "all_probabilities_finite_and_valid": true,
+  "choice_threshold_verified": true,
+  "models_refit_on_all_labeled_responses": true,
+  "internal_test_metrics_used_for_selection": false,
+  "official_test_labels_available": false,
+  "upload_performed": false,
+  "limitations": [
+    "The deployment routing was documented after prior outcome analyses; it was not independently preregistered.",
+    "The G3 validation used to choose the shared scorer is retrospective, not a pristine holdout.",
+    "G3 tests new photos of known cats, not new cats. Applying its shared scorer to new cats is transfer beyond the G3 target.",
+    "G4 covered one unseen cat versus one known cat, but is retrospective and does not directly validate comparisons between two unseen cats.",
+    "No official test labels are available, and no official-test performance is claimed."
+  ]
+}

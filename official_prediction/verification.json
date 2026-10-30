@@ -1,0 +1,18 @@
+{
+  "status": "independent_reconstruction_passed",
+  "official_rows_verified": 6224,
+  "labeled_training_rows_verified": 24896,
+  "prediction_columns_and_order_preserved": true,
+  "all_probabilities_reconstructed": true,
+  "all_choice_thresholds_verified": true,
+  "full_training_photo_preprocessing_reproduced": true,
+  "selected_parameters_verified": true,
+  "m1_gradient_max": 4.953665114516758e-07,
+  "m4_c_gradient_max": 7.507973806705906e-07,
+  "g2_g3_g4_frozen_history_verified": true,
+  "original_project_files_unchanged": 2140,
+  "prediction_sha256": "d005ff0de0545b18e1fe3095ad15f38a27d361bfdff1137c3535a70d6e44922f",
+  "deployment_provenance_sha256": "9c029c6f3b6816cce8740f59e78dabc4b2c69ffc72f036922867bfcc0bbef770",
+  "official_labels_available": false,
+  "upload_performed": false
+}

@@ -1,0 +1,6 @@
+{
+  "status": "all_labeled_deployment_refit_started",
+  "policy_sha256": "f2ca4679552a0253bb9bd654df640865c03af01c2d0008d552bdf0a35ed8972b",
+  "test_labels": "Official test choice and prob_a are blank; no official labels were used.",
+  "training_scope": "All audited labeled responses, including former internal-test responses."
+}
