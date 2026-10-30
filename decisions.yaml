@@ -1,0 +1,95 @@
+{
+  "schema_version": 1,
+  "format_note": "JSON syntax is a YAML 1.2 subset.",
+  "stage": 0,
+  "governance_status": "pending_team_review_and_prior_outcome_access_resolution",
+  "real_data_modeling_allowed": false,
+  "source_plan": {
+    "path": "project-plan-source.txt",
+    "sha256": "85ecf8eb38e8a9bf5574d3de388cd887d00441fa6732e475f5939ec5243ea823"
+  },
+  "inspection_base_commit": "b9fa807609c4cd4c1fab045042d6eeefd6ba5004",
+  "group": "19",
+  "team": ["Chen Wanchuan", "Yuen Lok Yan", "Lu Yuqing", "Chee Ching Lam", "Chan Hoi Lam"],
+  "primary_target": "strict_G2",
+  "primary_metric": "response_weighted_natural_log_loss_nats_per_response",
+  "python_version": "3.12",
+  "existing_split": {
+    "user_report": "none",
+    "working_tree_search": "no notebook or split-named file found outside dataset and .git",
+    "policy": "retain an existing valid split if discovered; do not replace solely for seed"
+  },
+  "seeds": {
+    "new_primary_split_if_needed": 20261028,
+    "simulation": 20261029,
+    "learning_curves": [20261030, 20261031],
+    "evaluation_bootstrap": 20261101,
+    "synthetic_label_control": 20261102,
+    "feature_audit": 20261103,
+    "feature_permutation": 20261104
+  },
+  "split": {
+    "unit": "unordered_photo_pair",
+    "proportions_fit_validation_test": [0.70, 0.15, 0.15],
+    "stratification": "comparison_type_by_pair_response_band",
+    "bands": ["1", "2-4", "5-9", "10+"],
+    "collapse_band_threshold_pairs": 20,
+    "allocation": "largest_remainder",
+    "allocation_tie_order": ["fit", "validation", "test"]
+  },
+  "candidate_registry": {
+    "status": "registered_before_model_comparison",
+    "primary": ["M0", "M1", "M2", "M3-H", "M3-C", "M3-Y", "M4-H", "M4-C", "M4-Y"],
+    "secondary": ["M2-no-position", "M3-side", "M4-side"],
+    "primary_context": "pet_care",
+    "base_ridge_grid": [0.000001, 0.00001, 0.0001, 0.001, 0.01, 0.1, 1],
+    "context_penalty_multipliers": [1, 10, 100],
+    "exact_pooled_fallback": true,
+    "tie_tolerance": 0.000001,
+    "representation_tie_order": ["H", "C", "Y"],
+    "m4_selection": "matched_to_selected_m3_representation",
+    "primary_contrasts": ["M0-M1", "M1-M2", "M2-M3*", "M3*-M4*"],
+    "feature_admission": "conditional_on_manifest_quality_and_coverage_gates"
+  },
+  "handcrafted_reference": {
+    "source": "legacy/src/model/handcrafted.py",
+    "expected_dimension": 20,
+    "ordered_names": [
+      "brightness", "contrast", "saturation_mean", "saturation_std",
+      "colorfulness", "sharpness_laplacian_var", "entropy_bits", "edge_density",
+      "warm_pixel_ratio", "hue_mean", "hue_concentration", "mean_r", "mean_g",
+      "mean_b", "aspect_ratio", "log_pixels", "overexposed_frac",
+      "underexposed_frac", "is_effectively_gray", "log_file_kb"
+    ],
+    "status": "reference_only_formulas_units_and_integration_require_audit"
+  },
+  "options": {
+    "known_cat_g3": false,
+    "all_block_fusion": false,
+    "fine_tuning": false,
+    "real_data_cycle_testing_in_core": false,
+    "test_driven_confirmatory_repair": false,
+    "cnn_pca_development_diagnostic": true,
+    "temperature_scaling_diagnostic": true,
+    "temperature_diagnostic_models": ["M2", "M3*", "M4*"],
+    "temperature_grid": [0.25, 0.5, 0.75, 1, 1.5, 2, 4],
+    "photo_residual_hybrid": false,
+    "grouped_feature_permutation": false,
+    "in_sample_pair_entropy_descriptive": true,
+    "official_predictions_after_internal_freeze": true
+  },
+  "evaluation": {
+    "bootstrap_replicates": 5000,
+    "bootstrap_unit": "unordered_test_pair",
+    "calibration_bins": 10,
+    "prediction_rule": "A if prob_a >= 0.5 else B",
+    "feature_response_coverage_minimum": 0.95
+  },
+  "prior_outcome_access": {
+    "prior_analysis_documented": true,
+    "team_access_details": "unknown",
+    "official_test_labels": "user reports none available",
+    "log": "artifacts/outcome_access_log.csv"
+  },
+  "changes": []
+}

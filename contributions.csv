@@ -1,0 +1,7 @@
+workstream,owners,reviewers,status,planned_responsibility
+Governance and reporting,Chen Wanchuan,Chee Ching Lam,assigned,Maintain protocol decisions claims and report coordination
+Data and splits,Chee Ching Lam,Chan Hoi Lam,assigned,Audit raw data and implement or verify the registered partitions
+H and C feature integration,Lu Yuqing,Yuen Lok Yan,assigned,Integrate and audit handcrafted and frozen CNN features
+YOLO-CLIP feature integration,Yuen Lok Yan,Lu Yuqing,assigned,Integrate and audit automated attribute measurements
+Modeling and evaluation,Chee Ching Lam; Chan Hoi Lam,Chen Wanchuan,assigned,Implement registered estimators model selection and evaluation
+Reproduction,Chen Wanchuan,Chee Ching Lam,assigned,Coordinate environment provenance and fresh-session reproduction

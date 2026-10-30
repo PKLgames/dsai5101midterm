@@ -1,0 +1,8 @@
+claim_id,task_roles,target,activity,evidence_status,progress,question,interpretation_boundary
+C01,T2,development,Explain,Real-data claim,planned,What agreement and disagreement are observed at different levels of support?,No respondent-consistency or numerical information-limit claim
+C02,T3,strict_G2,Show evidence,Real-data claim,planned,Does cat identity improve prediction over a constant baseline?,Predictive contrast is not objective attractiveness
+C03,T3,strict_G2,Show evidence,Real-data claim,planned,Does photo identity improve prediction over cat identity?,Interpret on matched rows with uncertainty
+C04,T3 and T4,strict_G2,Predict,Real-data claim,planned,How do admitted H C and Y shared scorers compare with photo identity?,Representation gains do not establish causal visual effects
+C05,T3 and T4,strict_G2,Show evidence,Real-data claim,planned,Does pet-care context improve the matched selected shared scorer?,A pooled fallback is not evidence that context is irrelevant
+C06,T2 and T3,strict_G2,Explain,Real-data claim,planned,Which diagnostic patterns support explanations for gains or underperformance?,Distinguish measured results supported interpretations alternatives and unresolved conclusions
+C07,T1 and T3,synthetic,Show evidence,Known-truth demonstration,planned,Do registered simulations demonstrate recovery pooling and scalar-ranking restrictions?,Synthetic behavior is not a finding about real-data cycles

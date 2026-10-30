@@ -1,5 +1,12 @@
 # Cat Image Arena
 
+The current project is in Stage 0 governance. See [protocol.md](protocol.md)
+and [decisions.yaml](decisions.yaml) for the registered scope and open gate.
+The setup and notebook instructions below describe an earlier workflow: the
+referenced notebooks are currently absent and the environment has not been
+validated for the current plan. [proj-docs.md](proj-docs.md) contains prior
+analysis, not results from the current protocol.
+
 Pairwise cat-image preferences, and the midterm analysis of those choices. The analysis notes are in `proj-docs.md`.
 
 ## Setup
