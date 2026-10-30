@@ -1,0 +1,3 @@
+partition,selection,status,pair_id,responses,canonical_i_proportion
+development,closest_to_half,no_pair_with_at_least_20_responses,,0,
+development,furthest_from_half,no_pair_with_at_least_20_responses,,0,

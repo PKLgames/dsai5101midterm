@@ -1,0 +1,33 @@
+{
+  "partitions": [
+    "fit",
+    "validation",
+    "development=fit+validation"
+  ],
+  "excluded_outcomes": "internal test and official test",
+  "wilson_interval": "95% binomial working model; respondent linkage unavailable",
+  "group_interaction_threshold": "100 fitting responses and 30 distinct fitting pairs",
+  "pair_group_contrast_threshold": "at least five responses in each group on the same pair",
+  "example_threshold": "at least 20 development responses; ties by greater support then pair ID",
+  "entropy_enabled": true,
+  "synthetic_label_control": "deferred: requires Stage 7 selected visual/contextual procedure and fixed development settings",
+  "input_sha256": {
+    "artifacts/rows_canonical.parquet": "2201f72aa2668b1b2410fb45208c17f702b1a2299f64aa00bd2e2f4df7188e70",
+    "artifacts/graph_provenance.json": "57e07a97a3438f63dba089b55ae67a03d1887594ef6f09fa27fb8d6dd919a382",
+    "artifacts/simulation_provenance.json": "aa7e267c30bc742c2066903f2988d4231a7fb068688367081e3613085f0ab6f1",
+    "decisions.yaml": "a881ba406cc05c48ad5c1d099e0458f5e4709c3219d804988d511eb7d6f3f232",
+    "src/descriptive.py": "357b3bbb8749db998b9ea0b56909fe610ccb1aded64a4e516ab64e11c532be89"
+  },
+  "output_sha256": {
+    "tables/pair_summary.csv": "45d22a6e8ae52c284ca6a917e7348dac01b371507e3b4d38f4fdeb025e5607da",
+    "tables/context_overlap.csv": "7ca20d7eca1b325ba2751dbf46649c97451243dd49205aecd60b90fc381ff6b8",
+    "tables/context_pair_support.csv": "6f76b2fd575610c2389b4186faba7fd3b85be04e16831dd72ac728efcf8bddb2",
+    "tables/context_support.csv": "d4ef42fe20b8b16051cb581d37fd3522cc1b31bc334c1d36012fa5f16a9d22e3",
+    "tables/photo_support.csv": "6b040084c7cd203a2a86bae31d606117b03e05a1acf4a90e332ac2eb00b8996b",
+    "tables/pair_support_summary.csv": "03d5f0fadccb9135387c21a7709fc396d71d0a4feec1fbc17876bbebd5de590f",
+    "tables/disagreement_examples.csv": "71b55df1d14397a0c7e7b1a5b3b2be1d9ae53c14cbae39754273b216971cb6ba",
+    "tables/pair_entropy.csv": "d59877c3bbc5c1beb5e577a4d4e461107cb2d0de6d3cf2a448407736d66b29c3",
+    "figures/disagreement.pdf": "967979f9f88dd4e2b42e860db79ad1b67c3b0dbd1369b9d28396b6653a08e2fa",
+    "figures/support_distribution.pdf": "135245b004dc3cb8da3b8ad7b17c1a9486f4ce192e0e1372855bfcc8c1ae4272"
+  }
+}

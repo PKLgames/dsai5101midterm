@@ -188,6 +188,29 @@ development settings, which does not exist until Stage 7. Run it before
 final evaluation and investigate consistent unexpected gains. A successful
 control does not prove all code paths leakage-free.
 
+## Stage 6 development-only descriptive investigation
+
+```powershell
+.\.venv\Scripts\python.exe -m unittest discover -s tests -p test_descriptive.py -v
+.\.venv\Scripts\python.exe -m src.run --config decisions.yaml --stage describe
+```
+
+The command verifies Stage 4 and Stage 5 artifact hashes, then reads only
+fitting and validation outcomes. Tables label each summary as `fit`,
+`validation`, or `development` (their union). Pair proportions use canonical
+image ordering. Their 95% Wilson intervals are binomial working-model
+summaries; respondent linkage is unavailable, so their assumptions cannot be
+fully verified.
+
+The pair, context-pair, context-overlap, context-support, photo-support and
+support-band tables are written under `tables/`. Group contrasts require
+shared pairs and at least five responses per pair-group cell; low overlap does
+not support broad group-preference claims. The 100-response/30-pair interaction
+rule is operational rather than a power guarantee. The example table applies
+the fixed 20-response minimum without lowering it. Registered pair entropy is
+an in-sample descriptive fit, not an oracle estimate or an information limit.
+Outputs are protected against overwrite.
+
 ## Setup
 
 Python 3.12. From the project root:

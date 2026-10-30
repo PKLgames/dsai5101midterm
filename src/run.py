@@ -13,7 +13,7 @@ from .audit import audit_dataset, write_audit
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--stage", required=True, choices=[
-        "audit", "split", "features", "feature-qa", "feature-panels", "feature-freeze", "graphs", "simulations",
+        "audit", "split", "features", "feature-qa", "feature-panels", "feature-freeze", "graphs", "simulations", "describe",
     ])
     parser.add_argument("--config", type=Path, default=Path("decisions.yaml"))
     parser.add_argument("--root", type=Path, default=Path.cwd())
@@ -91,6 +91,13 @@ def main(argv: list[str] | None = None) -> int:
             report = run_simulations(root, config["seeds"]["simulation"])
             print(f"Known-truth fits: {report['fit_count']}; failed fits: {report['failed_fits']}.")
             return 1 if report["failed_fits"] else 0
+        if args.stage == "describe":
+            from .descriptive import run_descriptive
+
+            report = run_descriptive(root, config)
+            print(f"Development summaries: {report['development_responses']} responses; "
+                  f"{report['development_pairs']} unordered pairs.")
+            return 0
         result = audit_dataset(root)
         outputs = write_audit(root, result, overwrite=args.overwrite)
     except (OSError, ValueError, RuntimeError, ImportError, KeyError) as exc:

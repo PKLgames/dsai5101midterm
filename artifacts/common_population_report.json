@@ -37,29 +37,29 @@
   "feature_reports": {
     "H": {
       "block": "H",
-      "status": "passed_human_review",
+      "status": "pending_human_review",
       "automated_checks": "passed",
       "successful_images": 1558,
       "failed_images": 0,
       "strict_validation_responses": 3742,
       "covered_validation_responses": 3742,
       "validation_coverage": 1.0,
-      "details": "review found no problem"
+      "details": ""
     },
     "C": {
       "block": "C",
-      "status": "passed_human_review",
+      "status": "pending_human_review",
       "automated_checks": "passed",
       "successful_images": 1558,
       "failed_images": 0,
       "strict_validation_responses": 3742,
       "covered_validation_responses": 3742,
       "validation_coverage": 1.0,
-      "details": "review found no problem"
+      "details": ""
     },
     "Y": {
       "block": "Y",
-      "status": "passed_human_review",
+      "status": "pending_human_review",
       "automated_checks": "passed",
       "successful_images": 1558,
       "failed_images": 0,

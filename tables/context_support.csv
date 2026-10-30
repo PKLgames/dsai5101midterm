@@ -1,0 +1,16 @@
+partition,pet_care,responses,distinct_pairs,distinct_photos,distinct_cats,within_cat_responses,between_cat_responses,interaction_support_threshold_met,threshold_interpretation,fitting_reference,fitting_interaction_eligible
+fit,current_regular,2600,2214,1258,237,309,2291,True,"operational rule, not statistical power",never,True
+fit,missing,360,353,557,223,38,322,True,"operational rule, not statistical power",never,True
+fit,never,4969,3592,1289,237,640,4329,True,"operational rule, not statistical power",never,False
+fit,occasionally,4533,3337,1291,237,490,4043,True,"operational rule, not statistical power",never,True
+fit,past_regular,4959,3577,1292,237,621,4338,True,"operational rule, not statistical power",never,True
+validation,current_regular,537,457,651,233,80,457,True,"operational rule, not statistical power",never,True
+validation,missing,70,68,126,103,6,64,False,"operational rule, not statistical power",never,True
+validation,never,1065,776,906,236,136,929,True,"operational rule, not statistical power",never,False
+validation,occasionally,959,703,874,236,108,851,True,"operational rule, not statistical power",never,True
+validation,past_regular,1111,795,927,236,120,991,True,"operational rule, not statistical power",never,True
+development,current_regular,3137,2671,1275,237,389,2748,True,"operational rule, not statistical power",never,True
+development,missing,430,421,631,233,44,386,True,"operational rule, not statistical power",never,True
+development,never,6034,4368,1296,237,776,5258,True,"operational rule, not statistical power",never,False
+development,occasionally,5492,4040,1294,237,598,4894,True,"operational rule, not statistical power",never,True
+development,past_regular,6070,4372,1293,237,741,5329,True,"operational rule, not statistical power",never,True
