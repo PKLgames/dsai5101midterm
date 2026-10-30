@@ -1,0 +1,15 @@
+{
+  "status": "post_test_retrospective_exploratory",
+  "responses": 286,
+  "pairs": 106,
+  "held_out_photos": 60,
+  "cats": 53,
+  "response_fraction_of_g3_test": 0.12711111111111112,
+  "g2_test_partition_overlap_responses": 43,
+  "selected_representation_before_subgroup": "C",
+  "operational_support_met": true,
+  "m1_within_cat_constant_logit": 0.08596921275387562,
+  "interpretation": "In a within-cat comparison the M1 cat-score difference cancels; M1 is a fitted displayed-side intercept and cannot distinguish the two photos. Comparisons are predictive and not causal.",
+  "prior_exposure": "G3 was not reserved at Stage 0; its outcomes overlap earlier analyses. This is not an independent confirmatory test.",
+  "uncertainty": "Exploratory and unadjusted for multiplicity, conditional on fitted models and selection; shared known photos, cats, and respondents may still induce dependence."
+}

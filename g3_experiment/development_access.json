@@ -1,0 +1,21 @@
+{
+  "status": "development_outcome_access_started",
+  "outcomes_requested": [
+    "separate core fitting",
+    "G3 validation"
+  ],
+  "g3_test_outcomes_requested": false,
+  "original_g2_partition_overlap": {
+    "separate_core_fit": {
+      "fit": 9998,
+      "test": 2054,
+      "validation": 2166
+    },
+    "g3_validation": {
+      "fit": 1436,
+      "test": 300,
+      "validation": 327
+    }
+  },
+  "warning": "Original G2 test outcomes occur in the separate fitting data. This retrospective analysis is not an independent G2 or G3 confirmation."
+}

@@ -1,0 +1,21 @@
+{
+  "status": "completed_once_post_freeze_retrospective_exploratory",
+  "freeze_sha256": "a1307b29f1f0ef37bc2dfcce6c39bdceb75e5eb41c76a78748c3eb0466a20514",
+  "test_access_record_sha256": "a44ab092dd53270fbac150df680aab6d5f7f3a08aa1a4008c305a4d3162fe12c",
+  "output_sha256": {
+    "test_predictions.parquet": "76af28b020277c97287097550e25f071d216a5ea496dc9b93647dc5cf34b59c6",
+    "test_results.csv": "2b44045032fab6ee389f179f11489285237ccff7092f443101322b9c480d9f18",
+    "test_contrasts.csv": "c9ed8753651372c4d8b1197067302a2b85cf36b5f946bd2bdda5f4e9e405aa70",
+    "presentation_g3_results.pdf": "ab68000365c1ac02ef0b73f3c573b763684aa07efb1af78c73e954199d94138f"
+  },
+  "responses": 2250,
+  "pairs": 718,
+  "held_out_photos": 64,
+  "bootstrap_replicates": 5000,
+  "bootstrap_unit": "held-out photo",
+  "bootstrap_seed": 20261101,
+  "original_g2_test_responses_in_g3_test": 361,
+  "interpretation": "Post-test retrospective exploration, not a new independent or confirmatory holdout. Intervals are pointwise and conditional on model selection; held-out-photo resampling does not account for all shared known-photo or respondent dependence.",
+  "no_g2_pipeline_changes": true,
+  "deployment_threshold_or_model_changed": false
+}

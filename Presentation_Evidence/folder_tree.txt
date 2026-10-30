@@ -43,11 +43,26 @@ Presentation_Evidence\
 |   |   |   |-- exploratory_demographic_semantic_overlap.csv
 |   |   |   |-- exploratory_demographic_semantic_rates.csv
 |   |   |   `-- exploratory_demographic_semantics.pdf
-|   |   `-- 05_Exploratory_Abstention_Utility\
-|   |       |-- abstention_utility_protocol.json
-|   |       |-- abstention_utility_provenance.json
-|   |       |-- exploratory_abstention_utility.csv
-|   |       `-- presentation_abstention_utility.pdf
+|   |   |-- 05_Exploratory_Abstention_Utility\
+|   |   |   |-- abstention_utility_protocol.json
+|   |   |   |-- abstention_utility_provenance.json
+|   |   |   |-- exploratory_abstention_utility.csv
+|   |   |   `-- presentation_abstention_utility.pdf
+|   |   `-- 06_Retrospective_G3\
+|   |       |-- Within_Cat_Subgroup\
+|   |       |   |-- analysis_provenance.json
+|   |       |   |-- presentation_within_cat_g3.pdf
+|   |       |   |-- protocol.json
+|   |       |   |-- within_cat_contrasts.csv
+|   |       |   |-- within_cat_summary.json
+|   |       |   `-- within_cat_test_results.csv
+|   |       |-- coverage.json
+|   |       |-- evaluation_provenance.json
+|   |       |-- presentation_g3_results.pdf
+|   |       |-- protocol.json
+|   |       |-- test_contrasts.csv
+|   |       |-- test_results.csv
+|   |       `-- validation_results.csv
 |   `-- 04_Claims\
 |       |-- 01_Question_and_Scope\
 |       |   `-- protocol.md
@@ -110,14 +125,33 @@ Presentation_Evidence\
 |   |   |-- exploratory_demographic_semantic_overlap.csv
 |   |   |-- exploratory_demographic_semantic_rates.csv
 |   |   `-- exploratory_demographic_semantics.pdf
-|   `-- 11_Report_and_Reproduction\
-|       |-- Group_19_Report.pdf
-|       |-- references.csv
-|       |-- REPRODUCTION.md
-|       `-- stage11_contributions_draft.csv
+|   |-- 11_Report_and_Reproduction\
+|   |   |-- Group_19_Report.pdf
+|   |   |-- references.csv
+|   |   |-- REPRODUCTION.md
+|   |   `-- stage11_contributions_draft.csv
+|   `-- 12_Retrospective_G3_Experiment\
+|       |-- Within_Cat_Subgroup\
+|       |   |-- analysis_provenance.json
+|       |   |-- presentation_within_cat_g3.pdf
+|       |   |-- protocol.json
+|       |   |-- within_cat_contrasts.csv
+|       |   |-- within_cat_summary.json
+|       |   `-- within_cat_test_results.csv
+|       |-- coverage.json
+|       |-- evaluation_provenance.json
+|       |-- presentation_g3_results.pdf
+|       |-- protocol.json
+|       |-- test_contrasts.csv
+|       |-- test_results.csv
+|       `-- validation_results.csv
 |-- extension_selection_manifest.csv
 |-- extension_verification.json
 |-- folder_tree.txt
+|-- g3_selection_manifest.csv
+|-- g3_verification.json
+|-- g3_within_cat_selection_manifest.csv
+|-- g3_within_cat_verification.json
 |-- original_hashes_after.json
 |-- original_hashes_before.json
 |-- selection_manifest.csv

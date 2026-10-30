@@ -1,0 +1,82 @@
+{
+  "status": "all_checks_passed",
+  "verified_utc": "2026-10-30T15:43:12.827949+00:00",
+  "operation": "Copied within-cat G3 evidence to both views; original sources were not moved or edited.",
+  "original_project_files_unchanged": 1965,
+  "previous_evidence_files_unchanged_before_tree_refresh": 103,
+  "subgroup_sources_verified_unchanged": 6,
+  "subgroup_copies_verified": 12,
+  "selection_manifest_sha256": "4bdfb6b1d7995ea17098bcecfd7bf6d17dd0301b4da076ba39fa74d938bf0ed7",
+  "g2_freeze_sha256": "47d22cc15fd7e42157b3f45faf634acee325e1288459b47b9635d9e2fd24411a",
+  "g3_freeze_sha256": "a1307b29f1f0ef37bc2dfcce6c39bdceb75e5eb41c76a78748c3eb0466a20514",
+  "scope_exclusions": [
+    ".cache",
+    ".git",
+    ".venv",
+    "Presentation_Evidence",
+    "g3_experiment\\within_cat_subgroup"
+  ],
+  "note": "The original, abstention and G3 evidence verification records remain historical and unchanged. The tree alone is refreshed. G2/G3 claims, reports and frozen evaluation outputs are not updated.",
+  "copies": [
+    {
+      "source": "g3_experiment\\within_cat_subgroup\\presentation_within_cat_g3.pdf",
+      "copy": "By_Stage\\12_Retrospective_G3_Experiment\\Within_Cat_Subgroup\\presentation_within_cat_g3.pdf",
+      "sha256": "38295f07c92267ca8da0a8a510695224477ff05b015d75b727d5cc36ff4ca89c"
+    },
+    {
+      "source": "g3_experiment\\within_cat_subgroup\\presentation_within_cat_g3.pdf",
+      "copy": "By_Presentation_Flow\\03_Diagnostics\\06_Retrospective_G3\\Within_Cat_Subgroup\\presentation_within_cat_g3.pdf",
+      "sha256": "38295f07c92267ca8da0a8a510695224477ff05b015d75b727d5cc36ff4ca89c"
+    },
+    {
+      "source": "g3_experiment\\within_cat_subgroup\\within_cat_test_results.csv",
+      "copy": "By_Stage\\12_Retrospective_G3_Experiment\\Within_Cat_Subgroup\\within_cat_test_results.csv",
+      "sha256": "11bd52dc2e4bdcd251799ae2f3da63a88cf6a11dfffefb5423277e8439b3063a"
+    },
+    {
+      "source": "g3_experiment\\within_cat_subgroup\\within_cat_test_results.csv",
+      "copy": "By_Presentation_Flow\\03_Diagnostics\\06_Retrospective_G3\\Within_Cat_Subgroup\\within_cat_test_results.csv",
+      "sha256": "11bd52dc2e4bdcd251799ae2f3da63a88cf6a11dfffefb5423277e8439b3063a"
+    },
+    {
+      "source": "g3_experiment\\within_cat_subgroup\\within_cat_contrasts.csv",
+      "copy": "By_Stage\\12_Retrospective_G3_Experiment\\Within_Cat_Subgroup\\within_cat_contrasts.csv",
+      "sha256": "d490fd3501cb6c8c0487b8110aaf83bb832645e6877f6f7924a16629631f92ce"
+    },
+    {
+      "source": "g3_experiment\\within_cat_subgroup\\within_cat_contrasts.csv",
+      "copy": "By_Presentation_Flow\\03_Diagnostics\\06_Retrospective_G3\\Within_Cat_Subgroup\\within_cat_contrasts.csv",
+      "sha256": "d490fd3501cb6c8c0487b8110aaf83bb832645e6877f6f7924a16629631f92ce"
+    },
+    {
+      "source": "g3_experiment\\within_cat_subgroup\\within_cat_summary.json",
+      "copy": "By_Stage\\12_Retrospective_G3_Experiment\\Within_Cat_Subgroup\\within_cat_summary.json",
+      "sha256": "8348efa2c0822b57119572b1bd0f528c86c52c9a37c85cafd17cd2eed8628d4d"
+    },
+    {
+      "source": "g3_experiment\\within_cat_subgroup\\within_cat_summary.json",
+      "copy": "By_Presentation_Flow\\03_Diagnostics\\06_Retrospective_G3\\Within_Cat_Subgroup\\within_cat_summary.json",
+      "sha256": "8348efa2c0822b57119572b1bd0f528c86c52c9a37c85cafd17cd2eed8628d4d"
+    },
+    {
+      "source": "g3_experiment\\within_cat_subgroup\\protocol.json",
+      "copy": "By_Stage\\12_Retrospective_G3_Experiment\\Within_Cat_Subgroup\\protocol.json",
+      "sha256": "14fa226afce8884be231c62384fbb6cc1b5d1130508c4ef1745caf48c793e1d7"
+    },
+    {
+      "source": "g3_experiment\\within_cat_subgroup\\protocol.json",
+      "copy": "By_Presentation_Flow\\03_Diagnostics\\06_Retrospective_G3\\Within_Cat_Subgroup\\protocol.json",
+      "sha256": "14fa226afce8884be231c62384fbb6cc1b5d1130508c4ef1745caf48c793e1d7"
+    },
+    {
+      "source": "g3_experiment\\within_cat_subgroup\\analysis_provenance.json",
+      "copy": "By_Stage\\12_Retrospective_G3_Experiment\\Within_Cat_Subgroup\\analysis_provenance.json",
+      "sha256": "a738721255d098bf1ac3ef63e2e98aa2aaa335dfbc74fb295b4557b9de1aac0c"
+    },
+    {
+      "source": "g3_experiment\\within_cat_subgroup\\analysis_provenance.json",
+      "copy": "By_Presentation_Flow\\03_Diagnostics\\06_Retrospective_G3\\Within_Cat_Subgroup\\analysis_provenance.json",
+      "sha256": "a738721255d098bf1ac3ef63e2e98aa2aaa335dfbc74fb295b4557b9de1aac0c"
+    }
+  ]
+}

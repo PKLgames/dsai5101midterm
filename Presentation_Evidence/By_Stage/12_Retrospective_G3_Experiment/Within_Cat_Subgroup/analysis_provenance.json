@@ -1,0 +1,29 @@
+{
+  "status": "completed_post_test_retrospective_exploratory",
+  "source_usage": "Saved G3 prediction outcomes and structural data only; no raw test outcomes parsed, no refit or test re-evaluation.",
+  "input_sha256": {
+    "g3_experiment\\freeze.json": "a1307b29f1f0ef37bc2dfcce6c39bdceb75e5eb41c76a78748c3eb0466a20514",
+    "g3_experiment\\freeze.sha256": "772281b3cb44aae5058b15c239ddd876dcfa61e5aacea5136cd6508f4c6eff52",
+    "g3_experiment\\evaluation_provenance.json": "b2e01a25dae5d386aceb789182f0725575cc58fe3201384aa828ccdc2d1eacb0",
+    "g3_experiment\\test_predictions.parquet": "76af28b020277c97287097550e25f071d216a5ea496dc9b93647dc5cf34b59c6",
+    "g3_experiment\\selected_models.json": "76b2870b43112f3ae96630f6fd6e2e87e97b599b36d08aeb27b875ddc7f8bdec",
+    "g3_experiment\\row_allocation.csv": "0e76a4d78f32d81e61290e2440d50b0d06c51ad65d3ba2485c5656719bca5a81",
+    "artifacts\\rows_canonical.parquet": "2201f72aa2668b1b2410fb45208c17f702b1a2299f64aa00bd2e2f4df7188e70",
+    "g3_experiment\\within_cat_subgroup\\protocol.json": "14fa226afce8884be231c62384fbb6cc1b5d1130508c4ef1745caf48c793e1d7",
+    "g3_experiment\\within_cat_subgroup\\analyze.py": "651db5ad602815727c2904e27851a152f866468c852d180210491baf527efdca"
+  },
+  "output_sha256": {
+    "within_cat_test_results.csv": "11bd52dc2e4bdcd251799ae2f3da63a88cf6a11dfffefb5423277e8439b3063a",
+    "within_cat_contrasts.csv": "d490fd3501cb6c8c0487b8110aaf83bb832645e6877f6f7924a16629631f92ce",
+    "within_cat_summary.json": "8348efa2c0822b57119572b1bd0f528c86c52c9a37c85cafd17cd2eed8628d4d",
+    "presentation_within_cat_g3.pdf": "38295f07c92267ca8da0a8a510695224477ff05b015d75b727d5cc36ff4ca89c"
+  },
+  "original_hash_snapshot_sha256": "9a19d9308c299787e184876416b6dabebf713535f0a0b65624fbfc335be81f0f",
+  "prior_evidence_snapshot_sha256": "fb65c356dee5ff0ab78daf3f7ed0000487f5c00a6e6e503c3fee1617e8206623",
+  "original_project_files_unchanged": 1965,
+  "previous_evidence_files_unchanged": 103,
+  "frozen_g2_and_g3_unchanged": true,
+  "models_refit": false,
+  "threshold_or_model_selected": false,
+  "limitations": "G3 was not reserved at Stage 0; its outcomes overlap earlier analyses. This is not an independent confirmatory test. Exploratory and unadjusted for multiplicity, conditional on fitted models and selection; shared known photos, cats, and respondents may still induce dependence."
+}

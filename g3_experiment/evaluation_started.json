@@ -1,0 +1,10 @@
+{
+  "status": "g3_test_access_started",
+  "freeze_sha256": "a1307b29f1f0ef37bc2dfcce6c39bdceb75e5eb41c76a78748c3eb0466a20514",
+  "prior_original_g2_partition_overlap": {
+    "fit": 1597,
+    "test": 361,
+    "validation": 292
+  },
+  "limitation": "Retrospective test outcomes include outcomes previously exposed in the completed G2 analysis."
+}

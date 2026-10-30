@@ -1,0 +1,47 @@
+{
+  "status": "retrospective_exploratory_not_preregistered",
+  "authorization": "The user explicitly authorized a quarantined retrospective G3 experiment after being informed that the Stage 0 reservation requirement cannot be met.",
+  "limitations": [
+    "G3 was disabled at Stage 0 and the completed G2 analysis has already accessed internal-test outcomes.",
+    "Some subsequently assigned G3 outcomes may have appeared in earlier analyses; this is not an independent confirmatory test.",
+    "The experiment does not change the original G2 split, frozen models, primary claims, report, or code archive."
+  ],
+  "reservation": {
+    "universe": "Unique training-response photos, grouped by audited exact-content SHA-256.",
+    "order": "Ascending SHA-256 of UTF-8 'retrospective-g3-20261028:' followed by the audited content digest; break ties by content digest.",
+    "groups_per_partition": "floor(0.05 * number of unique content groups), at least one",
+    "assignment": "First groups are G3 test, next groups G3 validation, remaining groups are nonreserved.",
+    "outcome_blind": true
+  },
+  "separate_core": {
+    "population": "Responses with both photos nonreserved and usable admitted H, C and Y feature records.",
+    "split": "Fresh separate 70/15/15 pair split using the existing pair-band allocation rules and seed 20261028; only fitting rows train G3 models.",
+    "no_change_to_original_g2": true
+  },
+  "eligibility": {
+    "rule": "Exactly one endpoint belongs to the given G3 reservation, the other photo appears in the separate fitting population, and both cats occur in fitting. The held-out cat must have a different fitting photo. Both endpoints must have usable H, C and Y features.",
+    "both_reserved": "Quarantine all comparisons with two reserved photos, including comparisons across reservations.",
+    "coverage_gate_per_partition": {"responses": 200, "pairs": 50, "held_out_photos": 20},
+    "insufficient_coverage": "Report insufficient coverage and do not fit or evaluate G3."
+  },
+  "model_selection": {
+    "models": ["M0", "M1", "M3-H", "M3-C", "M3-Y", "M4-H", "M4-C", "M4-Y"],
+    "m2": "Excluded: no fitted free photo score exists for a held-out photo.",
+    "ridge_grid": [0.000001, 0.00001, 0.0001, 0.001, 0.01, 0.1, 1.0],
+    "context_multipliers": [1, 10, 100],
+    "fallback": "Exact pooled M3 predictions are candidates for the matching M4 model.",
+    "context": "pet_care; fitting-only support of at least 100 responses and 30 pairs; largest supported group is reference, lexical tie; unsupported groups use zero deviation.",
+    "selection": "G3 validation loss only; tolerance 1e-6; stronger ridge, stronger context shrinkage, and exact pooled fallback preferred for ties. Select M3* among H, C, Y with that fixed tie order and retain matched M4*.",
+    "preprocessing": "Fit only on unique separate-core fitting photos, using the existing H, C and Y implementations.",
+    "test_freeze": "Write and hash experiment-specific selection and all fitted model/preprocessing artifacts before reading the reserved G3 test outcomes."
+  },
+  "evaluation": {
+    "bootstrap_unit": "held-out photo",
+    "bootstrap_replicates": 5000,
+    "bootstrap_seed": 20261101,
+    "confidence": "95% pointwise descriptive intervals, not multiplicity adjusted",
+    "metric": "response-weighted natural-log loss; Brier score and accuracy are secondary",
+    "paired_contrasts": ["M0-M1", "M1-M3*", "M3*-M4*"],
+    "guard": "Evaluate once only, after validating the experiment freeze. No post-test tuning or deployment selection."
+  }
+}

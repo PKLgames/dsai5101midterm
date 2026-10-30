@@ -1,0 +1,20 @@
+{
+  "status": "post_test_retrospective_exploratory",
+  "population": "Saved G3 test predictions for responses whose two photos have the same cat ID and comparison_type within_cat.",
+  "models": ["M0", "M1", "M3-H", "M3-C", "M3-Y", "M4-H", "M4-C", "M4-Y"],
+  "selection": "Use the existing G3 validation-selected representation and already-frozen models. Do not select or refit models using this subgroup.",
+  "metrics": ["response-weighted natural-log loss", "Brier score", "accuracy"],
+  "contrasts": ["M0 minus M1", "M1 minus validation-selected M3", "M3-H minus M4-H", "M3-C minus M4-C", "M3-Y minus M4-Y"],
+  "uncertainty": {
+    "unit": "held-out photo with at least one within-cat response",
+    "replicates": 5000,
+    "seed": 20261101,
+    "interval": "95% pointwise percentile, shared resamples for all models and contrasts",
+    "denominator": "Recompute total response multiplicity in each cluster resample.",
+    "limitations": "Exploratory and unadjusted for multiplicity, conditional on fitted models and selection; shared known photos, cats, and respondents may still induce dependence."
+  },
+  "operational_support": {"minimum_responses": 100, "minimum_pairs": 30, "meaning": "Reporting gate, not a power guarantee."},
+  "interpretation": "In a within-cat comparison the M1 cat-score difference cancels; M1 is a fitted displayed-side intercept and cannot distinguish the two photos. Comparisons are predictive and not causal.",
+  "prohibitions": ["raw test outcome parsing", "test re-evaluation", "model refitting", "test-driven selection", "changing the original G2 or G3 frozen artifacts"],
+  "prior_exposure": "G3 was not reserved at Stage 0; its outcomes overlap earlier analyses. This is not an independent confirmatory test."
+}

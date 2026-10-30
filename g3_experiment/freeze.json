@@ -1,0 +1,36 @@
+{
+  "status": "frozen_before_g3_test_access",
+  "exploratory": true,
+  "g3_test_outcomes_accessed": false,
+  "selected_representation": "C",
+  "experiment_sha256": {
+    "protocol.json": "ea2c4571e69207059bbee191fe93cbc3ffb05f7193612b03724618d52ed1c3c6",
+    "prepare.py": "90199ccb0d0ce8f81efb60378c2f00fac9ba1ee257141c4c023807fa2e307fa0",
+    "common.py": "090fd5aebf053046128c210539086bf257ef94f24b097d9113137902b1410e8f",
+    "develop.py": "88f8ae397ddaf19631a28a5051981fc9465c2b1a939b7a22ecd73709b36d865e",
+    "evaluate.py": "cfee50ac0f0a93562d97e8eb96c27e2baa65eabdea89e3d57ec0e159aa628358",
+    "tests.py": "46fadcba9c827a212f9459d73050d24716d7d381b07b168e3457ae3fe405a208",
+    "photo_reservation.csv": "9595ccd50e18ad4da1a20f1e4423ee4ec7aa38a9dd3d18c023cab5f456f0f50a",
+    "core_split.csv": "aaa709be8a6b22a343d2afabc8d77484a48bcd75f12afeee18d4de3315d0bc9e",
+    "row_allocation.csv": "0e76a4d78f32d81e61290e2440d50b0d06c51ad65d3ba2485c5656719bca5a81",
+    "coverage.json": "9541829ca9680aa89b66437507d69ca33279e39a032704a1fad7c71713e63dbb",
+    "development_access.json": "7747aeb1eac41991391d6b73c9cf89c731ade80de4b03cfc3751bbdb8c0a8e58",
+    "all_fit_attempts.csv": "ed0c96dc5d93f1df2b5a9988f2fe79c3ebf525e4ebb40b040d37d56006bc2d33",
+    "validation_results.csv": "c573b79ab20ee2256267ce1dd8f4de1f10d8b1159695f04dc5bff664ebd70a01",
+    "selected_models.json": "76b2870b43112f3ae96630f6fd6e2e87e97b599b36d08aeb27b875ddc7f8bdec"
+  },
+  "root_input_sha256": {
+    "dataset\\train.csv": "36bae3173cd867124b8c514a8abfb87b4d9303facbfc8fdeef0ea7cfbb0622d8",
+    "artifacts\\rows_canonical.parquet": "2201f72aa2668b1b2410fb45208c17f702b1a2299f64aa00bd2e2f4df7188e70",
+    "features\\H.parquet": "dfc525019207a6dac5637cab3c748cc24eba202f2a24c2cb38ec14a13a30438a",
+    "features\\C.parquet": "1b4d1f937e5a18d21204f25c2168dfa436872b890fa6f34a61c5635d775be426",
+    "features\\Y.parquet": "4e56141451643d8ce97f4a368271d033de6968be34f7a92a7216399339a13c33",
+    "src\\development.py": "a731411b36e8637fb0fe03a963b98e86fe7b48cc983a68a4eefce7dfab115aa5",
+    "src\\estimator.py": "2951bf159312714f6b83632ef2cd22f38f9f78238de455e7629ff59e4886cbc2",
+    "src\\preprocessing.py": "7e9f3985f306903e01107bf88f7b91df179ad08b42a8825c12c1a6f86130ffda",
+    "src\\features.py": "f8e12210fd814098f294070d86211b2465a88d03e071a1e5dbf6ed02cfdd728e",
+    "src\\feature_y.py": "27b0981666fb46d848ee5d45f09ab3d8a8686bbaf6799fc7751d79eccbc555e3",
+    "src\\split.py": "dde7fa06dda892433774fcf26d9e83dcef2a96483edff4fa83dfe0a6c2ed8522",
+    "src\\canonicalize.py": "4b0b926638d1a871ac2ec5c71d997b9193d24c95720def7aa0dd66105d95b37d"
+  }
+}
