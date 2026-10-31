@@ -1,0 +1,9 @@
+{
+  "status": "all_candidates_reproduced",
+  "fits": 21,
+  "maximum_validation_difference": 0.0,
+  "original_attempts_sha256": "ff49c63c31083b0f46c4794a09faba628e8d7345b4f95d7db5ec056ae5ba7b2e",
+  "output_sha256": "130734cc132e3639b49ab17d4f01d1c3a41d54b5fa47225794955479f019706b",
+  "test_outcomes_read": false,
+  "interpretation": "Post-test motivated development reconstruction; not independent."
+}

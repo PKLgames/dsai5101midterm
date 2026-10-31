@@ -1,0 +1,19 @@
+{
+  "status": "completed",
+  "matched_ids_pairs_outcomes_clusters_verified": true,
+  "bootstrap_replicates": 5000,
+  "source_sha256": {
+    "g2": {
+      "hybrid": "a80f995872f8c37f8352d948bc30119d5b519d86128a6eba9763ba84615ccb9c",
+      "demographic": "35b66f96e3e295358103eea6f4b8527622854faa41826931a113f8e29317894a",
+      "kernel": "1f9d17a3a1b7252fc28d0389946f84946c32f8b22de337b6fb1bf41d27ef0cc4"
+    },
+    "g3": {
+      "hybrid": "2407cc33c930d8a7f6ee23d0de7c453aa5fc64c0d05817219815385d40c16a0d",
+      "demographic": "f735cc19056bedbf8727bbc99e8e1036fd6cec6353639953c76f0173865d060d",
+      "kernel": "843f80a0928218f391ea0f697a68286c65bd8d382f5f5e095222db8079399de4"
+    }
+  },
+  "output_sha256": "61e3af95527d0170b6515249d514f95ad17d6ca8d3a516981d2de98c3951b7d3",
+  "limitations": "Post-test exploratory, comparisons do not isolate causal components or equal model inputs."
+}

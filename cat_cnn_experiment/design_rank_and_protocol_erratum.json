@@ -1,0 +1,18 @@
+{
+  "status": "completed",
+  "partition": "original_common_fitting_structure_and_features_only",
+  "fitting_responses": 17421,
+  "design_columns": 814,
+  "cats": 237,
+  "cnn_dimensions": 576,
+  "gram_relative_eigenvalue_tolerance": 1e-12,
+  "gram_absolute_tolerance": 1.7421707342569814e-08,
+  "numerical_rank": 813,
+  "rank_after_one_cat_offset_gauge": 813,
+  "smallest_retained_gram_eigenvalue": 0.29816832161025986,
+  "largest_gram_eigenvalue": 17421.707342569815,
+  "interpretation": "At this tolerance the G2 design has exactly the expected one-dimensional cat-score offset gauge; after fixing that gauge no further exact rank deficiency is detected. Cat/CNN predictors can still be correlated and ridge changes fitted coefficients. This rank check is not a causal identification or cross-split guarantee.",
+  "protocol_erratum": "The frozen protocol states that cat and CNN score components are not uniquely identified by the likelihood. That blanket statement overstates the evidence for the G2 design: after the single cat-offset gauge, this numerical rank check detects no additional exact deficiency. Do not claim a fundamental cat/CNN nonidentifiability beyond the gauge from that statement. Interpret coefficient allocation cautiously because penalties and correlations affect fitted values, not because an additional exact deficiency was established.",
+  "g2_freeze_sha256": "68b93282a768de8b17d20fcd6336b30fc1f5540cd73e00a96ce72ad8ecf190f6",
+  "outcomes_read_for_rank": false
+}

@@ -1,0 +1,11 @@
+{
+  "status": "passed_operational_control",
+  "seed": 20261102,
+  "repetitions": 20,
+  "failed_fits": 0,
+  "improvements": 0,
+  "mean_loss": 0.6975545804470998,
+  "g2_freeze_sha256": "68b93282a768de8b17d20fcd6336b30fc1f5540cd73e00a96ce72ad8ecf190f6",
+  "results_sha256": "5e77ee31696828cb9ea33235d81ab5ce081a6f55061c457f19fdbeeea7b7a087",
+  "limitations": "Operational check, not a leakage-free certificate."
+}

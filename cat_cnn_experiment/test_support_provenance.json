@@ -1,0 +1,13 @@
+{
+  "status": "completed",
+  "partition": "test",
+  "slices": 16,
+  "bins": 160,
+  "model_freeze_sha256": "68b93282a768de8b17d20fcd6336b30fc1f5540cd73e00a96ce72ad8ecf190f6",
+  "outputs_sha256": {
+    "test_support_slices.csv": "f34be03b784d0bdb9e36e449b66bb6e2c16eb188785e8151eb5996ae6f70f79c",
+    "test_support_calibration.csv": "4dc1de2bc8416f7f069e56b5d62ad49d8492c5ab65a0fca05596440b107bbff8"
+  },
+  "raw_test_outcomes_read": false,
+  "limitation": "Retrospective descriptive; quality flags overlap."
+}

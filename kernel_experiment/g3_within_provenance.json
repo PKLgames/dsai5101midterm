@@ -1,0 +1,15 @@
+{
+  "status": "completed_post_test_exploratory",
+  "input_sha256": "843f80a0928218f391ea0f697a68286c65bd8d382f5f5e095222db8079399de4",
+  "outputs_sha256": {
+    "g3_within_results.csv": "0793d683f468cceeac8b9ad89a2e873f0389e10a818a20bc8b7e0dd33e4b8e0b",
+    "g3_within_contrasts.csv": "58c011f01b36a0347a8182bf87670d00776c41204b7b22063a6efdb3c7a81a4f"
+  },
+  "responses": 286,
+  "pairs": 106,
+  "held_out_photos": 60,
+  "bootstrap_replicates": 5000,
+  "seed": 20261101,
+  "raw_test_outcomes_read": false,
+  "limitations": "Post-test pointwise, unadjusted, held-out-photo bootstrap; not independent."
+}

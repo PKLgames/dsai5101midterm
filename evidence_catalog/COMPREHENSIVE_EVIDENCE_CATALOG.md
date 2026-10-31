@@ -1,14 +1,14 @@
 # Comprehensive project evidence catalog
 
 **Project:** Group 19, *Predicting to Diagnose: Cat Identity, Visual Representations, and Context in Cat-Photo Preferences*  
-**Collection date:** 31 October 2026, HKT; demographic experiment and diagnostic-parity supplements added subsequently on 31 October 2026  
+**Collection date:** 31 October 2026, HKT; demographic and diagnostic-parity supplements added subsequently; kernel and Cat + CNN supplements added 1 November 2026  
 **Purpose:** explain the available figures, tables, numerical results, fitted artifacts, integrity records, and limitations across the entire project, including material not copied into the presentation folder.
 
 ## 1. How to use this catalog
 
-This document is the interpreted evidence list. Read the original [file inventory](file_inventory.csv), then the [demographic supplemental inventory](demographic_inventory.csv), then the [diagnostic-parity inventory](demographic_diagnostics_inventory.csv): each supplement adds new files and replaces the historical row for the refreshed presentation tree. They include individual path, canonical source, presentation-copy flag, purpose, supported claim, interpretation limit, byte size, SHA-256, CSV/Parquet row count, column count, and PDF page count where applicable. The original [integrity audit](integrity_audit.json) and [demographic update audit](demographic_integrity_audit.json) are historical records; the [diagnostic-parity audit](demographic_diagnostics_integrity_audit.json) records the latest inventory checks.
+This document is the interpreted evidence list. Read the original [file inventory](file_inventory.csv), then the [demographic supplemental inventory](demographic_inventory.csv), the [diagnostic-parity inventory](demographic_diagnostics_inventory.csv), the [kernel inventory](kernel_inventory.csv), and finally the [Cat + CNN inventory](cat_cnn_inventory.csv): each supplement adds new files and replaces the historical row for the refreshed presentation tree. They include individual path, canonical source, presentation-copy flag, purpose, supported claim, interpretation limit, byte size, SHA-256, CSV/Parquet row count, column count, and PDF page count where applicable. Earlier [integrity](integrity_audit.json), [demographic](demographic_integrity_audit.json), [diagnostic-parity](demographic_diagnostics_integrity_audit.json), and [kernel](kernel_integrity_audit.json) audits remain historical records; the [Cat + CNN audit](cat_cnn_integrity_audit.json) records the latest inventory checks.
 
-Together the inventories cover **2,318 files**: 2,086 in the original snapshot, 64 demographic-experiment additions, and 168 diagnostic-parity additions; each supplement also records the updated presentation-tree file. They include 1,558 dataset photographs, 64 review-panel images, executable sources, tests, and presentation duplicates. They exclude the root Git database, virtual environments, downloaded-model cache, this catalog directory, and runtime `__pycache__`/plotting-configuration directories. An incidental retained legacy plotting cache is inventoried as a legacy file, not scientific evidence.
+Together the inventories cover **2,673 files**: 2,086 in the original snapshot, 64 demographic-experiment additions, 168 diagnostic-parity additions, 179 kernel-study additions and 176 later additions including the Cat + CNN study; each supplement also records the updated presentation-tree file. Two of the latest additions appeared independently during the study and are recorded as unclassified, not attributed to the experiment. The inventories include 1,558 dataset photographs, 64 review-panel images, executable sources, tests, and presentation duplicates. They exclude the root Git database, virtual environments, downloaded-model cache, this catalog directory, and runtime `__pycache__`/plotting-configuration directories. An incidental retained legacy plotting cache is inventoried as a legacy file, not scientific evidence.
 
 **Do not count files as independent evidence.** A PDF, its source CSV, its row-level predictions, and its two presentation copies usually describe the same observations. The inventory's `canonical_source` field makes this explicit. It is not meaningful to add their sample sizes together.
 
@@ -17,11 +17,13 @@ Together the inventories cover **2,318 files**: 2,086 in the original snapshot, 
 - The **G2, G3, and G4 freeze seals** match their recorded artifacts.
 - **202 recorded provenance hash references** were checked across the core freeze, graph/development/evaluation, report/package, and G3/G4 records.
 - Both current synthesis CSVs preserve the original Stage 10 prefix and satisfy the Stage 10.5 append lineage.
-- The original audit verified **120 presentation copies from 60 selected source files**; the later demographic update verified **28 copies from 14 sources**, and the diagnostic-parity update verified **74 copies from 37 sources**. Earlier audits were not rewritten.
+- The original audit verified **120 presentation copies from 60 selected source files**; the later demographic update verified **28 copies from 14 sources**, the diagnostic-parity update **74 copies from 37 sources**, the kernel update **62 copies from 31 sources**, and the Cat + CNN update **64 copies from 32 sources**. Earlier audits were not rewritten.
 - The original code ZIP matches the hash in its historical clean-environment reproduction record and passes ZIP CRC verification: **233 entries**, comprising 232 payload files plus its manifest.
 - The inventoried original files did not change during this collection.
 - For the demographic update, **2,085 of 2,086** historical inventory entries still match; the sole changed entry is the intentionally refreshed presentation folder tree. The demographic freeze, selected/output hashes, recorded fair-coin control provenance, independent replay record, and all 28 new copies were checked. No project evidence files changed during the catalog update.
 - For the diagnostic-parity update, the only changed previously inventoried project file was the intentionally refreshed presentation tree. Original files were protected throughout the refits; 74 new presentation copies were checked against their sources. The new G3/G4 saved predictions and 5,000 cluster-bootstrap draws were independently replayed.
+- For the kernel update, the only changed previously inventoried file was the intentionally refreshed presentation tree. The kernel study's original project and presentation snapshots were checked before publication; its 62 new copies were verified.
+- For Cat + CNN, **2,272 original project files** and **305 prior presentation files** remained unchanged; two new external files were preserved and separately recorded. The study's 64 presentation copies were verified before refreshing the tree.
 
 These are **integrity checks**, not new empirical findings. No preference model, simulation, evaluation, or existing test suite was rerun for this catalog. Historical successful tests and reconstruction logs are described as historical records, not newly executed tests.
 
@@ -45,6 +47,8 @@ The documented difference is the Stage 11 PDF-only reporting requirement. The pr
 4. Official prediction is a **deployment refit on all labeled responses**, not another held-out evaluation.
 5. The original G2 pipeline, report, archive, and claims were not rewritten to absorb the later quarantined G3/G4/utility/deployment results.
 6. The four-model all-demographics experiment was proposed after the original test and prior demographic exploration. It is a quarantined, retrospective predictive supplement, not a new preregistered primary analysis.
+7. The pooled photo-level RBF Nyström M3-C extension was also proposed after test exposure; it is a separate exploratory kernel procedure, not an original primary candidate or deployment replacement.
+8. The pooled Cat + CNN scorer is another post-test extension. G4 was explicitly declared unsupported by user choice; no unseen-cat zero-score convention or G4 predictions were used for this study.
 
 ## 2. Evidence vocabulary and claim map
 
@@ -89,7 +93,7 @@ The current ledger has **23 rows**: C01-C07, S01-S10, and X105-01-X105-06.
 | S10 | Unresolved questions | Primary photo/visual intervals span zero; no unique explanation of remaining loss. |
 | X105-01-X105-06 | Six demographic semantic descriptions | Development-only, raw unadjusted rates for gender, pet_history, pet_care, pet_contact, future_pet and mbti_ie; not causal or matched preference effects. |
 
-G3, G4, within-cat G3, all-demographic models, utility and deployment results are **not additional completed primary C02-C05 claims**. Where this catalog names them, it is describing separate evidence families, not silently adding new IDs to the frozen claim ledger.
+G3, G4, within-cat G3, all-demographic models, the kernel and Cat + CNN extensions, utility and deployment results are **not additional completed primary C02-C05 claims**. Where this catalog names them, it is describing separate evidence families, not silently adding new IDs to the frozen claim ledger.
 
 ### 2.3 Global interpretation safeguards
 
@@ -754,6 +758,154 @@ For these examples, higher retained accuracy does not yield higher utility acros
 
 The [diagnostic summary](../demographic_experiment/diagnostics_extension/diagnostic_summary.json) records 32 curve rows, 208 category-support rows, the distinct-full-size reuse, original evidence checks and output hashes. [Publication verification](../demographic_experiment/diagnostics_extension/publication_verification.json) checked **2,157 pre-existing project files** unchanged before refreshing the presentation tree and verified **74 copies** of 37 source files. Original G2/G3/G4 claims, frozen models, report, ZIP, and official predictions were not replaced.
 
+## 10B. Retrospective nonlinear CNN kernel scorer
+
+The [kernel experiment](../kernel_experiment) tests whether a **pooled nonlinear scalar photo scorer** built from the existing frozen CNN representation improves on original linear M3-C. It was authorized after G2/G3/G4 outcomes were exposed, so it is post-test exploratory—not a new independently confirmatory finding. The original primary models, claims and deployment were not changed.
+
+The user's chosen formulation is an RBF Nyström approximation: fit at most 256 hash-ranked landmarks on unique fitting photos, use an RBF bandwidth multiplier relative to the fitting-photo median positive squared distance, center/RMS-normalize the map using fitting photos only, then fit a Bradley–Terry-style logit `beta + score(A) - score(B)`. Three multipliers (**0.25, 1, 4**) and seven ridge values are tuned on each split's validation data. **This is one score per photo**, not an unrestricted pair model or a pet-care/demographic interaction model.
+
+| Evidence | Contents and limits |
+|---|---|
+| [Protocol](../kernel_experiment/protocol.json), [README](../kernel_experiment/README.md) | Fit-only landmarks/bandwidth, selection, historical exposure and noncausal scope. |
+| [RESULTS.md](../kernel_experiment/RESULTS.md) | Full numerical synthesis, diagnostics and interpretation. |
+| [G2 candidate log](../kernel_experiment/g2_attempts.csv), [penalty refits](../kernel_experiment/penalty_refits.csv), [penalty provenance](../kernel_experiment/penalty_provenance.json) | All **21** width/ridge combinations accepted and independently refit; maximum validation-loss reproduction difference **0.0**. |
+| [G2 model](../kernel_experiment/g2_model.json), [freeze](../kernel_experiment/g2_freeze.json), [seal](../kernel_experiment/g2_freeze.sha256) | Validation-selected width multiplier **0.25**, ridge **0.0001**; training-only transformations frozen before this saved-test reanalysis. |
+| [Fair-coin results](../kernel_experiment/fair_coin_control.csv), [provenance](../kernel_experiment/fair_coin_provenance.json) | 20 fixed-setting fair-coin fits, zero failures, **0/20** improvements over log(2); operational check, not leakage-free certification. |
+| [G2 results](../kernel_experiment/g2_results.csv), [contrasts](../kernel_experiment/g2_contrasts.csv), [pair-weighted metrics](../kernel_experiment/g2_pair_weighted.csv) | Same 3,733 G2 responses / 1,207 pairs as original common models; 95% pointwise paired intervals are secondary/exploratory. |
+| [G2 slices](../kernel_experiment/g2_slices.csv), [G2 reliability bins](../kernel_experiment/g2_slice_calibration.csv), [validation slices](../kernel_experiment/validation_slices.csv), [validation bins](../kernel_experiment/validation_calibration.csv) | Original M3-C support/quality definitions; low-support bins/slices flagged, overlapping feature-quality categories not additive. |
+| [Learning curves](../kernel_experiment/learning_curves.csv), [study figure](../kernel_experiment/presentation_kernel_study.pdf) | Two seeds × four fitting fractions on the original common 1,836-response/589-pair validation intersection; preprocessing, landmarks and tuning refit at every subset. |
+| [Temperature grid](../kernel_experiment/temperature_candidates.csv), [temperature freeze](../kernel_experiment/temperature_freeze.json) | Validation selects **T=1**; scaled and unscaled outputs are identical. |
+| [G3 results](../kernel_experiment/g3_results.csv), [G3 contrasts](../kernel_experiment/g3_contrasts.csv), [G3 within-cat results](../kernel_experiment/g3_within_results.csv), [G3 within-cat contrasts](../kernel_experiment/g3_within_contrasts.csv) | Separate G3 fitting and validation, with **2,250 responses / 64 held-out photos**; within-cat subgroup has 286 responses / 60 held-out photos. |
+| [G4 results](../kernel_experiment/g4_results.csv), [G4 contrasts](../kernel_experiment/g4_contrasts.csv) | Separate one-unseen-cat G4 fitting/validation; **3,479 responses / 23 held-out cats**. No two-unseen-cat claim. |
+| [Abstention grid](../kernel_experiment/g2_abstention_utility.csv), [abstention figure](../kernel_experiment/presentation_kernel_abstention.pdf) | Three matched models × 21 fixed thresholds; +1/-1/0 with all original responses in the denominator. No cutoff selected. |
+| [Demographic-CNN paired comparisons](../kernel_experiment/additional_paired_contrasts.csv) | Matched rows/clusters but C+D also uses demographics; differences cannot isolate nonlinearity. |
+| [Verification](../kernel_experiment/verification.json), [additional verification](../kernel_experiment/additional_verification.json), [publication verification](../kernel_experiment/publication_verification.json) | Fitting-only maps, validation gradients/selections, saved predictions, cluster-bootstrap replay, subgroup parity and 62 verified presentation copies. |
+
+#### Matched nonlinear versus linear results
+
+Positive linear-reference minus kernel loss favors the kernel. G2 intervals resample unordered pairs; G3 resamples held-out photos; G4 resamples held-out cats. All intervals are **95% pointwise, unadjusted, retrospective** and conditional on selected procedures.
+
+| Target | Kernel test loss | Linear M3-C test loss | Linear M3-C minus kernel | 95% interval |
+|---|---:|---:|---:|---|
+| G2 | 0.669272 | 0.669202 | -0.000070 | [-0.003638, 0.003602] |
+| G3 | 0.672923 | 0.672169 | -0.000754 | [-0.006277, 0.004684] |
+| G4 | 0.673013 | 0.671809 | -0.001204 | [-0.004555, 0.001846] |
+
+**Measured result:** the kernel has slightly worse point loss in all three matched comparisons, but all intervals span zero. **Supported interpretation:** this tested nonlinear procedure does not establish a predictive advantage over linear M3-C. **Not established:** nonlinearity can never help; other kernel choices, tuning, approximation error and sample variation remain alternatives.
+
+Against original contextual M4-C, the pooled kernel has losses 0.669272 versus 0.668296 on G2, 0.672923 versus 0.669966 on G3, and 0.673013 versus 0.670039 on G4. These comparisons change **both** context and scoring procedure and do not isolate nonlinearity.
+
+The G3 within-cat subgroup is **286 responses / 106 pairs / 60 held-out photos**. Original M3-C minus kernel is **-0.006808**, interval **[-0.019018, 0.005108]**. Original M4-C minus kernel is **-0.013030**, interval **[-0.025989, -0.000467]**; this is a secondary unadjusted comparison of contextual versus pooled procedures, not an isolated nonlinearity effect. The original M1 cat score cancels within a cat.
+
+#### Learning curves and abstention
+
+| Seed | Fitting fraction | Kernel validation loss | Original M3-C curve loss |
+|---|---:|---:|---:|
+| 20261030 | 25% | 0.674606 | 0.675666 |
+| 20261030 | 50% | 0.671815 | 0.671707 |
+| 20261030 | 75% | 0.669267 | 0.670957 |
+| 20261030 | 100% | 0.665630 | 0.666987 |
+| 20261031 | 25% | 0.677476 | 0.676712 |
+| 20261031 | 50% | 0.672431 | 0.674022 |
+| 20261031 | 75% | 0.669820 | 0.671791 |
+| 20261031 | 100% | 0.665630 | 0.666987 |
+
+These are development selection results on the 1,836-response intersection, not independent test evidence. The 100% rows have identical fitting/validation populations, so the two seed results are not independent replications. Two initially interrupted 25% logs were preserved; both final seed sequences completed all 21 candidates per subset. Resource handling is documented in [resource_adjustment.json](../kernel_experiment/resource_adjustment.json).
+
+| Kernel confidence cutoff | Retained responses / pairs | Coverage | Retained accuracy | Utility / original response |
+|---:|---|---:|---:|---:|
+| 0.50 | 3,733 / 1,207 | 100% | 58.40% | 0.167961 |
+| 0.60 | 1,583 / 597 | 42.41% | 65.07% | 0.127779 |
+| 0.70 | 372 / 141 | 9.97% | 73.39% | 0.046611 |
+
+Increasing selective accuracy does not improve total utility here under the stated +1/-1/0 assumptions. No threshold was selected for deployment.
+
+## 10C. Retrospective additive Cat + CNN scorer
+
+The [Cat + CNN experiment](../cat_cnn_experiment) tests a pooled linear scorer that combines fitted cat identity and the original frozen CNN representation:
+
+`eta = beta + c(a_cat) - c(b_cat) + w.T @ (z_A - z_B)`.
+
+The user approved separate positive cat/CNN ridge penalties and selected **G4 unsupported** rather than assigning a zero identity score to an unseen cat. The study is a new post-test extension, not the original plan's disabled photo-residual hybrid. It is not independently confirmatory and does not change original models, claims or official predictions.
+
+All **49** combinations of seven original-grid cat penalties × seven CNN penalties were fitted on each split's fitting data and selected on validation. Original unique-fitting-photo CNN centering/block-RMS was refit per G2, G3 and curve subset. Comparisons are predictive: model-specific penalties, correlated features and different procedures can change fitted coefficients, so cat and CNN coefficients are not a causal or behavioral decomposition.
+
+### Frozen protocol interpretation correction
+
+The frozen Cat + CNN protocol contains an overly broad statement that cat and CNN components are not uniquely identified by the likelihood. An outcome-blind original-G2 fitting-design rank check found **rank 813 of 814 columns** at the recorded Gram relative-eigenvalue tolerance of `1e-12`, consistent with the usual one-dimensional **cat-score offset gauge**. After that gauge is fixed, no additional exact rank deficiency was detected numerically in this G2 design.
+
+This corrects the blanket claim; it does not prove no near-collinearity, no rank issues in other splits, stable coefficients, or causal identification. The sealed protocol and model were not rewritten. See the [design-rank record and explicit erratum](../cat_cnn_experiment/design_rank_and_protocol_erratum.json).
+
+### Evidence inventory
+
+| Evidence | Contents and limits |
+|---|---|
+| [Protocol](../cat_cnn_experiment/protocol.json), [README](../cat_cnn_experiment/README.md), [results synthesis](../cat_cnn_experiment/RESULTS.md) | Additive scorer, separate penalties, retrospective scope, rank erratum and G4 refusal. |
+| [G2 candidate log](../cat_cnn_experiment/g2_attempts.csv), [penalty refits](../cat_cnn_experiment/penalty_refits.csv), [penalty provenance](../cat_cnn_experiment/penalty_provenance.json) | **49** penalty pairs independently refit; maximum validation-loss reproduction difference **0.0**. |
+| [G2 model](../cat_cnn_experiment/g2_model.json), [freeze](../cat_cnn_experiment/g2_freeze.json), [seal](../cat_cnn_experiment/g2_freeze.sha256) | Original G2 validation selected cat ridge **0.001** and CNN ridge **0.001**; original fitting-only test procedure is separate. |
+| [Fair-coin results](../cat_cnn_experiment/fair_coin_control.csv), [provenance](../cat_cnn_experiment/fair_coin_provenance.json) | **20 accepted** fixed-setting random-label fits, **0/20** improvements over log(2); operational control, not a leakage certificate. |
+| [G2 results](../cat_cnn_experiment/g2_results.csv), [G2 contrasts](../cat_cnn_experiment/g2_contrasts.csv), [G2 subgroup contrasts](../cat_cnn_experiment/g2_subgroup_contrasts.csv) | Same 3,733 G2 responses / 1,207 pairs as original common models; subgroup intervals are additional 95% pointwise unadjusted comparisons. |
+| [Validation support](../cat_cnn_experiment/validation_support_slices.csv), [validation bins](../cat_cnn_experiment/validation_support_calibration.csv), [test support](../cat_cnn_experiment/test_support_slices.csv), [test bins](../cat_cnn_experiment/test_support_calibration.csv) | Original M3-C support/quality definitions and reliability thresholds; overlapping quality flags must not be added as disjoint groups. |
+| [Learning curves](../cat_cnn_experiment/learning_curves.csv), [study figure](../cat_cnn_experiment/presentation_cat_cnn.pdf) | Two seeds × four fitting fractions on the original common 1,836-response/589-pair validation intersection; 49 penalty combinations retuned at each subset. |
+| [Temperature grid](../cat_cnn_experiment/temperature_candidates.csv), [temperature freeze](../cat_cnn_experiment/temperature_freeze.json) | Validation selected **T=1**; scaling makes no change. |
+| [G3 results](../cat_cnn_experiment/g3_results.csv), [G3 contrasts](../cat_cnn_experiment/g3_contrasts.csv), [G3 within-cat results](../cat_cnn_experiment/g3_within_results.csv), [G3 within-cat contrasts](../cat_cnn_experiment/g3_within_contrasts.csv) | Separate G3 fitting and validation; **2,250 responses / 64 held-out photos**; within-cat subgroup 286 responses / 60 held-out photos. |
+| [G4 unsupported record](../cat_cnn_experiment/g4_unsupported.json) | No G4 predictions or test outcomes were used, as explicitly chosen by the user. |
+| [Abstention grid](../cat_cnn_experiment/g2_abstention_utility.csv), [abstention figure](../cat_cnn_experiment/presentation_abstention.pdf) | Four matched models × 21 fixed thresholds; +1/-1/0 with all original responses in the denominator. No cutoff selected. |
+| [Kernel/demographic paired comparisons](../cat_cnn_experiment/additional_paired_contrasts.csv) | Matched rows/clusters, but models use different inputs and tuning; cannot isolate a causal component. |
+| [Verification](../cat_cnn_experiment/verification.json), [additional verification](../cat_cnn_experiment/additional_verification.json), [subgroup verification](../cat_cnn_experiment/subgroup_verification.json), [publication verification](../cat_cnn_experiment/publication_verification.json) | Fitting-only preprocessing, selected gradients/selections, saved predictions, cluster-bootstrap replays, subgroup matching and **64** verified presentation copies. |
+
+### Matched G2 and G3 results
+
+Positive reference-minus-hybrid loss favors Cat + CNN. G2 intervals resample unordered pairs; G3 resamples held-out photos. Intervals below are **95% pointwise, unadjusted, retrospective** and conditional on selected procedures.
+
+| Target | Cat + CNN test loss | Cat-only M1 loss | M1 minus Cat + CNN | 95% interval |
+|---|---:|---:|---:|---|
+| G2: 3,733 responses / 1,207 pairs | 0.661909 | 0.663212 | +0.001304 | [-0.002937, 0.005614] |
+| G3: 2,250 responses / 64 held-out photos | 0.660637 | 0.662725 | +0.002088 | [-0.004448, 0.007905] |
+
+**Measured result:** the hybrid has slightly lower point loss than M1 on both targets, but both paired intervals span zero. **Supported interpretation:** adding CNN to the selected cat procedure did not establish incremental improvement over cat identity under these retrospective comparisons. **Not established:** CNN contains no useful visual information or no other hybrid could improve.
+
+| Target | Original CNN-only M3-C loss | M3-C minus Cat + CNN | 95% interval |
+|---|---:|---:|---|
+| G2 | 0.669202 | +0.007294 | [0.002735, 0.011613] |
+| G3 | 0.672169 | +0.011531 | [0.004756, 0.017998] |
+
+The hybrid improves point loss over CNN-only on these matched retrospective rows; this comparison adds cat identity and retunes two penalties, so it is not an isolated causal contribution. Original contextual M4-C is a further comparator, not a matched-context model: its paired differences favor the hybrid by +0.006387 on G2 and +0.009328 on G3 under secondary unadjusted intervals.
+
+### Within-cat, learning and abstention
+
+| Slice | Responses / pairs | Cat + CNN loss | Accuracy |
+|---|---|---:|---:|
+| G2 within-cat | 455 / 170 | 0.691254 | 53.85% |
+| G2 between-cats | 3,278 / 1,037 | 0.657835 | 60.37% |
+| G3 within-cat | 286 / 106 | 0.696858 | 45.80% |
+| G3 between-cats | 1,964 / 612 | 0.655363 | 60.74% |
+
+For within-cat pairs, the cat identity difference cancels; only the CNN difference and displayed-A intercept remain. G3 M1 minus the hybrid within-cat is **-0.000383**, 95% interval **[-0.009654, 0.009578]**. The subgroup comparison is unresolved and does not demonstrate a causal photo preference.
+
+| Seed | Fitting fraction | Cat + CNN common-validation loss | Original M3-C common-validation loss |
+|---|---:|---:|---:|
+| 20261030 | 25% | 0.673847 | 0.675666 |
+| 20261030 | 50% | 0.665664 | 0.671707 |
+| 20261030 | 75% | 0.664011 | 0.670957 |
+| 20261030 | 100% | 0.662325 | 0.666987 |
+| 20261031 | 25% | 0.675481 | 0.676712 |
+| 20261031 | 50% | 0.672411 | 0.674022 |
+| 20261031 | 75% | 0.667245 | 0.671791 |
+| 20261031 | 100% | 0.662325 | 0.666987 |
+
+All curve values use the **same 1,836 responses / 589 pairs**. The two 100% fits use identical fitting/validation data and are not independent replications. These development curves do not establish an information limit.
+
+| Fixed cutoff | Retained responses / pairs | Coverage | Retained accuracy | Utility / original response |
+|---:|---|---:|---:|---:|
+| 0.50 | 3,733 / 1,207 | 100% | 59.58% | 0.191535 |
+| 0.60 | 1,392 / 521 | 37.29% | 68.97% | 0.141441 |
+| 0.70 | 373 / 145 | 9.99% | 76.94% | 0.053844 |
+
+With the specified +1/-1/0 payoffs, higher selected accuracy did not improve utility per original response. No threshold was chosen or promoted.
+
+Four focused tests passed. The [independent reconstruction](../cat_cnn_experiment/verification.json) reports 10 selected G2/G3/curve models, 5,000 cluster-bootstrap draws per target and **84** abstention cells. [Additional verification](../cat_cnn_experiment/additional_verification.json) covers all 49 penalty refits and six matched extra-model contrasts; [subgroup verification](../cat_cnn_experiment/subgroup_verification.json) replays 14 G2/G3 subgroup comparisons. These checks do not undo previous outcome exposure.
+
 ## 11. Quarantined retrospective G3, within-cat G3, and G4
 
 These experiments use separate fitting/validation/model/freeze/output directories. They preserve the original G2 pipeline, but **cannot erase prior outcome exposure**. A fresh directory or different split is not a new independent test.
@@ -931,7 +1083,7 @@ Directory: [Presentation_Evidence](../Presentation_Evidence). Its [folder tree](
 - `By_Stage`: pipeline order, then isolated retrospective experiments.
 - `By_Presentation_Flow`: Data, Models, Diagnostics, Claims.
 
-There are now **222 copied assets**, from **111 selected original source files**, plus **19 root metadata files**. The copies add no observations or independent tests.
+There are now **348 copied assets**, from **174 selected original source files**, plus **23 root metadata files**. The copies add no observations or independent tests.
 
 | Copy batch | Unique sources | Copies | Metadata |
 |---|---:|---:|---|
@@ -942,10 +1094,12 @@ There are now **222 copied assets**, from **111 selected original source files**
 | G4 | 7 | 14 | [g4_selection_manifest.csv](../Presentation_Evidence/g4_selection_manifest.csv), [g4_verification.json](../Presentation_Evidence/g4_verification.json) |
 | All-demographic models and checks | 14 | 28 | [demographic_selection_manifest.csv](../Presentation_Evidence/demographic_selection_manifest.csv), [demographic_verification.json](../Presentation_Evidence/demographic_verification.json), [demographic_checks_selection_manifest.csv](../Presentation_Evidence/demographic_checks_selection_manifest.csv), [demographic_checks_verification.json](../Presentation_Evidence/demographic_checks_verification.json) |
 | All-demographic diagnostic parity | 37 | 74 | [demographic_diagnostics_selection_manifest.csv](../Presentation_Evidence/demographic_diagnostics_selection_manifest.csv), [demographic_diagnostics_verification.json](../Presentation_Evidence/demographic_diagnostics_verification.json) |
+| Retrospective kernel scorer | 31 | 62 | [kernel_selection_manifest.csv](../Presentation_Evidence/kernel_selection_manifest.csv), [kernel_verification.json](../Presentation_Evidence/kernel_verification.json) |
+| Retrospective Cat + CNN scorer | 32 | 64 | [cat_cnn_selection_manifest.csv](../Presentation_Evidence/cat_cnn_selection_manifest.csv), [cat_cnn_verification.json](../Presentation_Evidence/cat_cnn_verification.json) |
 
 Earlier manifests remain historical. Their smaller original-file counts reflect creation time and scope, not missing current files. The folder tree is intentionally refreshed when a new evidence batch is added. **Official prediction artifacts are not automatically part of the presentation copy selection or original report/ZIP.**
 
-Material outside this folder includes row-level predictions, complete candidate logs, full context/pair tables, feature caches and masks, all original models, individual review panels, provenance/access history, reproduction logs, deployment models/predictions, and methods/tests. The original inventory and both supplemental inventories together cover them.
+Material outside this folder includes row-level predictions, complete candidate logs, full context/pair tables, feature caches and masks, all original models, individual review panels, provenance/access history, reproduction logs, deployment models/predictions, and methods/tests. The original inventory and four supplemental inventories together cover them.
 
 ## 15. What is not a completed evidence claim
 

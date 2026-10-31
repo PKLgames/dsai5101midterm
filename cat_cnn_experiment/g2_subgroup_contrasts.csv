@@ -1,0 +1,11 @@
+comparison_type,reference,candidate,responses,pairs,difference,ci_low,ci_high,bootstrap_se,interpretation
+within_cat,original:common:M0,Cat+CNN,455,170,0.0023097802115865764,-0.005480219010870435,0.010067644115300879,0.004067954964298854,Post-test 95% pointwise unadjusted subgroup comparison.
+within_cat,original:common:M1,Cat+CNN,455,170,0.0024586185831503055,-0.005330802602114523,0.010167732860489396,0.004068263380425176,Post-test 95% pointwise unadjusted subgroup comparison.
+within_cat,original:common:M2,Cat+CNN,455,170,0.009310650852606895,-0.013270648657956154,0.03294853660511468,0.011814211106510566,Post-test 95% pointwise unadjusted subgroup comparison.
+within_cat,original:M3-C,Cat+CNN,455,170,0.010289263644162824,0.0004008343360277167,0.020814968746222563,0.0051654887318585705,Post-test 95% pointwise unadjusted subgroup comparison.
+within_cat,original:M4-C,Cat+CNN,455,170,0.009733371646803247,-0.00013103030617753184,0.020402229818046815,0.005188847952188622,Post-test 95% pointwise unadjusted subgroup comparison.
+between_cats,original:common:M0,Cat+CNN,3278,1037,0.03468090697438069,0.025720129599536623,0.04351650357352018,0.004520321868339689,Post-test 95% pointwise unadjusted subgroup comparison.
+between_cats,original:common:M1,Cat+CNN,3278,1037,0.0011434598914624218,-0.003499922074085865,0.005709110841727962,0.0023930060984814734,Post-test 95% pointwise unadjusted subgroup comparison.
+between_cats,original:common:M2,Cat+CNN,3278,1037,0.008766507017555127,0.0007672305567537842,0.01682727569229981,0.004068558687498923,Post-test 95% pointwise unadjusted subgroup comparison.
+between_cats,original:M3-C,Cat+CNN,3278,1037,0.006877923115592497,0.0017454965379924165,0.011741128643704576,0.0025633247570725597,Post-test 95% pointwise unadjusted subgroup comparison.
+between_cats,original:M4-C,Cat+CNN,3278,1037,0.005922521066131974,0.0008122631570468775,0.010946491142900694,0.0025896673642306833,Post-test 95% pointwise unadjusted subgroup comparison.

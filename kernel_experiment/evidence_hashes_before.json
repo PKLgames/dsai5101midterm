@@ -1,0 +1,966 @@
+{
+  "demographic_checks_selection_manifest.csv": {
+    "sha256": "531b7c736eab7a01f42f5fb9586b877a04b498c525d865ac96518761227c71af",
+    "bytes": 1930
+  },
+  "demographic_checks_verification.json": {
+    "sha256": "283b0a5ef46e327cf8019dd39e977b8db2f21e2413f4f504dfc43d38662ab767",
+    "bytes": 614
+  },
+  "demographic_diagnostics_selection_manifest.csv": {
+    "sha256": "27d883cabbabf9e73a95496f44410832f06e7e471957d506334e9d6b369aa3e2",
+    "bytes": 16688
+  },
+  "demographic_diagnostics_verification.json": {
+    "sha256": "e805b52321767786767e53bf79dd7c8f921d3e30d3822a89a9f9e8238c64dc64",
+    "bytes": 591
+  },
+  "demographic_selection_manifest.csv": {
+    "sha256": "d8161c68c9a34389f71816911261acfc7af49fcd1a072e896fdde40499b14685",
+    "bytes": 3300
+  },
+  "demographic_verification.json": {
+    "sha256": "36122b0b68584e740441ae2fe3af215341d8eccd7f11d4094f41f251e12db3dd",
+    "bytes": 530
+  },
+  "extension_selection_manifest.csv": {
+    "sha256": "a6aa29ca1c4fcd688914adf102e6d1e10cae35a7b985cb679b590544483ff2b0",
+    "bytes": 1622
+  },
+  "extension_verification.json": {
+    "sha256": "98811c9b9f1fe0acd903b8eb71f69a808a679e50a8df3e3a6e3cfe0d3ea560e2",
+    "bytes": 4114
+  },
+  "folder_tree.txt": {
+    "sha256": "93016f00ebb5aa97836ca0b07955c2efa8787548c2ad1f202431f6b8c6bc9455",
+    "bytes": 11444
+  },
+  "g3_selection_manifest.csv": {
+    "sha256": "c5a9207028ae4d1a8c50df3367a56837ce1203d3e8d3b340a7f32ba36ef6064b",
+    "bytes": 2149
+  },
+  "g3_verification.json": {
+    "sha256": "5fd7f2745732ced0a37fc6df9770f4d305059fef8827d7a09c5dbceed6402746",
+    "bytes": 4352
+  },
+  "g3_within_cat_selection_manifest.csv": {
+    "sha256": "4bdfb6b1d7995ea17098bcecfd7bf6d17dd0301b4da076ba39fa74d938bf0ed7",
+    "bytes": 2354
+  },
+  "g3_within_cat_verification.json": {
+    "sha256": "b78c371f66319b0c0ec35f5417290ee12d61a0ca7f24c95ad50163546a617079",
+    "bytes": 4485
+  },
+  "g4_selection_manifest.csv": {
+    "sha256": "7a6797f40872d05a5c41a5849a8b7a9a40fbdbe2d8f8af375a342de3d33e80e2",
+    "bytes": 2163
+  },
+  "g4_verification.json": {
+    "sha256": "d2c1e44bc6a43e9f8f6403662bcc5734b4c5ac5249a3c5985e285fa6087ed329",
+    "bytes": 4416
+  },
+  "original_hashes_after.json": {
+    "sha256": "19a14374f8a24af3b2a4e30bdc6091b49e98aa37511c874926a5a717f38334f8",
+    "bytes": 334446
+  },
+  "original_hashes_before.json": {
+    "sha256": "1dd425424cb49716d3aad4a172791891b39b020011d8bcbbde447eeaba84339f",
+    "bytes": 327077
+  },
+  "selection_manifest.csv": {
+    "sha256": "06021a0fb76ad82af296a62a6a0db06b02df65a4cba460e77c3e140717ce8564",
+    "bytes": 11692
+  },
+  "verification.json": {
+    "sha256": "0ab1c121907403e66c61873948b7f47ce9a35cb2f2f4626b73a6df98205e5088",
+    "bytes": 21742
+  },
+  "By_Presentation_Flow\\01_Data\\01_Audit\\data_audit.csv": {
+    "sha256": "0bb1c9da6102c69bf74e4a4559951aa04f303387ca0f309b64f22b558132d3f2",
+    "bytes": 4240
+  },
+  "By_Presentation_Flow\\01_Data\\02_Split_and_Graph_Support\\graph_summary.csv": {
+    "sha256": "39b1749c7e71ba862cf2902e5a782162ad309b380b5233249444a6562d8ac9b7",
+    "bytes": 536
+  },
+  "By_Presentation_Flow\\01_Data\\02_Split_and_Graph_Support\\graph_support.pdf": {
+    "sha256": "74dc3f6e015c5e49eed89f005e9aa3145bac899321785e7a461981a82918935d",
+    "bytes": 18766
+  },
+  "By_Presentation_Flow\\01_Data\\02_Split_and_Graph_Support\\split_coverage.csv": {
+    "sha256": "05568a8f74cdba019049ede6f0ebbaf3567da0b5bacf4aed0d24f4ffdf4e652c",
+    "bytes": 1093
+  },
+  "By_Presentation_Flow\\01_Data\\02_Split_and_Graph_Support\\split_manifest.parquet": {
+    "sha256": "2b11ea67b2d735af59c04b9bd3b37abf6e43744b3ce0b522e39915c7bf5151e5",
+    "bytes": 151800
+  },
+  "By_Presentation_Flow\\01_Data\\03_Feature_Quality\\feature_admission_decisions.csv": {
+    "sha256": "5df0539bf7611778b8024fe78e06456a75fcaa04ddc1d02339f867febde4e0fd",
+    "bytes": 213
+  },
+  "By_Presentation_Flow\\01_Data\\03_Feature_Quality\\feature_quality.csv": {
+    "sha256": "13165e5590a2cd775629083baeca5677d2ff53eaaae0d4733ad81fa8bdc89f9b",
+    "bytes": 307
+  },
+  "By_Presentation_Flow\\01_Data\\04_Development_Description\\context_overlap.csv": {
+    "sha256": "7ca20d7eca1b325ba2751dbf46649c97451243dd49205aecd60b90fc381ff6b8",
+    "bytes": 2692
+  },
+  "By_Presentation_Flow\\01_Data\\04_Development_Description\\disagreement.pdf": {
+    "sha256": "967979f9f88dd4e2b42e860db79ad1b67c3b0dbd1369b9d28396b6653a08e2fa",
+    "bytes": 17961
+  },
+  "By_Presentation_Flow\\01_Data\\04_Development_Description\\support_distribution.pdf": {
+    "sha256": "135245b004dc3cb8da3b8ad7b17c1a9486f4ce192e0e1372855bfcc8c1ae4272",
+    "bytes": 18055
+  },
+  "By_Presentation_Flow\\02_Models\\01_Validation_Selection\\validation_results.csv": {
+    "sha256": "e4c11a9044b5bab63ae740a8b667569d7184043679945803280ad7940e1ee62e",
+    "bytes": 6090
+  },
+  "By_Presentation_Flow\\02_Models\\02_Frozen_Feature_Associations\\presentation_context_interactions.pdf": {
+    "sha256": "a870d84d84dc3ea3e6e369278369cff3c97942b44705f726d82168ce1323d73b",
+    "bytes": 36081
+  },
+  "By_Presentation_Flow\\02_Models\\02_Frozen_Feature_Associations\\presentation_feature_importance_H.pdf": {
+    "sha256": "18675d45a85b2cd18abf41ac5b8451f64e936135e6558467dd978d133667afbb",
+    "bytes": 34659
+  },
+  "By_Presentation_Flow\\02_Models\\02_Frozen_Feature_Associations\\presentation_feature_importance_Y.pdf": {
+    "sha256": "56b0820d2a489fe996394a7d4eb82ecfdfef5e4a64f5cbaf1ba5f296bc1cdfaa",
+    "bytes": 34427
+  },
+  "By_Presentation_Flow\\02_Models\\03_Frozen_Test_Comparison\\main_results.csv": {
+    "sha256": "4e881157eb3a579d076d5e58fa01585848079111ae3a8283a9760caf975f1368",
+    "bytes": 9960
+  },
+  "By_Presentation_Flow\\02_Models\\03_Frozen_Test_Comparison\\primary_contrasts.csv": {
+    "sha256": "751f886d96c62faf4cf5df17003201a79abc0e4114d497663ab94d906d0d93ed",
+    "bytes": 1913
+  },
+  "By_Presentation_Flow\\02_Models\\03_Frozen_Test_Comparison\\secondary_results.csv": {
+    "sha256": "a5738fcbd003bc5b059cc87da808842525519aad470cd8c28b2614e45aa50b51",
+    "bytes": 2815
+  },
+  "By_Presentation_Flow\\03_Diagnostics\\01_Known_Truth_and_Controls\\simulations_ABC.pdf": {
+    "sha256": "5f263a2076649b9f15f527b1960989ce6b6602aa09b22bea63295ab6355cee93",
+    "bytes": 18979
+  },
+  "By_Presentation_Flow\\03_Diagnostics\\01_Known_Truth_and_Controls\\synthetic_label_control.csv": {
+    "sha256": "90c3639815fe4495467c4d841f655239fe8d9135cb007090726da7451e38268e",
+    "bytes": 25369
+  },
+  "By_Presentation_Flow\\03_Diagnostics\\02_Development_Probes\\cnn_pca_diagnostic.csv": {
+    "sha256": "ccefdc15a356affb4590b35ef89d82552c49501feebc2e98e6789321876b7e51",
+    "bytes": 2564
+  },
+  "By_Presentation_Flow\\03_Diagnostics\\02_Development_Probes\\grouped_ablations.csv": {
+    "sha256": "6dd4af7ea98b236ea5b0523bc8c978f383da4bedbdd85f3adcef2119cc08f47f",
+    "bytes": 18618
+  },
+  "By_Presentation_Flow\\03_Diagnostics\\02_Development_Probes\\learning_curves.pdf": {
+    "sha256": "a23d6915d22d7330e8c91a4dc91dfb5c0092def23a1e55fa86b9134295a5e061",
+    "bytes": 19902
+  },
+  "By_Presentation_Flow\\03_Diagnostics\\02_Development_Probes\\penalty_paths.pdf": {
+    "sha256": "e6ccfa54b1419b19ec65e358b5b95e6d31b635ca144080a91993340821de23b9",
+    "bytes": 34020
+  },
+  "By_Presentation_Flow\\03_Diagnostics\\02_Development_Probes\\temperature_diagnostic.csv": {
+    "sha256": "8de2dfd9ce9209db6e38e5c51712785cadb4a856fd8e2229f9e73f3f10c5da11",
+    "bytes": 3091
+  },
+  "By_Presentation_Flow\\03_Diagnostics\\03_Test_Calibration_and_Slices\\calibration.pdf": {
+    "sha256": "d698f0b424c33b22c6a7370b1c4724c8db79e96d887e5ad33c643e5a99c0409d",
+    "bytes": 18639
+  },
+  "By_Presentation_Flow\\03_Diagnostics\\03_Test_Calibration_and_Slices\\subgroup_results.csv": {
+    "sha256": "3b59c95c8270ec665abb6b03448904e64f4d5b80327a4db0f4dbaab8a43dc3e0",
+    "bytes": 36846
+  },
+  "By_Presentation_Flow\\03_Diagnostics\\04_Exploratory_Demographic_Semantics\\exploratory_demographic_semantics.pdf": {
+    "sha256": "10196c35ed7aaa10eb5f9b40812cfa9a32ec4eb78471681e31a8f1e637e53122",
+    "bytes": 161764
+  },
+  "By_Presentation_Flow\\03_Diagnostics\\04_Exploratory_Demographic_Semantics\\exploratory_demographic_semantic_overlap.csv": {
+    "sha256": "a897ca67b375a2da7f3a4043a95019336fa54a271abb6fc305bb610e89c5c2b3",
+    "bytes": 670698
+  },
+  "By_Presentation_Flow\\03_Diagnostics\\04_Exploratory_Demographic_Semantics\\exploratory_demographic_semantic_rates.csv": {
+    "sha256": "09209584f1a7178b4522be60c5e452c69e23a225b60d9fa771be4995ac6d65c3",
+    "bytes": 481985
+  },
+  "By_Presentation_Flow\\03_Diagnostics\\05_Exploratory_Abstention_Utility\\abstention_utility_protocol.json": {
+    "sha256": "6a620ab384f6c4699fb20b79f34b14fc9360deb4539533f0b2b47769c84105ab",
+    "bytes": 2186
+  },
+  "By_Presentation_Flow\\03_Diagnostics\\05_Exploratory_Abstention_Utility\\abstention_utility_provenance.json": {
+    "sha256": "bd269c8577954e8d5e11b43517e4c4bf543491a9a1e21af11caaefc51763f6a9",
+    "bytes": 4054
+  },
+  "By_Presentation_Flow\\03_Diagnostics\\05_Exploratory_Abstention_Utility\\exploratory_abstention_utility.csv": {
+    "sha256": "4e24c5acebb28ac72ae4a75b02af8ace32dc2f0d794ca04efe930d2727336f60",
+    "bytes": 54930
+  },
+  "By_Presentation_Flow\\03_Diagnostics\\05_Exploratory_Abstention_Utility\\presentation_abstention_utility.pdf": {
+    "sha256": "c342fd5b3ad2eb20eead3ad29523376ec6f1ba0cff2b0957672ab48c11043e92",
+    "bytes": 63506
+  },
+  "By_Presentation_Flow\\03_Diagnostics\\06_Retrospective_G3\\coverage.json": {
+    "sha256": "9541829ca9680aa89b66437507d69ca33279e39a032704a1fad7c71713e63dbb",
+    "bytes": 809
+  },
+  "By_Presentation_Flow\\03_Diagnostics\\06_Retrospective_G3\\evaluation_provenance.json": {
+    "sha256": "b2e01a25dae5d386aceb789182f0725575cc58fe3201384aa828ccdc2d1eacb0",
+    "bytes": 1228
+  },
+  "By_Presentation_Flow\\03_Diagnostics\\06_Retrospective_G3\\presentation_g3_results.pdf": {
+    "sha256": "ab68000365c1ac02ef0b73f3c573b763684aa07efb1af78c73e954199d94138f",
+    "bytes": 32441
+  },
+  "By_Presentation_Flow\\03_Diagnostics\\06_Retrospective_G3\\protocol.json": {
+    "sha256": "ea2c4571e69207059bbee191fe93cbc3ffb05f7193612b03724618d52ed1c3c6",
+    "bytes": 3612
+  },
+  "By_Presentation_Flow\\03_Diagnostics\\06_Retrospective_G3\\test_contrasts.csv": {
+    "sha256": "c9ed8753651372c4d8b1197067302a2b85cf36b5f946bd2bdda5f4e9e405aa70",
+    "bytes": 407
+  },
+  "By_Presentation_Flow\\03_Diagnostics\\06_Retrospective_G3\\test_results.csv": {
+    "sha256": "2b44045032fab6ee389f179f11489285237ccff7092f443101322b9c480d9f18",
+    "bytes": 1043
+  },
+  "By_Presentation_Flow\\03_Diagnostics\\06_Retrospective_G3\\validation_results.csv": {
+    "sha256": "c573b79ab20ee2256267ce1dd8f4de1f10d8b1159695f04dc5bff664ebd70a01",
+    "bytes": 657
+  },
+  "By_Presentation_Flow\\03_Diagnostics\\06_Retrospective_G3\\Within_Cat_Subgroup\\analysis_provenance.json": {
+    "sha256": "a738721255d098bf1ac3ef63e2e98aa2aaa335dfbc74fb295b4557b9de1aac0c",
+    "bytes": 2368
+  },
+  "By_Presentation_Flow\\03_Diagnostics\\06_Retrospective_G3\\Within_Cat_Subgroup\\presentation_within_cat_g3.pdf": {
+    "sha256": "38295f07c92267ca8da0a8a510695224477ff05b015d75b727d5cc36ff4ca89c",
+    "bytes": 33111
+  },
+  "By_Presentation_Flow\\03_Diagnostics\\06_Retrospective_G3\\Within_Cat_Subgroup\\protocol.json": {
+    "sha256": "14fa226afce8884be231c62384fbb6cc1b5d1130508c4ef1745caf48c793e1d7",
+    "bytes": 1770
+  },
+  "By_Presentation_Flow\\03_Diagnostics\\06_Retrospective_G3\\Within_Cat_Subgroup\\within_cat_contrasts.csv": {
+    "sha256": "d490fd3501cb6c8c0487b8110aaf83bb832645e6877f6f7924a16629631f92ce",
+    "bytes": 646
+  },
+  "By_Presentation_Flow\\03_Diagnostics\\06_Retrospective_G3\\Within_Cat_Subgroup\\within_cat_summary.json": {
+    "sha256": "8348efa2c0822b57119572b1bd0f528c86c52c9a37c85cafd17cd2eed8628d4d",
+    "bytes": 899
+  },
+  "By_Presentation_Flow\\03_Diagnostics\\06_Retrospective_G3\\Within_Cat_Subgroup\\within_cat_test_results.csv": {
+    "sha256": "11bd52dc2e4bdcd251799ae2f3da63a88cf6a11dfffefb5423277e8439b3063a",
+    "bytes": 967
+  },
+  "By_Presentation_Flow\\03_Diagnostics\\07_Retrospective_G4\\coverage.json": {
+    "sha256": "d4b8b3894079326fb0407f007cbe956747e734a7d0974948dff89fb6582a1475",
+    "bytes": 772
+  },
+  "By_Presentation_Flow\\03_Diagnostics\\07_Retrospective_G4\\evaluation_provenance.json": {
+    "sha256": "c39f05c1afbaa48f60151980cbaada99d2f510106c1dc0bf3151c30135251878",
+    "bytes": 1686
+  },
+  "By_Presentation_Flow\\03_Diagnostics\\07_Retrospective_G4\\presentation_g4_results.pdf": {
+    "sha256": "fc54830fdb1876f5c09b96b4556d69736d8cb16cc5ad9ebd86e7e0f9e1c26251",
+    "bytes": 30690
+  },
+  "By_Presentation_Flow\\03_Diagnostics\\07_Retrospective_G4\\protocol.json": {
+    "sha256": "f1090363e3a7e083d12db5dc4c6cd8145197affd2396c3c70070de98af570128",
+    "bytes": 3979
+  },
+  "By_Presentation_Flow\\03_Diagnostics\\07_Retrospective_G4\\test_contrasts.csv": {
+    "sha256": "45484d3a689c331f3978db3a0cdcb1c7aae67c44a172ded97afe832539ab6493",
+    "bytes": 431
+  },
+  "By_Presentation_Flow\\03_Diagnostics\\07_Retrospective_G4\\test_results.csv": {
+    "sha256": "0a85ab96c83a4e0c2ee3b21d01e40f22b564abbc02c9585b33cb4dee0050f55f",
+    "bytes": 1049
+  },
+  "By_Presentation_Flow\\03_Diagnostics\\07_Retrospective_G4\\validation_results.csv": {
+    "sha256": "a3c16b56b3bd3a558953c96fb4767fac334ab1c5bf46eea56347e544af442738",
+    "bytes": 669
+  },
+  "By_Presentation_Flow\\03_Diagnostics\\08_Retrospective_All_Demographics\\calibration.csv": {
+    "sha256": "4b8e6e76d07cc7f54384ed3db0d426bf8f2febef94bbb80047767069d15d608c",
+    "bytes": 2107
+  },
+  "By_Presentation_Flow\\03_Diagnostics\\08_Retrospective_All_Demographics\\control_provenance.json": {
+    "sha256": "eec95286125e34a41bcbb65d4fce677e215f74978a2b042b61f1f85513a60490",
+    "bytes": 1064
+  },
+  "By_Presentation_Flow\\03_Diagnostics\\08_Retrospective_All_Demographics\\control_results.csv": {
+    "sha256": "83357168e842add1ac3cb088d3581fe98728d42ad4d60d37ef6a4e2925cd5b5a",
+    "bytes": 28755
+  },
+  "By_Presentation_Flow\\03_Diagnostics\\08_Retrospective_All_Demographics\\design_conditioning.json": {
+    "sha256": "21625fdd697794927a0206746f6a3e84c162c53d5a7c361ce2da6db22a98ec73",
+    "bytes": 1444
+  },
+  "By_Presentation_Flow\\03_Diagnostics\\08_Retrospective_All_Demographics\\development_support.csv": {
+    "sha256": "db1f62a492ebe4eb58e11563f204bd106b985001ac3d62f0375c45010bd03c74",
+    "bytes": 2905
+  },
+  "By_Presentation_Flow\\03_Diagnostics\\08_Retrospective_All_Demographics\\evaluation_provenance.json": {
+    "sha256": "92781aaa51035006d420c57482a103b120b3a8f9a02d3b3c25fa094635cfc0bb",
+    "bytes": 2437
+  },
+  "By_Presentation_Flow\\03_Diagnostics\\08_Retrospective_All_Demographics\\INTERPRETATION.md": {
+    "sha256": "b5ce1a4ca1ffc0c465ccedb75f2dc3b5d0eb8c65e2eecc3bd5cc96c41e70418e",
+    "bytes": 8412
+  },
+  "By_Presentation_Flow\\03_Diagnostics\\08_Retrospective_All_Demographics\\presentation_demographic_models.pdf": {
+    "sha256": "c41bb77788b0a38156da718916c60d585bc21a82636cddfe427dc592dc7efa9e",
+    "bytes": 31648
+  },
+  "By_Presentation_Flow\\03_Diagnostics\\08_Retrospective_All_Demographics\\protocol.json": {
+    "sha256": "ce68e1149d26d4c42d827168354948cbfc5946a8f2c6954575044ab3572ed92c",
+    "bytes": 4519
+  },
+  "By_Presentation_Flow\\03_Diagnostics\\08_Retrospective_All_Demographics\\subgroups.csv": {
+    "sha256": "ac978a188cad2b2a3b4c64ee53483a6f84023f3e516b9fd0ffce8e148b6b5007",
+    "bytes": 9776
+  },
+  "By_Presentation_Flow\\03_Diagnostics\\08_Retrospective_All_Demographics\\test_contrasts.csv": {
+    "sha256": "cb870eb69246cfb3fb29330cdea28f6f1b07a63627652e47ee83437476936758",
+    "bytes": 1574
+  },
+  "By_Presentation_Flow\\03_Diagnostics\\08_Retrospective_All_Demographics\\test_results.csv": {
+    "sha256": "b29034e8c31bf184b7f5559e30dc9484931b182d397ba312d5b3ea1d5bec8e23",
+    "bytes": 3074
+  },
+  "By_Presentation_Flow\\03_Diagnostics\\08_Retrospective_All_Demographics\\validation_results.csv": {
+    "sha256": "a13452e2bdd22491dc31e08aceefaf6112fb304480fab826f3d83a3e6836ae95",
+    "bytes": 1404
+  },
+  "By_Presentation_Flow\\03_Diagnostics\\08_Retrospective_All_Demographics\\verification.json": {
+    "sha256": "d16218d96989b3cc950aaa4ce29fd8dcb6f5d602d7e120823538cc49f18c7aa0",
+    "bytes": 518
+  },
+  "By_Presentation_Flow\\03_Diagnostics\\08_Retrospective_All_Demographics\\Full_Diagnostic_Parity\\abstention_figure_provenance.json": {
+    "sha256": "725fd2bf525ddd9125a38de9046a4ef85b7ea45da3cfe9f0ea63b074376bd4d8",
+    "bytes": 324
+  },
+  "By_Presentation_Flow\\03_Diagnostics\\08_Retrospective_All_Demographics\\Full_Diagnostic_Parity\\abstention_utility.csv": {
+    "sha256": "d65c1c3257df2385c21dbeaa23e4018f48d460b9059d62e63dff24a9066c86e1",
+    "bytes": 55366
+  },
+  "By_Presentation_Flow\\03_Diagnostics\\08_Retrospective_All_Demographics\\Full_Diagnostic_Parity\\DIAGNOSTIC_EVIDENCE.md": {
+    "sha256": "b1b1dc136acd9989370036c823b97f939bd902e384f652af82f000218ae96762",
+    "bytes": 7984
+  },
+  "By_Presentation_Flow\\03_Diagnostics\\08_Retrospective_All_Demographics\\Full_Diagnostic_Parity\\diagnostic_summary.json": {
+    "sha256": "c00930e97a5bb75066db65a4421f0f38924bf4fd49a15c3ba3358a7f5144aabe",
+    "bytes": 2121
+  },
+  "By_Presentation_Flow\\03_Diagnostics\\08_Retrospective_All_Demographics\\Full_Diagnostic_Parity\\fixed_diagnostics_provenance.json": {
+    "sha256": "e8d705426fdf0bd8c67e2b61ee10a103517c4abf1e0701a49a693ad602991b43",
+    "bytes": 1046
+  },
+  "By_Presentation_Flow\\03_Diagnostics\\08_Retrospective_All_Demographics\\Full_Diagnostic_Parity\\full_size_reuse_provenance.json": {
+    "sha256": "0b476e28e69e74b90676ef3177055375bbbe217173c5471f09af754ea3981dbf",
+    "bytes": 679
+  },
+  "By_Presentation_Flow\\03_Diagnostics\\08_Retrospective_All_Demographics\\Full_Diagnostic_Parity\\g3_contrasts.csv": {
+    "sha256": "c020e2bac669611ef4f781d41b450ea5a432de3be6b922a87fed6c1c3db98006",
+    "bytes": 1044
+  },
+  "By_Presentation_Flow\\03_Diagnostics\\08_Retrospective_All_Demographics\\Full_Diagnostic_Parity\\g3_provenance.json": {
+    "sha256": "f672db09bcaa3757b964bf69c494124231a5593cd3f8490406407c8747563f46",
+    "bytes": 910
+  },
+  "By_Presentation_Flow\\03_Diagnostics\\08_Retrospective_All_Demographics\\Full_Diagnostic_Parity\\g3_results.csv": {
+    "sha256": "bc3c4b4c1f37f5ebc55b1c4c2390255df912d8474ffb38f3632ade8a3ac54a20",
+    "bytes": 1651
+  },
+  "By_Presentation_Flow\\03_Diagnostics\\08_Retrospective_All_Demographics\\Full_Diagnostic_Parity\\g4_contrasts.csv": {
+    "sha256": "300304cd332fa9a89d0971f32b707089dd436d1c2757e8653d6a904d7a2357ba",
+    "bytes": 967
+  },
+  "By_Presentation_Flow\\03_Diagnostics\\08_Retrospective_All_Demographics\\Full_Diagnostic_Parity\\g4_provenance.json": {
+    "sha256": "be5f7cf3f0f62408ad6d5a10793657f651bbf391dfb02aaa6af5f221b7653044",
+    "bytes": 908
+  },
+  "By_Presentation_Flow\\03_Diagnostics\\08_Retrospective_All_Demographics\\Full_Diagnostic_Parity\\g4_results.csv": {
+    "sha256": "16f6a38a84449d65cb28f2e0a15055f74b1d60ab2175b8d82efefdbaecdc3378",
+    "bytes": 1658
+  },
+  "By_Presentation_Flow\\03_Diagnostics\\08_Retrospective_All_Demographics\\Full_Diagnostic_Parity\\learning_curves.csv": {
+    "sha256": "31d3a956510e7ee0ac3ee27f8e05d6defc0712b1a65d299031b59a59d3c91400",
+    "bytes": 2606
+  },
+  "By_Presentation_Flow\\03_Diagnostics\\08_Retrospective_All_Demographics\\Full_Diagnostic_Parity\\learning_curve_support.csv": {
+    "sha256": "a4ac7af190b885954fe6b8273a920563a08a461822c1079136c7c114d2367250",
+    "bytes": 12994
+  },
+  "By_Presentation_Flow\\03_Diagnostics\\08_Retrospective_All_Demographics\\Full_Diagnostic_Parity\\penalty_path_provenance.json": {
+    "sha256": "d3022864986b5367a742e5f63a233b06f9b9d8ed0006bf394cedbd695054c522",
+    "bytes": 644
+  },
+  "By_Presentation_Flow\\03_Diagnostics\\08_Retrospective_All_Demographics\\Full_Diagnostic_Parity\\penalty_path_refits.csv": {
+    "sha256": "67fb8247c0f94d295fd7eb75227817a249daa11034030195b450b087a2683617",
+    "bytes": 11478
+  },
+  "By_Presentation_Flow\\03_Diagnostics\\08_Retrospective_All_Demographics\\Full_Diagnostic_Parity\\presentation_abstention_full.pdf": {
+    "sha256": "6f802ca6bd17d8375c72432c83ad97e7454ff6f1a72160779e24ad414d6f9999",
+    "bytes": 47769
+  },
+  "By_Presentation_Flow\\03_Diagnostics\\08_Retrospective_All_Demographics\\Full_Diagnostic_Parity\\presentation_fixed_diagnostics.pdf": {
+    "sha256": "8f5aece49b54595f399883676e973e47f254de7e62e81bba1a9137ede8a2dcf2",
+    "bytes": 26548
+  },
+  "By_Presentation_Flow\\03_Diagnostics\\08_Retrospective_All_Demographics\\Full_Diagnostic_Parity\\presentation_learning_penalty_transfer.pdf": {
+    "sha256": "a15d6d7d06aab3575619f22742379f30150d832e88577538878d2234b2099445",
+    "bytes": 46621
+  },
+  "By_Presentation_Flow\\03_Diagnostics\\08_Retrospective_All_Demographics\\Full_Diagnostic_Parity\\protocol.json": {
+    "sha256": "8092527c2bb59c33001dc3e9ef38ed802970ca21c26afc1b57d7782ceb6e00ae",
+    "bytes": 3341
+  },
+  "By_Presentation_Flow\\03_Diagnostics\\08_Retrospective_All_Demographics\\Full_Diagnostic_Parity\\resource_adjustment.json": {
+    "sha256": "47d07d7fbef5006b0c897e673b2f8935f50f9b60ceed666d6998361370574240",
+    "bytes": 1473
+  },
+  "By_Presentation_Flow\\03_Diagnostics\\08_Retrospective_All_Demographics\\Full_Diagnostic_Parity\\subgroup_calibration.csv": {
+    "sha256": "8263720608139fee1e2ff29fcfa6f5b1adb3ec52b521a1e5a9356360fd8e7cc9",
+    "bytes": 82331
+  },
+  "By_Presentation_Flow\\03_Diagnostics\\08_Retrospective_All_Demographics\\Full_Diagnostic_Parity\\subgroup_calibration_provenance.json": {
+    "sha256": "9c1423b36c08b55239c6dbc4cbda6a66703a728bdc96f02d202cd39c86bdae5a",
+    "bytes": 532
+  },
+  "By_Presentation_Flow\\03_Diagnostics\\08_Retrospective_All_Demographics\\Full_Diagnostic_Parity\\temperature_candidates.csv": {
+    "sha256": "3e45aa8451fd0301d5d7a799e4c0b9bc511e5fa29cb450935d3063d663e0a211",
+    "bytes": 968
+  },
+  "By_Presentation_Flow\\03_Diagnostics\\08_Retrospective_All_Demographics\\Full_Diagnostic_Parity\\temperature_freeze.json": {
+    "sha256": "6c0da3b41cc09c37adafa978ccfe58c1d80001c41322069a2727a8829f5552fc",
+    "bytes": 659
+  },
+  "By_Presentation_Flow\\03_Diagnostics\\08_Retrospective_All_Demographics\\Full_Diagnostic_Parity\\temperature_freeze.sha256": {
+    "sha256": "451a3f53883923a37c3d70abdff73dbf5f9587522e60be553117caeb90a249d3",
+    "bytes": 66
+  },
+  "By_Presentation_Flow\\03_Diagnostics\\08_Retrospective_All_Demographics\\Full_Diagnostic_Parity\\temperature_results.csv": {
+    "sha256": "057aed97797409a656b5a9913639eeb1d3d023bba42a31ca32d4f86979d1ed0f",
+    "bytes": 878
+  },
+  "By_Presentation_Flow\\03_Diagnostics\\08_Retrospective_All_Demographics\\Full_Diagnostic_Parity\\test_support_calibration.csv": {
+    "sha256": "d95d14458ed20a5e4384913d272b677e6943f421854d5119b880d09e08fecd71",
+    "bytes": 52479
+  },
+  "By_Presentation_Flow\\03_Diagnostics\\08_Retrospective_All_Demographics\\Full_Diagnostic_Parity\\test_support_slices.csv": {
+    "sha256": "830eebf3a036b0cf429e149ff86d1795f8b185208a773e38ab500b1a499c1362",
+    "bytes": 6988
+  },
+  "By_Presentation_Flow\\03_Diagnostics\\08_Retrospective_All_Demographics\\Full_Diagnostic_Parity\\test_support_slices_provenance.json": {
+    "sha256": "51448c30596ca198653eddc42b2d3e696556065cd5fa7157e15be44f4dce9699",
+    "bytes": 651
+  },
+  "By_Presentation_Flow\\03_Diagnostics\\08_Retrospective_All_Demographics\\Full_Diagnostic_Parity\\validation_demographic_calibration.csv": {
+    "sha256": "6f02f4df0595b024e4ca100069ccdf64272558479c46c2b4a8ceb58c478cf9d0",
+    "bytes": 57331
+  },
+  "By_Presentation_Flow\\03_Diagnostics\\08_Retrospective_All_Demographics\\Full_Diagnostic_Parity\\validation_demographic_provenance.json": {
+    "sha256": "186c5ce4cd491232be78ad9bfa114b2d2f388384573a8d3a5eaf885ba2ef262b",
+    "bytes": 662
+  },
+  "By_Presentation_Flow\\03_Diagnostics\\08_Retrospective_All_Demographics\\Full_Diagnostic_Parity\\validation_demographic_slices.csv": {
+    "sha256": "cff5708d1de616c1b12fbad6d488dac3dd065d4ca3c4aaddd7ff0240468f2b9d",
+    "bytes": 10222
+  },
+  "By_Presentation_Flow\\03_Diagnostics\\08_Retrospective_All_Demographics\\Full_Diagnostic_Parity\\validation_support_calibration.csv": {
+    "sha256": "c46befc19b3d4668e3d6067cd6bc9ee5556379e400154585d13e5b7611ab1d16",
+    "bytes": 42948
+  },
+  "By_Presentation_Flow\\03_Diagnostics\\08_Retrospective_All_Demographics\\Full_Diagnostic_Parity\\validation_support_provenance.json": {
+    "sha256": "bc33333dbb66187ed7ac4be0ec6b822858e0a77e48233fbd163eeb4e8939d97a",
+    "bytes": 653
+  },
+  "By_Presentation_Flow\\03_Diagnostics\\08_Retrospective_All_Demographics\\Full_Diagnostic_Parity\\validation_support_slices.csv": {
+    "sha256": "0683a943a0cf678668e27c28bfe05599e43a57ee658cbf0d6dcc0ba168066514",
+    "bytes": 9502
+  },
+  "By_Presentation_Flow\\03_Diagnostics\\08_Retrospective_All_Demographics\\Full_Diagnostic_Parity\\verification.json": {
+    "sha256": "8fb91857a60be101ac7cec810cf9dd331ffddc2bc5b5c667d8d98d6df81bc759",
+    "bytes": 634
+  },
+  "By_Presentation_Flow\\04_Claims\\01_Question_and_Scope\\protocol.md": {
+    "sha256": "36e96e9a7e2044d5433946696f36de456c8341c772690380591f86f19f9e2c7c",
+    "bytes": 10001
+  },
+  "By_Presentation_Flow\\04_Claims\\02_Evidence_Linked_Synthesis\\claims_final.csv": {
+    "sha256": "9cc8001c3cd61ed38b72a8d0890cb28c7edc2d96a599043c1ef1dfd49a7f808a",
+    "bytes": 92647
+  },
+  "By_Presentation_Flow\\04_Claims\\02_Evidence_Linked_Synthesis\\diagnostic_synthesis.csv": {
+    "sha256": "9cc8001c3cd61ed38b72a8d0890cb28c7edc2d96a599043c1ef1dfd49a7f808a",
+    "bytes": 92647
+  },
+  "By_Presentation_Flow\\04_Claims\\03_Report_and_Submission\\Group_19_Report.pdf": {
+    "sha256": "12ecf195e342137dc409a78f0b64d41121a35770ab7aa0b359a2cfca4e51b44c",
+    "bytes": 547616
+  },
+  "By_Presentation_Flow\\04_Claims\\03_Report_and_Submission\\references.csv": {
+    "sha256": "cfc2f59ec450a4e8a4b238cd7b894e507b23f3923d524b3d975cb82d54310d9e",
+    "bytes": 2263
+  },
+  "By_Presentation_Flow\\04_Claims\\03_Report_and_Submission\\REPRODUCTION.md": {
+    "sha256": "35fec8a23b36cf6b0b633102196d890e2f37247f48a42a56ff53380467dea422",
+    "bytes": 9517
+  },
+  "By_Presentation_Flow\\04_Claims\\03_Report_and_Submission\\stage11_contributions_draft.csv": {
+    "sha256": "07fd78e8eba445fff5e3dab5aa6d743b1147e991707c7c76e9a4fb6fd8c966ba",
+    "bytes": 1257
+  },
+  "By_Stage\\00_Governance\\protocol.md": {
+    "sha256": "36e96e9a7e2044d5433946696f36de456c8341c772690380591f86f19f9e2c7c",
+    "bytes": 10001
+  },
+  "By_Stage\\01_Raw_Data_Audit\\data_audit.csv": {
+    "sha256": "0bb1c9da6102c69bf74e4a4559951aa04f303387ca0f309b64f22b558132d3f2",
+    "bytes": 4240
+  },
+  "By_Stage\\02_Pair_Split\\split_manifest.parquet": {
+    "sha256": "2b11ea67b2d735af59c04b9bd3b37abf6e43744b3ce0b522e39915c7bf5151e5",
+    "bytes": 151800
+  },
+  "By_Stage\\03_Feature_Integration\\feature_admission_decisions.csv": {
+    "sha256": "5df0539bf7611778b8024fe78e06456a75fcaa04ddc1d02339f867febde4e0fd",
+    "bytes": 213
+  },
+  "By_Stage\\03_Feature_Integration\\feature_quality.csv": {
+    "sha256": "13165e5590a2cd775629083baeca5677d2ff53eaaae0d4733ad81fa8bdc89f9b",
+    "bytes": 307
+  },
+  "By_Stage\\04_Graphs_and_Eligibility\\graph_summary.csv": {
+    "sha256": "39b1749c7e71ba862cf2902e5a782162ad309b380b5233249444a6562d8ac9b7",
+    "bytes": 536
+  },
+  "By_Stage\\04_Graphs_and_Eligibility\\graph_support.pdf": {
+    "sha256": "74dc3f6e015c5e49eed89f005e9aa3145bac899321785e7a461981a82918935d",
+    "bytes": 18766
+  },
+  "By_Stage\\04_Graphs_and_Eligibility\\split_coverage.csv": {
+    "sha256": "05568a8f74cdba019049ede6f0ebbaf3567da0b5bacf4aed0d24f4ffdf4e652c",
+    "bytes": 1093
+  },
+  "By_Stage\\05_Estimator_Checks\\simulations_ABC.pdf": {
+    "sha256": "5f263a2076649b9f15f527b1960989ce6b6602aa09b22bea63295ab6355cee93",
+    "bytes": 18979
+  },
+  "By_Stage\\06_Development_Description\\context_overlap.csv": {
+    "sha256": "7ca20d7eca1b325ba2751dbf46649c97451243dd49205aecd60b90fc381ff6b8",
+    "bytes": 2692
+  },
+  "By_Stage\\06_Development_Description\\disagreement.pdf": {
+    "sha256": "967979f9f88dd4e2b42e860db79ad1b67c3b0dbd1369b9d28396b6653a08e2fa",
+    "bytes": 17961
+  },
+  "By_Stage\\06_Development_Description\\support_distribution.pdf": {
+    "sha256": "135245b004dc3cb8da3b8ad7b17c1a9486f4ce192e0e1372855bfcc8c1ae4272",
+    "bytes": 18055
+  },
+  "By_Stage\\07_Model_Selection\\validation_results.csv": {
+    "sha256": "e4c11a9044b5bab63ae740a8b667569d7184043679945803280ad7940e1ee62e",
+    "bytes": 6090
+  },
+  "By_Stage\\08_Development_Diagnostics\\cnn_pca_diagnostic.csv": {
+    "sha256": "ccefdc15a356affb4590b35ef89d82552c49501feebc2e98e6789321876b7e51",
+    "bytes": 2564
+  },
+  "By_Stage\\08_Development_Diagnostics\\grouped_ablations.csv": {
+    "sha256": "6dd4af7ea98b236ea5b0523bc8c978f383da4bedbdd85f3adcef2119cc08f47f",
+    "bytes": 18618
+  },
+  "By_Stage\\08_Development_Diagnostics\\learning_curves.pdf": {
+    "sha256": "a23d6915d22d7330e8c91a4dc91dfb5c0092def23a1e55fa86b9134295a5e061",
+    "bytes": 19902
+  },
+  "By_Stage\\08_Development_Diagnostics\\penalty_paths.pdf": {
+    "sha256": "e6ccfa54b1419b19ec65e358b5b95e6d31b635ca144080a91993340821de23b9",
+    "bytes": 34020
+  },
+  "By_Stage\\08_Development_Diagnostics\\synthetic_label_control.csv": {
+    "sha256": "90c3639815fe4495467c4d841f655239fe8d9135cb007090726da7451e38268e",
+    "bytes": 25369
+  },
+  "By_Stage\\08_Development_Diagnostics\\temperature_diagnostic.csv": {
+    "sha256": "8de2dfd9ce9209db6e38e5c51712785cadb4a856fd8e2229f9e73f3f10c5da11",
+    "bytes": 3091
+  },
+  "By_Stage\\09_Frozen_Test\\calibration.pdf": {
+    "sha256": "d698f0b424c33b22c6a7370b1c4724c8db79e96d887e5ad33c643e5a99c0409d",
+    "bytes": 18639
+  },
+  "By_Stage\\09_Frozen_Test\\main_results.csv": {
+    "sha256": "4e881157eb3a579d076d5e58fa01585848079111ae3a8283a9760caf975f1368",
+    "bytes": 9960
+  },
+  "By_Stage\\09_Frozen_Test\\primary_contrasts.csv": {
+    "sha256": "751f886d96c62faf4cf5df17003201a79abc0e4114d497663ab94d906d0d93ed",
+    "bytes": 1913
+  },
+  "By_Stage\\09_Frozen_Test\\secondary_results.csv": {
+    "sha256": "a5738fcbd003bc5b059cc87da808842525519aad470cd8c28b2614e45aa50b51",
+    "bytes": 2815
+  },
+  "By_Stage\\09_Frozen_Test\\subgroup_results.csv": {
+    "sha256": "3b59c95c8270ec665abb6b03448904e64f4d5b80327a4db0f4dbaab8a43dc3e0",
+    "bytes": 36846
+  },
+  "By_Stage\\10_0_Diagnostic_Synthesis\\claims_final.csv": {
+    "sha256": "9cc8001c3cd61ed38b72a8d0890cb28c7edc2d96a599043c1ef1dfd49a7f808a",
+    "bytes": 92647
+  },
+  "By_Stage\\10_0_Diagnostic_Synthesis\\diagnostic_synthesis.csv": {
+    "sha256": "9cc8001c3cd61ed38b72a8d0890cb28c7edc2d96a599043c1ef1dfd49a7f808a",
+    "bytes": 92647
+  },
+  "By_Stage\\10_1_Frozen_Coefficient_Charts\\presentation_context_interactions.pdf": {
+    "sha256": "a870d84d84dc3ea3e6e369278369cff3c97942b44705f726d82168ce1323d73b",
+    "bytes": 36081
+  },
+  "By_Stage\\10_1_Frozen_Coefficient_Charts\\presentation_feature_importance_H.pdf": {
+    "sha256": "18675d45a85b2cd18abf41ac5b8451f64e936135e6558467dd978d133667afbb",
+    "bytes": 34659
+  },
+  "By_Stage\\10_1_Frozen_Coefficient_Charts\\presentation_feature_importance_Y.pdf": {
+    "sha256": "56b0820d2a489fe996394a7d4eb82ecfdfef5e4a64f5cbaf1ba5f296bc1cdfaa",
+    "bytes": 34427
+  },
+  "By_Stage\\10_2_Exploratory_Abstention_Utility\\abstention_utility_protocol.json": {
+    "sha256": "6a620ab384f6c4699fb20b79f34b14fc9360deb4539533f0b2b47769c84105ab",
+    "bytes": 2186
+  },
+  "By_Stage\\10_2_Exploratory_Abstention_Utility\\abstention_utility_provenance.json": {
+    "sha256": "bd269c8577954e8d5e11b43517e4c4bf543491a9a1e21af11caaefc51763f6a9",
+    "bytes": 4054
+  },
+  "By_Stage\\10_2_Exploratory_Abstention_Utility\\exploratory_abstention_utility.csv": {
+    "sha256": "4e24c5acebb28ac72ae4a75b02af8ace32dc2f0d794ca04efe930d2727336f60",
+    "bytes": 54930
+  },
+  "By_Stage\\10_2_Exploratory_Abstention_Utility\\presentation_abstention_utility.pdf": {
+    "sha256": "c342fd5b3ad2eb20eead3ad29523376ec6f1ba0cff2b0957672ab48c11043e92",
+    "bytes": 63506
+  },
+  "By_Stage\\10_5_Exploratory_Semantics\\exploratory_demographic_semantics.pdf": {
+    "sha256": "10196c35ed7aaa10eb5f9b40812cfa9a32ec4eb78471681e31a8f1e637e53122",
+    "bytes": 161764
+  },
+  "By_Stage\\10_5_Exploratory_Semantics\\exploratory_demographic_semantic_overlap.csv": {
+    "sha256": "a897ca67b375a2da7f3a4043a95019336fa54a271abb6fc305bb610e89c5c2b3",
+    "bytes": 670698
+  },
+  "By_Stage\\10_5_Exploratory_Semantics\\exploratory_demographic_semantic_rates.csv": {
+    "sha256": "09209584f1a7178b4522be60c5e452c69e23a225b60d9fa771be4995ac6d65c3",
+    "bytes": 481985
+  },
+  "By_Stage\\11_Report_and_Reproduction\\Group_19_Report.pdf": {
+    "sha256": "12ecf195e342137dc409a78f0b64d41121a35770ab7aa0b359a2cfca4e51b44c",
+    "bytes": 547616
+  },
+  "By_Stage\\11_Report_and_Reproduction\\references.csv": {
+    "sha256": "cfc2f59ec450a4e8a4b238cd7b894e507b23f3923d524b3d975cb82d54310d9e",
+    "bytes": 2263
+  },
+  "By_Stage\\11_Report_and_Reproduction\\REPRODUCTION.md": {
+    "sha256": "35fec8a23b36cf6b0b633102196d890e2f37247f48a42a56ff53380467dea422",
+    "bytes": 9517
+  },
+  "By_Stage\\11_Report_and_Reproduction\\stage11_contributions_draft.csv": {
+    "sha256": "07fd78e8eba445fff5e3dab5aa6d743b1147e991707c7c76e9a4fb6fd8c966ba",
+    "bytes": 1257
+  },
+  "By_Stage\\12_Retrospective_G3_Experiment\\coverage.json": {
+    "sha256": "9541829ca9680aa89b66437507d69ca33279e39a032704a1fad7c71713e63dbb",
+    "bytes": 809
+  },
+  "By_Stage\\12_Retrospective_G3_Experiment\\evaluation_provenance.json": {
+    "sha256": "b2e01a25dae5d386aceb789182f0725575cc58fe3201384aa828ccdc2d1eacb0",
+    "bytes": 1228
+  },
+  "By_Stage\\12_Retrospective_G3_Experiment\\presentation_g3_results.pdf": {
+    "sha256": "ab68000365c1ac02ef0b73f3c573b763684aa07efb1af78c73e954199d94138f",
+    "bytes": 32441
+  },
+  "By_Stage\\12_Retrospective_G3_Experiment\\protocol.json": {
+    "sha256": "ea2c4571e69207059bbee191fe93cbc3ffb05f7193612b03724618d52ed1c3c6",
+    "bytes": 3612
+  },
+  "By_Stage\\12_Retrospective_G3_Experiment\\test_contrasts.csv": {
+    "sha256": "c9ed8753651372c4d8b1197067302a2b85cf36b5f946bd2bdda5f4e9e405aa70",
+    "bytes": 407
+  },
+  "By_Stage\\12_Retrospective_G3_Experiment\\test_results.csv": {
+    "sha256": "2b44045032fab6ee389f179f11489285237ccff7092f443101322b9c480d9f18",
+    "bytes": 1043
+  },
+  "By_Stage\\12_Retrospective_G3_Experiment\\validation_results.csv": {
+    "sha256": "c573b79ab20ee2256267ce1dd8f4de1f10d8b1159695f04dc5bff664ebd70a01",
+    "bytes": 657
+  },
+  "By_Stage\\12_Retrospective_G3_Experiment\\Within_Cat_Subgroup\\analysis_provenance.json": {
+    "sha256": "a738721255d098bf1ac3ef63e2e98aa2aaa335dfbc74fb295b4557b9de1aac0c",
+    "bytes": 2368
+  },
+  "By_Stage\\12_Retrospective_G3_Experiment\\Within_Cat_Subgroup\\presentation_within_cat_g3.pdf": {
+    "sha256": "38295f07c92267ca8da0a8a510695224477ff05b015d75b727d5cc36ff4ca89c",
+    "bytes": 33111
+  },
+  "By_Stage\\12_Retrospective_G3_Experiment\\Within_Cat_Subgroup\\protocol.json": {
+    "sha256": "14fa226afce8884be231c62384fbb6cc1b5d1130508c4ef1745caf48c793e1d7",
+    "bytes": 1770
+  },
+  "By_Stage\\12_Retrospective_G3_Experiment\\Within_Cat_Subgroup\\within_cat_contrasts.csv": {
+    "sha256": "d490fd3501cb6c8c0487b8110aaf83bb832645e6877f6f7924a16629631f92ce",
+    "bytes": 646
+  },
+  "By_Stage\\12_Retrospective_G3_Experiment\\Within_Cat_Subgroup\\within_cat_summary.json": {
+    "sha256": "8348efa2c0822b57119572b1bd0f528c86c52c9a37c85cafd17cd2eed8628d4d",
+    "bytes": 899
+  },
+  "By_Stage\\12_Retrospective_G3_Experiment\\Within_Cat_Subgroup\\within_cat_test_results.csv": {
+    "sha256": "11bd52dc2e4bdcd251799ae2f3da63a88cf6a11dfffefb5423277e8439b3063a",
+    "bytes": 967
+  },
+  "By_Stage\\13_Retrospective_G4_Experiment\\coverage.json": {
+    "sha256": "d4b8b3894079326fb0407f007cbe956747e734a7d0974948dff89fb6582a1475",
+    "bytes": 772
+  },
+  "By_Stage\\13_Retrospective_G4_Experiment\\evaluation_provenance.json": {
+    "sha256": "c39f05c1afbaa48f60151980cbaada99d2f510106c1dc0bf3151c30135251878",
+    "bytes": 1686
+  },
+  "By_Stage\\13_Retrospective_G4_Experiment\\presentation_g4_results.pdf": {
+    "sha256": "fc54830fdb1876f5c09b96b4556d69736d8cb16cc5ad9ebd86e7e0f9e1c26251",
+    "bytes": 30690
+  },
+  "By_Stage\\13_Retrospective_G4_Experiment\\protocol.json": {
+    "sha256": "f1090363e3a7e083d12db5dc4c6cd8145197affd2396c3c70070de98af570128",
+    "bytes": 3979
+  },
+  "By_Stage\\13_Retrospective_G4_Experiment\\test_contrasts.csv": {
+    "sha256": "45484d3a689c331f3978db3a0cdcb1c7aae67c44a172ded97afe832539ab6493",
+    "bytes": 431
+  },
+  "By_Stage\\13_Retrospective_G4_Experiment\\test_results.csv": {
+    "sha256": "0a85ab96c83a4e0c2ee3b21d01e40f22b564abbc02c9585b33cb4dee0050f55f",
+    "bytes": 1049
+  },
+  "By_Stage\\13_Retrospective_G4_Experiment\\validation_results.csv": {
+    "sha256": "a3c16b56b3bd3a558953c96fb4767fac334ab1c5bf46eea56347e544af442738",
+    "bytes": 669
+  },
+  "By_Stage\\14_Retrospective_All_Demographics\\calibration.csv": {
+    "sha256": "4b8e6e76d07cc7f54384ed3db0d426bf8f2febef94bbb80047767069d15d608c",
+    "bytes": 2107
+  },
+  "By_Stage\\14_Retrospective_All_Demographics\\control_provenance.json": {
+    "sha256": "eec95286125e34a41bcbb65d4fce677e215f74978a2b042b61f1f85513a60490",
+    "bytes": 1064
+  },
+  "By_Stage\\14_Retrospective_All_Demographics\\control_results.csv": {
+    "sha256": "83357168e842add1ac3cb088d3581fe98728d42ad4d60d37ef6a4e2925cd5b5a",
+    "bytes": 28755
+  },
+  "By_Stage\\14_Retrospective_All_Demographics\\design_conditioning.json": {
+    "sha256": "21625fdd697794927a0206746f6a3e84c162c53d5a7c361ce2da6db22a98ec73",
+    "bytes": 1444
+  },
+  "By_Stage\\14_Retrospective_All_Demographics\\development_support.csv": {
+    "sha256": "db1f62a492ebe4eb58e11563f204bd106b985001ac3d62f0375c45010bd03c74",
+    "bytes": 2905
+  },
+  "By_Stage\\14_Retrospective_All_Demographics\\evaluation_provenance.json": {
+    "sha256": "92781aaa51035006d420c57482a103b120b3a8f9a02d3b3c25fa094635cfc0bb",
+    "bytes": 2437
+  },
+  "By_Stage\\14_Retrospective_All_Demographics\\INTERPRETATION.md": {
+    "sha256": "b5ce1a4ca1ffc0c465ccedb75f2dc3b5d0eb8c65e2eecc3bd5cc96c41e70418e",
+    "bytes": 8412
+  },
+  "By_Stage\\14_Retrospective_All_Demographics\\presentation_demographic_models.pdf": {
+    "sha256": "c41bb77788b0a38156da718916c60d585bc21a82636cddfe427dc592dc7efa9e",
+    "bytes": 31648
+  },
+  "By_Stage\\14_Retrospective_All_Demographics\\protocol.json": {
+    "sha256": "ce68e1149d26d4c42d827168354948cbfc5946a8f2c6954575044ab3572ed92c",
+    "bytes": 4519
+  },
+  "By_Stage\\14_Retrospective_All_Demographics\\subgroups.csv": {
+    "sha256": "ac978a188cad2b2a3b4c64ee53483a6f84023f3e516b9fd0ffce8e148b6b5007",
+    "bytes": 9776
+  },
+  "By_Stage\\14_Retrospective_All_Demographics\\test_contrasts.csv": {
+    "sha256": "cb870eb69246cfb3fb29330cdea28f6f1b07a63627652e47ee83437476936758",
+    "bytes": 1574
+  },
+  "By_Stage\\14_Retrospective_All_Demographics\\test_results.csv": {
+    "sha256": "b29034e8c31bf184b7f5559e30dc9484931b182d397ba312d5b3ea1d5bec8e23",
+    "bytes": 3074
+  },
+  "By_Stage\\14_Retrospective_All_Demographics\\validation_results.csv": {
+    "sha256": "a13452e2bdd22491dc31e08aceefaf6112fb304480fab826f3d83a3e6836ae95",
+    "bytes": 1404
+  },
+  "By_Stage\\14_Retrospective_All_Demographics\\verification.json": {
+    "sha256": "d16218d96989b3cc950aaa4ce29fd8dcb6f5d602d7e120823538cc49f18c7aa0",
+    "bytes": 518
+  },
+  "By_Stage\\14_Retrospective_All_Demographics\\Full_Diagnostic_Parity\\abstention_figure_provenance.json": {
+    "sha256": "725fd2bf525ddd9125a38de9046a4ef85b7ea45da3cfe9f0ea63b074376bd4d8",
+    "bytes": 324
+  },
+  "By_Stage\\14_Retrospective_All_Demographics\\Full_Diagnostic_Parity\\abstention_utility.csv": {
+    "sha256": "d65c1c3257df2385c21dbeaa23e4018f48d460b9059d62e63dff24a9066c86e1",
+    "bytes": 55366
+  },
+  "By_Stage\\14_Retrospective_All_Demographics\\Full_Diagnostic_Parity\\DIAGNOSTIC_EVIDENCE.md": {
+    "sha256": "b1b1dc136acd9989370036c823b97f939bd902e384f652af82f000218ae96762",
+    "bytes": 7984
+  },
+  "By_Stage\\14_Retrospective_All_Demographics\\Full_Diagnostic_Parity\\diagnostic_summary.json": {
+    "sha256": "c00930e97a5bb75066db65a4421f0f38924bf4fd49a15c3ba3358a7f5144aabe",
+    "bytes": 2121
+  },
+  "By_Stage\\14_Retrospective_All_Demographics\\Full_Diagnostic_Parity\\fixed_diagnostics_provenance.json": {
+    "sha256": "e8d705426fdf0bd8c67e2b61ee10a103517c4abf1e0701a49a693ad602991b43",
+    "bytes": 1046
+  },
+  "By_Stage\\14_Retrospective_All_Demographics\\Full_Diagnostic_Parity\\full_size_reuse_provenance.json": {
+    "sha256": "0b476e28e69e74b90676ef3177055375bbbe217173c5471f09af754ea3981dbf",
+    "bytes": 679
+  },
+  "By_Stage\\14_Retrospective_All_Demographics\\Full_Diagnostic_Parity\\g3_contrasts.csv": {
+    "sha256": "c020e2bac669611ef4f781d41b450ea5a432de3be6b922a87fed6c1c3db98006",
+    "bytes": 1044
+  },
+  "By_Stage\\14_Retrospective_All_Demographics\\Full_Diagnostic_Parity\\g3_provenance.json": {
+    "sha256": "f672db09bcaa3757b964bf69c494124231a5593cd3f8490406407c8747563f46",
+    "bytes": 910
+  },
+  "By_Stage\\14_Retrospective_All_Demographics\\Full_Diagnostic_Parity\\g3_results.csv": {
+    "sha256": "bc3c4b4c1f37f5ebc55b1c4c2390255df912d8474ffb38f3632ade8a3ac54a20",
+    "bytes": 1651
+  },
+  "By_Stage\\14_Retrospective_All_Demographics\\Full_Diagnostic_Parity\\g4_contrasts.csv": {
+    "sha256": "300304cd332fa9a89d0971f32b707089dd436d1c2757e8653d6a904d7a2357ba",
+    "bytes": 967
+  },
+  "By_Stage\\14_Retrospective_All_Demographics\\Full_Diagnostic_Parity\\g4_provenance.json": {
+    "sha256": "be5f7cf3f0f62408ad6d5a10793657f651bbf391dfb02aaa6af5f221b7653044",
+    "bytes": 908
+  },
+  "By_Stage\\14_Retrospective_All_Demographics\\Full_Diagnostic_Parity\\g4_results.csv": {
+    "sha256": "16f6a38a84449d65cb28f2e0a15055f74b1d60ab2175b8d82efefdbaecdc3378",
+    "bytes": 1658
+  },
+  "By_Stage\\14_Retrospective_All_Demographics\\Full_Diagnostic_Parity\\learning_curves.csv": {
+    "sha256": "31d3a956510e7ee0ac3ee27f8e05d6defc0712b1a65d299031b59a59d3c91400",
+    "bytes": 2606
+  },
+  "By_Stage\\14_Retrospective_All_Demographics\\Full_Diagnostic_Parity\\learning_curve_support.csv": {
+    "sha256": "a4ac7af190b885954fe6b8273a920563a08a461822c1079136c7c114d2367250",
+    "bytes": 12994
+  },
+  "By_Stage\\14_Retrospective_All_Demographics\\Full_Diagnostic_Parity\\penalty_path_provenance.json": {
+    "sha256": "d3022864986b5367a742e5f63a233b06f9b9d8ed0006bf394cedbd695054c522",
+    "bytes": 644
+  },
+  "By_Stage\\14_Retrospective_All_Demographics\\Full_Diagnostic_Parity\\penalty_path_refits.csv": {
+    "sha256": "67fb8247c0f94d295fd7eb75227817a249daa11034030195b450b087a2683617",
+    "bytes": 11478
+  },
+  "By_Stage\\14_Retrospective_All_Demographics\\Full_Diagnostic_Parity\\presentation_abstention_full.pdf": {
+    "sha256": "6f802ca6bd17d8375c72432c83ad97e7454ff6f1a72160779e24ad414d6f9999",
+    "bytes": 47769
+  },
+  "By_Stage\\14_Retrospective_All_Demographics\\Full_Diagnostic_Parity\\presentation_fixed_diagnostics.pdf": {
+    "sha256": "8f5aece49b54595f399883676e973e47f254de7e62e81bba1a9137ede8a2dcf2",
+    "bytes": 26548
+  },
+  "By_Stage\\14_Retrospective_All_Demographics\\Full_Diagnostic_Parity\\presentation_learning_penalty_transfer.pdf": {
+    "sha256": "a15d6d7d06aab3575619f22742379f30150d832e88577538878d2234b2099445",
+    "bytes": 46621
+  },
+  "By_Stage\\14_Retrospective_All_Demographics\\Full_Diagnostic_Parity\\protocol.json": {
+    "sha256": "8092527c2bb59c33001dc3e9ef38ed802970ca21c26afc1b57d7782ceb6e00ae",
+    "bytes": 3341
+  },
+  "By_Stage\\14_Retrospective_All_Demographics\\Full_Diagnostic_Parity\\resource_adjustment.json": {
+    "sha256": "47d07d7fbef5006b0c897e673b2f8935f50f9b60ceed666d6998361370574240",
+    "bytes": 1473
+  },
+  "By_Stage\\14_Retrospective_All_Demographics\\Full_Diagnostic_Parity\\subgroup_calibration.csv": {
+    "sha256": "8263720608139fee1e2ff29fcfa6f5b1adb3ec52b521a1e5a9356360fd8e7cc9",
+    "bytes": 82331
+  },
+  "By_Stage\\14_Retrospective_All_Demographics\\Full_Diagnostic_Parity\\subgroup_calibration_provenance.json": {
+    "sha256": "9c1423b36c08b55239c6dbc4cbda6a66703a728bdc96f02d202cd39c86bdae5a",
+    "bytes": 532
+  },
+  "By_Stage\\14_Retrospective_All_Demographics\\Full_Diagnostic_Parity\\temperature_candidates.csv": {
+    "sha256": "3e45aa8451fd0301d5d7a799e4c0b9bc511e5fa29cb450935d3063d663e0a211",
+    "bytes": 968
+  },
+  "By_Stage\\14_Retrospective_All_Demographics\\Full_Diagnostic_Parity\\temperature_freeze.json": {
+    "sha256": "6c0da3b41cc09c37adafa978ccfe58c1d80001c41322069a2727a8829f5552fc",
+    "bytes": 659
+  },
+  "By_Stage\\14_Retrospective_All_Demographics\\Full_Diagnostic_Parity\\temperature_freeze.sha256": {
+    "sha256": "451a3f53883923a37c3d70abdff73dbf5f9587522e60be553117caeb90a249d3",
+    "bytes": 66
+  },
+  "By_Stage\\14_Retrospective_All_Demographics\\Full_Diagnostic_Parity\\temperature_results.csv": {
+    "sha256": "057aed97797409a656b5a9913639eeb1d3d023bba42a31ca32d4f86979d1ed0f",
+    "bytes": 878
+  },
+  "By_Stage\\14_Retrospective_All_Demographics\\Full_Diagnostic_Parity\\test_support_calibration.csv": {
+    "sha256": "d95d14458ed20a5e4384913d272b677e6943f421854d5119b880d09e08fecd71",
+    "bytes": 52479
+  },
+  "By_Stage\\14_Retrospective_All_Demographics\\Full_Diagnostic_Parity\\test_support_slices.csv": {
+    "sha256": "830eebf3a036b0cf429e149ff86d1795f8b185208a773e38ab500b1a499c1362",
+    "bytes": 6988
+  },
+  "By_Stage\\14_Retrospective_All_Demographics\\Full_Diagnostic_Parity\\test_support_slices_provenance.json": {
+    "sha256": "51448c30596ca198653eddc42b2d3e696556065cd5fa7157e15be44f4dce9699",
+    "bytes": 651
+  },
+  "By_Stage\\14_Retrospective_All_Demographics\\Full_Diagnostic_Parity\\validation_demographic_calibration.csv": {
+    "sha256": "6f02f4df0595b024e4ca100069ccdf64272558479c46c2b4a8ceb58c478cf9d0",
+    "bytes": 57331
+  },
+  "By_Stage\\14_Retrospective_All_Demographics\\Full_Diagnostic_Parity\\validation_demographic_provenance.json": {
+    "sha256": "186c5ce4cd491232be78ad9bfa114b2d2f388384573a8d3a5eaf885ba2ef262b",
+    "bytes": 662
+  },
+  "By_Stage\\14_Retrospective_All_Demographics\\Full_Diagnostic_Parity\\validation_demographic_slices.csv": {
+    "sha256": "cff5708d1de616c1b12fbad6d488dac3dd065d4ca3c4aaddd7ff0240468f2b9d",
+    "bytes": 10222
+  },
+  "By_Stage\\14_Retrospective_All_Demographics\\Full_Diagnostic_Parity\\validation_support_calibration.csv": {
+    "sha256": "c46befc19b3d4668e3d6067cd6bc9ee5556379e400154585d13e5b7611ab1d16",
+    "bytes": 42948
+  },
+  "By_Stage\\14_Retrospective_All_Demographics\\Full_Diagnostic_Parity\\validation_support_provenance.json": {
+    "sha256": "bc33333dbb66187ed7ac4be0ec6b822858e0a77e48233fbd163eeb4e8939d97a",
+    "bytes": 653
+  },
+  "By_Stage\\14_Retrospective_All_Demographics\\Full_Diagnostic_Parity\\validation_support_slices.csv": {
+    "sha256": "0683a943a0cf678668e27c28bfe05599e43a57ee658cbf0d6dcc0ba168066514",
+    "bytes": 9502
+  },
+  "By_Stage\\14_Retrospective_All_Demographics\\Full_Diagnostic_Parity\\verification.json": {
+    "sha256": "8fb91857a60be101ac7cec810cf9dd331ffddc2bc5b5c667d8d98d6df81bc759",
+    "bytes": 634
+  }
+}

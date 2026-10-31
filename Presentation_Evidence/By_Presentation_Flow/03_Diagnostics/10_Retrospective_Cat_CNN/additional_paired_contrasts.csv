@@ -1,0 +1,7 @@
+target,reference,candidate,difference,ci_low,ci_high,bootstrap_se,responses,clusters,interpretation
+g2,Cat+D,Cat+CNN,-0.0034464670325675606,-0.008371683517584891,0.001611969652583124,0.0025328624380257228,3733,1207,Post-test exploratory; comparator inputs and tuning differ.
+g2,C+D,Cat+CNN,0.0017180401796313513,-0.003709304440660516,0.007049312662855828,0.002736143562038599,3733,1207,Post-test exploratory; comparator inputs and tuning differ.
+g2,kernel_M3-C,Cat+CNN,0.007363419985963627,0.0023848467353940112,0.01217427527166016,0.0024772831853566556,3733,1207,Post-test exploratory; comparator inputs and tuning differ.
+g3,Cat+D,Cat+CNN,-0.002711788446533604,-0.010133752812998182,0.004033397719926537,0.0036020366783924436,2250,64,Post-test exploratory; comparator inputs and tuning differ.
+g3,C+D,Cat+CNN,0.005371683064547663,-0.0025985855563109834,0.013261010212557517,0.003994652324364106,2250,64,Post-test exploratory; comparator inputs and tuning differ.
+g3,kernel_M3-C,Cat+CNN,0.012285138316659802,0.005534696202959527,0.018782324756473807,0.0033758780126003575,2250,64,Post-test exploratory; comparator inputs and tuning differ.

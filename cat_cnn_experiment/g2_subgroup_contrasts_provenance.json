@@ -1,0 +1,10 @@
+{
+  "status": "completed_post_test_exploratory",
+  "input_sha256": "a80f995872f8c37f8352d948bc30119d5b519d86128a6eba9763ba84615ccb9c",
+  "output_sha256": "bbb0567af16b9447d993f263d0c4e0441407a6370a922b26cc76a3de6d3dcfac",
+  "bootstrap_replicates": 5000,
+  "seed": 20261101,
+  "cluster": "unordered pair",
+  "raw_test_outcomes_read": false,
+  "limitations": "Subgroup comparisons are post-test, unadjusted and not independent."
+}

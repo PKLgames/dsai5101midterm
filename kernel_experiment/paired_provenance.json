@@ -1,0 +1,15 @@
+{
+  "status": "completed",
+  "matched_pairing_and_clusters_verified": true,
+  "bootstrap_replicates": 5000,
+  "source_sha256": {
+    "demographic_g2": "35b66f96e3e295358103eea6f4b8527622854faa41826931a113f8e29317894a",
+    "demographic_g3": "f735cc19056bedbf8727bbc99e8e1036fd6cec6353639953c76f0173865d060d",
+    "demographic_g4": "6bbe44b6b254929c8200871ed2956af40adef75d4f33daa322f47ce8f3d3ffa0"
+  },
+  "outputs_sha256": {
+    "additional_paired_contrasts.csv": "9730ef83cfe92b11f3a650583d353561bb945ded2e8f46fc0e4bd1d85ce788ca",
+    "g2_pair_weighted.csv": "f6e92c383c80b8952e5b57693a5cd45c0ce96c317dce94f4c7e10704f62ca108"
+  },
+  "interpretation": "Post-test exploratory; C+D uses demographics while kernel is pooled."
+}

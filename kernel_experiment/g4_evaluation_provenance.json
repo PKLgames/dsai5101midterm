@@ -1,0 +1,20 @@
+{
+  "status": "completed_retrospective",
+  "model_freeze_sha256": "273eaefc138e9cc3b03c56590ee6e3ed84c53fb438778ea033bd62063681f5c3",
+  "original_saved_predictions_sha256": "336b8b5d3b245a405e63d3a8a12a94379effdff38e335e963ff3746f1069a381",
+  "outputs_sha256": {
+    "g4_results.csv": "b14f5f5bf43f6ab20f4d7cbac4c4d65d08a698751605343108e5d3b6292c3e63",
+    "g4_contrasts.csv": "4170fe067de9bbb2960a9e989789f3bfd7917818de5dc8855e694210011b4c2c",
+    "g4_predictions.parquet": "c7115a2492d2e3d44512c3d5166d200db50a6e3e6d2520ad9dfbafc20618b246",
+    "g4_subgroups.csv": "337294ca35ba0c8216b228ac3476b28cfdcd41635e0fbcbd9e21926ae592d6e5",
+    "g4_calibration.csv": "4e3a375fac109ab4c9cfdfd316d24a5eba673a8bd214c119eaa317065ef0a569"
+  },
+  "responses": 3479,
+  "pairs": 1101,
+  "cluster_unit": "held_out_cat",
+  "clusters": 23,
+  "bootstrap_replicates": 5000,
+  "raw_test_outcomes_read": false,
+  "prior_test_exposure": true,
+  "interpretation": "Post-test, 95% pointwise unadjusted; not independently confirmatory or causal."
+}

@@ -1,0 +1,9 @@
+{
+  "status": "passed",
+  "penalty_candidates_replayed": 49,
+  "extra_comparisons_replayed": 6,
+  "bootstrap_replicates_per_target": 5000,
+  "validation_and_test_support_groups_matched": 16,
+  "raw_test_outcomes_read": false,
+  "limitations": "Previously exposed outcomes remain exploratory."
+}

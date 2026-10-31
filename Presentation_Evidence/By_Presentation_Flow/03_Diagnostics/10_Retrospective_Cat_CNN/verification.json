@@ -1,0 +1,97 @@
+{
+  "status": "passed",
+  "selected_fits": [
+    {
+      "model": "g2",
+      "fit_rows": 17421,
+      "validation_rows": 3742,
+      "gradient_max": 5.800066882370998e-07,
+      "validation_delta": 0.0
+    },
+    {
+      "model": "g3",
+      "fit_rows": 14218,
+      "validation_rows": 2063,
+      "gradient_max": 1.8601294323158436e-07,
+      "validation_delta": 0.0
+    },
+    {
+      "model": "curve_20261030_025",
+      "fit_rows": 4367,
+      "validation_rows": 1836,
+      "gradient_max": 4.377184364096027e-07,
+      "validation_delta": 0.0
+    },
+    {
+      "model": "curve_20261030_050",
+      "fit_rows": 8737,
+      "validation_rows": 1836,
+      "gradient_max": 5.852056661870926e-07,
+      "validation_delta": 0.0
+    },
+    {
+      "model": "curve_20261030_075",
+      "fit_rows": 13057,
+      "validation_rows": 1836,
+      "gradient_max": 1.5356539537659131e-07,
+      "validation_delta": 0.0
+    },
+    {
+      "model": "curve_20261030_100",
+      "fit_rows": 17421,
+      "validation_rows": 1836,
+      "gradient_max": 8.720732678869049e-07,
+      "validation_delta": 0.0
+    },
+    {
+      "model": "curve_20261031_025",
+      "fit_rows": 4299,
+      "validation_rows": 1836,
+      "gradient_max": 8.054543171440748e-07,
+      "validation_delta": 0.0
+    },
+    {
+      "model": "curve_20261031_050",
+      "fit_rows": 8636,
+      "validation_rows": 1836,
+      "gradient_max": 7.277050758122138e-07,
+      "validation_delta": 0.0
+    },
+    {
+      "model": "curve_20261031_075",
+      "fit_rows": 13007,
+      "validation_rows": 1836,
+      "gradient_max": 9.068011409648822e-07,
+      "validation_delta": 0.0
+    },
+    {
+      "model": "curve_20261031_100",
+      "fit_rows": 17421,
+      "validation_rows": 1836,
+      "gradient_max": 8.720732678869049e-07,
+      "validation_delta": 0.0
+    }
+  ],
+  "test_replays": [
+    {
+      "target": "g2",
+      "responses": 3733,
+      "models": 7,
+      "contrasts": 6,
+      "clusters": 1207,
+      "draws": 5000
+    },
+    {
+      "target": "g3",
+      "responses": 2250,
+      "models": 5,
+      "contrasts": 4,
+      "clusters": 64,
+      "draws": 5000
+    }
+  ],
+  "abstention_cells_replayed": 84,
+  "raw_test_outcomes_read": false,
+  "g4": "unsupported by user choice; no predictions generated",
+  "limitations": "Previously exposed outcomes remain retrospective and not independently confirmatory."
+}

@@ -1,0 +1,7 @@
+{
+  "temperature": 1.0,
+  "selection": "exact minimum; tie nearest 1 then smaller temperature",
+  "g2_freeze_sha256": "68b93282a768de8b17d20fcd6336b30fc1f5540cd73e00a96ce72ad8ecf190f6",
+  "candidates_sha256": "ff55196021280f24ce2d5168a419f2e74041ef422d38588ae17e0aa7ca736090",
+  "previous_test_exposure": true
+}

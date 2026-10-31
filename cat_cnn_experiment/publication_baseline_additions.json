@@ -1,0 +1,9 @@
+{
+  "status": "external_additions_recorded_without_modification",
+  "reason": "Two new project files appeared after the pre-study snapshot; they are outside this study and do not conflict with its outputs. They are preserved and verified, not deleted or modified.",
+  "new_files": {
+    "graph.py": {"sha256": "fb4db8c8f3958170de9b68d42ff99afe247510ebddb10b8fe38a4c0a98273b74", "bytes": 2395},
+    "two_islands_graph.png": {"sha256": "76db60252e61c3ee497f8208894b9295caaa52b903876da1ad5192aa4b1113b4", "bytes": 145481}
+  },
+  "scope": "These files were absent from the pre-study snapshot; no claims about their content, authorship, or relation to the study are inferred."
+}

@@ -1,0 +1,7 @@
+{
+  "status": "unsupported_by_user_choice",
+  "reason": "The user explicitly declined zero-score cold-start for an unseen cat.",
+  "predictions_generated": false,
+  "test_outcomes_read": false,
+  "note": "The CNN block could score the photo, but the specified joint model has no fitted cat identity score."
+}

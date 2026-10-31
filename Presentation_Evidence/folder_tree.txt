@@ -71,58 +71,123 @@ Presentation_Evidence\
 |   |   |   |-- test_contrasts.csv
 |   |   |   |-- test_results.csv
 |   |   |   `-- validation_results.csv
-|   |   `-- 08_Retrospective_All_Demographics\
-|   |       |-- Full_Diagnostic_Parity\
-|   |       |   |-- abstention_figure_provenance.json
-|   |       |   |-- abstention_utility.csv
-|   |       |   |-- DIAGNOSTIC_EVIDENCE.md
-|   |       |   |-- diagnostic_summary.json
-|   |       |   |-- fixed_diagnostics_provenance.json
-|   |       |   |-- full_size_reuse_provenance.json
-|   |       |   |-- g3_contrasts.csv
-|   |       |   |-- g3_provenance.json
-|   |       |   |-- g3_results.csv
-|   |       |   |-- g4_contrasts.csv
-|   |       |   |-- g4_provenance.json
-|   |       |   |-- g4_results.csv
-|   |       |   |-- learning_curve_support.csv
-|   |       |   |-- learning_curves.csv
-|   |       |   |-- penalty_path_provenance.json
-|   |       |   |-- penalty_path_refits.csv
-|   |       |   |-- presentation_abstention_full.pdf
-|   |       |   |-- presentation_fixed_diagnostics.pdf
-|   |       |   |-- presentation_learning_penalty_transfer.pdf
-|   |       |   |-- protocol.json
-|   |       |   |-- resource_adjustment.json
-|   |       |   |-- subgroup_calibration.csv
-|   |       |   |-- subgroup_calibration_provenance.json
-|   |       |   |-- temperature_candidates.csv
-|   |       |   |-- temperature_freeze.json
-|   |       |   |-- temperature_freeze.sha256
-|   |       |   |-- temperature_results.csv
-|   |       |   |-- test_support_calibration.csv
-|   |       |   |-- test_support_slices.csv
-|   |       |   |-- test_support_slices_provenance.json
-|   |       |   |-- validation_demographic_calibration.csv
-|   |       |   |-- validation_demographic_provenance.json
-|   |       |   |-- validation_demographic_slices.csv
-|   |       |   |-- validation_support_calibration.csv
-|   |       |   |-- validation_support_provenance.json
-|   |       |   |-- validation_support_slices.csv
-|   |       |   `-- verification.json
-|   |       |-- calibration.csv
-|   |       |-- control_provenance.json
-|   |       |-- control_results.csv
-|   |       |-- design_conditioning.json
-|   |       |-- development_support.csv
-|   |       |-- evaluation_provenance.json
-|   |       |-- INTERPRETATION.md
-|   |       |-- presentation_demographic_models.pdf
+|   |   |-- 08_Retrospective_All_Demographics\
+|   |   |   |-- Full_Diagnostic_Parity\
+|   |   |   |   |-- abstention_figure_provenance.json
+|   |   |   |   |-- abstention_utility.csv
+|   |   |   |   |-- DIAGNOSTIC_EVIDENCE.md
+|   |   |   |   |-- diagnostic_summary.json
+|   |   |   |   |-- fixed_diagnostics_provenance.json
+|   |   |   |   |-- full_size_reuse_provenance.json
+|   |   |   |   |-- g3_contrasts.csv
+|   |   |   |   |-- g3_provenance.json
+|   |   |   |   |-- g3_results.csv
+|   |   |   |   |-- g4_contrasts.csv
+|   |   |   |   |-- g4_provenance.json
+|   |   |   |   |-- g4_results.csv
+|   |   |   |   |-- learning_curve_support.csv
+|   |   |   |   |-- learning_curves.csv
+|   |   |   |   |-- penalty_path_provenance.json
+|   |   |   |   |-- penalty_path_refits.csv
+|   |   |   |   |-- presentation_abstention_full.pdf
+|   |   |   |   |-- presentation_fixed_diagnostics.pdf
+|   |   |   |   |-- presentation_learning_penalty_transfer.pdf
+|   |   |   |   |-- protocol.json
+|   |   |   |   |-- resource_adjustment.json
+|   |   |   |   |-- subgroup_calibration.csv
+|   |   |   |   |-- subgroup_calibration_provenance.json
+|   |   |   |   |-- temperature_candidates.csv
+|   |   |   |   |-- temperature_freeze.json
+|   |   |   |   |-- temperature_freeze.sha256
+|   |   |   |   |-- temperature_results.csv
+|   |   |   |   |-- test_support_calibration.csv
+|   |   |   |   |-- test_support_slices.csv
+|   |   |   |   |-- test_support_slices_provenance.json
+|   |   |   |   |-- validation_demographic_calibration.csv
+|   |   |   |   |-- validation_demographic_provenance.json
+|   |   |   |   |-- validation_demographic_slices.csv
+|   |   |   |   |-- validation_support_calibration.csv
+|   |   |   |   |-- validation_support_provenance.json
+|   |   |   |   |-- validation_support_slices.csv
+|   |   |   |   `-- verification.json
+|   |   |   |-- calibration.csv
+|   |   |   |-- control_provenance.json
+|   |   |   |-- control_results.csv
+|   |   |   |-- design_conditioning.json
+|   |   |   |-- development_support.csv
+|   |   |   |-- evaluation_provenance.json
+|   |   |   |-- INTERPRETATION.md
+|   |   |   |-- presentation_demographic_models.pdf
+|   |   |   |-- protocol.json
+|   |   |   |-- subgroups.csv
+|   |   |   |-- test_contrasts.csv
+|   |   |   |-- test_results.csv
+|   |   |   |-- validation_results.csv
+|   |   |   `-- verification.json
+|   |   |-- 09_Retrospective_Kernel_CNN\
+|   |   |   |-- additional_paired_contrasts.csv
+|   |   |   |-- additional_verification.json
+|   |   |   |-- fair_coin_control.csv
+|   |   |   |-- fair_coin_provenance.json
+|   |   |   |-- g2_abstention_utility.csv
+|   |   |   |-- g2_attempts.csv
+|   |   |   |-- g2_calibration.csv
+|   |   |   |-- g2_contrasts.csv
+|   |   |   |-- g2_pair_weighted.csv
+|   |   |   |-- g2_results.csv
+|   |   |   |-- g2_slice_calibration.csv
+|   |   |   |-- g2_slices.csv
+|   |   |   |-- g2_subgroups.csv
+|   |   |   |-- g3_contrasts.csv
+|   |   |   |-- g3_results.csv
+|   |   |   |-- g3_within_contrasts.csv
+|   |   |   |-- g3_within_results.csv
+|   |   |   |-- g4_contrasts.csv
+|   |   |   |-- g4_results.csv
+|   |   |   |-- learning_curves.csv
+|   |   |   |-- penalty_refits.csv
+|   |   |   |-- presentation_kernel_abstention.pdf
+|   |   |   |-- presentation_kernel_study.pdf
+|   |   |   |-- protocol.json
+|   |   |   |-- resource_adjustment.json
+|   |   |   |-- RESULTS.md
+|   |   |   |-- summary.json
+|   |   |   |-- temperature_candidates.csv
+|   |   |   |-- validation_calibration.csv
+|   |   |   |-- validation_slices.csv
+|   |   |   `-- verification.json
+|   |   `-- 10_Retrospective_Cat_CNN\
+|   |       |-- additional_paired_contrasts.csv
+|   |       |-- additional_verification.json
+|   |       |-- design_rank_and_protocol_erratum.json
+|   |       |-- fair_coin_control.csv
+|   |       |-- fair_coin_provenance.json
+|   |       |-- g2_abstention_utility.csv
+|   |       |-- g2_attempts.csv
+|   |       |-- g2_calibration.csv
+|   |       |-- g2_contrasts.csv
+|   |       |-- g2_results.csv
+|   |       |-- g2_subgroup_contrasts.csv
+|   |       |-- g2_subgroups.csv
+|   |       |-- g3_contrasts.csv
+|   |       |-- g3_results.csv
+|   |       |-- g3_within_contrasts.csv
+|   |       |-- g3_within_results.csv
+|   |       |-- g4_unsupported.json
+|   |       |-- learning_curves.csv
+|   |       |-- penalty_provenance.json
+|   |       |-- penalty_refits.csv
+|   |       |-- presentation_abstention.pdf
+|   |       |-- presentation_cat_cnn.pdf
 |   |       |-- protocol.json
-|   |       |-- subgroups.csv
-|   |       |-- test_contrasts.csv
-|   |       |-- test_results.csv
-|   |       |-- validation_results.csv
+|   |       |-- RESULTS.md
+|   |       |-- subgroup_verification.json
+|   |       |-- summary.json
+|   |       |-- temperature_candidates.csv
+|   |       |-- test_support_calibration.csv
+|   |       |-- test_support_slices.csv
+|   |       |-- validation_support_calibration.csv
+|   |       |-- validation_support_slices.csv
 |   |       `-- verification.json
 |   `-- 04_Claims\
 |       |-- 01_Question_and_Scope\
@@ -214,59 +279,126 @@ Presentation_Evidence\
 |   |   |-- test_contrasts.csv
 |   |   |-- test_results.csv
 |   |   `-- validation_results.csv
-|   `-- 14_Retrospective_All_Demographics\
-|       |-- Full_Diagnostic_Parity\
-|       |   |-- abstention_figure_provenance.json
-|       |   |-- abstention_utility.csv
-|       |   |-- DIAGNOSTIC_EVIDENCE.md
-|       |   |-- diagnostic_summary.json
-|       |   |-- fixed_diagnostics_provenance.json
-|       |   |-- full_size_reuse_provenance.json
-|       |   |-- g3_contrasts.csv
-|       |   |-- g3_provenance.json
-|       |   |-- g3_results.csv
-|       |   |-- g4_contrasts.csv
-|       |   |-- g4_provenance.json
-|       |   |-- g4_results.csv
-|       |   |-- learning_curve_support.csv
-|       |   |-- learning_curves.csv
-|       |   |-- penalty_path_provenance.json
-|       |   |-- penalty_path_refits.csv
-|       |   |-- presentation_abstention_full.pdf
-|       |   |-- presentation_fixed_diagnostics.pdf
-|       |   |-- presentation_learning_penalty_transfer.pdf
-|       |   |-- protocol.json
-|       |   |-- resource_adjustment.json
-|       |   |-- subgroup_calibration.csv
-|       |   |-- subgroup_calibration_provenance.json
-|       |   |-- temperature_candidates.csv
-|       |   |-- temperature_freeze.json
-|       |   |-- temperature_freeze.sha256
-|       |   |-- temperature_results.csv
-|       |   |-- test_support_calibration.csv
-|       |   |-- test_support_slices.csv
-|       |   |-- test_support_slices_provenance.json
-|       |   |-- validation_demographic_calibration.csv
-|       |   |-- validation_demographic_provenance.json
-|       |   |-- validation_demographic_slices.csv
-|       |   |-- validation_support_calibration.csv
-|       |   |-- validation_support_provenance.json
-|       |   |-- validation_support_slices.csv
-|       |   `-- verification.json
-|       |-- calibration.csv
-|       |-- control_provenance.json
-|       |-- control_results.csv
-|       |-- design_conditioning.json
-|       |-- development_support.csv
-|       |-- evaluation_provenance.json
-|       |-- INTERPRETATION.md
-|       |-- presentation_demographic_models.pdf
+|   |-- 14_Retrospective_All_Demographics\
+|   |   |-- Full_Diagnostic_Parity\
+|   |   |   |-- abstention_figure_provenance.json
+|   |   |   |-- abstention_utility.csv
+|   |   |   |-- DIAGNOSTIC_EVIDENCE.md
+|   |   |   |-- diagnostic_summary.json
+|   |   |   |-- fixed_diagnostics_provenance.json
+|   |   |   |-- full_size_reuse_provenance.json
+|   |   |   |-- g3_contrasts.csv
+|   |   |   |-- g3_provenance.json
+|   |   |   |-- g3_results.csv
+|   |   |   |-- g4_contrasts.csv
+|   |   |   |-- g4_provenance.json
+|   |   |   |-- g4_results.csv
+|   |   |   |-- learning_curve_support.csv
+|   |   |   |-- learning_curves.csv
+|   |   |   |-- penalty_path_provenance.json
+|   |   |   |-- penalty_path_refits.csv
+|   |   |   |-- presentation_abstention_full.pdf
+|   |   |   |-- presentation_fixed_diagnostics.pdf
+|   |   |   |-- presentation_learning_penalty_transfer.pdf
+|   |   |   |-- protocol.json
+|   |   |   |-- resource_adjustment.json
+|   |   |   |-- subgroup_calibration.csv
+|   |   |   |-- subgroup_calibration_provenance.json
+|   |   |   |-- temperature_candidates.csv
+|   |   |   |-- temperature_freeze.json
+|   |   |   |-- temperature_freeze.sha256
+|   |   |   |-- temperature_results.csv
+|   |   |   |-- test_support_calibration.csv
+|   |   |   |-- test_support_slices.csv
+|   |   |   |-- test_support_slices_provenance.json
+|   |   |   |-- validation_demographic_calibration.csv
+|   |   |   |-- validation_demographic_provenance.json
+|   |   |   |-- validation_demographic_slices.csv
+|   |   |   |-- validation_support_calibration.csv
+|   |   |   |-- validation_support_provenance.json
+|   |   |   |-- validation_support_slices.csv
+|   |   |   `-- verification.json
+|   |   |-- calibration.csv
+|   |   |-- control_provenance.json
+|   |   |-- control_results.csv
+|   |   |-- design_conditioning.json
+|   |   |-- development_support.csv
+|   |   |-- evaluation_provenance.json
+|   |   |-- INTERPRETATION.md
+|   |   |-- presentation_demographic_models.pdf
+|   |   |-- protocol.json
+|   |   |-- subgroups.csv
+|   |   |-- test_contrasts.csv
+|   |   |-- test_results.csv
+|   |   |-- validation_results.csv
+|   |   `-- verification.json
+|   |-- 15_Retrospective_Kernel_CNN\
+|   |   |-- additional_paired_contrasts.csv
+|   |   |-- additional_verification.json
+|   |   |-- fair_coin_control.csv
+|   |   |-- fair_coin_provenance.json
+|   |   |-- g2_abstention_utility.csv
+|   |   |-- g2_attempts.csv
+|   |   |-- g2_calibration.csv
+|   |   |-- g2_contrasts.csv
+|   |   |-- g2_pair_weighted.csv
+|   |   |-- g2_results.csv
+|   |   |-- g2_slice_calibration.csv
+|   |   |-- g2_slices.csv
+|   |   |-- g2_subgroups.csv
+|   |   |-- g3_contrasts.csv
+|   |   |-- g3_results.csv
+|   |   |-- g3_within_contrasts.csv
+|   |   |-- g3_within_results.csv
+|   |   |-- g4_contrasts.csv
+|   |   |-- g4_results.csv
+|   |   |-- learning_curves.csv
+|   |   |-- penalty_refits.csv
+|   |   |-- presentation_kernel_abstention.pdf
+|   |   |-- presentation_kernel_study.pdf
+|   |   |-- protocol.json
+|   |   |-- resource_adjustment.json
+|   |   |-- RESULTS.md
+|   |   |-- summary.json
+|   |   |-- temperature_candidates.csv
+|   |   |-- validation_calibration.csv
+|   |   |-- validation_slices.csv
+|   |   `-- verification.json
+|   `-- 16_Retrospective_Cat_CNN\
+|       |-- additional_paired_contrasts.csv
+|       |-- additional_verification.json
+|       |-- design_rank_and_protocol_erratum.json
+|       |-- fair_coin_control.csv
+|       |-- fair_coin_provenance.json
+|       |-- g2_abstention_utility.csv
+|       |-- g2_attempts.csv
+|       |-- g2_calibration.csv
+|       |-- g2_contrasts.csv
+|       |-- g2_results.csv
+|       |-- g2_subgroup_contrasts.csv
+|       |-- g2_subgroups.csv
+|       |-- g3_contrasts.csv
+|       |-- g3_results.csv
+|       |-- g3_within_contrasts.csv
+|       |-- g3_within_results.csv
+|       |-- g4_unsupported.json
+|       |-- learning_curves.csv
+|       |-- penalty_provenance.json
+|       |-- penalty_refits.csv
+|       |-- presentation_abstention.pdf
+|       |-- presentation_cat_cnn.pdf
 |       |-- protocol.json
-|       |-- subgroups.csv
-|       |-- test_contrasts.csv
-|       |-- test_results.csv
-|       |-- validation_results.csv
+|       |-- RESULTS.md
+|       |-- subgroup_verification.json
+|       |-- summary.json
+|       |-- temperature_candidates.csv
+|       |-- test_support_calibration.csv
+|       |-- test_support_slices.csv
+|       |-- validation_support_calibration.csv
+|       |-- validation_support_slices.csv
 |       `-- verification.json
+|-- cat_cnn_selection_manifest.csv
+|-- cat_cnn_verification.json
 |-- demographic_checks_selection_manifest.csv
 |-- demographic_checks_verification.json
 |-- demographic_diagnostics_selection_manifest.csv
@@ -282,6 +414,8 @@ Presentation_Evidence\
 |-- g3_within_cat_verification.json
 |-- g4_selection_manifest.csv
 |-- g4_verification.json
+|-- kernel_selection_manifest.csv
+|-- kernel_verification.json
 |-- original_hashes_after.json
 |-- original_hashes_before.json
 |-- selection_manifest.csv

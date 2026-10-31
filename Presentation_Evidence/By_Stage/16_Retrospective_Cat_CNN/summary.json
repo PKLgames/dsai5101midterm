@@ -1,0 +1,12 @@
+{
+  "status": "complete_retrospective_exploratory",
+  "verification_sha256": "f0137f28169cf3badc3fcc9763e103d69e4463242ce088db668e3270bf4f8cfa",
+  "outputs_sha256": {
+    "learning_curves.csv": "465c6f0d5112bed0c44a304b4a83f915be386bbdd55cb0df8a5bb37ebf87bf21",
+    "presentation_cat_cnn.pdf": "eca3674e115cc9d6d7722003457f300222f476a88cd26d2baa8710df56506902",
+    "RESULTS.md": "45b522a8c079f68b6c3162af0eeca3191a85f1de5d4ce82cdb4c18ade90df65a"
+  },
+  "g4": "unsupported by user choice",
+  "primary_claims_changed": false,
+  "deployment_changed": false
+}

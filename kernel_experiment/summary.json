@@ -1,0 +1,13 @@
+{
+  "status": "complete_retrospective_exploratory",
+  "verification_sha256": "3e0632c0dc38954afeb1411ab0cdf084c1d2493eba69d4a9b0b06962a4ef40ab",
+  "outputs_sha256": {
+    "learning_curves.csv": "34212bd588312b68fbadf93ab7d5628deebd079e58e29ee401c2a1f6b8e371a5",
+    "presentation_kernel_study.pdf": "6b2b459f1abd74799c6501cd38f7b646e41347fd36a39b8573331bf4c12c73a6",
+    "RESULTS.md": "306acf788edb0bf004921fbf17ea1e77783bd121c7a67c5cc63d83c3df9b0df9"
+  },
+  "model": "pooled photo-level RBF Nystr\u00f6m M3-C",
+  "primary_claims_changed": false,
+  "deployment_changed": false,
+  "limitations": "Prior outcome exposure; conditional pointwise intervals, not causal."
+}

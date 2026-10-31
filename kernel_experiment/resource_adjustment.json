@@ -1,0 +1,8 @@
+{
+  "status": "documented_execution_adjustment",
+  "reason": "Two learning-curve workers were stopped shortly after startup when parallel work reduced free memory on the shared machine.",
+  "partial_logs_preserved": ["curve_20261030_025_interrupted_attempts.csv", "curve_20261031_025_interrupted_attempts.csv"],
+  "completion": "Both seeds were subsequently executed sequentially from zero; all eight final subset logs have 21 accepted width/ridge candidates.",
+  "unchanged_scientific_rules": "Same seeds, nested pairs, fitting-only transformations, candidate grid, zero initialization, numerical acceptance and validation selection.",
+  "interpretation": "Interrupted candidate logs are execution history, not final candidate sets or independent model fits."
+}

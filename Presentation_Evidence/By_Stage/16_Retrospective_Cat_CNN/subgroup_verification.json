@@ -1,0 +1,9 @@
+{
+  "status": "passed",
+  "contrasts_replayed": 14,
+  "bootstrap_replicates_per_group": 5000,
+  "g2_prediction_sha256": "a80f995872f8c37f8352d948bc30119d5b519d86128a6eba9763ba84615ccb9c",
+  "g3_prediction_sha256": "2407cc33c930d8a7f6ee23d0de7c453aa5fc64c0d05817219815385d40c16a0d",
+  "raw_test_outcomes_read": false,
+  "limitations": "Post-test subgroup intervals are unadjusted and not independent."
+}

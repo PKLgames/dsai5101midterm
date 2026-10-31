@@ -1,0 +1,9 @@
+{
+  "status": "all_candidates_reproduced",
+  "fits": 49,
+  "maximum_validation_difference": 0.0,
+  "original_attempts_sha256": "5017507a257bed43190736e07b76dc1820b29316757a4de70baa7e6bc6aff455",
+  "output_sha256": "6945b2fb5f0aee0f4885c7a3a0582b3053f23cd91e79855ed3a12d6016d78036",
+  "test_outcomes_read": false,
+  "interpretation": "Post-test motivated validation reconstruction."
+}

@@ -1,0 +1,21 @@
+{
+  "status": "passed",
+  "previous_inventoried_files": 2318,
+  "previous_files_changed": [
+    "Presentation_Evidence/folder_tree.txt"
+  ],
+  "new_files_inventoried": 179,
+  "current_total_project_files_in_scope": 2497,
+  "kernel_presentation_sources": 31,
+  "kernel_presentation_copies_verified": 62,
+  "historical_inventory_sha256": {
+    "file_inventory.csv": "d77b0610ce1d8005db844251ee6b4d3ab64d9e515ce2e2822aee1bb2f4c4068b",
+    "demographic_inventory.csv": "03d4a49e1e69aed42ce3fd2cc18b91d53b0b9382cfb89f8325503f268f0fe8bb",
+    "demographic_diagnostics_inventory.csv": "5361ed0125dab705e94abfb9fe02ab77712bd988980898dc87d8f0e834cadbf4"
+  },
+  "kernel_inventory_sha256": "8eed433eb6c3b7ff3c8ee39b28ee79274e141b5775121bb5f7bd5de7fa0d3a19",
+  "original_project_files_unchanged_during_collection": true,
+  "raw_test_outcomes_reopened": false,
+  "tests_or_evaluations_rerun": false,
+  "lineage": "Read prior inventories in order, then apply kernel inventory; refreshed presentation tree replaces prior row."
+}

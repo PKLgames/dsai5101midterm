@@ -1,0 +1,13 @@
+{
+  "status": "all_checks_passed",
+  "original_project_files_unchanged": 2272,
+  "external_new_project_files_preserved": 2,
+  "external_additions_record_sha256": "2609d4da2778ce8153cd719016c50c60b1406b88a3b7fa600c0aebdce14f25e5",
+  "previous_evidence_files_unchanged_before_tree_refresh": 305,
+  "selected_sources": 32,
+  "copies_verified": 64,
+  "manifest_sha256": "c6467d88bdea0bdfa060410b8358ec27cd19e7f7e111d716d21c21da160b4c77",
+  "study_summary_sha256": "f3a5fa94ce03be0df4f1a899b90c143b1cf1bfe70d2919398e622369d1e32dcd",
+  "primary_claims_models_and_deployment_changed": false,
+  "note": "Historical manifests remain unchanged; only folder_tree.txt refreshed."
+}

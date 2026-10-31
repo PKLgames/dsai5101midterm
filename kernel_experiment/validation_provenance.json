@@ -1,0 +1,13 @@
+{
+  "status": "completed",
+  "responses": 3742,
+  "slices": 16,
+  "bins": 130,
+  "model_freeze_sha256": "c1636a3375c863e13360b611f8a3523021fb08af3616266e602407c3a8d0fa1e",
+  "outputs_sha256": {
+    "validation_slices.csv": "a149fc2b256cc99f34626a33125232db3b0ac554290e795d8f3a5801404f04a0",
+    "validation_calibration.csv": "485e3e2877275246395b5b3111aa7b6b997dc6b507ece690460bdc9076bf1968"
+  },
+  "test_outcomes_read": false,
+  "limitations": "Post-test motivated development diagnostics; not independent."
+}

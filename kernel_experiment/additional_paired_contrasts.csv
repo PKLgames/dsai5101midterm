@@ -1,0 +1,4 @@
+target,reference,candidate,difference,ci_low,ci_high,responses,clusters,interpretation
+g2,C+D,kernel_M3-C,-0.005645379806332278,-0.010203495468784369,-0.001002996504792994,3733,1207,Post-test exploratory; additional demographic inputs and tuning differ.
+g3,C+D,kernel_M3-C,-0.006913455252112139,-0.01349751006279579,-0.0002586013116333984,2250,64,Post-test exploratory; additional demographic inputs and tuning differ.
+g4,C+D,kernel_M3-C,-0.007746975161232068,-0.011780365182538142,-0.0037521420409632,3479,23,Post-test exploratory; additional demographic inputs and tuning differ.

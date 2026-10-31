@@ -1,0 +1,14 @@
+{
+  "status": "frozen_before_saved_test_reanalysis",
+  "label": "curve_20261030_050",
+  "protocol_sha256": "da92996d0b49326be08704b86f4859c514aa569065b26ae7bfe97233ab713fcd",
+  "model_sha256": "044ff78339c081d5af7111671d6454512bc5ca8113efca5fa8eb0c6eb9fff7a2",
+  "attempts_sha256": "d0341b4d7ed49dfa86cdd78318fab9e7f6bb1525b6edebf69a1e7d2158ec28d5",
+  "source_sha256": {
+    "kernel.py": "5b65f560076fdf0e60a17a25c599e951f2103544f5716d83619688c0eff279bf",
+    "study.py": "7f25329c032e38339a557934bfdd129ef482688862a2082d903d171702140a4b"
+  },
+  "g2_freeze_sha256": "47d22cc15fd7e42157b3f45faf634acee325e1288459b47b9635d9e2fd24411a",
+  "source_C_sha256": "1b4d1f937e5a18d21204f25c2168dfa436872b890fa6f34a61c5635d775be426",
+  "prior_outcome_exposure": true
+}

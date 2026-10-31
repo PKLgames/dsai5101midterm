@@ -1,0 +1,111 @@
+{
+  "status": "passed",
+  "selected_fits": [
+    {
+      "model": "g2",
+      "fit_rows": 17421,
+      "validation_rows": 3742,
+      "gradient_max": 9.219894586384884e-07,
+      "validation_replay_delta": 0.0
+    },
+    {
+      "model": "g3",
+      "fit_rows": 14218,
+      "validation_rows": 2063,
+      "gradient_max": 5.350100498420696e-07,
+      "validation_replay_delta": 0.0
+    },
+    {
+      "model": "g4",
+      "fit_rows": 11543,
+      "validation_rows": 3503,
+      "gradient_max": 3.5057458260244784e-07,
+      "validation_replay_delta": 0.0
+    },
+    {
+      "model": "curve_20261030_025",
+      "fit_rows": 4367,
+      "validation_rows": 1836,
+      "gradient_max": 4.634170131469062e-07,
+      "validation_replay_delta": 0.0
+    },
+    {
+      "model": "curve_20261030_050",
+      "fit_rows": 8737,
+      "validation_rows": 1836,
+      "gradient_max": 7.870688899161519e-07,
+      "validation_replay_delta": 0.0
+    },
+    {
+      "model": "curve_20261030_075",
+      "fit_rows": 13057,
+      "validation_rows": 1836,
+      "gradient_max": 6.610608261049074e-07,
+      "validation_replay_delta": 0.0
+    },
+    {
+      "model": "curve_20261030_100",
+      "fit_rows": 17421,
+      "validation_rows": 1836,
+      "gradient_max": 9.219894586384884e-07,
+      "validation_replay_delta": 0.0
+    },
+    {
+      "model": "curve_20261031_025",
+      "fit_rows": 4299,
+      "validation_rows": 1836,
+      "gradient_max": 9.6198240683231e-07,
+      "validation_replay_delta": 0.0
+    },
+    {
+      "model": "curve_20261031_050",
+      "fit_rows": 8636,
+      "validation_rows": 1836,
+      "gradient_max": 5.079760709086824e-07,
+      "validation_replay_delta": 0.0
+    },
+    {
+      "model": "curve_20261031_075",
+      "fit_rows": 13007,
+      "validation_rows": 1836,
+      "gradient_max": 9.423572474786336e-07,
+      "validation_replay_delta": 0.0
+    },
+    {
+      "model": "curve_20261031_100",
+      "fit_rows": 17421,
+      "validation_rows": 1836,
+      "gradient_max": 9.219894586384884e-07,
+      "validation_replay_delta": 0.0
+    }
+  ],
+  "test_replays": [
+    {
+      "target": "g2",
+      "responses": 3733,
+      "models": 7,
+      "contrasts": 6,
+      "clusters": 1207,
+      "bootstrap_replicates": 5000
+    },
+    {
+      "target": "g3",
+      "responses": 2250,
+      "models": 5,
+      "contrasts": 4,
+      "clusters": 64,
+      "bootstrap_replicates": 5000
+    },
+    {
+      "target": "g4",
+      "responses": 3479,
+      "models": 5,
+      "contrasts": 4,
+      "clusters": 23,
+      "bootstrap_replicates": 5000
+    }
+  ],
+  "abstention_cells_replayed": 63,
+  "raw_test_outcomes_read": false,
+  "note": "Recorded previously exposed outcomes remain exploratory; checks are numerical, not independent validation."
+}

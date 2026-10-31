@@ -1,0 +1,2 @@
+comparison_type,responses,pairs,support,log_loss,brier,accuracy
+between_cats,3479,1101,supported,0.6730130069370964,0.2401082999233605,0.5720034492670307

@@ -1,0 +1,20 @@
+{
+  "status": "completed_retrospective",
+  "model_freeze_sha256": "5fa3ecf64bcefc0eca1c8c2887df91d2f5a1b6da1f4cbaceb04affcbfe48ef1f",
+  "original_saved_predictions_sha256": "76af28b020277c97287097550e25f071d216a5ea496dc9b93647dc5cf34b59c6",
+  "outputs_sha256": {
+    "g3_results.csv": "83fe6e5eb091bd48a731945d8c1e2c832c69560ecd3e8b00b0c36be8e2d93273",
+    "g3_contrasts.csv": "4fb18e1f4b636fa0b5c7982a90f8b2d3bfa5b67aa5453b36db05b04197c11035",
+    "g3_predictions.parquet": "843f80a0928218f391ea0f697a68286c65bd8d382f5f5e095222db8079399de4",
+    "g3_subgroups.csv": "23566676765eff113825628aa68d5fb82ce007f344da1ff8d498567fe8d22344",
+    "g3_calibration.csv": "1a42dabe66537f68b594c6c7d245d5233a8c1bdbe6a4b318fe4c9aefa070ec1a"
+  },
+  "responses": 2250,
+  "pairs": 718,
+  "cluster_unit": "held_out_photo",
+  "clusters": 64,
+  "bootstrap_replicates": 5000,
+  "raw_test_outcomes_read": false,
+  "prior_test_exposure": true,
+  "interpretation": "Post-test, 95% pointwise unadjusted; not independently confirmatory or causal."
+}

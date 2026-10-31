@@ -1,0 +1,11 @@
+{
+  "status": "all_checks_passed",
+  "original_project_files_unchanged": 2155,
+  "previous_evidence_files_unchanged_before_tree_refresh": 241,
+  "selected_sources": 31,
+  "copies_verified": 62,
+  "manifest_sha256": "3084e7b4182ff60b1bb0c830531eba4cde5e54009b557f9f37f5aaa060f14c3a",
+  "kernel_summary_sha256": "01852360301ce2eb9492c2a333f608d91bad01ae329466f5298a280bfe6ca976",
+  "primary_claims_models_and_deployment_changed": false,
+  "note": "Historical evidence manifests remain unchanged; only folder_tree.txt refreshed."
+}

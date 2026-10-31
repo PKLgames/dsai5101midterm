@@ -1,0 +1,32 @@
+{
+  "status": "retrospective_post_test_exploratory",
+  "authorization": "User approved a quarantined pooled photo-level RBF Nyström M3-C extension after disclosure of prior outcome exposure.",
+  "model": "P(A)=sigmoid(beta + w^T(phi(C_A)-phi(C_B))); one nonlinear scalar score per photo. No demographic or pet-care interactions.",
+  "kernel": {
+    "type": "RBF on original fitting-only centered/block-RMS CNN embeddings",
+    "gamma": "multiplier divided by the median strictly positive squared Euclidean distance among unique fitting photos",
+    "multipliers": [0.25, 1.0, 4.0],
+    "landmarks": "up to 256 unique fitting photos selected by ascending SHA-256 of UTF-8 'kernel-landmark-20261028:' + image_id; lexical tie",
+    "approximation": "Nyström K(X,L) K(L,L)^(-1/2), symmetric eigendecomposition; clip eigenvalues below 1e-12 times largest eigenvalue to that floor",
+    "transforms": "Fit CNN center/RMS, kernel bandwidth, landmarks, and Nyström center/RMS using unique fitting photos only; refit all transforms inside every learning-curve and G3/G4 fitting split.",
+    "leakage_guard": "Held-out photos/cats cannot be fitting landmarks in G3/G4."
+  },
+  "selection": {
+    "ridge_grid": [0.000001, 0.00001, 0.0001, 0.001, 0.01, 0.1, 1.0],
+    "tie_rule": "within 1e-6 prefer larger ridge, then smaller bandwidth multiplier",
+    "optimizer": "original float64 analytic-gradient zero-start L-BFGS-B, with original retry and gradient <1e-5 acceptance",
+    "loss": "mean response-weighted stable logistic loss; intercept ridge 1e-6; coefficient ridge lambda",
+    "freeze": "Seal selected model and fitting-only transformations after validation selection, before reanalysis of already-saved test outcomes."
+  },
+  "controls": {"seed": 20261102, "repetitions": 20, "baseline": "log(2)", "investigation_trigger": "16 or more improvements or any failed fit"},
+  "learning_curves": {"seeds": [20261030, 20261031], "fractions": [0.25, 0.5, 0.75, 1.0], "validation": "original common intersection, 1836 responses/589 pairs", "retune": "all kernel widths and ridge values within each subset"},
+  "test": {"bootstrap_seed": 20261101, "bootstrap_replicates": 5000, "confidence": "95% pointwise unadjusted; conditional on fitted models"},
+  "abstention": {"thresholds": "0.5 through 1.0 in steps of 0.025", "correct": 1, "incorrect": -1, "abstain": 0, "denominator": "all original test responses", "no_threshold_selection": true},
+  "limits": [
+    "G2, G3, G4 outcomes and prior results have already been exposed. This is post-test exploratory, not independently confirmatory.",
+    "Width/landmark approximation and extra validation search differ from original linear M3-C; same populations and pair weighting do not eliminate selection optimism.",
+    "Kernel scorer retains scalar-ranking structure, does not identify causes or semantic preference effects.",
+    "G3 and G4 must be separately refitted on their own fitting splits; G3 resamples held-out photos and G4 held-out cats.",
+    "No frozen primary claim, original model, report, package or official prediction is modified or replaced."
+  ]
+}

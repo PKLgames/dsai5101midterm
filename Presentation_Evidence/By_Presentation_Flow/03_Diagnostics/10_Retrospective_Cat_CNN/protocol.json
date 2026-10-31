@@ -1,0 +1,33 @@
+{
+  "status": "retrospective_post_test_exploratory",
+  "authorization": "User approved pooled additive Cat + CNN and requested G4 be marked unsupported.",
+  "model": "eta = beta + c(a_cat)-c(b_cat) + w^T(z(a_image)-z(b_image)); no demographic/context interactions.",
+  "objective": "Mean response-weighted stable logistic loss + lambda_cat/2 * ||c||^2 + lambda_cnn/2 * ||w||^2 + 1e-6/2 * beta^2.",
+  "selection": {
+    "cat_ridge_grid": [0.000001, 0.00001, 0.0001, 0.001, 0.01, 0.1, 1],
+    "cnn_ridge_grid": [0.000001, 0.00001, 0.0001, 0.001, 0.01, 0.1, 1],
+    "candidate_count": 49,
+    "tie_rule": "within 1e-6 prefer larger cat ridge, then larger CNN ridge",
+    "optimizer": "original float64 analytic-gradient zero-start L-BFGS-B; original retry and gradient <1e-5 acceptance",
+    "preprocessing": "Original C transform refit on unique fitting photos of each G2/G3/curve split.",
+    "freeze": "Seal selected model and fitting-only transformations after validation selection, before reanalysis of previously saved test outcomes."
+  },
+  "evaluation": {
+    "g2": "original common fit, validation and strict-test rows; pair bootstrap",
+    "g3": "separate refit and tuning on existing G3 core fitting/validation; saved G3 test outcomes; held-out-photo bootstrap",
+    "g4": "unsupported by explicit user choice; no unseen cat identity score is assigned or evaluated",
+    "bootstrap": "5000 shared cluster resamples, seed 20261101, 95% pointwise unadjusted intervals",
+    "primary_metric": "response-weighted natural-log loss",
+    "learning_curves": "original seeds 20261030 and 20261031; 25/50/75/100% pairs; original common validation intersection; refit preprocessing, identities and retune full grid",
+    "temperature": "original grid [0.25,0.5,0.75,1,1.5,2,4] selected on validation by minimum loss; do not promote",
+    "fair_coin": "20 independent fit/validation repetitions seed 20261102; fixed selected settings; investigation trigger >=16 improvements or any failed fit",
+    "abstention": "fixed thresholds 0.5 to 1 by .025, correct +1, incorrect -1, abstain 0; denominator all original test responses; no threshold selected"
+  },
+  "limitations": [
+    "Post-test, retrospective, not independent or confirmatory; all G2 and G3 outcomes were previously exposed.",
+    "Cat and CNN score components are not uniquely identified by likelihood; ridge penalties influence allocation. Do not interpret as a causal or behavioral decomposition.",
+    "G4 unsupported: the user declined the zero-score cold-start convention; no G4 predictions or performance are reported.",
+    "Different penalty tuning searches and model complexity affect comparisons; conditional pair/photo bootstrap omits model-selection/training and some respondent/shared-image dependence.",
+    "No frozen primary claim, model, report, package or official prediction will be replaced."
+  ]
+}

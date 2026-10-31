@@ -1,0 +1,12 @@
+{
+  "status": "passed_operational_control",
+  "seed": 20261102,
+  "repetitions": 20,
+  "failed_fits": 0,
+  "improvements": 0,
+  "mean_loss": 0.6978259973911423,
+  "selected_fixed_width_and_penalty": true,
+  "source_freeze_sha256": "c1636a3375c863e13360b611f8a3523021fb08af3616266e602407c3a8d0fa1e",
+  "results_sha256": "b23015f03c1d6167d73b4a1bff7ed3e4ee98e56b55249a5c029c8104a6bd84f8",
+  "note": "Operational control, not a leakage-free certificate."
+}

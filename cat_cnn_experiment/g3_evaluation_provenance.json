@@ -1,0 +1,20 @@
+{
+  "status": "completed_retrospective",
+  "model_freeze_sha256": "f658520902684b72e475c17f1ed14829c158a0d5e34a5a3bbe68d4e2f9bca6ff",
+  "original_predictions_sha256": "76af28b020277c97287097550e25f071d216a5ea496dc9b93647dc5cf34b59c6",
+  "outputs_sha256": {
+    "g3_results.csv": "987e8b0de2a553da0f2c60508a65f6fd81d996a49b7ee937ee80203567c86687",
+    "g3_contrasts.csv": "75437cd3ef29025735d17b1bbe493d64669dad9e55f79250f040ec5f15d11ab5",
+    "g3_predictions.parquet": "2407cc33c930d8a7f6ee23d0de7c453aa5fc64c0d05817219815385d40c16a0d",
+    "g3_subgroups.csv": "5d8c96c2e56350998b7c61d0e27b26ef2bc8b0678ea1d991ff9bc556b146db98",
+    "g3_calibration.csv": "95db02c459ce9bebdf489acaeb6892dfe76686c53176b1a1c7ebe8414b38f3ca"
+  },
+  "responses": 2250,
+  "pairs": 718,
+  "cluster_unit": "held_out_photo",
+  "clusters": 64,
+  "bootstrap_replicates": 5000,
+  "raw_test_outcomes_read": false,
+  "prior_test_exposure": true,
+  "limitations": "Post-test 95% pointwise unadjusted; not independently confirmatory or causal."
+}
