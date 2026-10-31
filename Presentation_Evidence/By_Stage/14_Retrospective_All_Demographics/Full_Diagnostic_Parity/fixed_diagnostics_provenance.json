@@ -1,0 +1,27 @@
+{
+  "status": "completed_post_test_exploratory",
+  "temperature_freeze_sha256": "6c0da3b41cc09c37adafa978ccfe58c1d80001c41322069a2727a8829f5552fc",
+  "source_demographic_predictions_sha256": "35b66f96e3e295358103eea6f4b8527622854faa41826931a113f8e29317894a",
+  "output_sha256": {
+    "temperature_results.csv": "057aed97797409a656b5a9913639eeb1d3d023bba42a31ca32d4f86979d1ed0f",
+    "abstention_utility.csv": "d65c1c3257df2385c21dbeaa23e4018f48d460b9059d62e63dff24a9066c86e1",
+    "presentation_fixed_diagnostics.pdf": "8f5aece49b54595f399883676e973e47f254de7e62e81bba1a9137ede8a2dcf2"
+  },
+  "test_responses": 3733,
+  "pairs": 1207,
+  "temperature_rows": 4,
+  "abstention_rows": 105,
+  "models": [
+    "D",
+    "Cat+D",
+    "Y+D",
+    "C+D",
+    "M4-C"
+  ],
+  "bootstrap_replicates": 5000,
+  "bootstrap_unit": "unordered pair",
+  "raw_outcomes_reopened": false,
+  "threshold_optimized": false,
+  "deployment_changed": false,
+  "interpretation": "Descriptive pointwise intervals are unadjusted; existing test outcomes were previously exposed."
+}

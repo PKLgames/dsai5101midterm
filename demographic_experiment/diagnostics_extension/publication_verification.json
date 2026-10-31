@@ -1,0 +1,11 @@
+{
+  "status": "all_checks_passed",
+  "previous_project_files_verified_unchanged": 2157,
+  "selected_sources": 37,
+  "copies_verified": 74,
+  "selection_manifest_sha256": "27d883cabbabf9e73a95496f44410832f06e7e471957d506334e9d6b369aa3e2",
+  "diagnostic_summary_sha256": "c00930e97a5bb75066db65a4421f0f38924bf4fd49a15c3ba3358a7f5144aabe",
+  "verification_sha256": "8fb91857a60be101ac7cec810cf9dd331ffddc2bc5b5c667d8d98d6df81bc759",
+  "note": "Historical selection/verification records are retained; folder_tree.txt alone is refreshed.",
+  "original_evaluations_or_deployment_changed": false
+}

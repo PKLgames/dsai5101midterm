@@ -1,0 +1,13 @@
+{
+  "status": "frozen_before_reserved_test_saved_outcome_reanalysis",
+  "target": "G4",
+  "selected_models_sha256": "d145474c1aec07dfcdf30fc08e8f9a412cc259a73bd0e80a9d35eeecb5d6dc7c",
+  "attempts_sha256": "c79a0abbea0d79499a83db12948f3ffc384155a671a766b38c08db2043e57960",
+  "source_code_sha256": {
+    "trainer.py": "bc8105e4d477eb691080174d3465ead220ce3e808e2b8ac37d5a07bc259f915a",
+    "transfer.py": "040f8b544a621f935a94673a8032d5717e80fba250d155ef02027195f4c51e11"
+  },
+  "source_reservation_freeze_sha256": "bdb3c2f5a7fc8636d132c91b815f6f1df04c4b752648ac2e0de68dfcacd5ea56",
+  "original_demographic_freeze_sha256": "b035941c08cf8c2d7739b118a438b6920686f66af391c55b8896f3f017a6e7d0",
+  "prior_exposure": "Reserved outcomes were previously exposed in G2/G3/G4; not an independent test."
+}

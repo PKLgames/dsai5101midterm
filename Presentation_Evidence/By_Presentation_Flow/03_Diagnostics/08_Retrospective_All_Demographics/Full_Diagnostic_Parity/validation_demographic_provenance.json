@@ -1,0 +1,20 @@
+{
+  "status": "completed",
+  "partition": "original_common_strict_validation",
+  "responses": 3742,
+  "models": [
+    "D",
+    "Cat+D",
+    "Y+D",
+    "C+D"
+  ],
+  "subgroup_rows": 104,
+  "calibration_rows": 800,
+  "model_sha256": "c1c631acdecd95bab7bae46655ff7bf30d4959290c058b5990b3140ab3a90554",
+  "outputs_sha256": {
+    "validation_demographic_slices.csv": "cff5708d1de616c1b12fbad6d488dac3dd065d4ca3c4aaddd7ff0240468f2b9d",
+    "validation_demographic_calibration.csv": "6f02f4df0595b024e4ca100069ccdf64272558479c46c2b4a8ceb58c478cf9d0"
+  },
+  "test_outcomes_read": false,
+  "limitations": "Post-test motivated development diagnostics; not independent."
+}

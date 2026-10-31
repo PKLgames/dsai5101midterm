@@ -1,0 +1,23 @@
+{
+  "status": "passed",
+  "verified_utc": "2026-10-31T12:13:03.437847+00:00",
+  "historical_inventory_sha256": "d77b0610ce1d8005db844251ee6b4d3ab64d9e515ce2e2822aee1bb2f4c4068b",
+  "historical_integrity_audit_sha256": "25ed8caaccf22c019a7f16cb2bcc0e5e37b04e46a56b71d6aa27d489519c47f4",
+  "historical_files_verified_unchanged": 2085,
+  "historical_files_updated": [
+    "Presentation_Evidence/folder_tree.txt"
+  ],
+  "new_files_inventoried": 64,
+  "current_total_project_files_in_scope": 2150,
+  "demographic_presentation_sources": 14,
+  "demographic_presentation_copies_verified": 28,
+  "demographic_freeze_sha256": "b035941c08cf8c2d7739b118a438b6920686f66af391c55b8896f3f017a6e7d0",
+  "demographic_frozen_and_evaluation_hashes_verified": true,
+  "fair_coin_control_provenance_verified": true,
+  "historical_independent_replay_record_verified": true,
+  "project_files_unchanged_during_catalog_update": true,
+  "tests_or_evaluations_rerun": false,
+  "raw_outcomes_reopened": false,
+  "supplemental_inventory_sha256": "03d4a49e1e69aed42ce3fd2cc18b91d53b0b9382cfb89f8325503f268f0fe8bb",
+  "lineage": "Original inventory/audit remain historical. Read the supplemental inventory as additions plus the updated folder_tree.txt replacement."
+}

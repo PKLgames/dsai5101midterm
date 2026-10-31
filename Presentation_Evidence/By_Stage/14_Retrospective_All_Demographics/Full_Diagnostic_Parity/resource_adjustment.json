@@ -1,0 +1,11 @@
+{
+  "status": "documented_execution_adjustment",
+  "reason": "Five concurrent high-dimensional fitting processes reduced free physical memory on a shared machine; concurrency was reduced to protect the environment.",
+  "learning_seeds_interrupted": [20261030, 20261031],
+  "completed_and_retained": "The 25% and 50% fitting-subset outputs for both seeds had completed and their SHA-256-linked candidate logs were preserved unchanged.",
+  "partial_logs_preserved": ["curve_20261030_075_interrupted_attempts.csv", "curve_20261031_075_interrupted_attempts.csv", "curve_20261030_100_interrupted_attempts.csv"],
+  "resume": "For each seed the 75% subset restarted from zero; completed 25% and 50% artifacts were hash-checked and skipped. The 20261030 full-size run was interrupted to protect shared memory; 20261031 runs the full-size fit. Once completed, its result can be reused for 20261030 only after verifying that the full fitting rows, order and common validation population are exactly identical for both seeds; this is one fit reported twice, not two independent fits.",
+  "unchanged_scientific_rules": "Same seed, nested pairs, fit-only preprocessing, complete grids, zero initialization, numerical acceptance and validation-selection rules; no incomplete candidate was treated as successful.",
+  "test_outcomes_used": false,
+  "interpretation": "Partial logs are provenance for interrupted execution, not final candidate sets or separate fitted models."
+}

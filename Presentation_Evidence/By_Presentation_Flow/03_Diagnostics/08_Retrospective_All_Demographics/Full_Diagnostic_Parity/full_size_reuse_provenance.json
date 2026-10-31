@@ -1,0 +1,13 @@
+{
+  "status": "identical_full_size_inputs_verified",
+  "source_seed": 20261031,
+  "reported_seed": 20261030,
+  "fitting_responses": 17421,
+  "fitting_pairs": 5634,
+  "validation_responses": 1836,
+  "candidate_log_sha256": "645a68ccb0a086bdae828a93705df2c09f87e623657c5876133166146841b8ef",
+  "source_models_sha256": "a04b479c0ad6e0df948e053132c3b0ca1389dfef5d33204f55d816b8267efb69",
+  "derived_models_sha256": "b4a2c8a2e1b2b2f8e92aee5f011d84627e1df34a7ad52b70027ae8897295023d",
+  "interpretation": "One full-size fit reused for two identical seeds; not independent replications.",
+  "reason": "Reduce memory pressure while preserving the exact full-size candidate procedure."
+}

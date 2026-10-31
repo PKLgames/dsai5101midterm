@@ -1,0 +1,6 @@
+{
+  "status": "existing_reserved_test_outcomes_reanalysis_started",
+  "freeze_sha256": "57c05d7d242e8be24145c89602525d20eae3805109ebe6018ce0a069f2504f2f",
+  "raw_test_outcomes_read": false,
+  "limitation": "Retrospective; outcome access occurred in earlier experiments."
+}

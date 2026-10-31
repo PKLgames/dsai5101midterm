@@ -1,0 +1,8 @@
+{
+  "status": "completed",
+  "pages": 4,
+  "input_sha256": "d65c1c3257df2385c21dbeaa23e4018f48d460b9059d62e63dff24a9066c86e1",
+  "output_sha256": "6f802ca6bd17d8375c72432c83ad97e7454ff6f1a72160779e24ad414d6f9999",
+  "threshold_selected": false,
+  "interpretation": "Post-test descriptive, no independent or causal claim."
+}

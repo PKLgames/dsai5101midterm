@@ -1,0 +1,32 @@
+{
+  "status": "all_requested_additional_diagnostics_available",
+  "learning_curve_rows": 32,
+  "learning_support_rows": 208,
+  "learning_candidate_logs": 8,
+  "learning_distinct_fit_subsets": 7,
+  "learning_full_size_reused_not_independent": true,
+  "full_size_reuse_provenance_sha256": "0b476e28e69e74b90676ef3177055375bbbe217173c5471f09af754ea3981dbf",
+  "learning_model_sha256": {
+    "20261030_025": "3eb7b35dd34e152f21da332282d664bd810f095e6903740b4e7057ac3f844f01",
+    "20261030_050": "8dfba5768f0bcd20336a4c0b1967be63aaa85c9ab66a69d5df4929f2fa04ffae",
+    "20261030_075": "e9ebbd4e9dae7da51f74a51e1c36455a3f0f7cb83ff5b0f4b4a6b2141dc23772",
+    "20261030_100": "b4a2c8a2e1b2b2f8e92aee5f011d84627e1df34a7ad52b70027ae8897295023d",
+    "20261031_025": "9f0002933582b72634e8163ea6b1d7282d31fb67e77ffd11a591f26f7a7ca6e9",
+    "20261031_050": "2a6cb2723b19b95919d40086237d72bde1ba925ffb09ee4bda2365241b7b89a4",
+    "20261031_075": "544f45864b6338f53446cf2ed97d51bff74269710762af015ab9a98464a9a8a2",
+    "20261031_100": "a04b479c0ad6e0df948e053132c3b0ca1389dfef5d33204f55d816b8267efb69"
+  },
+  "penalty_candidates": 94,
+  "penalty_refits": 91,
+  "penalty_fallback_copies": 3,
+  "g3_provenance_sha256": "f672db09bcaa3757b964bf69c494124231a5593cd3f8490406407c8747563f46",
+  "g4_provenance_sha256": "be5f7cf3f0f62408ad6d5a10793657f651bbf391dfb02aaa6af5f221b7653044",
+  "fixed_provenance_sha256": "e8d705426fdf0bd8c67e2b61ee10a103517c4abf1e0701a49a693ad602991b43",
+  "outputs_sha256": {
+    "learning_curves.csv": "31d3a956510e7ee0ac3ee27f8e05d6defc0712b1a65d299031b59a59d3c91400",
+    "learning_curve_support.csv": "a4ac7af190b885954fe6b8273a920563a08a461822c1079136c7c114d2367250",
+    "presentation_learning_penalty_transfer.pdf": "a15d6d7d06aab3575619f22742379f30150d832e88577538878d2234b2099445"
+  },
+  "existing_control_and_calibration": "Original demographic experiment fair-coin controls, calibration, and within/between subgroup outputs are preserved and reused.",
+  "limitations": "All new diagnostics are exploratory after prior test exposure, not causal or independently confirmatory. No deployment selection."
+}

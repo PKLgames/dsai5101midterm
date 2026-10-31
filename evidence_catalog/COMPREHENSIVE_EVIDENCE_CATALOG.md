@@ -1,14 +1,14 @@
 # Comprehensive project evidence catalog
 
 **Project:** Group 19, *Predicting to Diagnose: Cat Identity, Visual Representations, and Context in Cat-Photo Preferences*  
-**Collection date:** 31 October 2026, HKT  
+**Collection date:** 31 October 2026, HKT; demographic experiment and diagnostic-parity supplements added subsequently on 31 October 2026  
 **Purpose:** explain the available figures, tables, numerical results, fitted artifacts, integrity records, and limitations across the entire project, including material not copied into the presentation folder.
 
 ## 1. How to use this catalog
 
-This document is the interpreted evidence list. The companion [file inventory](file_inventory.csv) contains **every inventoried project file individually**: path, canonical source, presentation-copy flag, purpose, supported claim, interpretation limit, byte size, SHA-256, CSV/Parquet row count, column count, and PDF page count where applicable. The [integrity audit](integrity_audit.json) records the checks performed during collection.
+This document is the interpreted evidence list. Read the original [file inventory](file_inventory.csv), then the [demographic supplemental inventory](demographic_inventory.csv), then the [diagnostic-parity inventory](demographic_diagnostics_inventory.csv): each supplement adds new files and replaces the historical row for the refreshed presentation tree. They include individual path, canonical source, presentation-copy flag, purpose, supported claim, interpretation limit, byte size, SHA-256, CSV/Parquet row count, column count, and PDF page count where applicable. The original [integrity audit](integrity_audit.json) and [demographic update audit](demographic_integrity_audit.json) are historical records; the [diagnostic-parity audit](demographic_diagnostics_integrity_audit.json) records the latest inventory checks.
 
-The inventory covers **2,086 files**, including 1,558 dataset photographs, 64 review-panel images, executable sources, tests, and presentation duplicates. It excludes the root Git database, virtual environments, downloaded-model cache, this new catalog directory, and runtime `__pycache__`/plotting-configuration directories. An incidental retained legacy plotting cache is inventoried as a legacy file, not scientific evidence.
+Together the inventories cover **2,318 files**: 2,086 in the original snapshot, 64 demographic-experiment additions, and 168 diagnostic-parity additions; each supplement also records the updated presentation-tree file. They include 1,558 dataset photographs, 64 review-panel images, executable sources, tests, and presentation duplicates. They exclude the root Git database, virtual environments, downloaded-model cache, this catalog directory, and runtime `__pycache__`/plotting-configuration directories. An incidental retained legacy plotting cache is inventoried as a legacy file, not scientific evidence.
 
 **Do not count files as independent evidence.** A PDF, its source CSV, its row-level predictions, and its two presentation copies usually describe the same observations. The inventory's `canonical_source` field makes this explicit. It is not meaningful to add their sample sizes together.
 
@@ -17,9 +17,11 @@ The inventory covers **2,086 files**, including 1,558 dataset photographs, 64 re
 - The **G2, G3, and G4 freeze seals** match their recorded artifacts.
 - **202 recorded provenance hash references** were checked across the core freeze, graph/development/evaluation, report/package, and G3/G4 records.
 - Both current synthesis CSVs preserve the original Stage 10 prefix and satisfy the Stage 10.5 append lineage.
-- **120 presentation copies from 60 selected source files** match their source hashes.
+- The original audit verified **120 presentation copies from 60 selected source files**; the later demographic update verified **28 copies from 14 sources**, and the diagnostic-parity update verified **74 copies from 37 sources**. Earlier audits were not rewritten.
 - The original code ZIP matches the hash in its historical clean-environment reproduction record and passes ZIP CRC verification: **233 entries**, comprising 232 payload files plus its manifest.
 - The inventoried original files did not change during this collection.
+- For the demographic update, **2,085 of 2,086** historical inventory entries still match; the sole changed entry is the intentionally refreshed presentation folder tree. The demographic freeze, selected/output hashes, recorded fair-coin control provenance, independent replay record, and all 28 new copies were checked. No project evidence files changed during the catalog update.
+- For the diagnostic-parity update, the only changed previously inventoried project file was the intentionally refreshed presentation tree. Original files were protected throughout the refits; 74 new presentation copies were checked against their sources. The new G3/G4 saved predictions and 5,000 cluster-bootstrap draws were independently replayed.
 
 These are **integrity checks**, not new empirical findings. No preference model, simulation, evaluation, or existing test suite was rerun for this catalog. Historical successful tests and reconstruction logs are described as historical records, not newly executed tests.
 
@@ -42,6 +44,7 @@ The documented difference is the Stage 11 PDF-only reporting requirement. The pr
 3. Stage 10.5 demographic semantics, frozen-test abstention utility, and the G3 within-cat follow-up are explicitly exploratory supplements.
 4. Official prediction is a **deployment refit on all labeled responses**, not another held-out evaluation.
 5. The original G2 pipeline, report, archive, and claims were not rewritten to absorb the later quarantined G3/G4/utility/deployment results.
+6. The four-model all-demographics experiment was proposed after the original test and prior demographic exploration. It is a quarantined, retrospective predictive supplement, not a new preregistered primary analysis.
 
 ## 2. Evidence vocabulary and claim map
 
@@ -86,7 +89,7 @@ The current ledger has **23 rows**: C01-C07, S01-S10, and X105-01-X105-06.
 | S10 | Unresolved questions | Primary photo/visual intervals span zero; no unique explanation of remaining loss. |
 | X105-01-X105-06 | Six demographic semantic descriptions | Development-only, raw unadjusted rates for gender, pet_history, pet_care, pet_contact, future_pet and mbti_ie; not causal or matched preference effects. |
 
-G3, G4, within-cat G3, utility and deployment results are **not additional completed primary C02-C05 claims**. Where this catalog names them, it is describing separate evidence families, not silently adding new IDs to the frozen claim ledger.
+G3, G4, within-cat G3, all-demographic models, utility and deployment results are **not additional completed primary C02-C05 claims**. Where this catalog names them, it is describing separate evidence families, not silently adding new IDs to the frozen claim ledger.
 
 ### 2.3 Global interpretation safeguards
 
@@ -555,6 +558,202 @@ Thus higher selective accuracy does **not** necessarily improve total utility. U
 
 Uncertainty uses 5,000 shared unordered-pair draws and exploratory 95% pointwise intervals. Accuracy intervals require sufficient retained response/pair support and no undefined empty-retention draws. No test-optimal cutoff or deployment threshold was selected.
 
+## 10A. Retrospective all-demographic predictive models
+
+Directory: [demographic_experiment](../demographic_experiment). This is separate from Stage 10.5's descriptive semantic rates: it fits **new predictive models** after the original G2 test and earlier exploratory analyses. Its model freeze preceded its own analysis of already-saved G2 test outcomes, but this timing does not make the test historically unseen or confirmatory. No new raw test outcomes were parsed, and no existing model, claim, report, code ZIP or official prediction was changed.
+
+### 10A.1 Question, scope and model design
+
+The six demographics are `gender`, `pet_history`, `pet_care`, `pet_contact`, `future_pet` and `mbti_ie`. All are categorical; missing is separate from documented MBTI `unknown`. The original common G2 population is unchanged: **17,421 fitting responses**, **3,742 validation responses**, and **3,733 test responses / 1,207 unordered pairs**.
+
+| Requested procedure | What is modeled | What it can and cannot support |
+|---|---|---|
+| D: demographics only | Intercept plus additive demographic effects on displayed-A probability; no cat/photo/visual input | Conditional displayed-A prediction. It cannot rank photos/cats or determine which visual features a group prefers. A is not established to mean left; presentation randomization is unverified. |
+| Cat+D | Demographic displayed-A effects, pooled cat-score differences, and additive category-by-cat-score deviations | Predictive group-varying cat-score associations while pooling each cat's photos; not causal group preferences or individual effects. Cat-score differences cancel for within-cat comparisons. |
+| Y+D | Demographic displayed-A effects plus the original YOLO–CLIP encoded feature differences and additive demographic-category-by-feature differences | Predictive associations with automated measurements; not proven semantic preferences, causal coat effects or true pedigree. |
+| C+D | Demographic displayed-A effects plus all 576 frozen CNN feature differences and additive demographic-category-by-coordinate differences | Group-varying predictive CNN scoring; CNN coordinates have no verified individual semantic labels. |
+
+No cross-demographic/profile interaction products or H/C/Y fusion were searched. Each category required **at least 100 fitting responses and 30 distinct fitting pairs** for its own deviation. The largest fitting category was the reference, with lexical tie-break; unsupported/unseen categories receive zero deviation. This is an operational rule, not a power guarantee. Y/C preprocessing was recomputed on unique original fitting photos and checked against the existing frozen specifications.
+
+Each Cat/Y/C branch also fit a **side-adjusted no-score-interaction comparator** and allowed its exact logits as a validation candidate for the interaction model. Consequently, comparing each new model to its own side-adjusted counterpart is the relevant descriptive check for the *additional score interactions*; comparisons against the original models also combine demographic side effects, score effects and refitting/regularization differences.
+
+### 10A.2 Artifact-by-artifact evidence
+
+| Item | What it contains | Supported claim / limit |
+|---|---|---|
+| [protocol.json](../demographic_experiment/protocol.json) | Four models, six demographics, fit-only support, penalties, comparison and uncertainty rules | Fixed rules for this retrospective supplement; not prior preregistration before original G2 test access. |
+| [README.md](../demographic_experiment/README.md) | Model definitions, execution order, safeguards and interpretation limits | Methods and scope, not additional data. |
+| [INTERPRETATION.md](../demographic_experiment/INTERPRETATION.md) | Detailed numerical results, matched comparisons, nonclaims and next evidence | Bounded interpretation; predictive, not causal. |
+| [all_fit_attempts.csv](../demographic_experiment/all_fit_attempts.csv) | **94 candidates** including side-adjusted and pooled-fallback candidates, with solver attempts | All were numerically accepted; search records are not 94 independent replications. |
+| [validation_results.csv](../demographic_experiment/validation_results.csv) | **Seven selected procedures**: four requested models plus three side-adjusted comparators | Validation-only model/penalty choices. |
+| [selected_models.json](../demographic_experiment/selected_models.json) | Coefficients, demographic encoding, original-fit Y/C preprocessing and fitting cat keys | Reconstructs predictions; not proof that individual coefficients are identified or causal. |
+| [development_support.csv](../demographic_experiment/development_support.csv) | **52 fitting/validation category support records** | Reference, eligible deviations and zero-fallback states. |
+| [test_support.csv](../demographic_experiment/test_support.csv) | **26 test category support records** | Counts and fallback status without assuming subgroup precision. |
+| [design_conditioning.json](../demographic_experiment/design_conditioning.json) | 20 demographic side columns; rank **16** with intercept versus **21** stored side/intercept coefficients | Six missing indicators coincide in fitting; their separate effects are not identified by the likelihood. Full interaction rank was not computed. |
+| [freeze.json](../demographic_experiment/freeze.json), [freeze.sha256](../demographic_experiment/freeze.sha256), [development_access.json](../demographic_experiment/development_access.json), [evaluation_started.json](../demographic_experiment/evaluation_started.json) | Separate freeze, fit/validation access and write-once saved-test access record | Timing and integrity for this extension only, not a historically pristine test. |
+| [test_predictions.parquet](../demographic_experiment/test_predictions.parquet) | **52,262 predictions** = 14 compared procedures × 3,733 matched responses | Reconstruction and matched losses, not 52,262 independent observations. |
+| [test_results.csv](../demographic_experiment/test_results.csv) | **14 rows**: seven new selected procedures plus seven frozen original comparators | Response/pair-weighted loss, Brier, accuracy and 95% pointwise intervals. |
+| [test_contrasts.csv](../demographic_experiment/test_contrasts.csv) | **Nine matched paired comparisons** | Descriptive response/pair differences and intervals; secondary multiplicity is not adjusted. |
+| [subgroups.csv](../demographic_experiment/subgroups.csv) | **112 requested-model subgroup records** across comparison type and six demographics | Group estimates only when >=100 responses and >=30 pairs; otherwise explicit low-support counts. Not causal subgroup effects. |
+| [calibration.csv](../demographic_experiment/calibration.csv) | **40 bins**: ten overall equal-width bins for each requested model | Observed/predicted frequencies and support flags; not proof of complete information. |
+| [coefficients.csv](../demographic_experiment/coefficients.csv) | **19,257 signed coefficient rows** for requested models | Model reconstruction/inspection only. Scaling, correlated demographics, shrinkage and nonidentifiability prevent causal or independently identified preference claims. |
+| [presentation_demographic_models.pdf](../demographic_experiment/presentation_demographic_models.pdf) | **Two pages**: overall model/paired comparisons and calibration | Presentation visualizations of the same observations; explicitly noncausal and post-test exploratory. |
+| [control_results.csv](../demographic_experiment/control_results.csv), [control_provenance.json](../demographic_experiment/control_provenance.json) | **80 fixed-setting fair-coin fits**, 20 per requested model | Operational control passed; not proof of leakage freedom. |
+| [verification.json](../demographic_experiment/verification.json) | Recorded independent replay of 14 model results, nine paired contrasts and 5,000 bootstrap draws | Historical verification of saved outputs, not a newly run evaluation. |
+| [publication_verification.json](../demographic_experiment/publication_verification.json), [publication_checks_verification.json](../demographic_experiment/publication_checks_verification.json) | Copy-only evidence publication and protected-original checks | Two complementary batches: 14 sources copied to both views. |
+| [original_hashes_before.json](../demographic_experiment/original_hashes_before.json), [evidence_hashes_before.json](../demographic_experiment/evidence_hashes_before.json) | Pre-experiment original and presentation evidence snapshots | Historical preservation checks; later catalog updates are separate. |
+| [experiment.py](../demographic_experiment/experiment.py), [control.py](../demographic_experiment/control.py), [tests.py](../demographic_experiment/tests.py), [verify.py](../demographic_experiment/verify.py) | Implementation, operational control, focused tests and replay source | Methods and verification, not new observations. |
+
+The experiment's current files and the two presentation copies of each selected source are individually listed in the [demographic supplemental inventory](demographic_inventory.csv), including hashes, row/page counts, claim support and interpretation limits.
+
+### 10A.3 Measured model results
+
+The original matched test population is the same for every row. Lower log loss is better.
+
+| Model | Validation loss | Test log loss | Test Brier | Test accuracy | Stored coefficients |
+|---|---:|---:|---:|---:|---:|
+| D | 0.691141 | 0.688863 | 0.247872 | 53.362% | 21 |
+| Cat+side | 0.659772 | 0.658947 | 0.233328 | 60.836% | 258 |
+| Cat+D | 0.659513 | 0.658462 | 0.233131 | 60.836% | 4,998 |
+| Y+side | 0.674472 | 0.675898 | 0.241605 | 57.246% | 121 |
+| Y+D | 0.674380 | 0.675778 | 0.241501 | 57.675% | 2,121 |
+| C+side | 0.662922 | 0.665413 | 0.236570 | 59.175% | 597 |
+| C+D | 0.662324 | 0.663627 | 0.235688 | 59.711% | 12,117 |
+
+D selected ridge **0.001**. Cat+D, Y+D and C+D selected ridge **0.0001** with interaction multiplier **100**; none selected the exact pooled fallback. Stored counts are **not effective degrees of freedom**. Each model retains a displayed-A intercept and categorical side terms.
+
+### 10A.4 Matched paired differences and uncertainty
+
+Positive reference-minus-candidate loss favors the candidate. These are **95% pointwise**, unadjusted, exploratory intervals based on 5,000 identical unordered-pair bootstrap draws. They are conditional on fitted models/selection and do not encompass all respondent, shared-image or training-selection dependence.
+
+| Reference minus candidate | Difference | 95% interval | What the comparison can support |
+|---|---:|---|---|
+| Original M0 minus D | +0.003781 | [0.001330, 0.006287] | Demographics predict some displayed-A tendency on these previously exposed test rows; not proof of an inherent left-side bias. |
+| Original M1 minus Cat+D | +0.004750 | [0.002063, 0.007542] | The combined side-adjusted cat/demographic procedure improves point loss; the contrast does not isolate cat-score interactions. |
+| Original M3-Y minus Y+D | +0.004095 | [0.001055, 0.007105] | Combined YOLO/demographic procedure improves point loss; not proof of group-specific semantic preference. |
+| Original M3-C minus C+D | +0.005576 | [0.002684, 0.008569] | Combined CNN/demographic procedure improves point loss on this retrospective population. |
+| Original M4-C minus C+D | +0.004669 | [0.001890, 0.007567] | Comparison with the original pet-care contextual CNN, not a causal all-demographics effect. |
+| Original M4-side minus C+D | +0.003856 | [0.001383, 0.006422] | Comparison with the original pet-care side-adjusted contextual model. |
+| Cat+side minus Cat+D | +0.000485 | [-0.000001, 0.000960] | Additional cat-score interaction increment is unresolved at this precision; the lower endpoint is approximately **-0.0000013**, not positive. |
+| Y+side minus Y+D | +0.000120 | [-0.001294, 0.001527] | Additional YOLO demographic-score interaction increment is unresolved; do not infer a preference for a trait. |
+| C+side minus C+D | +0.001786 | [0.000660, 0.002951] | A positive extra CNN interaction increment under this approximation; still exploratory, noncausal and not semantically labeled. |
+
+The [contrast table](../demographic_experiment/test_contrasts.csv) also contains **pair-weighted** estimates and intervals. These are different estimands from the response-weighted values above.
+
+### 10A.5 Within-cat and between-cat results
+
+| New model | Within-cat loss: 455 responses / 170 pairs | Between-cat loss: 3,278 responses / 1,037 pairs |
+|---|---:|---:|
+| D | 0.696692 | 0.687776 |
+| Cat+D | 0.697547 | 0.653037 |
+| Y+D | 0.692176 | 0.673502 |
+| C+D | 0.703724 | 0.658061 |
+
+These are descriptive point estimates, not new subgroup-specific superiority claims. Cat+D's pooled cat and demographic-by-cat terms cancel within a cat, leaving displayed-A terms. C+D's within-cat point loss is higher than original M4-C's **0.700987**, despite its lower aggregate loss; the aggregate gain does not imply improvement for every subgroup.
+
+### 10A.6 Missingness, controls, interpretation and next evidence
+
+The fitting references are **man**, **never** for pet history, **never** for pet care, **rarely** for contact, **yes** for future pet, and **I** for MBTI. There are 20 nonreference side columns. The six missing-indicator columns are identical, so their separate effects are not identified by the likelihood; ridge produces a finite allocation but does not turn them into six independently measured missingness effects. Correlated nonmissing demographics can also limit coefficient interpretation.
+
+The historical validation record reports **eight focused tests passed** and **80 accepted fair-coin fits**, using 20 independent label draws per requested model at selected fixed settings. Improvements over the constant log(2) baseline occurred **8/20 for D, 0/20 for Cat+D, 1/20 for Y+D and 0/20 for C+D**. None crossed the repository's >=16/20 investigation trigger and no fit failed. Occasional random improvements are expected; passing is an operational check, not a certificate of no leakage.
+
+The [verification record](../demographic_experiment/verification.json) reports reconstruction of seven new models plus seven original comparators, nine paired intervals and 5,000 draws. Prior execution also checked 112 subgroup support/point-loss records and 40 calibration bins. These are historical checks; this catalog update verifies the records and hashes but does not rerun them.
+
+**Supported interpretation:** demographic predictors and the tested model structures show predictive associations on this already-exposed G2 population. **Not established:** causal effects of demographics, inherent side bias, independently confirmed improvements, individual-level preference consistency, true semantic labels or robust effects for each demographic. Strong shrinkage, incomplete pair overlap, correlated demographics and unavailable respondent IDs remain alternative explanations/limitations.
+
+**Next discriminating evidence:** specify hypotheses and model selection before a genuinely independent sample, verify display-position randomization, obtain respondent linkage and adequate repeated pair/group support, and evaluate side-only and score-interaction models separately.
+
+### 10A.7 Diagnostic parity: controls, calibration, curves, transfer and abstention
+
+The [diagnostic extension](../demographic_experiment/diagnostics_extension) supplies the requested counterparts to the original M4-C evidence for **all four** new demographic procedures. Its [evidence synthesis](../demographic_experiment/diagnostics_extension/DIAGNOSTIC_EVIDENCE.md) contains the detailed tables and interpretation. The original [demographic fair-coin controls](../demographic_experiment/control_results.csv), [overall calibration](../demographic_experiment/calibration.csv), and [within/between-cat slices](../demographic_experiment/subgroups.csv) were already available and were **reused, not rerun or relabeled as new evidence**.
+
+| Requested evidence | Canonical files | Scope / important limitation |
+|---|---|---|
+| Fair-coin control | [Control results](../demographic_experiment/control_results.csv), [control provenance](../demographic_experiment/control_provenance.json) | Historical 20 repetitions per model; 80 accepted fits. Improvements over log(2): D 8/20, Cat+D 0/20, Y+D 1/20, C+D 0/20. No >=16/20 trigger; not a leakage-free certificate. |
+| Calibration | [Original test overall](../demographic_experiment/calibration.csv), [test demographic bins](../demographic_experiment/diagnostics_extension/subgroup_calibration.csv), [test support/quality bins](../demographic_experiment/diagnostics_extension/test_support_calibration.csv), [validation support bins](../demographic_experiment/diagnostics_extension/validation_support_calibration.csv), [validation demographic bins](../demographic_experiment/diagnostics_extension/validation_demographic_calibration.csv) | Ten equal-width bins; bin support requires 30 responses and 10 pairs. Existing and new tables share observations and are not independent replications. |
+| Within/between-cat and support | [Original demographic subgroups](../demographic_experiment/subgroups.csv), [test support/quality slices](../demographic_experiment/diagnostics_extension/test_support_slices.csv), [validation support/quality slices](../demographic_experiment/diagnostics_extension/validation_support_slices.csv), [validation demographic slices](../demographic_experiment/diagnostics_extension/validation_demographic_slices.csv) | Slice threshold 100 responses/30 pairs; YOLO quality flags overlap and must not be summed. Original support labels/counts were checked against M4-C. |
+| Learning curves | [Curve summary](../demographic_experiment/diagnostics_extension/learning_curves.csv), [category support](../demographic_experiment/diagnostics_extension/learning_curve_support.csv), [curve/penalty/transfer figure](../demographic_experiment/diagnostics_extension/presentation_learning_penalty_transfer.pdf) | Two seeds, 25/50/75/100% pairs; all six demographic references/support, Y/C preprocessing and full grid refit at each size on the common validation intersection. |
+| Penalty paths | [94 candidate records](../demographic_experiment/diagnostics_extension/penalty_path_refits.csv), [path provenance](../demographic_experiment/diagnostics_extension/penalty_path_provenance.json), [figure](../demographic_experiment/diagnostics_extension/presentation_learning_penalty_transfer.pdf) | 91 numerical refits and three exact fallback copies; maximum original-validation reproduction difference **0.0**. Coefficient norms are descriptive, not causal importance. |
+| Temperature | [28 validation candidates](../demographic_experiment/diagnostics_extension/temperature_candidates.csv), [temperature freeze](../demographic_experiment/diagnostics_extension/temperature_freeze.json), [four test contrasts](../demographic_experiment/diagnostics_extension/temperature_results.csv) | Seven fixed candidates per model; chosen on validation and sealed before this saved-test reanalysis, but the larger experiment was motivated after test exposure. No promotion. |
+| G3/G4 transfer | [G3 results](../demographic_experiment/diagnostics_extension/g3_results.csv), [G3 contrasts](../demographic_experiment/diagnostics_extension/g3_contrasts.csv), [G4 results](../demographic_experiment/diagnostics_extension/g4_results.csv), [G4 contrasts](../demographic_experiment/diagnostics_extension/g4_contrasts.csv), [figure](../demographic_experiment/diagnostics_extension/presentation_learning_penalty_transfer.pdf) | Separate fitting/validation refits on each original retrospective G3/G4 split; no direct scoring of G2-fitted models on overlapping held-out identities. Neither transfer result is independent confirmation. |
+| Abstention | [105 fixed-cutoff rows](../demographic_experiment/diagnostics_extension/abstention_utility.csv), [four-page dashboard](../demographic_experiment/diagnostics_extension/presentation_abstention_full.pdf), [temperature/utility figure](../demographic_experiment/diagnostics_extension/presentation_fixed_diagnostics.pdf) | The four new models plus original M4-C; +1 correct, -1 incorrect, 0 abstain, utility divided by all original responses. No cutoff or deployment decision selected. |
+
+#### Learning-curve measured values
+
+All rows below use the **same 1,836-response / 589-pair strict-validation intersection**, not the complete 3,742-response validation set. At each fitting fraction, category support and references, unique-fitting-photo preprocessing and penalty selection are recomputed. The exact pooled fallback was selected in **6 of 24** Cat/Y/C curve cells. Different fallback/context support can change the effective model across sizes.
+
+| Seed | Fitting fraction | Fitting responses / pairs / photos | D | Cat+D | Y+D | C+D |
+|---|---:|---|---:|---:|---:|---:|
+| 20261030 | 25% | 4,367 / 1,408 / 1,161 | 0.691447 | 0.681836 | 0.679983 | 0.676050 |
+| 20261030 | 50% | 8,737 / 2,817 / 1,288 | 0.691026 | 0.670841 | 0.679025 | 0.670976 |
+| 20261030 | 75% | 13,057 / 4,225 / 1,296 | 0.691223 | 0.670431 | 0.678217 | 0.670190 |
+| 20261030 | 100% | 17,421 / 5,634 / 1,296 | 0.691033 | 0.670781 | 0.676639 | 0.666076 |
+| 20261031 | 25% | 4,299 / 1,408 / 1,140 | 0.690720 | 0.684690 | 0.679684 | 0.674902 |
+| 20261031 | 50% | 8,636 / 2,817 / 1,281 | 0.690581 | 0.676236 | 0.677460 | 0.672189 |
+| 20261031 | 75% | 13,007 / 4,225 / 1,295 | 0.690903 | 0.673011 | 0.677563 | 0.670768 |
+| 20261031 | 100% | 17,421 / 5,634 / 1,296 | 0.691033 | 0.670781 | 0.676639 | 0.666076 |
+
+These are **validation log losses**. The identical 100% fitting and validation inputs were verified and **one full-size fit was reused** for both seed rows; this is not two independent replicates. The completed final evidence comprises seven distinct fitting subsets, with eight reported seed/fraction logs including that verified duplicate. Partial interruption logs are explicitly labeled and are **not** final candidate sets; see [resource adjustment](../demographic_experiment/diagnostics_extension/resource_adjustment.json) and [full-size reuse provenance](../demographic_experiment/diagnostics_extension/full_size_reuse_provenance.json). Curves do not prove an information limit.
+
+#### Validation-selected temperature results
+
+| Model | Selected T | Unscaled minus scaled G2 loss | 95% pointwise pair interval |
+|---|---:|---:|---|
+| D | 1.5 | -0.000586 | [-0.001487, 0.000342] |
+| Cat+D | 1 | 0 | [0, 0] |
+| Y+D | 1 | 0 | [0, 0] |
+| C+D | 1 | 0 | [0, 0] |
+
+The D interval spans zero; it does not demonstrate a test improvement. For the other three models, T=1 is **exact identity**, not a new improvement. Intervals are pointwise, unadjusted, and conditional on selected procedures.
+
+#### Separately refitted retrospective transfer results
+
+G3 uses **2,250 responses / 718 pairs / 64 held-out photos** and G4 uses **3,479 responses / 1,101 pairs / 23 held-out cats**. Each model was newly fit on its corresponding existing core fitting split, with the original full regularization grid tuned only on that split's validation rows; selected models were frozen before their saved reserved-test outcome reanalysis. Some fit/validation and reserved-test outcomes were previously exposed in G2/G3/G4. CIs below resample the relevant held-out photo or cat and are 95% pointwise, unadjusted.
+
+| Model | G3 loss and 95% photo interval | G4 loss and 95% cat interval |
+|---|---|---|
+| D | 0.689100 [0.686252, 0.691784] | 0.688684 [0.685652, 0.691689] |
+| Cat+D | 0.657926 [0.646415, 0.669205] | 0.676922 [0.670194, 0.683216] |
+| Y+D | 0.678040 [0.671594, 0.684268] | 0.672731 [0.663856, 0.680670] |
+| C+D | 0.666009 [0.654564, 0.676922] | 0.665266 [0.657928, 0.672747] |
+
+G4 Cat+D fixes **both** the unseen cat's pooled score and all demographic-specific score deviations to zero. This is a cold-start convention, not a learned unseen-cat preference. G4 Y+D selected its **exact side-adjusted no-score-interaction fallback**, so its comparison with Y+side is exactly zero by construction.
+
+Score-interaction increments must be compared with the matched side-adjusted procedures:
+
+| Contrast | G3 difference [95% interval] | G4 difference [95% interval] |
+|---|---|---|
+| Cat+side minus Cat+D | +0.001302 [0.000540, 0.002088] | +0.000455 [-0.000064, 0.000993] |
+| Y+side minus Y+D | +0.001019 [-0.001290, 0.003299] | 0 [0, 0], exact fallback |
+| C+side minus C+D | +0.002156 [0.000368, 0.003852] | +0.002883 [0.001739, 0.004078] |
+
+These are retrospective predictive comparisons, not causal demographic or semantic preferences. In particular, G3/G4 YOLO interaction evidence remains unresolved or was not selected; a gain over original M3-Y can combine demographic side effects and refitting. G4 does not evaluate two unseen cats.
+
+#### Abstention: fixed-cutoff illustration
+
+The confidence grid is **0.50–1.00 by 0.025**, with ties retained together. Utility uses correct +1, incorrect -1, abstain 0 and the denominator **all 3,733 original responses**. Selective accuracy is undefined when no rows remain. The full table contains 105 model/cutoff cells and pointwise pair-bootstrap intervals.
+
+| Model | Cutoff | Retained | Coverage | Selective accuracy | Utility / original response |
+|---|---:|---:|---:|---:|---:|
+| D | 0.50 | 3,733 | 100% | 53.36% | 0.067238 |
+| D | 0.60 | 0 | 0% | undefined | 0 |
+| Cat+D | 0.50 | 3,733 | 100% | 60.84% | 0.216716 |
+| Cat+D | 0.60 | 1,715 | 45.94% | 67.11% | 0.157246 |
+| Y+D | 0.50 | 3,733 | 100% | 57.67% | 0.153496 |
+| Y+D | 0.60 | 1,159 | 31.05% | 63.85% | 0.085990 |
+| C+D | 0.50 | 3,733 | 100% | 59.71% | 0.194214 |
+| C+D | 0.60 | 1,701 | 45.57% | 66.26% | 0.148138 |
+| Original M4-C | 0.50 | 3,733 | 100% | 58.85% | 0.177069 |
+| Original M4-C | 0.60 | 1,575 | 42.19% | 65.52% | 0.130994 |
+
+For these examples, higher retained accuracy does not yield higher utility across all original cases. No cutoff was chosen from test outcomes. Under calibrated probabilities and these particular symmetric payoffs, always predicting is weakly optimal in *model-implied* expected total utility; that is not proof of actual calibration.
+
+#### Verification and preservation
+
+[Diagnostic verification](../demographic_experiment/diagnostics_extension/verification.json) records independent reconstruction of **12 models and eight contrasts** on each of G3 and G4, including **5,000 cluster-bootstrap draws** per target; all **105 abstention point cells** and four temperature test losses were checked. Five focused extension tests passed, including identity-disjoint split and G4 unseen-cat-zero interaction checks. Those are historical execution results, not tests rerun for the catalog update.
+
+The [diagnostic summary](../demographic_experiment/diagnostics_extension/diagnostic_summary.json) records 32 curve rows, 208 category-support rows, the distinct-full-size reuse, original evidence checks and output hashes. [Publication verification](../demographic_experiment/diagnostics_extension/publication_verification.json) checked **2,157 pre-existing project files** unchanged before refreshing the presentation tree and verified **74 copies** of 37 source files. Original G2/G3/G4 claims, frozen models, report, ZIP, and official predictions were not replaced.
+
 ## 11. Quarantined retrospective G3, within-cat G3, and G4
 
 These experiments use separate fitting/validation/model/freeze/output directories. They preserve the original G2 pipeline, but **cannot erase prior outcome exposure**. A fresh directory or different split is not a new independent test.
@@ -732,7 +931,7 @@ Directory: [Presentation_Evidence](../Presentation_Evidence). Its [folder tree](
 - `By_Stage`: pipeline order, then isolated retrospective experiments.
 - `By_Presentation_Flow`: Data, Models, Diagnostics, Claims.
 
-There are **120 copied assets**, from **60 selected original source files**, plus **13 root metadata files**. The copies add no observations or independent tests.
+There are now **222 copied assets**, from **111 selected original source files**, plus **19 root metadata files**. The copies add no observations or independent tests.
 
 | Copy batch | Unique sources | Copies | Metadata |
 |---|---:|---:|---|
@@ -741,10 +940,12 @@ There are **120 copied assets**, from **60 selected original source files**, plu
 | G3 | 7 | 14 | [g3_selection_manifest.csv](../Presentation_Evidence/g3_selection_manifest.csv), [g3_verification.json](../Presentation_Evidence/g3_verification.json) |
 | Within-cat G3 | 6 | 12 | [g3_within_cat_selection_manifest.csv](../Presentation_Evidence/g3_within_cat_selection_manifest.csv), [g3_within_cat_verification.json](../Presentation_Evidence/g3_within_cat_verification.json) |
 | G4 | 7 | 14 | [g4_selection_manifest.csv](../Presentation_Evidence/g4_selection_manifest.csv), [g4_verification.json](../Presentation_Evidence/g4_verification.json) |
+| All-demographic models and checks | 14 | 28 | [demographic_selection_manifest.csv](../Presentation_Evidence/demographic_selection_manifest.csv), [demographic_verification.json](../Presentation_Evidence/demographic_verification.json), [demographic_checks_selection_manifest.csv](../Presentation_Evidence/demographic_checks_selection_manifest.csv), [demographic_checks_verification.json](../Presentation_Evidence/demographic_checks_verification.json) |
+| All-demographic diagnostic parity | 37 | 74 | [demographic_diagnostics_selection_manifest.csv](../Presentation_Evidence/demographic_diagnostics_selection_manifest.csv), [demographic_diagnostics_verification.json](../Presentation_Evidence/demographic_diagnostics_verification.json) |
 
 Earlier manifests remain historical. Their smaller original-file counts reflect creation time and scope, not missing current files. The folder tree is intentionally refreshed when a new evidence batch is added. **Official prediction artifacts are not automatically part of the presentation copy selection or original report/ZIP.**
 
-Material outside this folder includes row-level predictions, complete candidate logs, full context/pair tables, feature caches and masks, all original models, individual review panels, provenance/access history, reproduction logs, deployment models/predictions, and methods/tests. The file inventory covers them all.
+Material outside this folder includes row-level predictions, complete candidate logs, full context/pair tables, feature caches and masks, all original models, individual review panels, provenance/access history, reproduction logs, deployment models/predictions, and methods/tests. The original inventory and both supplemental inventories together cover them.
 
 ## 15. What is not a completed evidence claim
 

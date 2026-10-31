@@ -1,0 +1,19 @@
+{
+  "status": "passed",
+  "verified_utc": "2026-10-31T13:13:12.974606+00:00",
+  "previously_inventoried_files": 2150,
+  "previous_files_changed": [
+    "Presentation_Evidence/folder_tree.txt"
+  ],
+  "new_files_inventoried": 168,
+  "current_total_project_files_in_scope": 2318,
+  "presentation_sources": 37,
+  "presentation_copies_verified": 74,
+  "previous_catalog_inventory_sha256": "d77b0610ce1d8005db844251ee6b4d3ab64d9e515ce2e2822aee1bb2f4c4068b",
+  "previous_demographic_inventory_sha256": "03d4a49e1e69aed42ce3fd2cc18b91d53b0b9382cfb89f8325503f268f0fe8bb",
+  "supplemental_inventory_sha256": "5361ed0125dab705e94abfb9fe02ab77712bd988980898dc87d8f0e834cadbf4",
+  "project_files_unchanged_during_catalog_collection": true,
+  "tests_or_evaluations_rerun": false,
+  "raw_outcomes_reopened": false,
+  "lineage": "Read the original and demographic inventories, then apply this supplemental inventory; the refreshed presentation tree replaces its prior row."
+}

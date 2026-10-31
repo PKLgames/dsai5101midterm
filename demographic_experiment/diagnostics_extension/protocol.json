@@ -1,0 +1,27 @@
+{
+  "status": "retrospective_post_test_exploratory",
+  "models": ["D", "Cat+D", "Y+D", "C+D"],
+  "original_g2": "Reuse matched original G2 rows. Never change original model selection, freeze, claims, report, package, deployment or prior experiment artifacts.",
+  "already_available": ["20-draw fair-coin controls", "overall test calibration bins", "within/between-cat subgroup metrics"],
+  "learning_curves": {
+    "sizes": [0.25, 0.5, 0.75, 1.0],
+    "seeds": [20261030, 20261031],
+    "validation": "Original shared 1836-response/589-pair strict-G2 intersection; recompute eligibility for each size and both seeds, with existing 100-response/30-pair fallback rule.",
+    "fit": "At each subset refit demographic category support/reference and C/Y preprocessing on unique fitting photos; retune registered seven ridge penalties and interaction multipliers 1/10/100. Compare exact no-interaction fallback; log every candidate and failure.",
+    "scope": "Conditional development learning curve after prior test exposure, not a new independent test or information-limit estimate."
+  },
+  "penalty_paths": "Reproduce every original demographic development candidate with zero-start and record training loss, validation loss, coefficient norm and numerical acceptance. Reconstructed losses must match logged original attempt within 1e-6.",
+  "temperature": {
+    "grid": [0.25, 0.5, 0.75, 1, 1.5, 2, 4],
+    "selection": "Per model choose minimum original common validation loss, tolerance 1e-6; if tied prefer temperature closest to 1, then smaller temperature. Freeze choices before accessing saved test outcomes; do not promote.",
+    "evaluation": "Paired test loss differences from already-saved demographic logits/outcomes; 5000 shared pair draws, 95% pointwise unadjusted intervals."
+  },
+  "transfer": {
+    "G3": "Refit and tune each demographic procedure on existing G3 core fitting and validation only, with fit-only demographics/C/Y preprocessing and known-cat identity design. Freeze before reading existing G3 test prediction outcomes; bootstrap by held-out photo.",
+    "G4": "Refit and tune on existing G4 core fitting and validation only; for each unseen cat set both its pooled cat score and every demographic-specific cat-score deviation to zero. Freeze before reading existing G4 test prediction outcomes; bootstrap by held-out cat.",
+    "fallback": "Demographic side-only branch plus separately tuned score-only side-adjusted fallback; never select a test winner or alter deployment.",
+    "prior_exposure": "Original G2, G3, G4 outcomes have already been exposed. Prior G3/G4 comparison models were trained on different partitions. Tests are retrospective, not independent confirmation."
+  },
+  "abstention": "Reuse frozen demographic test predictions and exact prior Stage 10 confidence thresholds 0.5 to 1 step 0.025; +1 correct, -1 incorrect, 0 abstain; denominator all original test responses; shared 5000 pair-bootstrap draws; no cutoff chosen.",
+  "interpretation": ["Predictive association, not causal effect.", "Displayed A is not established to be screen-left.", "Demographics-only cannot rank cats or photos.", "Demographic missing columns are redundant and individual missing-field effects are not separately identifiable.", "No confidence- or utility-based deployment decision."]
+}

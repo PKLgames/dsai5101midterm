@@ -1,0 +1,13 @@
+{
+  "status": "completed",
+  "subgroup_rows": 64,
+  "calibration_rows": 640,
+  "original_support_flags_sha256": "e390f1dd6cfbbb1ef93a70dfc7d772f244cdc87b330e56137b21429b7fb897a8",
+  "demographic_predictions_sha256": "35b66f96e3e295358103eea6f4b8527622854faa41826931a113f8e29317894a",
+  "output_sha256": {
+    "test_support_slices.csv": "830eebf3a036b0cf429e149ff86d1795f8b185208a773e38ab500b1a499c1362",
+    "test_support_calibration.csv": "d95d14458ed20a5e4384913d272b677e6943f421854d5119b880d09e08fecd71"
+  },
+  "raw_outcomes_reopened": false,
+  "interpretation": "Post-test descriptive slices; quality flags overlap; low-support values flagged."
+}

@@ -1,0 +1,24 @@
+{
+  "status": "independent_replay_passed",
+  "g3": {
+    "responses": 2250,
+    "models": 12,
+    "contrasts": 8,
+    "clusters": 64,
+    "bootstrap_replicates": 5000
+  },
+  "g4": {
+    "responses": 3479,
+    "models": 12,
+    "contrasts": 8,
+    "clusters": 23,
+    "bootstrap_replicates": 5000
+  },
+  "abstention_cells_point_checked": 105,
+  "temperature_test_point_metrics_checked": 4,
+  "learning_rows": 32,
+  "penalty_refits": 91,
+  "summary_sha256": "c00930e97a5bb75066db65a4421f0f38924bf4fd49a15c3ba3358a7f5144aabe",
+  "raw_outcomes_reopened": false,
+  "limitations": "Existing outcomes previously exposed; not independent."
+}

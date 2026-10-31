@@ -1,0 +1,18 @@
+{
+  "status": "completed",
+  "rows": 1160,
+  "test_responses": 3733,
+  "models": [
+    "D",
+    "Cat+D",
+    "Y+D",
+    "C+D"
+  ],
+  "bins": 10,
+  "minimum_bin_responses": 30,
+  "minimum_bin_pairs": 10,
+  "source_saved_predictions_sha256": "35b66f96e3e295358103eea6f4b8527622854faa41826931a113f8e29317894a",
+  "output_sha256": "8263720608139fee1e2ff29fcfa6f5b1adb3ec52b521a1e5a9356360fd8e7cc9",
+  "raw_outcomes_reopened": false,
+  "interpretation": "Post-test descriptive reliability only; low-support bins retained and flagged."
+}

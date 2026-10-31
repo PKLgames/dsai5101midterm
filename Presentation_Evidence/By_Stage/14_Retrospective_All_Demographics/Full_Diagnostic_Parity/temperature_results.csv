@@ -1,0 +1,5 @@
+model,temperature,unscaled_loss,temperature_loss,difference_unscaled_minus_temperature,ci95_low,ci95_high,bootstrap_se,pair_ci95_low,pair_ci95_high,responses,pairs,interpretation
+D,1.5,0.6888632111546124,0.6894488546117186,-0.0005856434571061011,-0.0014873256124750267,0.0003420716694947553,0.0004704245148788847,-0.0018441476632691024,8.645072716299781e-05,3733,1207,Post-test exploratory; validation-fixed temperature; no promotion.
+Cat+D,1.0,0.6584620752623745,0.6584620752623745,0.0,0.0,0.0,0.0,0.0,0.0,3733,1207,Post-test exploratory; validation-fixed temperature; no promotion.
+Y+D,1.0,0.6757781787883579,0.6757781787883579,0.0,0.0,0.0,0.0,0.0,0.0,3733,1207,Post-test exploratory; validation-fixed temperature; no promotion.
+C+D,1.0,0.6636265824745735,0.6636265824745735,0.0,0.0,0.0,0.0,0.0,0.0,3733,1207,Post-test exploratory; validation-fixed temperature; no promotion.

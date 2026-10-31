@@ -1,0 +1,22 @@
+{
+  "status": "validation_selected_before_temperature_test_reanalysis",
+  "temperature": {
+    "D": 1.5,
+    "Cat+D": 1.0,
+    "Y+D": 1.0,
+    "C+D": 1.0
+  },
+  "selection_grid": [
+    0.25,
+    0.5,
+    0.75,
+    1.0,
+    1.5,
+    2.0,
+    4.0
+  ],
+  "source_sha256": "c1c631acdecd95bab7bae46655ff7bf30d4959290c058b5990b3140ab3a90554",
+  "validation_candidates_sha256": "3e45aa8451fd0301d5d7a799e4c0b9bc511e5fa29cb450935d3063d663e0a211",
+  "demographic_freeze_sha256": "b035941c08cf8c2d7739b118a438b6920686f66af391c55b8896f3f017a6e7d0",
+  "prior_test_exposure": "Original G2 and demographic model test outcomes were already exposed; post-test diagnostic."
+}

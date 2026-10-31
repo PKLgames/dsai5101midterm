@@ -1,0 +1,21 @@
+{
+  "status": "all_candidates_reproduced",
+  "candidate_records": 94,
+  "numerical_refits": 91,
+  "exact_fallback_copies": 3,
+  "maximum_abs_validation_difference": 0.0,
+  "selected_model_names": [
+    "D",
+    "Cat+side",
+    "Cat+D",
+    "Y+side",
+    "Y+D",
+    "C+side",
+    "C+D"
+  ],
+  "source_attempts_sha256": "3b3bf09bc281a309e6604a886b24689b6b92fca9057eb28a1a92980f7611d248",
+  "refit_attempts_sha256": "21c00e12e134f1ef3c593940e76d63ace0ecbda079d4c9f2f2590eda0e3141a7",
+  "output_sha256": "67fb8247c0f94d295fd7eb75227817a249daa11034030195b450b087a2683617",
+  "test_outcomes_read": false,
+  "post_test_development_diagnostic": true
+}

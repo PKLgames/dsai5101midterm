@@ -1,0 +1,19 @@
+{
+  "status": "retrospective_transfer_completed",
+  "freeze_sha256": "57c05d7d242e8be24145c89602525d20eae3805109ebe6018ce0a069f2504f2f",
+  "source_predictions_sha256": "76af28b020277c97287097550e25f071d216a5ea496dc9b93647dc5cf34b59c6",
+  "raw_test_outcomes_read": false,
+  "outputs_sha256": {
+    "g3_results.csv": "bc3c4b4c1f37f5ebc55b1c4c2390255df912d8474ffb38f3632ade8a3ac54a20",
+    "g3_contrasts.csv": "c020e2bac669611ef4f781d41b450ea5a432de3be6b922a87fed6c1c3db98006",
+    "g3_predictions.parquet": "f735cc19056bedbf8727bbc99e8e1036fd6cec6353639953c76f0173865d060d"
+  },
+  "responses": 2250,
+  "pairs": 718,
+  "clusters": 64,
+  "cluster_unit": "held_out_photo",
+  "bootstrap_replicates": 5000,
+  "limitations": "Post-test retrospective; held-out photo/cat bootstrap does not account for all dependence; 95% pointwise unadjusted intervals.",
+  "g4_unseen_cat_zero": false,
+  "deployment_changed": false
+}

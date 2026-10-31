@@ -1,0 +1,6 @@
+{
+  "status": "previously_saved_g2_outcome_analysis_started",
+  "temperature_freeze_sha256": "6c0da3b41cc09c37adafa978ccfe58c1d80001c41322069a2727a8829f5552fc",
+  "raw_outcomes_reopened": false,
+  "limitations": "Post-test, retrospective, noncausal; no model/temperature/threshold promotion."
+}
