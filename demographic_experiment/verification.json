@@ -1,0 +1,15 @@
+{
+  "status": "independent_replay_passed",
+  "matched_test_responses": 3733,
+  "models_verified": 14,
+  "selected_new_models": 7,
+  "paired_contrasts_verified": 9,
+  "bootstrap_replicates_replayed": 5000,
+  "exact_pooled_fallbacks_verified": true,
+  "validation_predictions_replayed": true,
+  "single_evaluation_guard_verified": true,
+  "original_files_unchanged": 2026,
+  "pdf_pages": 2,
+  "raw_test_outcomes_parsed": false,
+  "prediction_sha256": "35b66f96e3e295358103eea6f4b8527622854faa41826931a113f8e29317894a"
+}

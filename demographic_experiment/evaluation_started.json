@@ -1,0 +1,6 @@
+{
+  "status": "saved_g2_test_outcome_reanalysis_started",
+  "freeze_sha256": "b035941c08cf8c2d7739b118a438b6920686f66af391c55b8896f3f017a6e7d0",
+  "raw_test_outcomes_read": false,
+  "note": "Existing G2 test outcomes were previously exposed; this is post-test exploratory."
+}

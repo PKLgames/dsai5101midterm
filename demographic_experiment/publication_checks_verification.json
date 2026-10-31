@@ -1,0 +1,13 @@
+{
+  "status": "all_checks_passed",
+  "sources_copied": 5,
+  "new_copies_verified": 10,
+  "total_new_model_and_checks_sources": 14,
+  "total_new_copies": 28,
+  "original_files_unchanged": 2026,
+  "previous_evidence_files_unchanged_before_tree_refresh": 153,
+  "manifest_sha256": "531b7c736eab7a01f42f5fb9586b877a04b498c525d865ac96518761227c71af",
+  "base_publication_verification_sha256": "36122b0b68584e740441ae2fe3af215341d8eccd7f11d4094f41f251e12db3dd",
+  "experiment_freeze_sha256": "b035941c08cf8c2d7739b118a438b6920686f66af391c55b8896f3f017a6e7d0",
+  "no_original_claim_or_official_prediction_update": true
+}

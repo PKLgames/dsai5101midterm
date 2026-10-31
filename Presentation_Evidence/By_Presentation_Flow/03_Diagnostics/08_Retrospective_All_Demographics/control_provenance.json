@@ -1,0 +1,33 @@
+{
+  "status": "passed_operational_control",
+  "repetitions": 20,
+  "fits": 80,
+  "failed_fits": 0,
+  "seed": 20261102,
+  "baseline": 0.6931471805599453,
+  "improved_repetitions": {
+    "D": 8,
+    "Cat+D": 0,
+    "Y+D": 1,
+    "C+D": 0
+  },
+  "mean_validation_loss": {
+    "D": 0.6933343493120924,
+    "Cat+D": 0.6998311886579811,
+    "Y+D": 0.694975304602079,
+    "C+D": 0.7001810980327862
+  },
+  "investigation_trigger": "Existing repository rule: >=16 of 20 fair-coin validation improvements or any failed fits.",
+  "investigation_triggered": {
+    "D": false,
+    "Cat+D": false,
+    "Y+D": false,
+    "C+D": false
+  },
+  "test_outcomes_read": false,
+  "fixed_settings_not_retuned": true,
+  "source_sha256": "ce4c799af6fe1d22dd6e62a4d848d1b5c77b9dbaaf26a2e98f7d5ed0d26addfe",
+  "freeze_sha256": "b035941c08cf8c2d7739b118a438b6920686f66af391c55b8896f3f017a6e7d0",
+  "results_sha256": "83357168e842add1ac3cb088d3581fe98728d42ad4d60d37ef6a4e2925cd5b5a",
+  "note": "Operational leakage/recovery probe only, not proof of leakage freedom or model generalization."
+}

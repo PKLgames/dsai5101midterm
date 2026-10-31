@@ -1,0 +1,49 @@
+{
+  "fitting_responses": 17421,
+  "side_columns": 20,
+  "side_design_with_intercept_rank": 16,
+  "stored_columns_including_intercept": 21,
+  "identical_columns": [
+    {
+      "column": "gender=<missing>",
+      "identical_to": [
+        "pet_history=<missing>",
+        "pet_care=<missing>",
+        "pet_contact=<missing>",
+        "future_pet=<missing>",
+        "mbti_ie=<missing>"
+      ]
+    },
+    {
+      "column": "pet_history=<missing>",
+      "identical_to": [
+        "pet_care=<missing>",
+        "pet_contact=<missing>",
+        "future_pet=<missing>",
+        "mbti_ie=<missing>"
+      ]
+    },
+    {
+      "column": "pet_care=<missing>",
+      "identical_to": [
+        "pet_contact=<missing>",
+        "future_pet=<missing>",
+        "mbti_ie=<missing>"
+      ]
+    },
+    {
+      "column": "pet_contact=<missing>",
+      "identical_to": [
+        "future_pet=<missing>",
+        "mbti_ie=<missing>"
+      ]
+    },
+    {
+      "column": "future_pet=<missing>",
+      "identical_to": [
+        "mbti_ie=<missing>"
+      ]
+    }
+  ],
+  "interpretation": "Identical or correlated demographic indicators mean separate effects are not identified by the likelihood. Ridge chooses a finite coefficient allocation, not independently measured demographic causes. Joint all-missing effects cannot be attributed to individual fields. Stored parameter counts are not effective degrees of freedom. Full interaction rank is not computed."
+}

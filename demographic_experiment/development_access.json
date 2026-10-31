@@ -1,0 +1,8 @@
+{
+  "status": "original_fit_validation_only",
+  "fitting_responses": 17421,
+  "validation_responses": 3742,
+  "test_outcomes_read": false,
+  "raw_training_outcomes_parsed": false,
+  "note": "Retrospective analysis; earlier outcome access already occurred."
+}

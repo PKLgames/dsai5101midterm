@@ -1,0 +1,46 @@
+{
+  "status": "retrospective_post_test_exploratory",
+  "models_requested": ["demographics-only", "cat + all demographics", "YOLO-CLIP + all demographics", "CNN + all demographics"],
+  "demographics": ["gender", "pet_history", "pet_care", "pet_contact", "future_pet", "mbti_ie"],
+  "population": "Original common G2 fitting and strict validation/test response IDs; preserve original split.",
+  "design": {
+    "D": "eta = beta + sum_j gamma_j(demographic_j); predicts displayed-A tendencies only.",
+    "Cat+D": "eta = beta + sum_j gamma_j + (c_A-c_B) + sum_j (v_j,A-v_j,B). Cat scores pool photos of a cat.",
+    "Y+D": "eta = beta + sum_j gamma_j + w^T delta_Y + sum_j v_j^T delta_Y.",
+    "C+D": "eta = beta + sum_j gamma_j + w^T delta_C + sum_j v_j^T delta_C.",
+    "additivity": "One set of deviations per eligible nonreference category per demographic; no cross-demographic/profile interaction products.",
+    "side_effects": "All models use the same additive demographic displayed-A effects to separate side tendencies from score interactions.",
+    "reference": "Per demographic, largest fitting-response eligible category; lexical tie.",
+    "support": "Category needs >=100 fitting responses and >=30 distinct fitting pairs. Unsupported/unseen categories have zero side/score deviation and are explicitly counted.",
+    "missing": "Separate <missing>; documented MBTI unknown is retained. Gender vocabulary is audited rather than assumed.",
+    "visual": "Use full original admitted Y numeric/categorical encoding and all 576 CNN coordinates separately. No H/C/Y fusion.",
+    "preprocessing": "Recompute Y/C on unique original common fitting photos and require equality with frozen specifications."
+  },
+  "selection": {
+    "ridge_grid": [0.000001, 0.00001, 0.0001, 0.001, 0.01, 0.1, 1],
+    "interaction_multipliers": [1, 10, 100],
+    "objective": "Mean stable response logistic loss + ridge/2 on side and pooled score coefficients + ridge*rho/2 on score interactions + 1e-6/2 on intercept.",
+    "optimizer": "Existing float64 zero-start L-BFGS-B; max gradient <1e-5; existing one-retry policy.",
+    "no_interaction_fallback": "For each Cat/Y/C branch select a side-adjusted no-score-interaction model on validation, then include its exact copied logits as a candidate for the requested interaction model.",
+    "ties": "Within 1e-6 prefer exact no-interaction fallback, otherwise larger ridge then rho.",
+    "test": "Freeze specification/encoding/preprocessing/model choices before reading already-saved G2 test outcomes. No raw test label parsing, tuning or representation winner on test."
+  },
+  "evaluation": {
+    "bootstrap": "5000 identical unordered-pair draws for all models; seed 20261101; preserve all responses and sampled pair multiplicity; recompute response denominator.",
+    "intervals": "95% pointwise exploratory, not multiplicity adjusted, conditional on selected fits.",
+    "metrics": ["response-weighted natural-log loss", "pair-weighted log loss", "Brier", "accuracy"],
+    "comparators": "Original frozen M0/M1/M3-Y/M3-C/M4-C/M3-side/M4-side and each new matched no-interaction side-adjusted branch.",
+    "subgroups": "Within/between cat and six individual demographics; report estimates only at >=100 responses and >=30 pairs, otherwise counts with low-support flag.",
+    "calibration": "10 equal-width overall bins, mark <30 responses or <10 pairs low support.",
+    "coefficients": "Provide full signed side/score coefficients with actual names; no automatic demographic-preference discoveries or causal importance claims."
+  },
+  "limitations": [
+    "Experiment proposed after the original G2 test and exploratory demographic outcome analyses; not confirmatory or an independent holdout.",
+    "Displayed A is not established to be screen-left; randomization is unverified. Side effects do not prove innate group bias.",
+    "Demographics-only cannot rank unseen cats/photos or identify which visual traits people prefer.",
+    "Cat/semantic interactions are conditional model-based predictive associations, not causal preferences, true pedigree or individual effects.",
+    "Correlated demographics, sparse support and many parameters may yield unstable coefficients; thresholds are not power guarantees.",
+    "Pair bootstrap omits training-selection uncertainty and all respondent/shared-image dependence.",
+    "Original G2/G3/G4 models, claims, report, archive and official prediction artifacts remain unchanged."
+  ]
+}

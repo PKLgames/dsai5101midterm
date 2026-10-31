@@ -1,0 +1,11 @@
+{
+  "status": "all_checks_passed",
+  "original_files_unchanged": 2026,
+  "previous_evidence_files_unchanged_before_tree_refresh": 133,
+  "new_sources": 9,
+  "new_copies_verified": 18,
+  "manifest_sha256": "d8161c68c9a34389f71816911261acfc7af49fcd1a072e896fdde40499b14685",
+  "experiment_freeze_sha256": "b035941c08cf8c2d7739b118a438b6920686f66af391c55b8896f3f017a6e7d0",
+  "no_original_claim_or_official_prediction_update": true,
+  "note": "Historical manifests unchanged; only folder_tree.txt is refreshed after verification."
+}
