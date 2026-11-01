@@ -38,6 +38,8 @@ Presentation_Evidence\
 |   |   |   `-- temperature_diagnostic.csv
 |   |   |-- 03_Test_Calibration_and_Slices\
 |   |   |   |-- calibration.pdf
+|   |   |   |-- calibration_readable.pdf
+|   |   |   |-- calibration_readable.png
 |   |   |   `-- subgroup_results.csv
 |   |   |-- 04_Exploratory_Demographic_Semantics\
 |   |   |   |-- exploratory_demographic_semantic_overlap.csv
@@ -256,6 +258,8 @@ Presentation_Evidence\
 |   |   `-- temperature_diagnostic.csv
 |   |-- 09_Frozen_Test\
 |   |   |-- calibration.pdf
+|   |   |-- calibration_readable.pdf
+|   |   |-- calibration_readable.png
 |   |   |-- main_results.csv
 |   |   |-- primary_contrasts.csv
 |   |   |-- secondary_results.csv
@@ -474,5 +478,6 @@ Presentation_Evidence\
 |-- original_hashes_before.json
 |-- photo_demographic_support_selection_manifest.csv
 |-- photo_demographic_support_verification.json
+|-- readable_calibration_selection_manifest.csv
 |-- selection_manifest.csv
 `-- verification.json

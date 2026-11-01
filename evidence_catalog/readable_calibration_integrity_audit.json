@@ -1,0 +1,49 @@
+{
+  "status": "passed",
+  "previous_inventoried_files": 2723,
+  "previous_managed_verified": 37,
+  "previous_files_changed": [
+    "Presentation_Evidence/folder_tree.txt"
+  ],
+  "new_project_files_inventoried": 5,
+  "current_total_project_files_in_scope": 2728,
+  "catalog_managed_study_files": 6,
+  "presentation_sources": 2,
+  "presentation_copies_verified": 4,
+  "historical_inventory_sha256": {
+    "file_inventory.csv": "d77b0610ce1d8005db844251ee6b4d3ab64d9e515ce2e2822aee1bb2f4c4068b",
+    "demographic_inventory.csv": "03d4a49e1e69aed42ce3fd2cc18b91d53b0b9382cfb89f8325503f268f0fe8bb",
+    "demographic_diagnostics_inventory.csv": "5361ed0125dab705e94abfb9fe02ab77712bd988980898dc87d8f0e834cadbf4",
+    "kernel_inventory.csv": "8eed433eb6c3b7ff3c8ee39b28ee79274e141b5775121bb5f7bd5de7fa0d3a19",
+    "cat_cnn_inventory.csv": "fe7cc0cc7ef505b354360ff5130169db0287aed5d6705de512b960b5b15d4fb5",
+    "cat_demographic_support_inventory.csv": "c1bc18f0fbd21e4754d1d0e8fa23912171c30144339c9b95eb4bee005f4d70fa",
+    "photo_demographic_support_inventory.csv": "45573399f8725f427cc1824ad274a3a4dd939f485bf36438f615771cb734bc13",
+    "heldout_agreement_inventory.csv": "9baf606f209675d08e97f2c68ad2d51dbcda36b161aa94741895c5aee3472a90"
+  },
+  "readable_calibration_inventory_sha256": "cfdee20eba2a4c84b20ef71a091c699c80b69501641358fdb83fdd1f3efc6f28",
+  "frozen_data_and_original_figure_unchanged": true,
+  "models": [
+    "common:M0",
+    "common:M1",
+    "common:M2",
+    "M3-C",
+    "M4-C"
+  ],
+  "note": "The only changed prior project file is the intentionally refreshed presentation tree.",
+  "presentation_revision": {
+    "reason": "Compact legend inside plot, no changes to plotted points or models",
+    "previous_sha256": {
+      "Presentation_Evidence/By_Presentation_Flow/03_Diagnostics/03_Test_Calibration_and_Slices/calibration_readable.pdf": "b33e977ab28790d8bb97b39b5c184b15e390ac9efa6a5aab96716e5cb4aec12b",
+      "Presentation_Evidence/By_Presentation_Flow/03_Diagnostics/03_Test_Calibration_and_Slices/calibration_readable.png": "a98b74578222695cc9db8a1e425c24711ade6d8f851523bdc2e7c681790ce918",
+      "Presentation_Evidence/By_Stage/09_Frozen_Test/calibration_readable.pdf": "b33e977ab28790d8bb97b39b5c184b15e390ac9efa6a5aab96716e5cb4aec12b",
+      "Presentation_Evidence/By_Stage/09_Frozen_Test/calibration_readable.png": "a98b74578222695cc9db8a1e425c24711ade6d8f851523bdc2e7c681790ce918",
+      "evidence_catalog/calibration_readable/calibration_readable.pdf": "b33e977ab28790d8bb97b39b5c184b15e390ac9efa6a5aab96716e5cb4aec12b",
+      "evidence_catalog/calibration_readable/calibration_readable.png": "a98b74578222695cc9db8a1e425c24711ade6d8f851523bdc2e7c681790ce918",
+      "evidence_catalog/calibration_readable/plot.py": "b93024b3d9fe3117c0db7f9e691a704a94d5ef5a535f82119e497684f19ef38e",
+      "evidence_catalog/calibration_readable/plotted_bins.csv": "2e6b8c8373134340691d022621d7d4c00f1c634eddea4c7d4372b64faf64b82b",
+      "evidence_catalog/calibration_readable/provenance.json": "004a75706bac0859c1aba2a829e5003389bf6ed20474c5b4f500cddcd5f52d58"
+    },
+    "revised_utc": "2026-11-01T16:01:02.176336+00:00",
+    "verified_unchanged_plotted_points": 31
+  }
+}

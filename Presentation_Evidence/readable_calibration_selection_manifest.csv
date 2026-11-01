@@ -1,0 +1,3 @@
+source,by_stage_copy,by_flow_copy,sha256,bytes,purpose
+evidence_catalog/calibration_readable/calibration_readable.pdf,By_Stage\09_Frozen_Test\calibration_readable.pdf,By_Presentation_Flow\03_Diagnostics\03_Test_Calibration_and_Slices\calibration_readable.pdf,6af94310783e98b3d91bd7d71d950419b0d27e99d426ef2de2bc522821e31b0f,19878,Readable relabel of original supported-bin calibration; no new model or data.
+evidence_catalog/calibration_readable/calibration_readable.png,By_Stage\09_Frozen_Test\calibration_readable.png,By_Presentation_Flow\03_Diagnostics\03_Test_Calibration_and_Slices\calibration_readable.png,b3d7fb8fbba0b31fa5b647d6e954a8383f5ea025b59b1a1f9f225b49f1ac3930,170137,Readable relabel of original supported-bin calibration; no new model or data.

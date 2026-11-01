@@ -1,0 +1,35 @@
+{
+  "status": "presentation_relabel_only",
+  "input": "tables/test_calibration.csv",
+  "input_sha256": "ce5573443422e399bb543c76770b5504c5b45ed82c62e365e62bd9d1d4136605",
+  "source_plot": "figures/calibration.pdf",
+  "source_plot_sha256": "d698f0b424c33b22c6a7370b1c4724c8db79e96d887e5ad33c643e5a99c0409d",
+  "models_in_original_order": [
+    "common:M0",
+    "common:M1",
+    "common:M2",
+    "M3-C",
+    "M4-C"
+  ],
+  "model_labels": {
+    "common:M0": "Baseline",
+    "common:M1": "Cat ID",
+    "common:M2": "Photo ID",
+    "M3-C": "CNN",
+    "M4-C": "CNN + Context"
+  },
+  "bin_counts": {
+    "common:M0": 1,
+    "common:M1": 8,
+    "common:M2": 8,
+    "M3-C": 7,
+    "M4-C": 7
+  },
+  "outputs_sha256": {
+    "calibration_readable.pdf": "6af94310783e98b3d91bd7d71d950419b0d27e99d426ef2de2bc522821e31b0f",
+    "calibration_readable.png": "b3d7fb8fbba0b31fa5b647d6e954a8383f5ea025b59b1a1f9f225b49f1ac3930",
+    "plotted_bins.csv": "1a1abd5dccd785054905f2accd85d7697bf5e8de7cfae4a880709cc4c9f2e06c"
+  },
+  "frozen_inputs_modified": false,
+  "model_fit_or_re_evaluation": false
+}
