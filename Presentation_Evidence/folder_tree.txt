@@ -198,14 +198,21 @@ Presentation_Evidence\
 |   |   |   |-- REPORT.md
 |   |   |   |-- support_summary.json
 |   |   |   `-- verification.json
-|   |   `-- 12_Photo_Demographic_Support\
+|   |   |-- 12_Photo_Demographic_Support\
+|   |   |   |-- analysis_provenance.json
+|   |   |   |-- group_support_summary.csv
+|   |   |   |-- matched_group_support.csv
+|   |   |   |-- per_photo_demographic_counts.csv
+|   |   |   |-- presentation_photo_demographic_support.pdf
+|   |   |   |-- REPORT.md
+|   |   |   |-- support_summary.json
+|   |   |   `-- verification.json
+|   |   `-- 13_Heldout_Agreement\
+|   |       |-- agreement_summary.csv
 |   |       |-- analysis_provenance.json
-|   |       |-- group_support_summary.csv
-|   |       |-- matched_group_support.csv
-|   |       |-- per_photo_demographic_counts.csv
-|   |       |-- presentation_photo_demographic_support.pdf
+|   |       |-- model_comparisons.csv
+|   |       |-- presentation_heldout_agreement.pdf
 |   |       |-- REPORT.md
-|   |       |-- support_summary.json
 |   |       `-- verification.json
 |   `-- 04_Claims\
 |       |-- 01_Question_and_Scope\
@@ -424,14 +431,21 @@ Presentation_Evidence\
 |   |   |-- REPORT.md
 |   |   |-- support_summary.json
 |   |   `-- verification.json
-|   `-- 18_Photo_Demographic_Support\
+|   |-- 18_Photo_Demographic_Support\
+|   |   |-- analysis_provenance.json
+|   |   |-- group_support_summary.csv
+|   |   |-- matched_group_support.csv
+|   |   |-- per_photo_demographic_counts.csv
+|   |   |-- presentation_photo_demographic_support.pdf
+|   |   |-- REPORT.md
+|   |   |-- support_summary.json
+|   |   `-- verification.json
+|   `-- 19_Heldout_Agreement\
+|       |-- agreement_summary.csv
 |       |-- analysis_provenance.json
-|       |-- group_support_summary.csv
-|       |-- matched_group_support.csv
-|       |-- per_photo_demographic_counts.csv
-|       |-- presentation_photo_demographic_support.pdf
+|       |-- model_comparisons.csv
+|       |-- presentation_heldout_agreement.pdf
 |       |-- REPORT.md
-|       |-- support_summary.json
 |       `-- verification.json
 |-- cat_cnn_selection_manifest.csv
 |-- cat_cnn_verification.json
@@ -452,6 +466,8 @@ Presentation_Evidence\
 |-- g3_within_cat_verification.json
 |-- g4_selection_manifest.csv
 |-- g4_verification.json
+|-- heldout_agreement_selection_manifest.csv
+|-- heldout_agreement_verification.json
 |-- kernel_selection_manifest.csv
 |-- kernel_verification.json
 |-- original_hashes_after.json

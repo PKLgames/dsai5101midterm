@@ -1,0 +1,33 @@
+{
+  "status": "post_test_exploratory_complete",
+  "input_sha256": {
+    "artifacts/rows_canonical.parquet": "2201f72aa2668b1b2410fb45208c17f702b1a2299f64aa00bd2e2f4df7188e70",
+    "artifacts/test_predictions.parquet": "e390f1dd6cfbbb1ef93a70dfc7d772f244cdc87b330e56137b21429b7fb897a8",
+    "demographic_experiment/test_predictions.parquet": "35b66f96e3e295358103eea6f4b8527622854faa41826931a113f8e29317894a",
+    "kernel_experiment/g2_predictions.parquet": "1f9d17a3a1b7252fc28d0389946f84946c32f8b22de337b6fb1bf41d27ef0cc4",
+    "cat_cnn_experiment/g2_predictions.parquet": "a80f995872f8c37f8352d948bc30119d5b519d86128a6eba9763ba84615ccb9c",
+    "g3_experiment/test_predictions.parquet": "76af28b020277c97287097550e25f071d216a5ea496dc9b93647dc5cf34b59c6",
+    "demographic_experiment/diagnostics_extension/g3_predictions.parquet": "f735cc19056bedbf8727bbc99e8e1036fd6cec6353639953c76f0173865d060d",
+    "kernel_experiment/g3_predictions.parquet": "843f80a0928218f391ea0f697a68286c65bd8d382f5f5e095222db8079399de4",
+    "cat_cnn_experiment/g3_predictions.parquet": "2407cc33c930d8a7f6ee23d0de7c453aa5fc64c0d05817219815385d40c16a0d",
+    "g4_experiment/test_predictions.parquet": "336b8b5d3b245a405e63d3a8a12a94379effdff38e335e963ff3746f1069a381",
+    "demographic_experiment/diagnostics_extension/g4_predictions.parquet": "6bbe44b6b254929c8200871ed2956af40adef75d4f33daa322f47ce8f3d3ffa0",
+    "kernel_experiment/g4_predictions.parquet": "c7115a2492d2e3d44512c3d5166d200db50a6e3e6d2520ad9dfbafc20618b246"
+  },
+  "output_sha256": {
+    "agreement_summary.csv": "4adbd268162fa12c34ec6f5a0f8f319b7fa6e2effe09ee0a19a7fdb607dc2dc3",
+    "model_comparisons.csv": "1da17f822f22e7bdbeedd8e00fbec19a661745481c7b82b44262ec797f8f570c",
+    "presentation_heldout_agreement.pdf": "4014ac3a0a8c7ee92169152d4c7a89adbee78a0cc2f02143ec40a85640408db0"
+  },
+  "original_snapshot_sha256": "c8ffc9d82fd80b6635dd64483c1449f80de3450cc661d47c1c04ef1505feddb7",
+  "original_files_unchanged": 2752,
+  "bootstrap": {
+    "replicates": 3000,
+    "seed": 23801,
+    "sampling_unit": "photo pair or cat pair, according to level"
+  },
+  "models_fitted": false,
+  "heldout_saved_prediction_outcomes_read": true,
+  "raw_outcome_source_read": false,
+  "caveats": "Post-test, conditional repeated-group population, dependent respondents unknown; pair-only oracle is not a universal ceiling."
+}

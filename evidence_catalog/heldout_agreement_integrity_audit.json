@@ -1,0 +1,28 @@
+{
+  "status": "passed",
+  "previous_inventoried_files": 2709,
+  "previous_catalog_managed_files_verified": 26,
+  "previous_files_changed": [
+    "Presentation_Evidence/folder_tree.txt"
+  ],
+  "new_project_files_inventoried": 14,
+  "current_total_project_files_in_scope": 2723,
+  "catalog_managed_study_files": 11,
+  "presentation_sources": 6,
+  "presentation_copies_verified": 12,
+  "historical_inventory_sha256": {
+    "file_inventory.csv": "d77b0610ce1d8005db844251ee6b4d3ab64d9e515ce2e2822aee1bb2f4c4068b",
+    "demographic_inventory.csv": "03d4a49e1e69aed42ce3fd2cc18b91d53b0b9382cfb89f8325503f268f0fe8bb",
+    "demographic_diagnostics_inventory.csv": "5361ed0125dab705e94abfb9fe02ab77712bd988980898dc87d8f0e834cadbf4",
+    "kernel_inventory.csv": "8eed433eb6c3b7ff3c8ee39b28ee79274e141b5775121bb5f7bd5de7fa0d3a19",
+    "cat_cnn_inventory.csv": "fe7cc0cc7ef505b354360ff5130169db0287aed5d6705de512b960b5b15d4fb5",
+    "cat_demographic_support_inventory.csv": "c1bc18f0fbd21e4754d1d0e8fa23912171c30144339c9b95eb4bee005f4d70fa",
+    "photo_demographic_support_inventory.csv": "45573399f8725f427cc1824ad274a3a4dd939f485bf36438f615771cb734bc13"
+  },
+  "heldout_agreement_inventory_sha256": "9baf606f209675d08e97f2c68ad2d51dbcda36b161aa94741895c5aee3472a90",
+  "models_fitted": false,
+  "saved_heldout_outcomes_read": true,
+  "raw_outcome_source_read": false,
+  "scope_note": "Project scope excludes evidence_catalog; this supplement separately lists catalog-managed study files, but not itself or its audit.",
+  "report_rounding_correction": "Five-decimal presentation rounding corrected and current report copies and manifests rehashed."
+}

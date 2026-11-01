@@ -1,0 +1,14 @@
+{
+  "status": "independent_pair_enumeration_passed",
+  "agreement_rows_verified": 6,
+  "model_rows_verified": 204,
+  "checks": [
+    "explicit unordered response-pair agreement",
+    "leave-one-out Brier",
+    "in-sample Brier",
+    "repeated subset and all saved-model Brier",
+    "orientation and cross-source response alignment"
+  ],
+  "intervals": "Bootstrap intervals are not independently replayed.",
+  "analysis_provenance_sha256": "b0ad70cf4fb0f2cc9fa949e1c095a0295536debefe6f007084eeed374e853400"
+}

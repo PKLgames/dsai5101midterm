@@ -1,0 +1,13 @@
+{
+  "status": "all_checks_passed",
+  "previous_project_files_unchanged_before_tree_refresh": 2752,
+  "selected_sources": 6,
+  "copies_verified": 12,
+  "manifest_sha256": "bcb163347dc57bd8612056b3f42b34d43716f9a204737f085b07201d8e8dcee6",
+  "verification_sha256": "77d5b7f575e93d89d437ee4ebe43e1b21a73dad0ad8ffb44209d2a6cfc39575e",
+  "models_fitted": false,
+  "saved_heldout_outcomes_read": true,
+  "raw_outcome_source_read": false,
+  "note": "The presentation tree was intentionally refreshed; prior manifests were preserved.",
+  "report_rounding_correction": "Corrected five-decimal display rounding; all three report copies reverified; underlying calculated outputs unchanged."
+}
