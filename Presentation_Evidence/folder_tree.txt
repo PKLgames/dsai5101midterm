@@ -156,38 +156,56 @@ Presentation_Evidence\
 |   |   |   |-- validation_calibration.csv
 |   |   |   |-- validation_slices.csv
 |   |   |   `-- verification.json
-|   |   `-- 10_Retrospective_Cat_CNN\
-|   |       |-- additional_paired_contrasts.csv
-|   |       |-- additional_verification.json
-|   |       |-- design_rank_and_protocol_erratum.json
-|   |       |-- fair_coin_control.csv
-|   |       |-- fair_coin_provenance.json
-|   |       |-- g2_abstention_utility.csv
-|   |       |-- g2_attempts.csv
-|   |       |-- g2_calibration.csv
-|   |       |-- g2_contrasts.csv
-|   |       |-- g2_results.csv
-|   |       |-- g2_subgroup_contrasts.csv
-|   |       |-- g2_subgroups.csv
-|   |       |-- g3_contrasts.csv
-|   |       |-- g3_results.csv
-|   |       |-- g3_within_contrasts.csv
-|   |       |-- g3_within_results.csv
-|   |       |-- g4_unsupported.json
-|   |       |-- learning_curves.csv
-|   |       |-- penalty_provenance.json
-|   |       |-- penalty_refits.csv
-|   |       |-- presentation_abstention.pdf
-|   |       |-- presentation_cat_cnn.pdf
-|   |       |-- protocol.json
-|   |       |-- RESULTS.md
-|   |       |-- subgroup_verification.json
-|   |       |-- summary.json
-|   |       |-- temperature_candidates.csv
-|   |       |-- test_support_calibration.csv
-|   |       |-- test_support_slices.csv
-|   |       |-- validation_support_calibration.csv
-|   |       |-- validation_support_slices.csv
+|   |   |-- 10_Retrospective_Cat_CNN\
+|   |   |   |-- additional_paired_contrasts.csv
+|   |   |   |-- additional_verification.json
+|   |   |   |-- design_rank_and_protocol_erratum.json
+|   |   |   |-- fair_coin_control.csv
+|   |   |   |-- fair_coin_provenance.json
+|   |   |   |-- g2_abstention_utility.csv
+|   |   |   |-- g2_attempts.csv
+|   |   |   |-- g2_calibration.csv
+|   |   |   |-- g2_contrasts.csv
+|   |   |   |-- g2_results.csv
+|   |   |   |-- g2_subgroup_contrasts.csv
+|   |   |   |-- g2_subgroups.csv
+|   |   |   |-- g3_contrasts.csv
+|   |   |   |-- g3_results.csv
+|   |   |   |-- g3_within_contrasts.csv
+|   |   |   |-- g3_within_results.csv
+|   |   |   |-- g4_unsupported.json
+|   |   |   |-- learning_curves.csv
+|   |   |   |-- penalty_provenance.json
+|   |   |   |-- penalty_refits.csv
+|   |   |   |-- presentation_abstention.pdf
+|   |   |   |-- presentation_cat_cnn.pdf
+|   |   |   |-- protocol.json
+|   |   |   |-- RESULTS.md
+|   |   |   |-- subgroup_verification.json
+|   |   |   |-- summary.json
+|   |   |   |-- temperature_candidates.csv
+|   |   |   |-- test_support_calibration.csv
+|   |   |   |-- test_support_slices.csv
+|   |   |   |-- validation_support_calibration.csv
+|   |   |   |-- validation_support_slices.csv
+|   |   |   `-- verification.json
+|   |   |-- 11_Cat_Demographic_Support\
+|   |   |   |-- analysis_provenance.json
+|   |   |   |-- group_support_summary.csv
+|   |   |   |-- matched_group_support.csv
+|   |   |   |-- per_cat_demographic_counts.csv
+|   |   |   |-- presentation_cat_demographic_support.pdf
+|   |   |   |-- REPORT.md
+|   |   |   |-- support_summary.json
+|   |   |   `-- verification.json
+|   |   `-- 12_Photo_Demographic_Support\
+|   |       |-- analysis_provenance.json
+|   |       |-- group_support_summary.csv
+|   |       |-- matched_group_support.csv
+|   |       |-- per_photo_demographic_counts.csv
+|   |       |-- presentation_photo_demographic_support.pdf
+|   |       |-- REPORT.md
+|   |       |-- support_summary.json
 |   |       `-- verification.json
 |   `-- 04_Claims\
 |       |-- 01_Question_and_Scope\
@@ -364,41 +382,61 @@ Presentation_Evidence\
 |   |   |-- validation_calibration.csv
 |   |   |-- validation_slices.csv
 |   |   `-- verification.json
-|   `-- 16_Retrospective_Cat_CNN\
-|       |-- additional_paired_contrasts.csv
-|       |-- additional_verification.json
-|       |-- design_rank_and_protocol_erratum.json
-|       |-- fair_coin_control.csv
-|       |-- fair_coin_provenance.json
-|       |-- g2_abstention_utility.csv
-|       |-- g2_attempts.csv
-|       |-- g2_calibration.csv
-|       |-- g2_contrasts.csv
-|       |-- g2_results.csv
-|       |-- g2_subgroup_contrasts.csv
-|       |-- g2_subgroups.csv
-|       |-- g3_contrasts.csv
-|       |-- g3_results.csv
-|       |-- g3_within_contrasts.csv
-|       |-- g3_within_results.csv
-|       |-- g4_unsupported.json
-|       |-- learning_curves.csv
-|       |-- penalty_provenance.json
-|       |-- penalty_refits.csv
-|       |-- presentation_abstention.pdf
-|       |-- presentation_cat_cnn.pdf
-|       |-- protocol.json
-|       |-- RESULTS.md
-|       |-- subgroup_verification.json
-|       |-- summary.json
-|       |-- temperature_candidates.csv
-|       |-- test_support_calibration.csv
-|       |-- test_support_slices.csv
-|       |-- validation_support_calibration.csv
-|       |-- validation_support_slices.csv
+|   |-- 16_Retrospective_Cat_CNN\
+|   |   |-- additional_paired_contrasts.csv
+|   |   |-- additional_verification.json
+|   |   |-- design_rank_and_protocol_erratum.json
+|   |   |-- fair_coin_control.csv
+|   |   |-- fair_coin_provenance.json
+|   |   |-- g2_abstention_utility.csv
+|   |   |-- g2_attempts.csv
+|   |   |-- g2_calibration.csv
+|   |   |-- g2_contrasts.csv
+|   |   |-- g2_results.csv
+|   |   |-- g2_subgroup_contrasts.csv
+|   |   |-- g2_subgroups.csv
+|   |   |-- g3_contrasts.csv
+|   |   |-- g3_results.csv
+|   |   |-- g3_within_contrasts.csv
+|   |   |-- g3_within_results.csv
+|   |   |-- g4_unsupported.json
+|   |   |-- learning_curves.csv
+|   |   |-- penalty_provenance.json
+|   |   |-- penalty_refits.csv
+|   |   |-- presentation_abstention.pdf
+|   |   |-- presentation_cat_cnn.pdf
+|   |   |-- protocol.json
+|   |   |-- RESULTS.md
+|   |   |-- subgroup_verification.json
+|   |   |-- summary.json
+|   |   |-- temperature_candidates.csv
+|   |   |-- test_support_calibration.csv
+|   |   |-- test_support_slices.csv
+|   |   |-- validation_support_calibration.csv
+|   |   |-- validation_support_slices.csv
+|   |   `-- verification.json
+|   |-- 17_Cat_Demographic_Support\
+|   |   |-- analysis_provenance.json
+|   |   |-- group_support_summary.csv
+|   |   |-- matched_group_support.csv
+|   |   |-- per_cat_demographic_counts.csv
+|   |   |-- presentation_cat_demographic_support.pdf
+|   |   |-- REPORT.md
+|   |   |-- support_summary.json
+|   |   `-- verification.json
+|   `-- 18_Photo_Demographic_Support\
+|       |-- analysis_provenance.json
+|       |-- group_support_summary.csv
+|       |-- matched_group_support.csv
+|       |-- per_photo_demographic_counts.csv
+|       |-- presentation_photo_demographic_support.pdf
+|       |-- REPORT.md
+|       |-- support_summary.json
 |       `-- verification.json
 |-- cat_cnn_selection_manifest.csv
 |-- cat_cnn_verification.json
+|-- cat_demographic_support_selection_manifest.csv
+|-- cat_demographic_support_verification.json
 |-- demographic_checks_selection_manifest.csv
 |-- demographic_checks_verification.json
 |-- demographic_diagnostics_selection_manifest.csv
@@ -418,5 +456,7 @@ Presentation_Evidence\
 |-- kernel_verification.json
 |-- original_hashes_after.json
 |-- original_hashes_before.json
+|-- photo_demographic_support_selection_manifest.csv
+|-- photo_demographic_support_verification.json
 |-- selection_manifest.csv
 `-- verification.json

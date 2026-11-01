@@ -1,0 +1,24 @@
+{
+  "status": "completed_outcome_blind_descriptive",
+  "input_sha256": {
+    "artifacts/model_freeze.json": "47d22cc15fd7e42157b3f45faf634acee325e1288459b47b9635d9e2fd24411a",
+    "artifacts/model_freeze.sha256": "5b1c65e1eac2f904ea5d20beac9e0bbc06e25448758cadbb1c8d3d78e3126138",
+    "artifacts/rows_canonical.parquet": "2201f72aa2668b1b2410fb45208c17f702b1a2299f64aa00bd2e2f4df7188e70",
+    "artifacts/g2_eligibility.parquet": "4aaac8aee46fcdbe757366eb6942e3dddd790bd5d73b6bd28c92edaa569f78e9"
+  },
+  "outputs_sha256": {
+    "per_photo_demographic_counts.csv": "36d1af6783929169d2ed90166c73cad45b22c7a26b3726ed83c03df59184b0a0",
+    "group_support_summary.csv": "8feaba1dce555709482574e96639986aeb4c5faed80fc8a345438a3e028ff5e4",
+    "matched_group_support.csv": "a7f980164f33746bd5850d50c770af61752773f2cc9a72d13be5fcfcb42c4268",
+    "support_summary.json": "35434ee7e1e252bee2bab1a1905ba6ad8baab1aa693de0ece1e680a49c5a040c",
+    "presentation_photo_demographic_support.pdf": "b99fdd10183a6aad681fcef7292cc51d11386bfadaf2ddb75f7f951bf38007de"
+  },
+  "original_snapshot_sha256": "1b47a7ff4c864553bd3ca8bb1e25fcc2867075d16a5fedd0c64b0b704ee72a85",
+  "original_files_unchanged": 2719,
+  "per_photo_rows": 67392,
+  "group_summary_rows": 52,
+  "matched_group_rows": 92,
+  "outcome_columns_read": false,
+  "test_rows_read": false,
+  "models_fitted": false
+}

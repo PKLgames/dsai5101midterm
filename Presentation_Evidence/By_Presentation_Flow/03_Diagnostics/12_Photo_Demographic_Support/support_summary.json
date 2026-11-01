@@ -1,0 +1,61 @@
+{
+  "partitions": {
+    "fit": {
+      "responses": 17421,
+      "pairs": 5634,
+      "fitting_photo_universe": 1296,
+      "photo_appearances_per_demographic": 34842
+    },
+    "development": {
+      "responses": 21163,
+      "pairs": 6842,
+      "fitting_photo_universe": 1296,
+      "photo_appearances_per_demographic": 42326
+    }
+  },
+  "demographic_categories": {
+    "gender": [
+      "<missing>",
+      "man",
+      "woman"
+    ],
+    "pet_history": [
+      "<missing>",
+      "current",
+      "never",
+      "past"
+    ],
+    "pet_care": [
+      "<missing>",
+      "current_regular",
+      "never",
+      "occasionally",
+      "past_regular"
+    ],
+    "pet_contact": [
+      "<missing>",
+      "daily",
+      "never",
+      "often",
+      "rarely",
+      "sometimes"
+    ],
+    "future_pet": [
+      "<missing>",
+      "no",
+      "unsure",
+      "yes"
+    ],
+    "mbti_ie": [
+      "<missing>",
+      "E",
+      "I",
+      "unknown"
+    ]
+  },
+  "photo_counting": "One appearance per photo in each comparison; each response has two distinct photos, including within-cat comparisons.",
+  "zero_cells": "All fitting photos crossed with every development category.",
+  "outcome_columns_read": false,
+  "test_rows_read": false,
+  "models_fitted": false
+}

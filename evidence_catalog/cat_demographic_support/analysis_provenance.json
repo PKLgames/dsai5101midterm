@@ -1,0 +1,25 @@
+{
+  "status": "completed_outcome_blind_descriptive",
+  "input_sha256": {
+    "artifacts/model_freeze.json": "47d22cc15fd7e42157b3f45faf634acee325e1288459b47b9635d9e2fd24411a",
+    "artifacts/model_freeze.sha256": "5b1c65e1eac2f904ea5d20beac9e0bbc06e25448758cadbb1c8d3d78e3126138",
+    "artifacts/rows_canonical.parquet": "2201f72aa2668b1b2410fb45208c17f702b1a2299f64aa00bd2e2f4df7188e70",
+    "artifacts/g2_eligibility.parquet": "4aaac8aee46fcdbe757366eb6942e3dddd790bd5d73b6bd28c92edaa569f78e9"
+  },
+  "outputs_sha256": {
+    "per_cat_demographic_counts.csv": "a566fdb0be31b7a532999430292c03047c049c8264ec4450b76bbd7257a87392",
+    "group_support_summary.csv": "8762eb71def401a2f9a31037cb7de1edf522fb9f51cf9633564b04e59f01d52e",
+    "matched_group_support.csv": "a71c81500a0d6754e75fa53e57c96e0d96c14e9320407161543a5eef445063fa",
+    "support_summary.json": "c5e36fee8b31d3d54b9ead3da55488574aaf236e913be22ee883f9211b99d751",
+    "presentation_cat_demographic_support.pdf": "de2fe0d9090a31b6c8db2105c3ad70a4053341f5cfc221d05c1527f89c2d2f9e"
+  },
+  "original_snapshot_sha256": "f826cb3539b08b91db73326767658535fc70a5660d153276223e29e0dea98d1e",
+  "original_files_unchanged": 2686,
+  "per_cat_rows": 12324,
+  "group_summary_rows": 52,
+  "matched_group_rows": 92,
+  "outcome_columns_read": false,
+  "test_rows_read": false,
+  "models_fitted": false,
+  "nonclaim": "No causal demographic preference, respondent independence or statistical power claim."
+}

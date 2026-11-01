@@ -6,9 +6,9 @@
 
 ## 1. How to use this catalog
 
-This document is the interpreted evidence list. Read the original [file inventory](file_inventory.csv), then the [demographic supplemental inventory](demographic_inventory.csv), the [diagnostic-parity inventory](demographic_diagnostics_inventory.csv), the [kernel inventory](kernel_inventory.csv), and finally the [Cat + CNN inventory](cat_cnn_inventory.csv): each supplement adds new files and replaces the historical row for the refreshed presentation tree. They include individual path, canonical source, presentation-copy flag, purpose, supported claim, interpretation limit, byte size, SHA-256, CSV/Parquet row count, column count, and PDF page count where applicable. Earlier [integrity](integrity_audit.json), [demographic](demographic_integrity_audit.json), [diagnostic-parity](demographic_diagnostics_integrity_audit.json), and [kernel](kernel_integrity_audit.json) audits remain historical records; the [Cat + CNN audit](cat_cnn_integrity_audit.json) records the latest inventory checks.
+This document is the interpreted evidence list. Read the original [file inventory](file_inventory.csv), then the [demographic supplemental inventory](demographic_inventory.csv), the [diagnostic-parity inventory](demographic_diagnostics_inventory.csv), the [kernel inventory](kernel_inventory.csv), the [Cat + CNN inventory](cat_cnn_inventory.csv), the [cat-demographic support inventory](cat_demographic_support_inventory.csv), and the [photo-demographic support inventory](photo_demographic_support_inventory.csv): supplements add new files and replace the historical row for the refreshed presentation tree. They include individual path, canonical source, presentation-copy flag, purpose, supported claim, interpretation limit, byte size, SHA-256, CSV/Parquet row count, column count, and PDF page count where applicable. Earlier [integrity](integrity_audit.json), [demographic](demographic_integrity_audit.json), [diagnostic-parity](demographic_diagnostics_integrity_audit.json), [kernel](kernel_integrity_audit.json), [Cat + CNN](cat_cnn_integrity_audit.json), and [cat-demographic support](cat_demographic_support_integrity_audit.json) audits remain historical records; the [photo-demographic support audit](photo_demographic_support_integrity_audit.json) records the latest inventory checks.
 
-Together the inventories cover **2,673 files**: 2,086 in the original snapshot, 64 demographic-experiment additions, 168 diagnostic-parity additions, 179 kernel-study additions and 176 later additions including the Cat + CNN study; each supplement also records the updated presentation-tree file. Two of the latest additions appeared independently during the study and are recorded as unclassified, not attributed to the experiment. The inventories include 1,558 dataset photographs, 64 review-panel images, executable sources, tests, and presentation duplicates. They exclude the root Git database, virtual environments, downloaded-model cache, this catalog directory, and runtime `__pycache__`/plotting-configuration directories. An incidental retained legacy plotting cache is inventoried as a legacy file, not scientific evidence.
+Together the inventories cover **2,709 files in the original project scope**: 2,086 in the original snapshot, 64 demographic-experiment additions, 168 diagnostic-parity additions, 179 kernel-study additions, 176 later additions including the Cat + CNN study, and 18 presentation additions for each of the cat- and photo-demographic support studies; each supplement also records the updated presentation-tree file. Two of the Cat + CNN-era additions appeared independently during that study and are recorded as unclassified, not attributed to the experiment. The inventories include 1,558 dataset photographs, 64 review-panel images, executable sources, tests, and presentation duplicates. The original project scope excludes the root Git database, virtual environments, downloaded-model cache, this catalog directory, and runtime `__pycache__`/plotting-configuration directories. The two support supplements separately inventory 13 catalog-managed files each, outside that 2,709-file scope; neither includes itself or its audit. An incidental retained legacy plotting cache is inventoried as a legacy file, not scientific evidence.
 
 **Do not count files as independent evidence.** A PDF, its source CSV, its row-level predictions, and its two presentation copies usually describe the same observations. The inventory's `canonical_source` field makes this explicit. It is not meaningful to add their sample sizes together.
 
@@ -24,6 +24,8 @@ Together the inventories cover **2,673 files**: 2,086 in the original snapshot, 
 - For the diagnostic-parity update, the only changed previously inventoried project file was the intentionally refreshed presentation tree. Original files were protected throughout the refits; 74 new presentation copies were checked against their sources. The new G3/G4 saved predictions and 5,000 cluster-bootstrap draws were independently replayed.
 - For the kernel update, the only changed previously inventoried file was the intentionally refreshed presentation tree. The kernel study's original project and presentation snapshots were checked before publication; its 62 new copies were verified.
 - For Cat + CNN, **2,272 original project files** and **305 prior presentation files** remained unchanged; two new external files were preserved and separately recorded. The study's 64 presentation copies were verified before refreshing the tree.
+- For cat-demographic support, the counting analysis checked **2,686 pre-existing project files** unchanged; a separate pandas calculation reconciled **12,324 cat/group/scope cells**, **52 group summaries**, and **92 matched-group rows**. Sixteen presentation copies from eight sources were checked. Only the presentation tree changed among earlier inventoried project-scope files; updating this catalog is an explicitly authorized report change.
+- For photo-demographic support, **2,719 pre-existing files** were unchanged during counting. Independent pandas reconciliation checked **67,392 photo/group/scope cells**, **52 group summaries**, and **92 matched-group rows**; all 92 pair-overlap results matched the earlier cat-support table. Sixteen presentation copies from eight sources were verified; only the presentation tree changed among earlier inventoried project-scope files.
 
 These are **integrity checks**, not new empirical findings. No preference model, simulation, evaluation, or existing test suite was rerun for this catalog. Historical successful tests and reconstruction logs are described as historical records, not newly executed tests.
 
@@ -906,6 +908,45 @@ With the specified +1/-1/0 payoffs, higher selected accuracy did not improve uti
 
 Four focused tests passed. The [independent reconstruction](../cat_cnn_experiment/verification.json) reports 10 selected G2/G3/curve models, 5,000 cluster-bootstrap draws per target and **84** abstention cells. [Additional verification](../cat_cnn_experiment/additional_verification.json) covers all 49 penalty refits and six matched extra-model contrasts; [subgroup verification](../cat_cnn_experiment/subgroup_verification.json) replays 14 G2/G3 subgroup comparisons. These checks do not undo previous outcome exposure.
 
+## 10D. Outcome-blind per-cat demographic data support
+
+The [support report](cat_demographic_support/REPORT.md), [per-cat table](cat_demographic_support/per_cat_demographic_counts.csv), [group summary](cat_demographic_support/group_support_summary.csv), [matched-group table](cat_demographic_support/matched_group_support.csv), and [presentation figure](cat_demographic_support/presentation_cat_demographic_support.pdf) describe the original fitting and fitting-plus-validation development populations. This is a retrospective **structural count only**, not a model or preference result. Development includes fitting; do not treat these as independent samples. No outcome columns or test rows were read and no models were fitted.
+
+The denominator is 237 fitting cats, including zero-count cells. The source has 17,421 fitting responses and 21,163 development responses. A within-cat response counts once for its cat; a between-cat response counts once for each cat. Consequently there are 32,744 and 39,778 cat appearances per demographic variable, respectively. These are response records, not unique respondents; demographic variables cover the same records and their totals must not be added.
+
+| Structural finding | Fitting | Development | Interpretation |
+|---|---:|---:|---|
+| Men, median appearances per cat | 78 | 95 | All 237 cats have at least 10 appearances; pooled over photo pairs, not independent people. |
+| Women, median appearances per cat | 57 | 70 | All 237 cats have at least 10 appearances; support is not uniformly thin. |
+| `pet_contact=never`, median; cats below 10 | 6; 225/237 | 7; 193/237 | Rare group has much thinner cat-level coverage. |
+| `future_pet=no`, median; cats below 10 | 13; 51/237 | 16; 11/237 | Descriptive counts; no statistical-power threshold is implied. |
+| Gender missing, median; cats with zero | 3; 14/237 | 3; 4/237 | Missing is not a substantive identity; missing rows coincide across the six variables. |
+| Men/women shared unordered photo pairs with at least one record per group | 3,883 | 4,713 | Shared pair is stricter than shared cat, but does not by itself establish a semantic effect. |
+| Men/women shared pairs with at least two records per group | 735 | 907 | Across all pairs, not per cat; repeated responses need not be distinct people. |
+| Any group comparison meeting the earlier five-records-per-pair-per-group rule | 0 | 0 | Development has at most four records total per pair. This earlier operational rule is not a universal power theorem. |
+
+Within-cat counts are smaller: the men/women median per cat is **5/4** in fitting and **6/4** in development. For `pet_contact=never`, **165/237** fitting cats and **149/237** development cats have no within-cat response in that group. The complete report lists all 26 category rows, distinguishes recorded MBTI `unknown` from missing, and explains why aggregate cat coverage cannot establish a semantic demographic preference. The [provenance](cat_demographic_support/analysis_provenance.json), [independent verification](cat_demographic_support/verification.json), and [supplemental inventory audit](cat_demographic_support_integrity_audit.json) record scope and reconciliation; presentation copies are not new observations.
+
+## 10E. Outcome-blind per-photo demographic data support
+
+The [photo-support report](photo_demographic_support/REPORT.md), [per-photo table](photo_demographic_support/per_photo_demographic_counts.csv), [group summaries](photo_demographic_support/group_support_summary.csv), [matched-group table](photo_demographic_support/matched_group_support.csv), and [presentation figure](photo_demographic_support/presentation_photo_demographic_support.pdf) describe the same original fitting and fitting-plus-validation development populations as Section 10D. This is a retrospective **structural count only**; no outcome columns or test rows were read and no models were fitted. Development includes fitting and is not an independent sample.
+
+The universe is **1,296 fitting photos**, including zero-count photo/group cells. Each response contributes one appearance to each of its two distinct photos, including both photos in a within-cat comparison. Thus 17,421 fitting responses yield 34,842 photo appearances per demographic variable, and 21,163 development responses yield 42,326. This differs from the cat-level convention, where a within-cat response contributes once to its cat. Responses are not necessarily unique respondents, and variables reuse the same records.
+
+| Structural finding | Fitting | Development | Interpretation |
+|---|---:|---:|---|
+| Men, median appearances per photo; photos below 10 | 15; 197/1,296 | 18; 83/1,296 | Counts pool different photo pairs; the cutoff is illustrative. |
+| Women, median appearances per photo; photos below 10 | 11; 482/1,296 | 13; 240/1,296 | Every cat had at least ten fitting appearances in both gender groups, but many individual photos do not. |
+| `pet_contact=never`, median; photos with zero | 1; 439/1,296 | 1; 341/1,296 | Sparse group-specific photo coverage. |
+| `pet_care=current_regular`, median; photos below 5 | 4; 815/1,296 | 5; 600/1,296 | Descriptive support counts, not a power guarantee. |
+| `future_pet=yes`, median; photos below 10 | 18; 89/1,296 | 22; 35/1,296 | Support is not equally thin across all groups. |
+| Photos appearing in both gender groups; photos with at least 10 in each | 1,293; 746 | 1,295; 1,026 | A shared photo can have different opponents in the two groups. |
+| Gender-shared pairs, at least one per group; at least two per group | 3,883; 735 | 4,713; 907 | These match Section 10D and are pair-level, not per-photo counts. |
+
+Within-cat response appearances are smaller: **328/1,296** fitting photos have no such appearance among men and **399/1,296** among women; development has **213** and **278** respectively. Development has at most four records total per pair, so none satisfy the earlier five-per-pair-per-group operational rule. None of these counts establishes a demographic preference, effect size, respondent independence, or a required sample size. The complete [report](photo_demographic_support/REPORT.md) lists all 26 group rows, distinguishes recorded MBTI `unknown` from missing, and explains the counting conventions.
+
+The [analysis provenance](photo_demographic_support/analysis_provenance.json), [independent verification](photo_demographic_support/verification.json), and [supplemental inventory audit](photo_demographic_support_integrity_audit.json) record the scope and checks. Presentation copies show the same observations and are not independent evidence.
+
 ## 11. Quarantined retrospective G3, within-cat G3, and G4
 
 These experiments use separate fitting/validation/model/freeze/output directories. They preserve the original G2 pipeline, but **cannot erase prior outcome exposure**. A fresh directory or different split is not a new independent test.
@@ -1083,7 +1124,7 @@ Directory: [Presentation_Evidence](../Presentation_Evidence). Its [folder tree](
 - `By_Stage`: pipeline order, then isolated retrospective experiments.
 - `By_Presentation_Flow`: Data, Models, Diagnostics, Claims.
 
-There are now **348 copied assets**, from **174 selected original source files**, plus **23 root metadata files**. The copies add no observations or independent tests.
+There are now **380 copied assets**, from **190 selected original source files**, plus **27 root metadata files**. The copies add no observations or independent tests.
 
 | Copy batch | Unique sources | Copies | Metadata |
 |---|---:|---:|---|
@@ -1096,10 +1137,12 @@ There are now **348 copied assets**, from **174 selected original source files**
 | All-demographic diagnostic parity | 37 | 74 | [demographic_diagnostics_selection_manifest.csv](../Presentation_Evidence/demographic_diagnostics_selection_manifest.csv), [demographic_diagnostics_verification.json](../Presentation_Evidence/demographic_diagnostics_verification.json) |
 | Retrospective kernel scorer | 31 | 62 | [kernel_selection_manifest.csv](../Presentation_Evidence/kernel_selection_manifest.csv), [kernel_verification.json](../Presentation_Evidence/kernel_verification.json) |
 | Retrospective Cat + CNN scorer | 32 | 64 | [cat_cnn_selection_manifest.csv](../Presentation_Evidence/cat_cnn_selection_manifest.csv), [cat_cnn_verification.json](../Presentation_Evidence/cat_cnn_verification.json) |
+| Outcome-blind cat-demographic support | 8 | 16 | [cat_demographic_support_selection_manifest.csv](../Presentation_Evidence/cat_demographic_support_selection_manifest.csv), [cat_demographic_support_verification.json](../Presentation_Evidence/cat_demographic_support_verification.json) |
+| Outcome-blind photo-demographic support | 8 | 16 | [photo_demographic_support_selection_manifest.csv](../Presentation_Evidence/photo_demographic_support_selection_manifest.csv), [photo_demographic_support_verification.json](../Presentation_Evidence/photo_demographic_support_verification.json) |
 
 Earlier manifests remain historical. Their smaller original-file counts reflect creation time and scope, not missing current files. The folder tree is intentionally refreshed when a new evidence batch is added. **Official prediction artifacts are not automatically part of the presentation copy selection or original report/ZIP.**
 
-Material outside this folder includes row-level predictions, complete candidate logs, full context/pair tables, feature caches and masks, all original models, individual review panels, provenance/access history, reproduction logs, deployment models/predictions, and methods/tests. The original inventory and four supplemental inventories together cover them.
+Material outside this folder includes row-level predictions, complete candidate logs, full context/pair tables, feature caches and masks, all original models, individual review panels, provenance/access history, reproduction logs, deployment models/predictions, and methods/tests. The original inventory and six supplemental inventories together cover the project scope; the two latest supplements also list their catalog-managed support-study files.
 
 ## 15. What is not a completed evidence claim
 

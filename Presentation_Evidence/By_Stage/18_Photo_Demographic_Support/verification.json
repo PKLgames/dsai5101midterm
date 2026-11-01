@@ -1,0 +1,11 @@
+{
+  "status": "independent_pandas_reconciliation_passed",
+  "per_photo_group_cells_checked": 67392,
+  "summary_rows_checked": 52,
+  "matched_group_rows_checked": 92,
+  "prior_matched_pair_rows_reconciled": 92,
+  "analysis_provenance_sha256": "2d5aedb4ffdd1ca262fd183eb9cbf031e844523ddeffe04d85a38f4f5201976d",
+  "structural_columns_only": true,
+  "test_rows_read": false,
+  "models_fitted": false
+}

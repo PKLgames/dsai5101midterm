@@ -1,0 +1,67 @@
+{
+  "partitions": {
+    "fit": {
+      "responses": 17421,
+      "pairs": 5634,
+      "within_cat_responses": 2098,
+      "between_cats_responses": 15323,
+      "fitting_cat_universe": 237,
+      "cat_response_appearances_per_demographic": 32744
+    },
+    "development": {
+      "responses": 21163,
+      "pairs": 6842,
+      "within_cat_responses": 2548,
+      "between_cats_responses": 18615,
+      "fitting_cat_universe": 237,
+      "cat_response_appearances_per_demographic": 39778
+    }
+  },
+  "demographic_categories": {
+    "gender": [
+      "<missing>",
+      "man",
+      "woman"
+    ],
+    "pet_history": [
+      "<missing>",
+      "current",
+      "never",
+      "past"
+    ],
+    "pet_care": [
+      "<missing>",
+      "current_regular",
+      "never",
+      "occasionally",
+      "past_regular"
+    ],
+    "pet_contact": [
+      "<missing>",
+      "daily",
+      "never",
+      "often",
+      "rarely",
+      "sometimes"
+    ],
+    "future_pet": [
+      "<missing>",
+      "no",
+      "unsure",
+      "yes"
+    ],
+    "mbti_ie": [
+      "<missing>",
+      "E",
+      "I",
+      "unknown"
+    ]
+  },
+  "response_counting": "One response per distinct cat appearing in it; within-cat responses count once for that cat; between-cat responses count once for each of two cats.",
+  "count_units": "Response records, not unique respondents; pair counts use unordered photo pair IDs.",
+  "zero_cells": "Every fitting cat crossed with every observed development category, separately for both scopes.",
+  "threshold_interpretation": "5, 10 and 20 responses per cat/group are descriptive cutoffs, not power guarantees. Five responses per pair/group is the existing group-contrast operational rule.",
+  "outcome_columns_read": false,
+  "test_rows_read": false,
+  "models_fitted": false
+}

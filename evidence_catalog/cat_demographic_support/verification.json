@@ -1,0 +1,14 @@
+{
+  "status": "independent_pandas_reconciliation_passed",
+  "per_cat_group_cells_checked": 12324,
+  "group_summary_rows_checked": 52,
+  "matched_group_rows_checked": 92,
+  "fitting_and_development_verified": true,
+  "within_cat_endpoints_deduplicated": true,
+  "both_within_cat_photos_retained": true,
+  "structural_columns_only": true,
+  "test_rows_read": false,
+  "models_fitted": false,
+  "analysis_provenance_sha256": "78213735d92dbb92e6f6694ec78aff22dd797a9125d2c8f8b8ae4a927d2a26d8",
+  "note": "Response records are not unique people; illustrative support cutoffs are not power guarantees."
+}

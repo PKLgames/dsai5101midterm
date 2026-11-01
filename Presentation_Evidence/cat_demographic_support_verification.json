@@ -1,0 +1,12 @@
+{
+  "status": "all_checks_passed",
+  "previous_project_files_unchanged_before_tree_refresh": 2686,
+  "selected_sources": 8,
+  "copies_verified": 16,
+  "manifest_sha256": "d22adffb1ad88f904e194e0ec214bd73e2c9dd5e435b21d34f32e5cc104da5be",
+  "verification_sha256": "715aef83df30cdd7f07adc5b50af88d713214bec91e6df05c53687b68a9235e1",
+  "models_fitted": false,
+  "test_rows_read": false,
+  "outcome_columns_read": false,
+  "note": "The presentation tree was intentionally refreshed; prior manifests were preserved."
+}
